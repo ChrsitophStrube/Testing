@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module version="1">
+    <Name>NewHMIProjectUserDefinedModule</Name>
+    <Company></Company>
+    <Version>0.0.0</Version>
+    <MinUpgradableVersion>0.0.0</MinUpgradableVersion>
+    <Binding name="Net" />
+
+    <Namespaces/>
+
+    <Dependencies>
+        <Core version="0.0.0" />
+        <Binding version="0.0.0" />
+        <Module name="FTOptix.HMIProject.Net" version="0.0.0" />
+    </Dependencies>
+
+    <Nodes/>
+
+    <TypeMappings>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="NewHMIProject" guid="01a7e8933afd7c95fe894b0859308138" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="NewHMIProject" guid="e69f12f7d0b08ed7b4102635f7643e5b" />
+            </TargetType>
+        </TypeMapping>
+    </TypeMappings>
+</Module>

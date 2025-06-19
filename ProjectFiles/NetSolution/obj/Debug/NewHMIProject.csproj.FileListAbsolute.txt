@@ -1,0 +1,12 @@
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\bin\NewHMIProject.deps.json
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\bin\NewHMIProject.dll
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\bin\NewHMIProject.pdb
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.csproj.AssemblyReference.cache
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.AssemblyInfoInputs.cache
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.AssemblyInfo.cs
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.csproj.CoreCompileInputs.cache
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.dll
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\refint\NewHMIProject.dll
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\NewHMIProject.pdb
+D:\Masterarbeit\Code\Optix\TestPipeline\NewHMIProject\ProjectFiles\NetSolution\obj\Debug\ref\NewHMIProject.dll
