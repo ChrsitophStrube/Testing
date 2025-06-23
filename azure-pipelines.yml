@@ -1,19 +1,39 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
 pool:
   OPTIX Builder 
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  - name: 'TARGET_IP'
+    value: '192.168.1.200'
+  - name: 'TARGET_USER'
+    value: 'admin'
+  - name: 'FT_OPTIX_CLI'
+    value: 'C:\\Program Files\\Rockwell Automation\\FactoryTalk Optix\\Studio 1.6.0.557\\FTOptixStudio'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+steps:
+  - script: |
+      echo "Repo root: $(Build.SourcesDirectory)"
+      dir "$(Build.SourcesDirectory)"
+    displayName: 'Print repo root'
+
+  - script: |
+      echo Building and exporting HMI project...
+      "$(FT_OPTIX_CLI)" deploy "$(Build.SourcesDirectory)/NewHMIProject.optix" --ip-address=$(TARGET_IP) --username=$(TARGET_USER)
+    displayName: 'Export and deploy project to target machine'
+
+  - script: |
+      echo Building and exporting HMI project...
+      "$(FT_OPTIX_CLI)" export "$(Build.SourcesDirectory)/NewHMIProject.optix" --location="$(Build.SourcesDirectory)/build" --platform=Win32_x64
+    displayName: 'Export and deploy project to target machine'
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish artifact"
+    inputs:
+      PathtoPublish: "$(Build.SourcesDirectory)/build"
+      ArtifactName: "optix"
+
+  - script: |
+      echo Deployment pipeline completed.
+    displayName: 'Finish'
