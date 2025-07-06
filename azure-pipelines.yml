@@ -35,8 +35,7 @@ steps:
       command: 'build'
       projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
 
-  - script: |
-      pwsh $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/netX/playwright.ps1 install
+  - pwsh: $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/netX/playwright.ps1 install
     displayName: 'Install Browser'
 
 
