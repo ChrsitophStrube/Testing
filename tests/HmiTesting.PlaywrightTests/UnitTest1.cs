@@ -42,7 +42,7 @@ public class Tests
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200");
     }
 
     [TearDown]
