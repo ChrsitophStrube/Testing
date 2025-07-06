@@ -40,8 +40,7 @@ steps:
 
   - task: Delay@1
     inputs:
-      delayForMinutes: '0'
-      delayForSeconds: '50
+      delayForMinutes: '1'
 
   - task: DotNetCoreCLI@2
     displayName: 'Run Tests'
