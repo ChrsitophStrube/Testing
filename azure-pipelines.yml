@@ -20,12 +20,12 @@ steps:
 
   - script: |
       echo Building and exporting HMI project...
-      "$(FT_OPTIX_CLI)" deploy "$(Build.SourcesDirectory)/NewHMIProject.optix" --ip-address=$(TARGET_IP) --username=$(TARGET_USER)
+      "$(FT_OPTIX_CLI)" deploy "$(Build.SourcesDirectory)/MyHMI_Template_Unencrypted.optix" --ip-address=$(TARGET_IP) --username=$(TARGET_USER)
     displayName: 'Export and deploy project to target machine'
 
   - script: |
       echo Building and exporting HMI project...
-      "$(FT_OPTIX_CLI)" export "$(Build.SourcesDirectory)/NewHMIProject.optix" --location="$(Build.SourcesDirectory)/build" --platform=Win32_x64
+      "$(FT_OPTIX_CLI)" export "$(Build.SourcesDirectory)/MyHMI_Template_Unencrypted.optix" --location="$(Build.SourcesDirectory)/build" --platform=Win32_x64
     displayName: 'Export and deploy project to target machine'
 
   - task: PublishBuildArtifacts@1
