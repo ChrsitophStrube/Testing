@@ -1,0 +1,114 @@
+Name: MyHMI_Template_Unencrypted
+Id: g=51a0a78e3958ddd42374f1782a0a4703
+Type: ProjectFolder
+Children:
+- Name: Localization
+  Id: g=6374f91254ed99c6732ec3ecf911e0d6
+  Type: PropertyGroup
+  Children:
+  - Name: Locales
+    Id: g=5ab8b651915676639554711303b489a6
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US","de-DE"]
+  - Name: LocaleFallbackList
+    Id: g=ed8c619946d670b0223d3917ca0c11a9
+    Type: BaseDataVariableType
+    DataType: LocaleId
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: ["en-US"]
+- Name: Authentication
+  Id: g=ecf6625e1167d513585aacf2e3a758cb
+  Type: PropertyGroup
+  Children:
+  - Name: DefaultUserFolder
+    Id: g=7e9760f7c8c9c7ff55fbcc43369b6b26
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/MyHMI_Template_Unencrypted/Security/Users"
+    Children:
+    - Name: Kind
+      Id: g=3fba524c81936550948910ef98299212
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
+  - Name: AuthenticationMode
+    Id: g=eddfb26332471464747d13ac4ef124f1
+    Type: BaseDataVariableType
+    DataType: AuthenticationMode
+- Name: PasswordPolicy
+  Id: g=396c6c08c1e6292f7896defb7baa1d07
+  Type: PasswordPolicy
+  Children:
+  - Name: MaximumPasswordAge
+    Id: g=e96fb526a89e25feef2faaee45939b63
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: EnforcePasswordHistory
+    Id: g=e4f67df783f6bd732cc97a2471a4bd67
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 1
+  - Name: MinimumPasswordAge
+    Id: g=8cd32d65fa4bf341c955e33191d8f6b4
+    Type: BaseDataVariableType
+    DataType: UInt16
+  - Name: MinimumPasswordLength
+    Id: g=793c2d30403e319e6578ad7f01a8a73b
+    Type: BaseDataVariableType
+    DataType: Byte
+    Value: 6
+- Name: AlarmConfiguration
+  Id: g=f582f973d08d367d94642ef9c3e2a651
+  Type: PropertyGroup
+- File: UI/UI.yaml
+- File: Model/Model.yaml
+- File: Converters/Converters.yaml
+- File: Alarms/Alarms.yaml
+- File: Recipes/Recipes.yaml
+- File: Loggers/Loggers.yaml
+- File: DataStores/DataStores.yaml
+- File: Reports/Reports.yaml
+- File: 'OPC-UA/OPC-UA.yaml'
+- File: CommDrivers/CommDrivers.yaml
+- File: NetLogic/NetLogic.yaml
+- File: Security/Security.yaml
+- File: System/System.yaml
+- File: Translations/Translations.yaml
+- File: Retentivity/Retentivity.yaml
+- File: AlarmTypes/AlarmTypes.yaml
+- Name: CoTD_RecipeSchemaFormat
+  Id: g=2a0d6b5510c990a77d0de1457907bad0
+  Type: Alias
+  DataType: NodeId
+  Value: "/Objects/MyHMI_Template_Unencrypted/Recipes/CoTD_RecipeSchemaFormat/EditModel"
+  Children:
+  - Name: Kind
+    Id: g=ad74b9db3c8b672e1dbc155a937ab065
+    Type: PropertyType
+    DataType: NodeId
+    Value: "/Objects/MyHMI_Template_Unencrypted/Recipes/CoTD_RecipeSchemaFormat/EditModel"
+- Name: templateConfig
+  Id: g=c933bb96c775b9cec1c674b413b0f955
+  Type: NodePointer
+  DataType: NodeId
+  Value: "/Objects/MyHMI_Template_Unencrypted/Model/CoTD_Model/CoTD_TemplateConfig"
+  Children:
+  - Name: Kind
+    Id: g=4244d4bb04ed29b0eb28e13887105f67
+    Type: PropertyType
+    DataType: NodeId
+    Value: "/Objects/MyHMI_Template_Unencrypted/Model/CoT_Model/TemplateConfig/CoT_TemplateConfig"
+- Name: CoTD_PlatformMasterVersion
+  Id: g=c47406b150784fc4d9352f9d12a743c0
+  Type: BaseDataVariableType
+  DataType: String
+  Value: "0.0.0"
+- Name: CoTD_ProjectVersion
+  Id: g=1006288769b3acde3c69ea5d8937c485
+  Type: BaseDataVariableType
+  DataType: String
+  Value: "0.0.0"

@@ -1,0 +1,22 @@
+Name: Reports
+Id: g=cef202f0348efa7dfc4efe53a636f450
+Type: FolderType
+Children:
+- File: MessageHistory/MessageHistory.yaml
+- Name: ns=19;LibraryReference
+  Id: g=1b649c0191517bb3743220a622bd7afd
+  Type: ObjectLibraryReference
+  DataType: ObjectLibraryReferenceDataType
+  Value: 
+   {
+    "TypeId": {
+     "Id": 72,
+     "Namespace": 19
+    },
+    "Body": {
+     "libraryGuid": "99228a66987f61ed04c51bc3564c5ee6",
+     "objectGuid": "3376e604c6ad97fef7d582b0259c244a",
+     "objectVersion": 1,
+     "highestIgnoredVersion": 0
+    }
+   }

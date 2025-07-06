@@ -1,0 +1,5 @@
+Name: CoT_TemplateReports
+Id: g=65d94592ff0891b4d4c0a2cdacb64d42
+Type: FolderType
+Children:
+- File: MessageHistory/MessageHistory.yaml

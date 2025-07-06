@@ -1,0 +1,278 @@
+Name: Misc
+Id: g=bdcd64876e66edb8b62dfbe039d57c81
+Type: FolderType
+Children:
+- Class: DataType
+  Name: CoT_TableCellPositionHorizontal
+  Id: g=fbb93194f5359730e835e19d71f830f7
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "CoT_CMP_TableCellPositionHorizontal1",
+    "DataType": {
+     "IdType": 2,
+     "Id": "fbb93194f5359730e835e19d71f830f7",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "left"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "middle"
+      }
+     },{
+      "Name": "Value2",
+      "Value": 3,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "right"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=dcad5206d2d45f772dfa12e2cfeb41db
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"left"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"middle"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":3,"DisplayName":{"LocaleId":"en-US","Text":"right"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+- Class: DataType
+  Name: CoT_TableCellWidth
+  Id: g=c163ebb3510f47a2737d65ef64fb9af4
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "CoT_CMP_TableCellsContainerWidth1",
+    "DataType": {
+     "IdType": 2,
+     "Id": "c163ebb3510f47a2737d65ef64fb9af4",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Auto"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 1"
+      }
+     },{
+      "Name": "Value2",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 2"
+      }
+     },{
+      "Name": "Value3",
+      "Value": 3,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 3"
+      }
+     },{
+      "Name": "Value4",
+      "Value": 4,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 4"
+      }
+     },{
+      "Name": "Value5",
+      "Value": 5,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 5"
+      }
+     },{
+      "Name": "Value6",
+      "Value": 6,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 6"
+      }
+     },{
+      "Name": "Value7",
+      "Value": 7,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 7"
+      }
+     },{
+      "Name": "Value8",
+      "Value": 8,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 8"
+      }
+     },{
+      "Name": "Value9",
+      "Value": 9,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 9"
+      }
+     },{
+      "Name": "Value10",
+      "Value": 10,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 10"
+      }
+     },{
+      "Name": "Value11",
+      "Value": 11,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 11"
+      }
+     },{
+      "Name": "Value12",
+      "Value": 12,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 12"
+      }
+     },{
+      "Name": "Value13",
+      "Value": 13,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 13"
+      }
+     },{
+      "Name": "Value14",
+      "Value": 14,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 14"
+      }
+     },{
+      "Name": "Value15",
+      "Value": 15,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 15"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=e3841ffbd2e55384dfb7bab6770398f8
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"Auto"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 1"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 2"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":3,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 3"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":4,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 4"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":5,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 5"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":6,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 6"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":7,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 7"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":8,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 8"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":9,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 9"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":10,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 10"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":11,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 11"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":12,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 12"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":13,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 13"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":14,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 14"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":15,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 15"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+- Class: DataType
+  Name: CoT_TableCellState
+  Id: g=b6b81def4a55ce589b9be6d0f66b5dba
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "CoT_CMP_TableCellState1",
+    "DataType": {
+     "IdType": 2,
+     "Id": "b6b81def4a55ce589b9be6d0f66b5dba",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "enabled"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "pressed"
+      }
+     },{
+      "Name": "Value2",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "selected"
+      }
+     },{
+      "Name": "Value3",
+      "Value": 3,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "disabled"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=287430e8369ca877c57c88602813b6b0
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"enabled"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"pressed"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"selected"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":3,"DisplayName":{"LocaleId":"en-US","Text":"disabled"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+- Class: DataType
+  Name: CoT_TableSortingDirection
+  Id: g=f2fa2b0c4ea2c948863fb630a18407c9
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "CoT_SortingDirection1",
+    "DataType": {
+     "IdType": 2,
+     "Id": "f2fa2b0c4ea2c948863fb630a18407c9",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "none"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "ascending"
+      }
+     },{
+      "Name": "Value2",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "descending"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=0d256f41aefdcd10f0509fd778c3fa9b
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"none"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"ascending"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"descending"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]

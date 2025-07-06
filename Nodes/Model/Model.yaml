@@ -1,2 +1,6 @@
 Name: Model
+Id: g=c21d261f3362b7cca14b9583caf803bc
 Type: ModelCategoryFolder
+Children:
+- File: CoT_Model/CoT_Model.yaml
+- File: CoTD_Model/CoTD_Model.yaml

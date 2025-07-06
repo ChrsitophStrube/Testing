@@ -1,2 +1,5 @@
-Name: ns=4;Keyboards
+Name: ns=19;Keyboards
+Id: g=392e49034bdcb6f130afc6a7b8843907
 Type: KeyboardsCategoryFolder
+Children:
+- File: CoT_Template_Keyboards/CoT_Template_Keyboards.yaml

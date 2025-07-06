@@ -1,0 +1,6 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" data-testid="item=led,state=off,mode=enabled" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.2">
+<rect x="19" y="19" width="34" height="34" rx="17" fill="#D6D6D8" stroke="black" stroke-width="2"/>
+<rect x="21.5" y="21.5" width="29" height="29" rx="14.5" stroke="white" stroke-width="3"/>
+</g>
+</svg>

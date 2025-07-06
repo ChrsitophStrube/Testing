@@ -1,0 +1,2010 @@
+Name: CoT_DataStores
+Id: g=e118189f75c6015dbc1ea8d4afa431f5
+Type: FolderType
+Children:
+- Name: SchemaFormatStore
+  Id: g=b640d11ad15d6f19a5daa7360c663a1d
+  Type: SQLiteStore
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+  Children:
+  - Class: Reference
+    Target: ns=29;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=29;i=33
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=59
+    Direction: Forward
+  - Name: Tables
+    Id: g=1bd53bd0223d6399bcfd9eca1e5db04e
+    Type: BaseObjectType
+    Children:
+    - Name: SchemaFormat
+      Id: g=4dffa1631e4b0b1453c74afbaa2d2dab
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=15;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=20
+        Direction: Forward
+      - Name: Columns
+        Id: g=e0efb77404fc0b58f6b80fa51b3f1c12
+        Type: BaseObjectType
+        Children:
+        - Name: Name
+          Id: g=3b86af7569cb0655f9f36c5a50e8532c
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod1/1/recipeVariable
+          Id: g=83d71c93833e108b30ebe098cac15f30
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/2/recipeVariable
+          Id: g=0d02be8cbc885d28ad30cd386f750b8f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/3/recipeVariable
+          Id: g=274ac32ffd4ccd45a6d7358a1e55aa75
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/4/recipeVariable
+          Id: g=c2996ef198c2de5f64445307a0e6cb43
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/5/recipeVariable
+          Id: g=5e44779a5a734f6d723b7770cfb4f5e7
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/6/recipeVariable
+          Id: g=3d78c8e5c59f6fab98357e8175b0d00c
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/7/recipeVariable
+          Id: g=d4825eeb9f72de38a68257c8104afba9
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/8/recipeVariable
+          Id: g=a89f2cda9ff9c68b75b660065a60666b
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/9/recipeVariable
+          Id: g=63037e126198314b92572552e105cefd
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/10/recipeVariable
+          Id: g=cfd17fc56272dc829ff5fcdf13f98760
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/11/recipeVariable
+          Id: g=579ab4c5ebff23f5e7a8bb174f1c2589
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/12/recipeVariable
+          Id: g=99c17619d293b99debd5915dbbf577f6
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/13/recipeVariable
+          Id: g=b0923642a34334515cd049d6e556257f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/14/recipeVariable
+          Id: g=d697071b7c5c28513279d711fb6921fb
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/15/recipeVariable
+          Id: g=7795b565b5b972959aee41df9601172e
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/16/recipeVariable
+          Id: g=279586ebf613e1845deeda5966e1b5ab
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/17/recipeVariable
+          Id: g=6700d194139c48383d9b88eda40180d3
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/18/recipeVariable
+          Id: g=e99cd50bdaccf2ace0dc2407cdb6540d
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/19/recipeVariable
+          Id: g=2b3a6dbe07acb8edef7ce9dc31b9e147
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/20/recipeVariable
+          Id: g=7326be4e7454a46224bc404fafc27fcf
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/21/recipeVariable
+          Id: g=a4d704a8ea499c1c14f9cc31655072b8
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/22/recipeVariable
+          Id: g=0a1bda4deb1ee20ea695ae28a5115a71
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/23/recipeVariable
+          Id: g=65aa2461aabce2294b1e4ac9e976062f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/24/recipeVariable
+          Id: g=a7c098933f20f4db55e1a0a9a356a648
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/25/recipeVariable
+          Id: g=60d6b5d218bf28a60ff2cc62d5733e32
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/26/recipeVariable
+          Id: g=79101b879894c688c24c02d4ff2c25b1
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/27/recipeVariable
+          Id: g=702999305240ce7c39ac33ed69ee92dd
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/28/recipeVariable
+          Id: g=d53a3fe74471847e319f3e03faa92e0a
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/29/recipeVariable
+          Id: g=27e514d025d2a361198039cf6a60bab8
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/30/recipeVariable
+          Id: g=185cd8d840446e37592898197ef1d03f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/31/recipeVariable
+          Id: g=ff99c1c1efc2f2ac3dff30eed6efb597
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/32/recipeVariable
+          Id: g=91facc0d188339115e2c42540c9648e6
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/33/recipeVariable
+          Id: g=093c8e5403083c69405dbd12f4d8fa67
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/34/recipeVariable
+          Id: g=2ebba6a3405830538ae0b82200ad7b76
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/35/recipeVariable
+          Id: g=a2f5a19d12cbf3c8f5b06292ae62834f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/36/recipeVariable
+          Id: g=99e4611134fc68039640c5fde09f921a
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/37/recipeVariable
+          Id: g=bc4dedb3206ec9f6feb2c9fbfb35c1ae
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/38/recipeVariable
+          Id: g=4ceee500c6aeed3014760e2938797e78
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/39/recipeVariable
+          Id: g=00f2d8e7f67c4a65d02a5b1a86cb0ed0
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/40/recipeVariable
+          Id: g=979fe6f5e65c4dbb31f852c29227b5bd
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/41/recipeVariable
+          Id: g=d5555296fed1a3aebcd1be3c85504049
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/42/recipeVariable
+          Id: g=014056be3e4498d6d86357f486bfb481
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/43/recipeVariable
+          Id: g=edc18459aa02da1aff5677ea0879bf98
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/44/recipeVariable
+          Id: g=a3fe7bac6dcd8b100ab85a3eb0b9f41b
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/45/recipeVariable
+          Id: g=44a6b9208a34c4753b26d84a980c4b70
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/46/recipeVariable
+          Id: g=27586f873224e65f6fd93226f176b1b7
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/47/recipeVariable
+          Id: g=13a20c568c1dcb2b63e7de808f92de94
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/48/recipeVariable
+          Id: g=9065b4c78b9ac02adb4cc15ba799e97b
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/49/recipeVariable
+          Id: g=4a651cfa73d54b71e89f51dfc1497c1a
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/50/recipeVariable
+          Id: g=52fc25ef90e5a42593cdbba5a6283231
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/51/recipeVariable
+          Id: g=5b0fe3431a5320ae78dc4f38ea1fa9cb
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/52/recipeVariable
+          Id: g=4b14c3008c45bb453412311a082dcf29
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/53/recipeVariable
+          Id: g=6e5154c8a7b643a00ee29a8b71613613
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/54/recipeVariable
+          Id: g=be4b4a08c8339856cc57441ae5133459
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/55/recipeVariable
+          Id: g=455b830e51d7ece16dff77bfd0a5fb03
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/56/recipeVariable
+          Id: g=1fd5554313e1f58c3262d80df38caec1
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/57/recipeVariable
+          Id: g=a497a92461cbe0477678749bbdc2a725
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/58/recipeVariable
+          Id: g=8e143d41db74bf3bcfd72385a3b402d6
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/59/recipeVariable
+          Id: g=746fc7eec8e942215f7fbbd03a43dd83
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/60/recipeVariable
+          Id: g=53ac366e39ba1207842cd71ba1d6e051
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/61/recipeVariable
+          Id: g=800384ec6699faefe1fa45497efed698
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/62/recipeVariable
+          Id: g=8975efdc2364d83ee310d599656ffc12
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/63/recipeVariable
+          Id: g=4b31b465c1031fec02760fdf6f9af6ab
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/64/recipeVariable
+          Id: g=f4e3cddaca577aa3ba2750c15dee4e29
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/65/recipeVariable
+          Id: g=506c46439cfe8f4e3e4ae9cc1890cfc2
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/66/recipeVariable
+          Id: g=5c37323b32bb31c8b17f36ad15fb144c
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/67/recipeVariable
+          Id: g=bce425716208899887a60c923857662d
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/68/recipeVariable
+          Id: g=0bdec459656ff28e81f4df917a07157c
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/69/recipeVariable
+          Id: g=e74872a7e1a6e98d4f0c0699836f2c4b
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/70/recipeVariable
+          Id: g=0222a22738edf56004ce2b1f3ba80fd9
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/71/recipeVariable
+          Id: g=32b7b87e82ab521dec57d00a73785d30
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/72/recipeVariable
+          Id: g=43ad8f7346628c6e4b46e3acd11580d0
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/73/recipeVariable
+          Id: g=8da5dd15cb5d202f5fecb34f443bd4e0
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/74/recipeVariable
+          Id: g=5c8c91770e163082113fbbced95049a9
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/75/recipeVariable
+          Id: g=dc9d05537900c0fb91e9a1ed4282d480
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/76/recipeVariable
+          Id: g=c1d2593da87a36b762fcdc64621d3c0b
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/77/recipeVariable
+          Id: g=14862200dc127b9471406b0f289e7731
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/78/recipeVariable
+          Id: g=d416a0aa5059dab9b46995c14792a1bd
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/79/recipeVariable
+          Id: g=62806512cb7b4bf8dd65e820fd7fb228
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/80/recipeVariable
+          Id: g=3a48f5914f81aff43dd506149bde3f95
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/81/recipeVariable
+          Id: g=e275c7511c2770ece932186761d2cea9
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/82/recipeVariable
+          Id: g=686cb95a419bc02df695cfdf2c6fe4de
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/83/recipeVariable
+          Id: g=25a30e9945131944d9e95b8d6646de43
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/84/recipeVariable
+          Id: g=6d9fc7592ea8561af9f4bc873324664a
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/85/recipeVariable
+          Id: g=f0c59f1cce48ff897617237591e47bfe
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/86/recipeVariable
+          Id: g=01ca43d3950bff74a5d445afea141750
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/87/recipeVariable
+          Id: g=8410f4c96d3d9f1a121afefe6a036154
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/88/recipeVariable
+          Id: g=0696e89ef9c1038faa5f6774a8df5aec
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/89/recipeVariable
+          Id: g=290229be5aecdc326fdad8c31ab43ecb
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/90/recipeVariable
+          Id: g=a01c208c3cc258488ed04c5297036ba1
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/91/recipeVariable
+          Id: g=ae6850cb05150ebd8c6c144b0c241290
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/92/recipeVariable
+          Id: g=46b5e20c82e7ef2cb61d55d7be01e331
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/93/recipeVariable
+          Id: g=125bb79fe81a10c908dbf664298f5ecc
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/94/recipeVariable
+          Id: g=7bfc9470d0cd19efcfdb38ba4ed974eb
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/95/recipeVariable
+          Id: g=3d944a519d0011360e924acc2b6e2e31
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/96/recipeVariable
+          Id: g=f29a65c01fa62db33ffc304a0362642f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/97/recipeVariable
+          Id: g=ae9b2abd691bf4bdbd33552acff215a3
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/98/recipeVariable
+          Id: g=2817331ffca6becc0ad5cc3d271c53dc
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/99/recipeVariable
+          Id: g=c65512cc4967579610c14b376dc45732
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod1/100/recipeVariable
+          Id: g=3c87370173c2070091eb1040d853cb7d
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: /Mod2/1/recipeVariable
+          Id: g=b2cf77d71f7ee130412329f379ec0b1e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/2/recipeVariable
+          Id: g=312a13de394a1ab48bf660f4aade1fef
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/3/recipeVariable
+          Id: g=b2c542829098737d79ebee62bd46238c
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/4/recipeVariable
+          Id: g=903b55df3e019e40c546cb8e6146746b
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/5/recipeVariable
+          Id: g=f80c0bda5616ba15103918c5dc4e482a
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/6/recipeVariable
+          Id: g=3fac8c82063865eb692c656e5d88b581
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/7/recipeVariable
+          Id: g=0a3f44404bdf9bd619dc98d5a5135fab
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/8/recipeVariable
+          Id: g=3dbeefdf79ea78c512b1b04b6fded9d0
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/9/recipeVariable
+          Id: g=0b454d6bd511e0075e3ac31831300314
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/10/recipeVariable
+          Id: g=84a88398e58d9a0b1824d0a5ca11713a
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/11/recipeVariable
+          Id: g=7d6c5ccb970f0bf9191428cb57226b1c
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/12/recipeVariable
+          Id: g=190abdc0615446f9d29a9ada0b4ed5e4
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/13/recipeVariable
+          Id: g=44b6d2e5bed4532cefb6cc69045a1ea4
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/14/recipeVariable
+          Id: g=a43e8e1d9a604b126ddaddad67683dd9
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/15/recipeVariable
+          Id: g=eb37ffa49fb8c6fb9eef72029d326c33
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/16/recipeVariable
+          Id: g=5f07d16b3496e796e046f955beef91bb
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/17/recipeVariable
+          Id: g=915f27d67d945f29db8445b3388c44d6
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/18/recipeVariable
+          Id: g=c8e6068bc9b75018728e01f77793c583
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/19/recipeVariable
+          Id: g=59b5c21c7749195475401446092746e8
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/20/recipeVariable
+          Id: g=383de02929769eced6c7e9602adbc226
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/21/recipeVariable
+          Id: g=dbae95921a1d9ee8d3bd4a8766524a6e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/22/recipeVariable
+          Id: g=55faf50b97ef30a18f4626b0b87163d0
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/23/recipeVariable
+          Id: g=91d2b6eaad8b07537934bb9e741eb0e5
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/24/recipeVariable
+          Id: g=1c77a1fee4dbe181e6c5b76bfa49c108
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/25/recipeVariable
+          Id: g=de5d88cd67e6bed60f015786646e34b1
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/26/recipeVariable
+          Id: g=e2c6a077eda5607c1d1cd499fb53b444
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/27/recipeVariable
+          Id: g=cb1ddccb732bc8874ce2a7db3e07ee0f
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/28/recipeVariable
+          Id: g=1947ad76017fde9379ef7eaa94f7f48f
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/29/recipeVariable
+          Id: g=998177c446f36b795e8ca4bfc296987d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/30/recipeVariable
+          Id: g=059ff10b60c62029966af7f586a7920d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/31/recipeVariable
+          Id: g=78677cb0c991b447ba2528d56a559596
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/32/recipeVariable
+          Id: g=11e45717d905f82033d1b00196b48e6b
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/33/recipeVariable
+          Id: g=7b4cbe3ff68b2e66786eb7177942c1b6
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/34/recipeVariable
+          Id: g=bbf02eaf50f2df4d23ef7ddb0af4f34d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/35/recipeVariable
+          Id: g=ebee0b158dbacfc2084a641c11226734
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/36/recipeVariable
+          Id: g=8ec839273f6eae5bd8d05a39f3334373
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/37/recipeVariable
+          Id: g=b1e9bc5c5db1730192a7ae0d8781a0b3
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/38/recipeVariable
+          Id: g=2f48375d1513fc0265e996d77adedbff
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/39/recipeVariable
+          Id: g=fe8429ee4c3e59bc2286ee27689e91e9
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/40/recipeVariable
+          Id: g=1b9867cccd079f456825d96c9c2e2953
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/41/recipeVariable
+          Id: g=8ee4642d7e9fac59e5a0c465a5512c74
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/42/recipeVariable
+          Id: g=5ed6a73a2bed6971c3686bff520bc644
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/43/recipeVariable
+          Id: g=803717ecf31978a84a82c06036791ee2
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/44/recipeVariable
+          Id: g=2a43574766db21f9f5ce8dc2536b7279
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/45/recipeVariable
+          Id: g=b15d9bbb2cfaad351b0e19963bf27dbe
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/46/recipeVariable
+          Id: g=7f932c47fa6aa77c5e2b5623eee5f36e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/47/recipeVariable
+          Id: g=c33cfef4de55c121691ffd3cb8dc33df
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/48/recipeVariable
+          Id: g=03d3fa78bc2ac6bbdf71608c34a64a15
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/49/recipeVariable
+          Id: g=9a4944e4a6f43dfff73970a50a6e4859
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/50/recipeVariable
+          Id: g=43360d5aaf776605608f86672dc43c45
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/51/recipeVariable
+          Id: g=32518dc4ee149d200bcb8e6c62525cac
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/52/recipeVariable
+          Id: g=b0903eb52017151840d879b0203d993b
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/53/recipeVariable
+          Id: g=ec2dc6ea5411490696d1d2c2b0cd41d7
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/54/recipeVariable
+          Id: g=fa7dcb60076cf8cbc12f1f5b6ebf085e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/55/recipeVariable
+          Id: g=ce4273fd63c461c8b69ae9261fc6ccb7
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/56/recipeVariable
+          Id: g=1129ba2280b622b69bdbc8592000c008
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/57/recipeVariable
+          Id: g=5608a9a4273e924ed0d196d7a10b885d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/58/recipeVariable
+          Id: g=b98d353c3ba6a9d6b07b44a243960464
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/59/recipeVariable
+          Id: g=cb5cfae93649d8440bb9386ac3420d75
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/60/recipeVariable
+          Id: g=1fe807d7d0f4fa979c730d2e6dd5eb3e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/61/recipeVariable
+          Id: g=c0b31687499d1d4a4ec1f3a063f1ab94
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/62/recipeVariable
+          Id: g=9963e62591cb567c4dc637feaa4bebf8
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/63/recipeVariable
+          Id: g=1b22b765ce0e484572ecb49e33ad5f6a
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/64/recipeVariable
+          Id: g=d7150cb6095414f8c7623c14fef46c01
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/65/recipeVariable
+          Id: g=c3838f680a4e3a473afb45256f357612
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/66/recipeVariable
+          Id: g=e731e7dd3a8fba283d566ae66a93cc76
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/67/recipeVariable
+          Id: g=75d1cc7c25354b9b1b6732f2c6e784f1
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/68/recipeVariable
+          Id: g=8f0034f77c709327439ca7985e517018
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/69/recipeVariable
+          Id: g=7f84442f0343c3e1e331076b94f9c68a
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/70/recipeVariable
+          Id: g=813d804593c45a2b7fe1662fa41a01b6
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/71/recipeVariable
+          Id: g=a943a9aeeb1743e30f1b2e2ebc094ff9
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/72/recipeVariable
+          Id: g=82342de4e4bd2ccdac9ce61d84d45e34
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/73/recipeVariable
+          Id: g=007e850d4eeb48d7faefd080865a80b3
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/74/recipeVariable
+          Id: g=5d95dbbabd5658f037719c63be27cf82
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/75/recipeVariable
+          Id: g=13e02be4da555a4a058aa3762a4855b6
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/76/recipeVariable
+          Id: g=e479ad731e20be6a131c7acab12fc848
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/77/recipeVariable
+          Id: g=e9d74c85a728be96079b40c208ae968b
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/78/recipeVariable
+          Id: g=b1ec918f1290cc2c1edb4e0af2b7c775
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/79/recipeVariable
+          Id: g=eeb7f9ec2d1a12f19f349059e75a4fbb
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/80/recipeVariable
+          Id: g=03410080f0c52b547981ded33ad148e2
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/81/recipeVariable
+          Id: g=5a386e9d9b34e59f30e6105318ceaf3e
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/82/recipeVariable
+          Id: g=aa5f720a3944a92d88f0bec491dda2a0
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/83/recipeVariable
+          Id: g=abd3129d6323c5e22878ac6fb5dff7dd
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/84/recipeVariable
+          Id: g=36ab97fc070d75c5ccb5448e35fcd200
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/85/recipeVariable
+          Id: g=55c59f882d05bf9c00a8728e8ace0ad8
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/86/recipeVariable
+          Id: g=db561b55462196cd45c258685c0b648d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/87/recipeVariable
+          Id: g=848849bd6a187cdc72cca9571e76a343
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/88/recipeVariable
+          Id: g=75d2b4e76eebd8050b6a13e632e6a398
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/89/recipeVariable
+          Id: g=0d8a65866e83f9ea4915a454b67f108d
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/90/recipeVariable
+          Id: g=a4a35a0176827cd46e61dd0f4f6fcfff
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/91/recipeVariable
+          Id: g=c158f6e77fd10eee770c1063b3416f16
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/92/recipeVariable
+          Id: g=84ec97d63dc3ab50ff36c4ea699c0e55
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/93/recipeVariable
+          Id: g=be68d0090f876cbadbc537683bc67ff9
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/94/recipeVariable
+          Id: g=1571323a6eb54139832acabb77cbf846
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/95/recipeVariable
+          Id: g=1adfdff166c80daeb9d2509e222437e7
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/96/recipeVariable
+          Id: g=24c0c899db58716df8e8912ffe5ae812
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/97/recipeVariable
+          Id: g=2bf9c21860c6f9d910d2587269f01576
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/98/recipeVariable
+          Id: g=e6a9599eb31f64f6d97e0793d03a2840
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod2/99/recipeVariable
+          Id: g=9132db8430e815867b1717a1740bc9ca
+          Type: StoreColumn
+          DataType: Int32
+        - Name: /Mod3/1/recipeVariable
+          Id: g=f662bd3011580965b95c42adef0da930
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/2/recipeVariable
+          Id: g=0611538e7a6361fab12083211a389e1d
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/3/recipeVariable
+          Id: g=7aa6ebcff49a802cee875481c493b1c6
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/4/recipeVariable
+          Id: g=305eb3934d1ef728a7c1d91d70be32a4
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/5/recipeVariable
+          Id: g=4d19cd678c71f06383e312bc48fea64a
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/6/recipeVariable
+          Id: g=2ed5dbd0ac252ad5cb24120b3594aa8b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/7/recipeVariable
+          Id: g=933e2535c3b763028c67303edf785660
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/8/recipeVariable
+          Id: g=e32f6789ed1e557542c030d8bea52b3e
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/9/recipeVariable
+          Id: g=54bef2839cc9f0a878be50e9df72a0f7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/10/recipeVariable
+          Id: g=9d61a64b3866f5390d2f2e75e6da74c4
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/11/recipeVariable
+          Id: g=edc83035a99c2a691455d3d85c4cb211
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/12/recipeVariable
+          Id: g=e543143cfcc517250cc57912c2e58917
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/13/recipeVariable
+          Id: g=55a8020d9acb8ae6f64dffd16256c08b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/14/recipeVariable
+          Id: g=8b5084a3577ed8643f0d98f808045b7f
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/15/recipeVariable
+          Id: g=36c56fb6c145ff9b4f45f559ada3424e
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/16/recipeVariable
+          Id: g=b834b2a260a68f98ac139b51e52b4d9d
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/17/recipeVariable
+          Id: g=ece956cf93d4bedbfa2eac0f4019508c
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/18/recipeVariable
+          Id: g=9b35d146ff9a3b4e7c1e5414219d5669
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/19/recipeVariable
+          Id: g=5642d2763d54e16da2eed9cfc13a460b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/20/recipeVariable
+          Id: g=cbcf4f5cd3d2cd49f61267cc0fe14474
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/21/recipeVariable
+          Id: g=4fb509aed280ffd50499dac6c1bdfa2d
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/22/recipeVariable
+          Id: g=349d313b502f43df087a07ce3066b066
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/23/recipeVariable
+          Id: g=35858fd4130df9675fdca81a2deb60e7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/24/recipeVariable
+          Id: g=9cc173099dbf99810d9863cdf6ef718a
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/25/recipeVariable
+          Id: g=0016dfe587d374099efe42383dd55d31
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/26/recipeVariable
+          Id: g=e9d49daa6f32e54851e331b054345c0f
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/27/recipeVariable
+          Id: g=e58c426185d548373bb7d32bf19c9056
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/28/recipeVariable
+          Id: g=45cd8ebe8a223b30aad8ea0aacb31fdf
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/29/recipeVariable
+          Id: g=01c704e30192cff27db9c3ad1e0da6be
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/30/recipeVariable
+          Id: g=392db77382640608d49b1a621c5eefbc
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/31/recipeVariable
+          Id: g=d4e61bc7af16c23c4241c30dab0fbbe6
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/32/recipeVariable
+          Id: g=2fa7360d403129b6d93d79bf7bcb0fe7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/33/recipeVariable
+          Id: g=dfc8c32b9515fe9e3cbb2d8c2ea86d00
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/34/recipeVariable
+          Id: g=d9cf71aa1cd9c658f676b1a8c0e48f2b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/35/recipeVariable
+          Id: g=8fd79d4d42995f693739fccb529e4b96
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/36/recipeVariable
+          Id: g=75dd7e45573a9a54c25e480903fc6312
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/37/recipeVariable
+          Id: g=ff0a516081a44a44e3aa2179879ff7fa
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/38/recipeVariable
+          Id: g=6d05bb934b7e604f8dbd95f48d6392dc
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/39/recipeVariable
+          Id: g=03ffb259ff8d7352ead058f95f55d2aa
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/40/recipeVariable
+          Id: g=3f265397c73dbf15114598080b1659d0
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/41/recipeVariable
+          Id: g=e589625fa145d9701efd4746d4d5c6a7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/42/recipeVariable
+          Id: g=03c852b44e2d73432cd43e584ef6a7b5
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/43/recipeVariable
+          Id: g=afabe67175964cf56677eb215f0aacd3
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/44/recipeVariable
+          Id: g=6103b7f06d4af3b777892d30af4bb303
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/45/recipeVariable
+          Id: g=c4780b63f34e925d95da47b8ea5a1d11
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/46/recipeVariable
+          Id: g=c7edd5b126a8e095d06b66225967edbd
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/47/recipeVariable
+          Id: g=685a46829c4a7aad0847408273c67222
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/48/recipeVariable
+          Id: g=e7b55496fe028c2a902c4c073e0d16af
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/49/recipeVariable
+          Id: g=76288b15907acec7b71bf6e970aba438
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/50/recipeVariable
+          Id: g=6f3d0de09f161937645e04f7475665f6
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/51/recipeVariable
+          Id: g=89bfd21451554e7eaa80d25ba7525dbf
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/52/recipeVariable
+          Id: g=70323384048d1568a1a0a9b774f9e7e3
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/53/recipeVariable
+          Id: g=38346cdd87bd132645d642620f0d2d9f
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/54/recipeVariable
+          Id: g=18674eb80cfd262ffa0b1769e55d5e8b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/55/recipeVariable
+          Id: g=92b219ccacb5cf7e2ce8192e557241da
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/56/recipeVariable
+          Id: g=130132ef9987f7b0e0b0360f87bed1ed
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/57/recipeVariable
+          Id: g=41e10b0b8b38d8e96c1de328e260e809
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/58/recipeVariable
+          Id: g=c4382aa87316ac57423d989898017800
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/59/recipeVariable
+          Id: g=1e57026c2e67f3f085508cf0079a9339
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/60/recipeVariable
+          Id: g=e1675c91f6c0215b4ca5c3f3edbaf09a
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/61/recipeVariable
+          Id: g=dc08f87c09eab77f28b75e723c9de740
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/62/recipeVariable
+          Id: g=a1f3214b8fbda52653642215901ff4f1
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/63/recipeVariable
+          Id: g=fd460c9773430bb426defdfd9f50055c
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/64/recipeVariable
+          Id: g=947433a3546ae84da45d7abda835d327
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/65/recipeVariable
+          Id: g=c6da440e5803deeb04f00f6eb2791330
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/66/recipeVariable
+          Id: g=1bcf5ac33716a07a2787af7d7fcb63fa
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/67/recipeVariable
+          Id: g=34245cee6c29b399165c751bc43ca1d7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/68/recipeVariable
+          Id: g=7b9348db164e5c49c11c68c88d9ce6d1
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/69/recipeVariable
+          Id: g=788a077637220752ba734b430698b399
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/70/recipeVariable
+          Id: g=fc8fd31819c98d003f9e623e79c2209d
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/71/recipeVariable
+          Id: g=42d5248ec0e1cfb0b8cfc059288f7805
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/72/recipeVariable
+          Id: g=b90f0d31399aca7ee9bb62b2ea5f478b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/73/recipeVariable
+          Id: g=9635aee5cd49c9cfab7e78f4638d7227
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/74/recipeVariable
+          Id: g=b095f53125f66512079467679cdc7277
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/75/recipeVariable
+          Id: g=e64076f3fce9fa38798392a77f650309
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/76/recipeVariable
+          Id: g=46b1ce53784a6d7917b8f32e69563ee7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/77/recipeVariable
+          Id: g=7176642757b396803b41aa1a83ab1019
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/78/recipeVariable
+          Id: g=f213d282e25fb7077af4a01a918bfbeb
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/79/recipeVariable
+          Id: g=846fafc1a83ec006c6980e641ee69bdf
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/80/recipeVariable
+          Id: g=72db02cc86eb8d4ff9d4bbabe81ffa69
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/81/recipeVariable
+          Id: g=7217476d995729a2def7a8a841e16400
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/82/recipeVariable
+          Id: g=6766c635b51e24bb596257d7ef566a9a
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/83/recipeVariable
+          Id: g=738e54c724c2c72fc472b83f9dc28a0c
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/84/recipeVariable
+          Id: g=730ede2bd7a2ad8efa0fa064b370568e
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/85/recipeVariable
+          Id: g=34326c95fc3ef24a322888eeda3265ce
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/86/recipeVariable
+          Id: g=e62c75b1fa2ca225bcf139a7a40b64b7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/87/recipeVariable
+          Id: g=8c88e05b477788e512cad9a8c2420d1b
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/88/recipeVariable
+          Id: g=65fe310a210d1a690817fa8f5f5f5d32
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/89/recipeVariable
+          Id: g=7c5c74067548ba894c2f4e54cefd3be6
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/90/recipeVariable
+          Id: g=caadc273fb70a3a7b348476df960c7c3
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/91/recipeVariable
+          Id: g=65a99aa9823c0149a3775a3641e988df
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/92/recipeVariable
+          Id: g=be32a4a337bf1e9febb6296b5a0f4826
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/93/recipeVariable
+          Id: g=d3d91bcb170a55f513bdced0979439a7
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/94/recipeVariable
+          Id: g=2dd79dc334c7626ac1920449a205a910
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/95/recipeVariable
+          Id: g=680b7eb0bc7bc4344ac67eeff1a4cc08
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/96/recipeVariable
+          Id: g=5db54a4b428ffe7b70e0288a836458bc
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/97/recipeVariable
+          Id: g=f275d64f56f51027e2e24e473a64438f
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/98/recipeVariable
+          Id: g=64463ad520a3c71ffa5b43db4778763f
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod3/99/recipeVariable
+          Id: g=81e855f88edcf81f21b5cbb05127b570
+          Type: StoreColumn
+          DataType: Double
+        - Name: /Mod4/1/recipeVariable
+          Id: g=c8d84328e2478d1e7ae60011e32de07d
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/2/recipeVariable
+          Id: g=d5b87c5be1e05cee9e0abd8e9092bed4
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/3/recipeVariable
+          Id: g=1f049ca703cbbb489c6c958285ddbc13
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/4/recipeVariable
+          Id: g=9d89162b75a7e8588ecace4189bbe581
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/5/recipeVariable
+          Id: g=c20d7e985f7669502f3f39fc8cb41d64
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/6/recipeVariable
+          Id: g=c612ef9f5423f75663befa4397cbae6e
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/7/recipeVariable
+          Id: g=c062f2c89bdf4d14c20f19cd6e210af5
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/8/recipeVariable
+          Id: g=29f88210b49cb66b1ab72fc38c021b24
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/9/recipeVariable
+          Id: g=dfe0cb33a0ec6d16339f27da6521d4c2
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/10/recipeVariable
+          Id: g=e33a6b9e121fd6f935e276f3c43a902e
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/11/recipeVariable
+          Id: g=5e4ff9cfb8d6697d3b30f367fe4a7f96
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/12/recipeVariable
+          Id: g=b42d2a95eb097c0cc8b38930cc018608
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/13/recipeVariable
+          Id: g=245a6a48435d4425bf19122942312f62
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/14/recipeVariable
+          Id: g=68c0a67eab054ef9e94fa27a7db22acd
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/15/recipeVariable
+          Id: g=56abf6937ef77f0dd2b9d5edb96ae0e5
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/16/recipeVariable
+          Id: g=3c478ab284fb186d7a0b169db1207f5d
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/17/recipeVariable
+          Id: g=f72faea2c91662a865ea1e935224e5c8
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/18/recipeVariable
+          Id: g=32eecfb74c116e0847bf6cfbbd5933fb
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/19/recipeVariable
+          Id: g=ad4a65e466eaf9351a6356ee3855b91a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/20/recipeVariable
+          Id: g=081d88b6797d4b0dd11b451049be8cdb
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/21/recipeVariable
+          Id: g=e0b62c1e69aee61f5dfeb955037354cf
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/22/recipeVariable
+          Id: g=ba2fc6369d38284c815900d7978e88e3
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/23/recipeVariable
+          Id: g=2201b01038859aa5c5fb78789a45967d
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/24/recipeVariable
+          Id: g=5fbc84a73b2c73b4507e412170eca0ad
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/25/recipeVariable
+          Id: g=5cc691af4af21ac6fdff473b1f261063
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/26/recipeVariable
+          Id: g=ec225aa42942e83b99a2ac16c64700de
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/27/recipeVariable
+          Id: g=b48c13fbbc69c81051f0e71161626063
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/28/recipeVariable
+          Id: g=1407f88ebeb228ab254b62ec5bac1d4a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/29/recipeVariable
+          Id: g=5b683de4a321401894b865468b569d1b
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/30/recipeVariable
+          Id: g=e66fcd47dbe41d4432f9eeea74f8f632
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/31/recipeVariable
+          Id: g=346a5678d6b6556934218a79b329df64
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/32/recipeVariable
+          Id: g=4e2eb25af462e06c116f4e1b058a4c2a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/33/recipeVariable
+          Id: g=2e3f437b8cfcf2b23a816d49c99537ed
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/34/recipeVariable
+          Id: g=cda381de9f24c2d0cb8a99c3d2616e7f
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/35/recipeVariable
+          Id: g=ca41a9fa1162c47ab1ecef260272cd52
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/36/recipeVariable
+          Id: g=7929d3692e094db2ea1441c91c61c38f
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/37/recipeVariable
+          Id: g=60f5c44b646243985e27dae16433127a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/38/recipeVariable
+          Id: g=5ea01b45dcc05d2a9032b983850ea1fb
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/39/recipeVariable
+          Id: g=6d78dd2e3951cef2a144b62ed31cc71a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/40/recipeVariable
+          Id: g=2f2224959d9873420d85afecf0831759
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/41/recipeVariable
+          Id: g=6557b73cb932eb221b15d23b41f856a5
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/42/recipeVariable
+          Id: g=f3ff4d45b26a1b6bf2ea79dc84a7ebd6
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/43/recipeVariable
+          Id: g=23f4bc20411591bf2a4bed1ba7fe2dd4
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/44/recipeVariable
+          Id: g=43d499c1838608750bed35a673e1aba6
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/45/recipeVariable
+          Id: g=9248ae53573329f1c193af867d9e498e
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/46/recipeVariable
+          Id: g=a63953230e5aae9bfa8839732659a191
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/47/recipeVariable
+          Id: g=1e9910729065c1c125315edc2641dc2c
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/48/recipeVariable
+          Id: g=1962cce9e88c909cf7f897fa2458ce71
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/49/recipeVariable
+          Id: g=c3a92d2d5912d6df4db3a7ee56e30970
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/50/recipeVariable
+          Id: g=2e927876724c2f7d7cd7108c638fd2b9
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/51/recipeVariable
+          Id: g=56124d187bda3e23f376bee3e89d8014
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/52/recipeVariable
+          Id: g=c1769552a1c184a988c32c3da5a93658
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/53/recipeVariable
+          Id: g=0c04cb4c4a93ba09d8c374443426bd51
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/54/recipeVariable
+          Id: g=5af3c656fef44e925ef5367b330598db
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/55/recipeVariable
+          Id: g=6bf9c4ffc1bb63fcf12c3e79a1b6889c
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/56/recipeVariable
+          Id: g=acc2f6253cafe499605360b5671deadc
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/57/recipeVariable
+          Id: g=329400ef98edae4ca44db1e266c0f2c7
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/58/recipeVariable
+          Id: g=d17d5c55060db3dc0ab1201e2f3a3f1a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/59/recipeVariable
+          Id: g=cca1f339f6fc4bd0df770a3b84ba99a1
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/60/recipeVariable
+          Id: g=e9ff3ce51f935fff1773f62fb24fc148
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/61/recipeVariable
+          Id: g=700927f71c1d6c302a3339f2076274c3
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/62/recipeVariable
+          Id: g=0931840c8cb07be75306b88acf099b55
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/63/recipeVariable
+          Id: g=fe0563cb6047c26deb127c4a9718b8eb
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/64/recipeVariable
+          Id: g=68f73a62de0ce2529dc2b494902d3d42
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/65/recipeVariable
+          Id: g=a1b5a9677309d0dbcaec1678efa02add
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/66/recipeVariable
+          Id: g=9ba35e05d916ad42f92da8e719e20056
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/67/recipeVariable
+          Id: g=3027f70fc053e96c8f8af58d61441015
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/68/recipeVariable
+          Id: g=f229b9ad93028d25d57c3b2580dc20f9
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/69/recipeVariable
+          Id: g=b0720fd607dfd11ae45ea71150912b6f
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/70/recipeVariable
+          Id: g=f82d0bf1a581d1e2af681c4e3ad3dd09
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/71/recipeVariable
+          Id: g=51798642f3eaac27a75b333cac7fd1af
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/72/recipeVariable
+          Id: g=9d0ae33632337a22d544d987d3627b2e
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/73/recipeVariable
+          Id: g=4e0ce7d1519b5e052b9ef30057c63e4a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/74/recipeVariable
+          Id: g=b350ae01782c25b5b74a9d1b26f56faf
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/75/recipeVariable
+          Id: g=4a5452f430cced72dbb539640e15d415
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/76/recipeVariable
+          Id: g=5d1bc8f1743a30e8a1de2f542d2f4604
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/77/recipeVariable
+          Id: g=47156be29b8061fc81a130a659048df3
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/78/recipeVariable
+          Id: g=b7a9fbf34da3688f5108aabdf69e7474
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/79/recipeVariable
+          Id: g=0d27d37a7edb1b865965dc1371d154da
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/80/recipeVariable
+          Id: g=2dcb7c9d2c618a90932fb799da8a1208
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/81/recipeVariable
+          Id: g=0ef6ed6637c217e3920720f799bf7d87
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/82/recipeVariable
+          Id: g=8678cdb0c9eadb4fd8f6bbee6c8a0a21
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/83/recipeVariable
+          Id: g=6c69f8bad1f24a37f49c8b64f08360b7
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/84/recipeVariable
+          Id: g=6f5b4fbab2e284eb8942d8654aa29609
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/85/recipeVariable
+          Id: g=c4de03f7ca1908ed27bafd2ba85ec52a
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/86/recipeVariable
+          Id: g=98c92a3011e69b194b5e21534f3bcda0
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/87/recipeVariable
+          Id: g=8ff449e9863ddf9e1a472ff37c645669
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/88/recipeVariable
+          Id: g=cc23e18598292231f238748f5410215d
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/89/recipeVariable
+          Id: g=b623496de698cae504d3c71ce62a2347
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/90/recipeVariable
+          Id: g=28aead269682dea97eb73350097b7b01
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/91/recipeVariable
+          Id: g=f07d1cf1e686a94427ae23be536ed059
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/92/recipeVariable
+          Id: g=46f75bab615e2660ded57d6b5c34f085
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/93/recipeVariable
+          Id: g=cdd64dec9cb7a25226729b4ccd0da577
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/94/recipeVariable
+          Id: g=5e3adea68850d427f95bbfbe0191ecd1
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/95/recipeVariable
+          Id: g=8c7b079feb946b47d65651c2c68e9abe
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/96/recipeVariable
+          Id: g=b4136819312f1267a814208010989187
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/97/recipeVariable
+          Id: g=d719b8a271caf484512c966e725bb01d
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/98/recipeVariable
+          Id: g=2f755b9aacb519d2708b5c170d79b6e2
+          Type: StoreColumn
+          DataType: String
+        - Name: /Mod4/99/recipeVariable
+          Id: g=beee3ccb461db50518abc9a68621e029
+          Type: StoreColumn
+          DataType: String
+  - Name: MaxColumnNameLength
+    Id: g=b5e846b012c28297a3909a33845a2aac
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Id: g=f209476adbb54d532d3c09ba590d047e
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Id: g=5a7609ea7e864c36036b40c0268c5353
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Id: g=a1a4d842a3454b781e6b6c416f1dfd32
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Name: Filename
+    Id: g=47d50b30b3da2dfda9f661c3fefe1df0
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "SchemaFormatStore"
+  - Name: InMemory
+    Id: g=15c59888489bfe0be988f886bbea9822
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ns=19;LibraryReference
+    Id: g=7d315b0b5ad0d0c4c945937d6b98326c
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 19
+      },
+      "Body": {
+       "libraryGuid": "f476080c9fed80c1d182c143a2b855c9",
+       "objectGuid": "db454538f3d8c425efb61141ada0f42c",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: AlarmHistoryStore
+  Id: g=53c060faf727d2db2cca6e1309e23cfe
+  Type: SQLiteStore
+  Children:
+  - Name: Tables
+    Id: g=643118cca34538def8d0c2c99e97d83d
+    Type: BaseObjectType
+    Children:
+    - Name: CoT_AlarmsEventLogger
+      Id: g=a069f34efeffee9b3b25d58ec4f5bdfa
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=15;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=20
+        Direction: Forward
+      - Name: Columns
+        Id: g=f090cb4b149375841358ce16129bded9
+        Type: BaseObjectType
+        Children:
+        - Name: LocalTime
+          Id: g=034202974f3f6203f1d986b8737ea9dd
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: ConfirmedState_Id
+          Id: g=65022152d160c8dd02c48d837b868f79
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: subSubGroup
+          Id: g=ceff45c3919d22a2d1e9239407348c14
+          Type: StoreColumn
+          DataType: String
+        - Name: subGroup
+          Id: g=0494519bf166763a35ce77b20ab9d5f1
+          Type: StoreColumn
+          DataType: String
+        - Name: stopReason
+          Id: g=3733f1f1ad30ba81b4e7cfda1a9b1f6a
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: resourceLabel
+          Id: g=a1a90f6e0226e7b537219c1da7a66f56
+          Type: StoreColumn
+          DataType: String
+        - Name: occurredTime
+          Id: g=b6304b7fa0c67404b3ad8fc86571a286
+          Type: StoreColumn
+          DataType: DateTime
+        - Name: messageType
+          Id: g=698ce951122f642d0a869bfd03e6464e
+          Type: StoreColumn
+          DataType: CoT_MessageType
+        - Name: 'messageTextStatic_en-US'
+          Id: g=364e1e1a04e23add5c741129b212ad21
+          Type: StoreColumn
+          DataType: String
+        - Name: 'messageTextStatic_de-DE'
+          Id: g=df1ea716244769e0c67582fcd5b2de42
+          Type: StoreColumn
+          DataType: String
+        - Name: messageTextDynamic
+          Id: g=f1816b02f20ae97c5cf3e3db28bc7ddf
+          Type: StoreColumn
+          DataType: String
+        - Name: id
+          Id: g=b55b4caa926d472a9165a226db8f6d24
+          Type: StoreColumn
+          DataType: Int32
+        - Name: group
+          Id: g=6b2ab6c12cc0ef223db6bbd76df353af
+          Type: StoreColumn
+          DataType: String
+        - Name: duration
+          Id: g=b14f4dd6e255174faeead370d4495465
+          Type: StoreColumn
+          DataType: String
+        - Name: 'displayedText_en-US'
+          Id: g=ee0b15dce911138e4727a736060dc283
+          Type: StoreColumn
+          DataType: String
+        - Name: 'displayedText_de-DE'
+          Id: g=211256f23e180065049ac4eff0442955
+          Type: StoreColumn
+          DataType: String
+        - Name: ActiveState_Id
+          Id: g=18af8f14ee560556b5110033c7e15018
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: AckedState_Id
+          Id: g=545f8c620ececb2ffdced19192f61b31
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: EnabledState_Id
+          Id: g=920b191d01bcb1789ce5a47b50a674fc
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: Time
+          Id: g=d538c150bd1c5a7baeff016aca6ecf86
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: SourceName
+          Id: g=2a77219714ef12419b67cf61b50af14d
+          Type: StoreColumn
+          DataType: String
+        - Name: Severity
+          Id: g=9718b44375301858eb7ac3800e147080
+          Type: StoreColumn
+          DataType: UInt16
+        - Name: 'description_en-US'
+          Id: g=4ebdaf5b02bc3a80ae708652a0918e52
+          Type: StoreColumn
+          DataType: String
+        - Name: 'description_de-DE'
+          Id: g=a580ba5c81be25ab2761b23005d57f3c
+          Type: StoreColumn
+          DataType: String
+  - Class: Reference
+    Target: ns=29;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=29;i=33
+    Direction: Forward
+  - Name: MaxColumnNameLength
+    Id: g=24af2cb194c800917e934e9e20c13ff9
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Id: g=1ed830f3022b34cd088c6375a004a029
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Id: g=c4497c8123e8d077ca8879b33de83b7e
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Id: g=c3bf5f2fab8fd3bb20078f99ff6c6768
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=15;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=59
+    Direction: Forward
+  - Name: Filename
+    Id: g=1793460be48fdd35288fb0bef9dedf39
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "AlarmHistoryStore"
+- Name: CommentStore
+  Id: g=a5b2314e8ac74b32d93c52a0d8f166d3
+  Type: SQLiteStore
+  Children:
+  - Name: Tables
+    Id: g=d6a3e09df8e036163c799e0f9a000e39
+    Type: BaseObjectType
+    Children:
+    - Name: DBComments
+      Id: g=7deb1a92fd34040df59c0451e8324957
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=15;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=15;i=20
+        Direction: Forward
+      - Name: Columns
+        Id: g=3ec315bdcfef9a769a7e39f70a3268d2
+        Type: BaseObjectType
+        Children:
+        - Name: objectIdentifier
+          Id: g=f5b28e68197b4570142c63b09b63325f
+          Type: StoreColumn
+          DataType: String
+        - Name: comment
+          Id: g=9e919622873405d82c4f577895f7788d
+          Type: StoreColumn
+          DataType: String
+        - Name: commentId
+          Id: g=d4553ffa36256a08abd0ea92896fb4bc
+          Type: StoreColumn
+          DataType: String
+        - Name: updatedAt
+          Id: g=42204b15387ba5e57f38092314d9a084
+          Type: StoreColumn
+          DataType: DateTime
+  - Class: Reference
+    Target: ns=29;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=29;i=33
+    Direction: Forward
+  - Name: MaxColumnNameLength
+    Id: g=965b790d622121b5824af01be8491138
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Id: g=3e4975dbb9fb2e0bc1dcec31683afc31
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Id: g=44a2974ea237e314f7d68a48b9f521e9
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Id: g=29dd86fff69cac3cf0917fbe68dec4f4
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=15;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=59
+    Direction: Forward

@@ -1,0 +1,38 @@
+Name: Screens
+Id: g=37ce706f0e0367cd5f7f19582a6b10f8
+Type: FolderType
+Children:
+- Name: CoT_Screen
+  Id: g=d87e1019cdadf3c540e9cd274c30c733
+  Supertype: Screen
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=e252baa2b7fc5150dcbbf06bcb3256cc
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=ccbf4a67b369498ee08d25b617b150bf
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: Height
+    Id: g=6744e6438fde2687738a3a0a7de63833
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 872.0
+  - Name: Width
+    Id: g=fe7f404146988f6782de9cdd6f2abbde
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 1872.0
+  - Name: title
+    Id: g=4ec26edd817f27174fbbd3e1466171d5
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=fa0968f8dc3980fd5547e0ed885d1f38
+    Type: BaseDataVariableType
+    DataType: ResourceUri

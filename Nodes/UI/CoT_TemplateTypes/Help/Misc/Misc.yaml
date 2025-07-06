@@ -1,0 +1,16 @@
+Name: Misc
+Id: g=32b23a96286ccaea2ed21a31c8800f15
+Type: FolderType
+Children:
+- Name: CoT_PageHelpAlias
+  Id: g=91f550b8e73f4259e9645279c70a326e
+  Supertype: BaseObjectType
+  Children:
+  - Name: text
+    Id: g=6de8e73a56ceec9dbece711c6e524304
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: path
+    Id: g=73a64093813afe61b04809780394048a
+    Type: BaseDataVariableType
+    DataType: ResourceUri

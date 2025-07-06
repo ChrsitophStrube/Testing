@@ -1,0 +1,5 @@
+Name: CoTD_ScreenFaceplates
+Id: g=fbcfce09c3ea23adaaf71e59c07c452c
+Type: FolderType
+Children:
+- File: CoTD_Collator/CoTD_Collator.yaml

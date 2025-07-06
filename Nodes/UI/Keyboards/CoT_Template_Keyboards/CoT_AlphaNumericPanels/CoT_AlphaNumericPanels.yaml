@@ -1,0 +1,4671 @@
+Name: CoT_AlphaNumericPanels
+Id: g=abdbacfa3b737915cda6d3d846da3051
+Type: FolderType
+Children:
+- Name: Letters_en_US
+  Id: g=667df8cc5b97fdc8d1cad082ff423463
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=8a2fefbc02b5b9e46f133ff38e5214c3
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 630.0
+  - Name: Height
+    Id: g=a16e6d4093cb14c042b55a77d7a7c94f
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 230.0
+  - Name: KeysRows
+    Id: g=a9487be4d8087741f13e0ba039d35726
+    Type: ColumnLayout
+    Children:
+    - Name: LeftMargin
+      Id: g=97fa526b3fb10524be62b4e5cb599f6c
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: TopMargin
+      Id: g=b92d3b0c8bd1f53363521b99ad3eda08
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: VerticalGap
+      Id: g=5fbc217e4cdbf52bffff49a0ef9ae5a9
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: KeysRow1
+      Id: g=bca776a49c9374bc24650a943dab57c5
+      Type: RowLayout
+      Children:
+      - Name: q
+        Id: g=7d562f515c8897309393ff396a74fc19
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=fa9f91775b0f5d4a06852bd4c2b9826b
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "q"
+        - Name: Text
+          Id: g=10c0bee297a6824a8e6cc4ea9f438150
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"q"}
+        - Name: TextColor
+          Id: g=ff11ef6e79f0b23952ebdd64817b774a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e87a27f91be9e57b220052220ace90bc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=54589cea9969fed6ee05c84577eec88a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=10174b00a6485e87b051550db499a1f7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: w
+        Id: g=056ddd2e540c6d42f5fff90e4d526fb6
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=12a9e72eae578121b26144426a07e9fc
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "w"
+        - Name: Text
+          Id: g=bc09b96ea1a78e4920bcea8e625ff835
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"w"}
+        - Name: TextColor
+          Id: g=c9791afe90de2e4462da80cda34a2c70
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=00cc43c5d405db22ab924dfe204be8aa
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=79cb870f0a5bcee332351f75899c103b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8d1114b0ed1941bc7aae498907d5ea1b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: e
+        Id: g=5114b790b448fc38f5864dd2a1959ebe
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d6f5bfbea0c5e159f03f0e82d370f946
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "e"
+        - Name: Text
+          Id: g=cf1a58842d621b2e1e35b41d0ebbbf76
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"e"}
+        - Name: TextColor
+          Id: g=4225b65e4eda50c0745e21f40a9b6e0a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=dc49b528fe8135b30a47d0efe595f9b2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=74519dc884f9e9d12c67e4ecb005a302
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f2fe8f856be2bf2062fdc885d551d9f8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: r
+        Id: g=784e364e4d95e2a20b621968b33af4d7
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=4ac162f82557c1c12f17b39dda3ee1d1
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "r"
+        - Name: Text
+          Id: g=6a17bf1d67b8de4a0dc93be8e3148572
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"r"}
+        - Name: TextColor
+          Id: g=bbf0451f724156387922a9e0c2b42139
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7a80a7826cdbc8f132694483e7c563e7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=af56abd0dabeb78b10686656b666c9a0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=405cd9b923cdc18aef60f0af2dbcb94f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: t
+        Id: g=c6feec95ac5426e27aa8952a5d0a9e7a
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=82c184d1081153e637c4fe13e22f7341
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "t"
+        - Name: Text
+          Id: g=e0314b2dcd41049f74089a92f631b751
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"t"}
+        - Name: TextColor
+          Id: g=b06104903d594cfdeede6dcdc537bf34
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=9c297a80a82666bf2330345abd0a9020
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=9b1b929a084ad8e81be2dfe33f64c03c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=19c4e6078f68b1ab037c5160d1425a44
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: y
+        Id: g=00e0ffe384b402df1f04254b25abb1b7
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d50792c37544e8becfad36fca6463e22
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "y"
+        - Name: Text
+          Id: g=bd8401d9283a1bc3302a111b6136c170
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"y"}
+        - Name: TextColor
+          Id: g=262ac6f31bdb23f2e4476d1a60efd1c9
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=558a93318b49c5b7423c0c321de70ce0
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=2c83c93e59584cee77e1adf34a44a97c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bcb69d3bed59c1ffd0c9ddb04becfb93
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: u
+        Id: g=898197639ac115a7271d43abf6c0680e
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5562cf3fc9c5e73fefd0d13746d45ee5
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "u"
+        - Name: Text
+          Id: g=36e90e9341d91cbc7f84d88620f00363
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"u"}
+        - Name: TextColor
+          Id: g=e5e75d4f296f1222b4141504d56f949a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=47ebce8e9058ba4f26165aa7ca51aeb8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e029bccbf6c3a00463f41e6b2e02473f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=93efb23bcddf2f404124b5a92cd85157
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: i
+        Id: g=bed0c5e3a596f2de2b8f71525aee3fb8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=ed3908c8ba02828980e5cfc348d48930
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "i"
+        - Name: Text
+          Id: g=1600d102a8abaa4c33c461b39c2752d6
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"i"}
+        - Name: TextColor
+          Id: g=86c77d372a5993ca06c740bba9a37ea9
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=19030e88e6af85465665328ebee14916
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=55b65b3667c050e38d9e1e3283a083cc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f8d52a40533a01e1053a42e0dad6171c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: o
+        Id: g=967dc79ea7525de2565bb7648c5062cd
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=1e636f90b3cd4940618d4c4ab5e4b32c
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "o"
+        - Name: Text
+          Id: g=b1f3858d6a65ad5dbe88c8706e970e26
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"o"}
+        - Name: TextColor
+          Id: g=60c8e8aa6028eb65a2d56c918b2bdab4
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=1dc8fcdf84860c8d7a44cdfcbb4ee6ad
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=52bde4979fb200f9facf57d8d7034d56
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e14d97df29670e3536f240d1dc3724f5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: p
+        Id: g=f6d7032b1e92a894291e6bc490d63fef
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=9a6029a250da0073dacbb962206c4ee2
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "p"
+        - Name: Text
+          Id: g=762268473c6f99c8560eddf4b14d622f
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"p"}
+        - Name: TextColor
+          Id: g=05d7662aace8a58a66a36584a632a9f0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=13b65599664b95a3068a4dc0e7641ffb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8f8d9aa718fdb125801ba385a6b4bf85
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8a681d1eb05d52974a4947f669fa7644
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: HorizontalGap
+        Id: g=22a58ef004db34f6c583f04f330c2c7f
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+    - Name: KeysRow2
+      Id: g=e9b59bec0ddf4b4140c9a0fee04e5f9e
+      Type: RowLayout
+      Children:
+      - Name: a
+        Id: g=e0175eef3b41254c2cd39cae7a9e8626
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=2a8dc2bb0fc968e5971b80bd4c41b07a
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "a"
+        - Name: Text
+          Id: g=a5bb0cac24a433b89fe82f23060e1588
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"a"}
+        - Name: TextColor
+          Id: g=fe28aac58aac8d5579a429b1cb2f8cd3
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2e4b3efe0c99f9a71a6194c2e0daaad1
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=27b384b6970876de6438d4e17bd66a35
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=3785c580bcd9433dd374743330b02c26
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: s
+        Id: g=2f1e75337c1458f6c4b79b9bee684bf7
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=8a910f7277dbd18b2005cc74d0169e49
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "s"
+        - Name: Text
+          Id: g=f9b29e9aafd0e52f7f1dca2ab2f56841
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"s"}
+        - Name: TextColor
+          Id: g=473d4e23abd59034c3502b2bbb68e454
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=30ee6eb6dfe75cc82f87ddc4240c9c34
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=f5d6b3fb33d862aaedbb82724b045dd8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bc77cf760744e7714010b7361f365722
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: d
+        Id: g=16438d32069dc9e5fd619e593740e9ac
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=b9b5766836243ce3c3e38209d1fc29f2
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "d"
+        - Name: Text
+          Id: g=c07d5e345a9ba7d26089b560309c5249
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"d"}
+        - Name: TextColor
+          Id: g=d69e53467d78ed228351c40927a618e1
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=b93bd16a6e715728111925dccec379e2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=2a7dadf46123382ed0e58e468de1ecc0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=571d4150482b0cda1f2757766b82b673
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: f
+        Id: g=f1a6198dd208c738263859cbf8edf13d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=46b8c2b791a7c458fb38a551d4732cff
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "f"
+        - Name: Text
+          Id: g=5a47ff13b6d94130c054f52942d9eb63
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"f"}
+        - Name: TextColor
+          Id: g=2f00a4226e24f7c7b16475e3c3a3eb6d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=8f2edfc27f6f76683027192cabbce69c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=33e948665d08327757b3980427fdb446
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=0615db2605a60c96f4f46f55740ec85b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: g
+        Id: g=3ec7b3b6c137539436b97b2d48bf625d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=84f122d3f5a383feda591fd3e5686bb4
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "g"
+        - Name: Text
+          Id: g=52689a3eee1d86ba445d95941aa3e6b5
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"g"}
+        - Name: TextColor
+          Id: g=85e86c5b628daef53a3dd3787c676a9c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=302da2355beb2d92f2d1179560bb07ed
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=bd746cf4d2cf4f61ad658569aa85e8a1
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=3badb68e14a5e3117c977c3b54504ba7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: h
+        Id: g=bbe4bcd7d006d317a70807cd4cc2b57a
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=b767a5bde147ba6e9c020b45ebcf3083
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "h"
+        - Name: Text
+          Id: g=5ae4f15a29753ba5ae551b8b33381512
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"h"}
+        - Name: TextColor
+          Id: g=877fa205c1e246edeaae36fc1e51f6d0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=a1c4f8a9dfc75971bf00b978921d301f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=560134df606d82fda7c88c6c961480b5
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=88cf6e4d8fea07fc6e09804b3dd76549
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: j
+        Id: g=bef92d5a80cfef646ce8f68d8366bf53
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=c4451e2890fb6e9e10e0a9f861ff4962
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "j"
+        - Name: Text
+          Id: g=6ca5857d7ead54b1292f87f949af5a6a
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"j"}
+        - Name: TextColor
+          Id: g=ccae173b970a244b20f168c7e0279f6a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=c86356b6ec9481bcc3ba58785d637ba4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=5815941c980c43dea115e870009bef58
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=9baf93b85b989d3819c549512a61f82d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: k
+        Id: g=d1ad9d01ad0a39c9388c95dc7241f7e8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=1a73545ae567adf0ad0c808c9018340b
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "k"
+        - Name: Text
+          Id: g=045caeefccdf377a2da8b77bf5aafe19
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"k"}
+        - Name: TextColor
+          Id: g=fcec2498e3e4f3a54038c7c45fd29879
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2a2835e43c6e2c9ce7369d9d18128404
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=817e72452b97d0dcb4de2cb1b4b2a234
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8595422c97c1a6fd3f866b0fe39dfb61
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: l
+        Id: g=a333bfb1008d814340a787cc351afdd0
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=17b8fee86b5a25909e120665e400d4fe
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "l"
+        - Name: Text
+          Id: g=4d5e67161d7cb93a3b956c69fea91585
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"l"}
+        - Name: TextColor
+          Id: g=22c49cc3204666bd26b43a67dd8e513c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7f4c6d218ef5f8288e4d9bb8b6e28d0a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=89e24cd15fff28a78b7ebd0a44d320d4
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=01b111cd6c182c81c42f5acdb9deb841
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: LeftMargin
+        Id: g=d21ca441ee276461f97b6a96d1a8ed3e
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 30.0
+      - Name: HorizontalGap
+        Id: g=1f147d3b079b580675fe20cc48c34b1c
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+    - Name: KeysRow3
+      Id: g=d651e829a10fea0903ac3b2abadc8ee0
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=ad16d24d5b33248f527819657cfccc20
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: z
+        Id: g=781a75775055eaa0158b2d7461a94222
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=dd5a6a7c1c8550731f3ed5b3d0a0bdee
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "z"
+        - Name: Text
+          Id: g=8f4141913f36219930b1264cbe0eddaa
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"z"}
+        - Name: TextColor
+          Id: g=62a5dcf2fb91e0dd2a50ac85e6a466f6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=cbf4c3b7fa255761c7b58e54d8aeee3f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=68c231cfb48c64bd036e2baa64b6c77f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=15db495587c7c285995b5e0c8fb2ce1f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: x
+        Id: g=34d00e91ad9df254b102677f48975563
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d02b11f50cef50cdc00cbe1480662d85
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "x"
+        - Name: Text
+          Id: g=891b4dd7da994f24ef9d7ff3a5bfe77e
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"x"}
+        - Name: TextColor
+          Id: g=62012e1e5680d169aac4d3a86557311b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=58479ee37964ec0240e9b9bedd09007c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=04a66b268adcd727226775ddac3637e3
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=1226e2632571342c2280ad70458451bd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: c
+        Id: g=fe2f9427d784bde23b36c22a12fc4fa5
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=58264d3ae0f9a73ada223acbebde591e
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "c"
+        - Name: Text
+          Id: g=a25af41094252cce6263d10f0d98388c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"c"}
+        - Name: TextColor
+          Id: g=22bc691ab9c49c71d2c8a7f34e6318bb
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=4e654f2c49cedba22e20fbbcd4de8d9e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=a6b28de9a192baf032b9606120bc5264
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c221494cec3c23d375fbd50bdd731f78
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: v
+        Id: g=b90ab7ae63f753d1acc5fcc3589c06ca
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=b5c820b29ec97187c8964cbcbf46a639
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "v"
+        - Name: Text
+          Id: g=859c6c00fdda4a286d38d77ef3307c79
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"v"}
+        - Name: TextColor
+          Id: g=681c818745066ec931380e826897353a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=b063c17a857498cd3510ce6316c8c814
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=57b414166b3b50efd004a90bac158932
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=328eb1a00c3d36a49991a6d067c0fb9c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: b
+        Id: g=a9938b70e8ab52e105389533f94cd809
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=bb14805b78cfdfd984715ff5b5b7d0a7
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "b"
+        - Name: Text
+          Id: g=37617b0385146604a58cc9693500ca35
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"b"}
+        - Name: TextColor
+          Id: g=b70e96334379d7761c112c57a0f59147
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=636790ce73f7da03678cb6ade831f436
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3ef1f8f0ffbe943f49d2306cd809b8fd
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=9c2ef96aaa7545dfcd20d53bae87c48c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: n
+        Id: g=f02650362939ef409bf679eab0bbac18
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=c7d1a22e4e8160c30ea5d8ca9babadcd
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "n"
+        - Name: Text
+          Id: g=0ae178cda7bf4116e9edb652202e9864
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"n"}
+        - Name: TextColor
+          Id: g=08480b721f29a47a71d0caf2726a3ce8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=94c94ad87e552db3b30c054762560202
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=da52fe87598f68b0369c8517ccaad9eb
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=aa8fc431821aa1e0501ce34a3bea8cf4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: m
+        Id: g=50360de7e013a8a70a9fb4b57279497a
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=9ec61f7d011a5f9252eaab275639dedc
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "m"
+        - Name: Text
+          Id: g=7a09de61fefb3fd4f8b34ea576586533
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"m"}
+        - Name: TextColor
+          Id: g=7620a8313e07d6cca5698a1db966255c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=35496626b0df58a35779e3c4409c706c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=de906614192a38df50ea4fdb17fb5182
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=2a582e22398c9f74507a46a7fa770968
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Backspace
+        Id: g=a80127748c3f39fb1f33cf5e1f0d3626
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: Symbol
+          Id: g=c8e05517cbd1e6eb3288b06a831d7b00
+          Type: BaseDataVariableType
+          DataType: VirtualKeyboardKeySymbolEnum
+          ModellingRule: Optional
+          Value: 2
+        - Name: ImagePath
+          Id: g=46bdb628d020a863b81af7078dc56980
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Backspace_Outline_24x.svg"
+      - Name: HorizontalGap
+        Id: g=0e39747695f2f5df65d14097ba85cda4
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+    - Name: KeysRow4
+      Id: g=1dab42aa8872a062c2efee7226d38014
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=a7c7a2173a2a4336765d65bea133c0e6
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: Space
+        Id: g=b044fbb99fbe8a785dd4b231cda91c89
+        Type: BasicSpaceButton
+        Children:
+        - Name: Text
+          Id: g=268119ae536262ffdd901c32e871da79
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+      - Name: Enter
+        Id: g=088e209ce9e67555f17328c9f4e5e9e8
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: ImagePath
+          Id: g=321d8a911e0989b9690f2bf4e89d01a6
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Enter_Outline_24x.svg"
+      - Name: HorizontalGap
+        Id: g=c392dd36d38e3b456c89be34eca24e68
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+- Name: Letters_de_DE
+  Id: g=9f12017476cb63ba01cfaee2cc1028fd
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=6785fe68319841860ea01824101407c8
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 730.0
+  - Name: Height
+    Id: g=654776aff66f09b6846f8335300ad9f2
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 230.0
+  - Name: KeysRows
+    Id: g=e69d8ddaca566007c9854ff90ac15377
+    Type: ColumnLayout
+    Children:
+    - Name: LeftMargin
+      Id: g=d4f8b713ea6b80fd01c9fda76d39ec19
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: TopMargin
+      Id: g=1d7952f985c64f4b9fec38ff7f9ced66
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: VerticalGap
+      Id: g=7945503d36c53a2ae1ae21d356a412f7
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: KeysRow1
+      Id: g=0e37357a8cf48c2ced08662409d398cc
+      Type: RowLayout
+      Children:
+      - Name: q
+        Id: g=acd086d143fc7e7329b93262cd67e5a4
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=48ca69bcc7bb949a00b347d9f6120bd7
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "q"
+        - Name: Text
+          Id: g=1a5e742f2b339ba87b02b463e8168870
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"q"}
+        - Name: TextColor
+          Id: g=f696c40ca4446c2011a59ff0731aa3c0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=39191c3cf9c282d035e3d499212f98e2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=7a811263b86b71e3cd5b3f47ad3c745c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=82ebbb72a3fd7227ac6c643dfbba6c3a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: w
+        Id: g=1de99cc31836cbdc8c3ba468a290bfa1
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=634f3f1e61f9393ef19cb724002cdfdf
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "w"
+        - Name: Text
+          Id: g=c26e2c3a272f62a601a33747149562fa
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"w"}
+        - Name: TextColor
+          Id: g=2acde6d602c0223fe0ddfd4fdca4a4b3
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=cb89a61b964fdac983cb56140c472d33
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=22da43d5fea917940c860597ca5de754
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bbe1d9f160a1a58c45ff19617e3f047c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: e
+        Id: g=e3e58f93a3997c297ac5f3b59e614c59
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=4c22038272035fecb44d4a01d463eb62
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "e"
+        - Name: Text
+          Id: g=4087f62bb5ee4d8f0680ba1845540817
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"e"}
+        - Name: TextColor
+          Id: g=a195285ba63de18697b2d4ba181b13ea
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=f030c109f82b55ffb51547cfe1ca0a6a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=a174e9b12af89ab35f78664810662775
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f5ebe4f505280e2f599611884dadc26b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: r
+        Id: g=4eb8812f466d854039d12a788f372fbd
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=90f1bd7eced19a5d988d20bd48acb365
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "r"
+        - Name: Text
+          Id: g=74e09060feb90b69243f449dc47e75a6
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"r"}
+        - Name: TextColor
+          Id: g=958a51fc6c9ad1304911236780933f7c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=059d9c221a8ea8cf739bcd9ae3ff6b49
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=0affb04c22567b99e1eeaf1401f7afd6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=440630dc5157bbd83015a9a0687d5e38
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: t
+        Id: g=466143071fb3dfd244a18de4aa2aacdf
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=db3e8ea53d615eb2521a494559333268
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "t"
+        - Name: Text
+          Id: g=1d638bea99874bc254e0fd567bdfaba5
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"t"}
+        - Name: TextColor
+          Id: g=b697ae3cf59d0433726bae488755a348
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=175938f027de4993a39d7245fd5f4209
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=6ef461f7b61fe9632bfaa6aa443851cc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=fd81b01c342fc410da58b3eb52b94207
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: y
+        Id: g=febbd4b974112b478f339111d951b3fa
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=bdeadad6a733363e84b1888f1e4f570d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "z"
+        - Name: Text
+          Id: g=6011fa8e772100a3a16cc5b98bd97c93
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"z"}
+        - Name: TextColor
+          Id: g=188f0adaaa1e0c5ce4d445f0a78d634e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=4d9798ce3c3c1d399d625e3ec73cf4ef
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=2019c0e364a206332d09520dec2a6376
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=90778d28d0b6b017cb5e37d6b5c56d77
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: u
+        Id: g=56e45ad497be79465bed3f73415a3e98
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=cc1c096083d5bc75a46fdf8bd1d84f66
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "u"
+        - Name: Text
+          Id: g=4d8fe58c546179396e2e6b9c619a150b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"u"}
+        - Name: TextColor
+          Id: g=b8b7131460673e4d40db9f8cd095e269
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e5f3420d4902c902f3c157eba41ad6f3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=d900b3bf70677715186de305151daf51
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c200582ecd327f646a9da6e3181da784
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: i
+        Id: g=21f866e21771b98c88dce71d925a34a0
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=24507febf00a5d76b3c8a575cfcd3401
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "i"
+        - Name: Text
+          Id: g=53e02c0b2210731418b5b9103b3004b3
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"i"}
+        - Name: TextColor
+          Id: g=1f814341975a2bc9a6759dfc391bf686
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=45da51e78a361ba874eadb17b9a318cd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=6f5826939e965f71ffda5428fa57f509
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=9ba0f56a78c165891933162b95a930f4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: o
+        Id: g=cd3afe2cbc1b658aceb8fed01fbfd78d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=0dd933c39ed96965520bd001c2c35c21
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "o"
+        - Name: Text
+          Id: g=a0282123aa11702190ff4747c544262a
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"o"}
+        - Name: TextColor
+          Id: g=2b5a8476b039d54d506609fad0aef128
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=1e8d72e37a35fd0bff2d70aa3c1c6b77
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=36bab7a11d2667a4da23e40f6faa0597
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8eb0d89ed31c9eed4f63984bfcac4bde
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: p
+        Id: g=a947613ed199628b4474c529f27f0a8d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=391cb07ab3825feafdfd583b2cf38716
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "p"
+        - Name: Text
+          Id: g=bb7fb5df5eeb6d42554aff54bfb4548c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"p"}
+        - Name: TextColor
+          Id: g=399115bf349304f7fbbb3565b235c764
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=6980684049e647ba03eeb2252c684e9d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=a714c0989f53c4b7ba54b50c20aeff88
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=fe99e563761e1fabf6d80f92357dcb17
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: HorizontalGap
+        Id: g=929c99625e5f184a00e81c9a7df5be3b
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: ü
+        Id: g=857aeab916a800cba3dce20784eee144
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5acf9d4d0c593b05c855ceb8c265017d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "ü"
+        - Name: Text
+          Id: g=aa7f9e05fe8c46b526f99da03da03ae2
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"ü"}
+        - Name: TextColor
+          Id: g=b818678b9911333465aabfcd29f4b971
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=26bb2540abac552f37f36d680ca9b46c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=65cf6d377fdbf39209b85f6cb34e07d2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=dddeca95add8ee326ab8186f58f38fc1
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow2
+      Id: g=4a42d0e7a70025225d6f835ce3810404
+      Type: RowLayout
+      Children:
+      - Name: a
+        Id: g=8f06c8d25c24b01c7d2e870b8b208a42
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=bb0423b8b0f316ee7768fc97255fa0f3
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "a"
+        - Name: Text
+          Id: g=c73b2bd586e9aaf7dc0b546ec86e0072
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"a"}
+        - Name: TextColor
+          Id: g=a2bcbc527fd82df3df5c2ef9316eb1e8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=6d19987c23226eeb8f783f142d823946
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e814c69fbf917cfc6245140e885b52df
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=12b3f96e857b4333f95355db0ef2b705
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: s
+        Id: g=eb949833db0bec8ecc8d236221aab26f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=a17e3990134de56fa46c94780681dd77
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "s"
+        - Name: Text
+          Id: g=9a4fa2f38ce0fb6e2abecb4708f5dc96
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"s"}
+        - Name: TextColor
+          Id: g=90aa94bd52d5bf91662a9d5f2c80dfba
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=8fe76c0d84622e37a322e5d32ffc07e8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=befb5ce200c6059365c5504bbc53bc6d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=40fdd9bc79c534313d08b4ca231da2ff
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: d
+        Id: g=11bb055cb15b32b2e9373c1e9aca920b
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=9de21f38f31ca220871a31c892c2f386
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "d"
+        - Name: Text
+          Id: g=b5ae72a4e02b2951149cdb1eaa987a32
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"d"}
+        - Name: TextColor
+          Id: g=4ef20b16dce073c5bd7c813bbe5c7199
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=f47790ef681cd6654ea47c532dd3e9eb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=a2195c4536e4ca89ff1fa16896a5b2af
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e116aed078f3d1bc3ac50e69e0847f4d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: f
+        Id: g=152834e233f79df1946ba35adc63ba49
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=c88c81d7e2ed8655542b14e4aadf09b4
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "f"
+        - Name: Text
+          Id: g=e70bae85ecef64f68b2362757cb5db35
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"f"}
+        - Name: TextColor
+          Id: g=4d11d34698cea1c462ab6294046217ad
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=c6fe1ecee484cd6f07f6d61f7400f942
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=fbc59c513c8bac1510b2f1affa2f2cea
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=d7c252b21bf10885494bfa3864d0819c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: g
+        Id: g=57fbff61d4dbcfc5e6527b2a51c9fa73
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=349c7387552696c66e0e5dd390e2b5d2
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "g"
+        - Name: Text
+          Id: g=b5aa9fa7331dcb2975659f49959271b5
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"g"}
+        - Name: TextColor
+          Id: g=3adf57d1007f6eea1fac51b0af8daadc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=343c6dbd78a0c1d3e5fa28b862a511c8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=b60fac4f9a1397401b60d4bf2484a33c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=d0466e4fca8068987cf1c0142b0e5cae
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: h
+        Id: g=83cb77928e58cc10ad47881c2078451d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d19a25e10fa935af77aad3a691d433fd
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "h"
+        - Name: Text
+          Id: g=098b488b76ad1802fe3d70fd491cd190
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"h"}
+        - Name: TextColor
+          Id: g=942fb237f7f3c1343fa7dccc1fafa1f5
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0ab0dd388990c7b0c167af425c7e4ef3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8e9c2495bf732a2df170fab366946d8f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bce6e532f177cc8261e91a8500de80bf
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: j
+        Id: g=3359a1b6f03b42bb0c6dbb20f5c39144
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=bbf83c2ece889075435f59f7f75f006d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "j"
+        - Name: Text
+          Id: g=9de7908f6b83603087f2c69840d56c3f
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"j"}
+        - Name: TextColor
+          Id: g=f0ed0df9f9b4a8e51a11ae05e8dde18b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=05221273d2fd7761d42b7129787d0883
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=6ae284e2496aa14ac77ec08f3057afba
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=b65797665489532d857aded6546e6caa
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: k
+        Id: g=d3f53a9d54016e49cde4b05fca3f6832
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=21382b936df5c4b20f97c118d0eeee5d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "k"
+        - Name: Text
+          Id: g=d57df6f1a6bb12259c55bc4c46aa29b0
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"k"}
+        - Name: TextColor
+          Id: g=35b03e10403958912d86e2f7a77d4dc5
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=174933bfd9b09cac90784f20e5e9783a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8300386d342b2e9ab9e299941f8cdd39
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=73f7ca79bbc7af77b154a1130c60f58a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: l
+        Id: g=6819b662ac104d8580f49bdb9591c9ed
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=2c63bae31cacd7a5cd78414a10da4338
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "l"
+        - Name: Text
+          Id: g=4927d9b7f3a1efa11bd279c6208715a5
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"l"}
+        - Name: TextColor
+          Id: g=c77f2cea25f2d9f72d3957ec93cbd884
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=65656f5d96d41dafcce1862fdf3bb0c6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=759a5d07fc867cc887b447d1368e9edb
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=36b34b456b7067cd6176b7799852cc54
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: LeftMargin
+        Id: g=1a7f4179113138c1e4d929bcef0f1120
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 30.0
+      - Name: HorizontalGap
+        Id: g=d0ad554f478dc6610ac38fc825208f1d
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: ö
+        Id: g=7dd15fd26cec956b8f27f854e3597f25
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=00842fd34ba84eea3175c637e08e344e
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "ö"
+        - Name: Text
+          Id: g=609e7594be2941966abb3197448d0d40
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"ö"}
+        - Name: TextColor
+          Id: g=b00bafd2f77e22d08ac99e73908e21b6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0f57a19c473903dd449f7a80b5822fd2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=4b807a5400158eec6a1fb33b96209394
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=6891d19dd4441aafd695ea1896ada2d4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: ä
+        Id: g=4c19f03f624c7766eb743ed760b0c922
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d74bf67ddda29a0d4227ac70ea9d0e51
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "ä"
+        - Name: Text
+          Id: g=3ee7ef823fcb772401d94c4da32f9596
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"ä"}
+        - Name: TextColor
+          Id: g=de2a2a0ad63e8e0a64c9e331b14edc27
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=d846dfda3b5282dc4be6e8ab913ed2db
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=856f45117c59a546f77635ec97bdbd72
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c58f644aeb11ee4c8c6fb5c4ad002489
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow3
+      Id: g=cb2496bcc35e27669ab24c47af0ca5b1
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=b1fc72d14204e39de15d325567923cc4
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: z
+        Id: g=6049064db89be77a5b6e684cc1c56191
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=7e3aa4a9e92857dcce196457a96dcb4a
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "y"
+        - Name: Text
+          Id: g=2e23852cbe45181a797dd5da16a69bfc
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"y"}
+        - Name: LeftMargin
+          Id: g=fdbe39f986bf5a813a1838156116b243
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+        - Name: TopMargin
+          Id: g=b81c19dc441ac98dd0f609c5cc728125
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+        - Name: TextColor
+          Id: g=32e6d109012fcc0d0e307a44062cde72
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=41e8369ce2d6fe30ab66a7364abfab04
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e7688e8b82ff9365983cdd83b1385dd2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=d6d85d4d3e1cc40b9f7dfdc18c287bef
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: x
+        Id: g=b053839f6057d33879a7ffe7ae4b7fa6
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=2df633195e40c54e7653fe398fc4f82f
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "x"
+        - Name: Text
+          Id: g=d45ff2278ccdb6af0b5f53c01714fec0
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"x"}
+        - Name: TextColor
+          Id: g=7b35a48f49220b9eb4c28e6aa875e845
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7ea5848c01b1bcf49fbfbcdebc26f8db
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=ef1bce4d7c504a36af980da94978b7b2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=9212bddbc580b19b05a8548266006cad
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: c
+        Id: g=5ae8ecac517f72f0cdb671416f64eded
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e849e664fff15494d21278a7fb6c5e5f
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "c"
+        - Name: Text
+          Id: g=773e2ff693ada42d8b540a4f83707493
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"c"}
+        - Name: TextColor
+          Id: g=18ab0436ab4e6df636dab6837fbd5d52
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=612f2915e36c95e67eaad879539fb07c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=c9c886a42c06c6e817fed1026697fdc9
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8a70190e5d8785689f1cc4aec998418e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: v
+        Id: g=c937f316a4a25ef4d2f275f50d607454
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=509a402266cc362c8c9419dae19525e4
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "v"
+        - Name: Text
+          Id: g=26888448e10b5b38126cf262e1ced8f7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"v"}
+        - Name: TextColor
+          Id: g=e82c5891cd7781cf5afaf6455bd11b7d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=4b46e96c75715c2d25a21b70455c8410
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=cc32760b915e6a81a0368307bae06680
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=53bdbe637304cd9a3b25fb16688eba37
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: b
+        Id: g=d5dda5f7a57c3147ab8ea381deb819f9
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=8c93b56de92da2d800c4fb0ae944b45a
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "b"
+        - Name: Text
+          Id: g=a8be1ea90da3a01302a67cc13be311e8
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"b"}
+        - Name: TextColor
+          Id: g=2dfcc85991da30ecfcecd8fc3519c09d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=62a31c46633d36769b4a0e14e2deaa5d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=1fc2499c592930ebfc91c8024fed47d7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=3d9c081f37fe83786f7d42b86e30641b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: n
+        Id: g=cc4b9f89df6200b15abfb8e2292c56a5
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d3e6a4050b17d19c2fba2cbc2e98d4ca
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "n"
+        - Name: Text
+          Id: g=3cad34428bf1619226fcaaf4565306db
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"n"}
+        - Name: TextColor
+          Id: g=2819ca69cfaefe6acba7678f612aaf9b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e048728aa39f890f138dc64dc72b58d4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=950a15361e2fcc6e8340917d1a7d3c0d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=0a1b9f3fa5103b5ee216a2db12399df9
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: m
+        Id: g=69853848e717ac653b8c58cde0b9430b
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=46381be3080ccc5aea644cb8e4614aac
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "m"
+        - Name: Text
+          Id: g=01c620319562572d82ae8a07eb22334e
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"m"}
+        - Name: TextColor
+          Id: g=99baffc560831b8d3ab31ac5ee3eead7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=18f0fd74d7587c7f4e460bbbd30bdd9d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=1d09c263ffad1777e95232b958d83883
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=42071cb44139a9ed2748c0d41325d498
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Backspace
+        Id: g=4ffdbdd044a6cdd8a6e56d1c175f05b8
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: Symbol
+          Id: g=5b303c62e87e3889f6e9e1ea563efee6
+          Type: BaseDataVariableType
+          DataType: VirtualKeyboardKeySymbolEnum
+          ModellingRule: Optional
+          Value: 2
+        - Name: ImagePath
+          Id: g=13f72413230acda485ecf86d1ce3757d
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Backspace_Outline_24x.svg"
+        - Name: HorizontalAlignment
+          Id: g=c3356b79408d2d4cd0ee8ea526777551
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+      - Name: HorizontalGap
+        Id: g=74d8208a68b6d76cbe7d2d5c2809439d
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+    - Name: KeysRow4
+      Id: g=032f74598aa31076873d38fcd1c0da46
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=2bf25ac879b0a3ce02f10437c0422122
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: Space
+        Id: g=89f8932043209ed64f237a99eca23a35
+        Type: BasicSpaceButton
+        Children:
+        - Name: Text
+          Id: g=498a124b6c7b41d21fc8b4549f17150a
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+      - Name: Enter
+        Id: g=79ee243a228002f572a5fdba0e1fa3a4
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: ImagePath
+          Id: g=f81053f82c82d29dca172bd841fc4fb6
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Enter_Outline_24x.svg"
+      - Name: HorizontalGap
+        Id: g=f8bf41caa0c3153c2d444fee724f84cc
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+- Name: NumbersAndSymbols1
+  Id: g=3b7b7bd1da91d3bccb4aea43357236bd
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=7266804544e81317adf350a7ed5f39cd
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 630.0
+  - Name: Height
+    Id: g=c6009afe7d502ed635ff1964a2d9645d
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 230.0
+  - Name: KeysRows
+    Id: g=1fc3c7b438863080cdd3ea1713943e72
+    Type: ColumnLayout
+    Children:
+    - Name: LeftMargin
+      Id: g=f4bcca4a1937ee21f7091c111a1a7d90
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: TopMargin
+      Id: g=88ce9c5daf2062e69175ef7b05ec3038
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: VerticalGap
+      Id: g=9b0a9dadaf6bb117353cce61a44abd01
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: KeysRow1
+      Id: g=05ec48d99ba3a15c89e907973b69b7c7
+      Type: RowLayout
+      Children:
+      - Name: HorizontalGap
+        Id: g=ecba958e43527294d7c1129c1acdd896
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: 1
+        Id: g=61d3f6186586b58827288342b0ea0b6d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=9579d337abcd83cb102a1254eccda35a
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "1"
+        - Name: Text
+          Id: g=eb67852f9eee0d43a6ad1d741f8407e6
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"1"}
+        - Name: TextColor
+          Id: g=3e51e3e63d440fafe1c48c16252811d4
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7b63970a20f4a9fc701e19a1aef71237
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=bfacbb00be32f21211a543e707a40f0c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=d0b6a6dbf34024614ea5462b5a370b37
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 2
+        Id: g=89100420fb8f94a4ee0968fa11e39cef
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5aa2c8a93de309b11cc025636b95df54
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "2"
+        - Name: Text
+          Id: g=e9e68dbe604fcbe7e3ab21d525c73cb9
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"2"}
+        - Name: TextColor
+          Id: g=b3986fa6525e4d5d55ebb88ae96de37e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=746cbb4dacb96d3b247619d774df253f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=0c1d347546a6ccf62e7809de9c749785
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=a7a3da89de139c33705e5002f86d0852
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 3
+        Id: g=9924a838ce4ca4f115c6adfdf0eaa237
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e73a5df790c96fd511557955b0eaabbe
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "3"
+        - Name: Text
+          Id: g=6757feda84e519a9541bc22268ab139b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"3"}
+        - Name: TextColor
+          Id: g=b4e48e0841a4b26f76cbf6e9184f8581
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=fd89b32b784b4c963426f74e97bbfbd8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=94cb0075abfd859d19d727102ff43dc5
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=9a747cf7e8f589e06d5f2a158a96f389
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 4
+        Id: g=eb454c6f0781eee523774b6ef60bd1c6
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=820b4ec95c7afa8b3297cb786b4fa237
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "4"
+        - Name: Text
+          Id: g=f6642a20ec3b7696b00087205f6fb089
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"4"}
+        - Name: TextColor
+          Id: g=13eb5b4e0003a401c4ab98283d2b14ab
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=8e5ac114b3641e5a45c08361e71bb976
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=aa587c6fde524ea7aa32207c2d0a7379
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=64e436bf30a3994c1576738297531439
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 5
+        Id: g=466641871d24f3ca44960835d874671a
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=6369b0041314fb45e8fb24a661be05ee
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "5"
+        - Name: Text
+          Id: g=2bd625d5dbe0c42e53dc3ef2f720032c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"5"}
+        - Name: TextColor
+          Id: g=61f745ce8ea29b839e438947f312b769
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0c44441b58fd40fc330eaf817e0da95f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=73202d8169d41be7d0097c86739a31d2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=531de74890ef2e27f9496196da2122ce
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 6
+        Id: g=b0dad72a13764108c1dc9b953246422b
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=a6535e20bb7158063ed338e6a1148f3c
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "6"
+        - Name: Text
+          Id: g=37524d5a7d3ded388d8f5eb5e4ec2f34
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"6"}
+        - Name: TextColor
+          Id: g=2588af93ae2f9606131b9f3746589707
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=713188f4e6e75815ad756296a76be6e3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=4f7e54fc9e31328c9c35087666b37679
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c7750831192d22e0769bba36b30e1457
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 7
+        Id: g=4538b41486bf53c229e3138b9e32d11e
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d235d42fd1f23e3953ca31c5f51317da
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "7"
+        - Name: Text
+          Id: g=c9c628562290dadfaeff8e94c1ff1634
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"7"}
+        - Name: TextColor
+          Id: g=ae700f5cb2c5760259c79a05146116ca
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=a1df30b0eb1e72054b5165c83a7a67a2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e7458f760cf6c712d2fd30b27cc1f470
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=5486c946f73553c599648b6583ea7f6b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 8
+        Id: g=5c0b52eeb6b605bf016f4d629265aa2e
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e71ecd35396fa69015ace00503ad21af
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "8"
+        - Name: Text
+          Id: g=295c4705a2c3db27cabbec3c10993aff
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"8"}
+        - Name: TextColor
+          Id: g=4947a340234278d8c07a337b6a29af47
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=8a3589bcd5a1969581e82626af9fd86a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3e3c24084a400b018e2706af1328dccc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=4249c32aa94c22c8e275143c39b052c1
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 9
+        Id: g=5691098dac1fe6204d7d649f43f578ac
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=b6f0efb07702a3d0fad33819fc1e2ce5
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "9"
+        - Name: Text
+          Id: g=a715f193504c6658385800e9de8a4b05
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"9"}
+        - Name: TextColor
+          Id: g=577d47a6f669f5bbb1869b21c72e2e30
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2ce35c4ee9e574b9e1fc7267c4652b3e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e3b3c15a64a1518609b8cec76ddaac9c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=3480c8beb67d99afbfefd2fda15048bb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: 0
+        Id: g=21f0d73d6fe7767c534a3c69c075434c
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=31a4d939d161e624b5b795e9681c6db7
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "0"
+        - Name: Text
+          Id: g=b96e6b8a21cab945b8b5019c03955d8e
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"0"}
+        - Name: TextColor
+          Id: g=3d250dff4061d9123f236fd2454aea11
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e9e74899fc9ec7ba1c9e0f12ce067f5b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=24a5cf62f0039ce7e4c90ab7949f4acf
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=d087e82779df6887fd896c23e8826a68
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow2
+      Id: g=af6540050e8499de0def25acdab8a3e2
+      Type: RowLayout
+      Children:
+      - Name: HorizontalGap
+        Id: g=a7a7c11b19e7d27b42dd05fcbe7b7f36
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: At
+        Id: g=9245dc5e4bb014efb2984acfa5ddb4e8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=f8d4eb491969bd912eaaf9a8e61151b1
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "@"
+        - Name: Text
+          Id: g=6a9c1cc6084c01d41439fdd6c23123f7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"@"}
+        - Name: TextColor
+          Id: g=5af0513e913e9690a8c41b8881a1a181
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7e19a083735890660b0ce7f5540d8995
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8e43ebc31a9f6721c1a33bb29f13a0a2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=5bf97367b0ff6da5e7529f2cdba31dcb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Hashtag
+        Id: g=d719299d30c8d6c720debdcca2218462
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=dafbdb6d6fb383fd9dccda220f3096c5
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "#"
+        - Name: Text
+          Id: g=ea5ebc617eeda93f601e6ecfe2f8b983
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"#"}
+        - Name: TextColor
+          Id: g=8170716ae93486619ca5198e37396a35
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0bbb13721825390c7003eef19bdd9843
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=ef127a05782930b741dc6822c50c7b91
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=df099fed132e060a707ece3d95f798ef
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Percent
+        Id: g=7c5cf01936b86143d9d7fe6622dac5ee
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=ebba522fde5fa2d0b5c5b644c8cc3aa6
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "%"
+        - Name: Text
+          Id: g=8b278934ac5162e2d55840b40e7f44ce
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"%"}
+        - Name: TextColor
+          Id: g=2d3ebd33a0cee7db9d06eaaab0080261
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=f3eee377f24189fd4b6a84b6864d72fd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=4cdebf7adf3292693e42424a8b065893
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=7511bd5d6f76df4ce45d920247e49a7e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: And
+        Id: g=2f3ab32bd97fe697d38b8b6db6c9cfe4
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e10b5c8b56190a1233ef847775bd7511
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "&"
+        - Name: Text
+          Id: g=313b8a1cbf07f1ed33b07182b6643f4b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"&"}
+        - Name: TextColor
+          Id: g=da66a9e2fa872f8bc35600672d803ef1
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=be8f4e4c6464863ba08f8adb88fed859
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=106b229b18075132c2c99b3479c39da7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e9d4a5944d36350a18b9a468ea0e43b9
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Asterisk
+        Id: g=4d12a0bc3575de1ef937789f8b214f48
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=9dd9a10889469935763ca8912b0dcdf1
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "*"
+        - Name: Text
+          Id: g=2a553fbdc82c5dcacc93355809348e93
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"*"}
+        - Name: TextColor
+          Id: g=e87be72512cf4e3ad572b267e2a23eda
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=9abcf97764e6504674ef3d22e532458a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=276fce2980e344a0d74ae480bef957a6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=857420b912b2b0a9e99047deb7631d5c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Underscore
+        Id: g=e2e1b14c6f17a287f70416f6d8feb120
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=915a567f76f707c4988589a95780732d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "_"
+        - Name: Text
+          Id: g=c22baf853b8fc03967f39ecf18c34a95
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"_"}
+        - Name: TextColor
+          Id: g=17868f0aea5044dd98b31547d313d79e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=d1ed01a9e2e8acfe2aa66487839eb13d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e55f4df6b2362d4669bdeef200441cf9
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=ab0b0c95fa4645366b257b8554cf47b5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: hyphen
+        Id: g=7f361eda5ed5896e41f113549e03dc4f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=a12903cbf861c71eed48d059bc908995
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "-"
+        - Name: Text
+          Id: g=0e3725e9e9277052d746585c5d6a5584
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"-"}
+        - Name: TextColor
+          Id: g=6981013768320a2510f570feeb2dd5e9
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=71b24a62989c11e81eae0f01f2888fa5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=4e6ed9a51a2721117a4fdb7a80044901
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bc173ac3e5e7dc68c464e0db5a8d8d98
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Plus
+        Id: g=d1f736bc07bef82f0371e714dee0605e
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5ffa04e1a3621a044a629b021b89b037
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "+"
+        - Name: Text
+          Id: g=9c38faf6e8e1b1e894e2649f14ff1e97
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"+"}
+        - Name: TextColor
+          Id: g=b5d492e0ca9f7baf88bf3d3f5fcb2471
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e26b7c24cd2b1533cc62ddad3fe47c55
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=cb0ff89d0672a9f215c8103a28d3ba34
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c7898b59399ecb108bb3d8d9b84a79e5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: OpeningParenthesis
+        Id: g=881585f2c2f72ac155bdcf45d7bcd7c3
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=663ad32c085e1c26141b1698b21595a6
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "("
+        - Name: Text
+          Id: g=f312356974260e486c82d8fee5435f0d
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"("}
+        - Name: TextColor
+          Id: g=859185eb829f5c440ebcc85b5aa9299e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=853207e15a9280a912b15274bc558fb4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=28f6b66b9b4f1f02ef5983ea0a77958a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=4c8f4c9cd2ca722bb138969134d48d6f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: ClosingParenthesis
+        Id: g=59c5092ce7000039c123d6dc05733db1
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=1ecf335fec46cb22706a8f9cef8c9681
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: ")"
+        - Name: Text
+          Id: g=f1b76652e5d96a69afd378f7af8fa0b7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":")"}
+        - Name: TextColor
+          Id: g=ceb42ce953faf79595835a9ac01e1c01
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0de4b1672fc10ccacda066b92c5667eb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=62cfc89af37ae2674808747173489700
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=ca85b71c884cbe41f7e0d8133a65b530
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow3
+      Id: g=d7f865582f4856afbf55d07a0642124f
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=519f1850fd8c5d8ea1e53beec1f0e329
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: HorizontalGap
+        Id: g=92d7d4d470e61fae0ebd65fc023d9621
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: LessThan
+        Id: g=4a3ca8d2fc81a777ab5aaccb88036ca9
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=1a2a515a48d06d96a6d87ed8e209da58
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "<"
+        - Name: Text
+          Id: g=c855b414a4105a0f396f7800a19066ed
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"<"}
+        - Name: TextColor
+          Id: g=ab894ec389c83a6080b5ed977d32d59e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=f1fabe5d029038899d5bee2541f64e02
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=7865fe9e27fbb1532317076f58c88f3e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=5eb7361456337e84dbdd508212883e62
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: GreaterThan
+        Id: g=4d61d4b9b10b003293e37b4c74563a87
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=6bdd5143857155be823b9eed2e805d8b
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: ">"
+        - Name: Text
+          Id: g=7338bd5e8558123cc795c90b9cf311e4
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":">"}
+        - Name: TextColor
+          Id: g=69e86edbea9ac5f301fb9ed5a79c15d2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=15094537e81c3923de01040ece333a4c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=06cf3b31499776ef6e19fe720692edac
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=05ebe24c99a89e43fea7dc289b74fb40
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Apostrophe
+        Id: g=1cfb32df923d0d92aac51cf3e356355f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=15fcf507b129431d4e28ad767c01dc4c
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "'"
+        - Name: Text
+          Id: g=705e9efa95fd03dbce86ee277c21e7e8
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"'"}
+        - Name: TextColor
+          Id: g=41475d46c26be5a548fda9b6aad03b9f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0df0c8d7db648fd1f30cd9e88d7281b5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=13bc7d489566349caf6d99a1ae2bc3a0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=37eb27551e2b40d96d7c2be98c1ea0df
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Colon
+        Id: g=44a51b1f9bdcb205b6c1dbcf18128cda
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=d72591449b53c7d75d3fdb6cc875588d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: ":"
+        - Name: Text
+          Id: g=c4b7da3402c2e60555350078f28ecc17
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":":"}
+        - Name: TextColor
+          Id: g=9f760bfc6d49b09fc1dbf3bdc5aca250
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2923b5bcd8faa693b88fbf5fced8795d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=9f326c4d6006025b2f329c56d92b4985
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=ace19f6049d1e8c054e047b8fb63584a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Slash
+        Id: g=7faf84b43a1f7300a0744f03695dad48
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=8ebd0a20211750da87c71c9d2390e251
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "/"
+        - Name: Text
+          Id: g=03bcfb00ea2fab6876f6775e3f7723a0
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"/"}
+        - Name: TextColor
+          Id: g=4725e32025f1ea84676216861bc2e748
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=d34528ad4798980740e9057122d87d61
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3caaefe6229680d280f6321897521d3e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=c2c3c2826d2d65f02dba946bd907d5be
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: ExclamationMark
+        Id: g=a16854b5e48eb03dd0e4d81710a6990d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=135fb9978cd192be08db79b999e43f88
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "!"
+        - Name: Text
+          Id: g=f08883bb6bbbfcc5e1460877346be8f8
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"!"}
+        - Name: TextColor
+          Id: g=892a61d83e923bddbefb3c4e387cd6db
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e7b9b8bd17f8c7f2085e70f2953e5ddd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=6fea9e3f18a2706522eb5921c05627a7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=7335521072efa54cdbd4ba6aec0fbeca
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: QuestionMark
+        Id: g=62efac1ae2d18a96a32e85867a7a8583
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e882947fc4c6d4b04075ad98b085a0d5
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "?"
+        - Name: Text
+          Id: g=927fb19985083d2fe1a17d281062fca7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"?"}
+        - Name: TextColor
+          Id: g=91fed862cab655efb7d3c4797950041a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=06c0153b37387526aece765bf9daa36c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=c01d5a2bcafb7e41833b0f92bff53a1f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=850a0bbfc9bab58d1fcfbd1bbadd15ed
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Backspace
+        Id: g=bbbde2c0ffa7d50b34294108779ac223
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: Symbol
+          Id: g=04d1355d77352eaaab7f73058f95ee6f
+          Type: BaseDataVariableType
+          DataType: VirtualKeyboardKeySymbolEnum
+          ModellingRule: Optional
+          Value: 2
+        - Name: ImagePath
+          Id: g=8f08fd45186f73dc7970fd6aa59cbcf9
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Backspace_Outline_24x.svg"
+    - Name: KeysRow4
+      Id: g=a55cb312a3a611f93128209ad1744fee
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=dbe8355e9a720ca377d9d1f14f50153d
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: HorizontalGap
+        Id: g=7b0bc397775003ed82102c133457ff07
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: Space
+        Id: g=2ca85ce76b1320d9fcf7d54e69a54a9d
+        Type: BasicSpaceButton
+        Children:
+        - Name: Text
+          Id: g=dd67a86dcca095f835a75baeb5f45fcc
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+      - Name: Enter
+        Id: g=1b6a705d5c6f2e9010b79c91c7ab57b9
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: ImagePath
+          Id: g=bbe00e380751d288b30658ee1868cb4e
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Enter_Outline_24x.svg"
+- Name: NumbersAndSymbols2
+  Id: g=7944c7cd3138aebe83cdc005568a3361
+  Supertype: Panel
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=0c6ca001d34a003405f405225640dfd2
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 630.0
+  - Name: Height
+    Id: g=22388416a5cb18c970fb301e1c1be6cc
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 230.0
+  - Name: KeysRows
+    Id: g=fba19e57b3455d7ae1ebdecfebb85756
+    Type: ColumnLayout
+    Children:
+    - Name: LeftMargin
+      Id: g=fc02dc5493237b9e707d266e8f415413
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: TopMargin
+      Id: g=f89f5ba941bece4bab844a4fa1b36ff1
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: VerticalGap
+      Id: g=f9daeccf5a62c41e84a033df8a69af99
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 10.0
+    - Name: KeysRow1
+      Id: g=206f4bcc21ebbc8217d27f40aa23e912
+      Type: RowLayout
+      Children:
+      - Name: HorizontalGap
+        Id: g=19686a80607322807950d8f49e09365b
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: Tilde
+        Id: g=cb66d27d75b1b5637a1311e077e2f3b0
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=6be90eb08e27aafac9ef97b82076c7d0
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "~"
+        - Name: Text
+          Id: g=f03225954eedf53c29439f79dc309e39
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"~"}
+        - Name: TextColor
+          Id: g=a2659d8be496bb6e020c254007e51550
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e390dc1dd50e79e08b0edc758b17212e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=76dfb167c217230fe6dd7771fd4871e1
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=b7f9d70ace62108728c1147d59683f87
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Accent
+        Id: g=e9d345c3fcba5cc027ed372908006de0
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=0a8c26213f27a341a8331126a206725f
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "`"
+        - Name: Text
+          Id: g=944a6b9222fa3c5429b22b372eac4531
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"`"}
+        - Name: TextColor
+          Id: g=96f62d685445b7dbd80f5af61c925296
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=c2444359670d46214e049e1291cc1f97
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8734e48d5ce800fd605300be2535eddc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=b48e6ce4bc64a5553da61fad31a853ac
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Pipe
+        Id: g=cb9118fdce14cdb98c58e99a1aae0dd0
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=346f0f3d5b0ca0cd74748a067bcf9701
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "|"
+        - Name: Text
+          Id: g=ed7f2cc160561a2e287553ff245f6f1c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"|"}
+        - Name: TextColor
+          Id: g=33b99bf691729a6bb51d6a3ebaf47b04
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=94f7a0e7f30103a57aabec154e861dac
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3f67562317ecf3b6b4e4ae7a0e0bb658
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=68b88ea9a075d5721fb5b7e198aed08c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: MiddleDot
+        Id: g=d83ce3f0c33003882a3c8e39ef3ebe39
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=292f01a569f78fb8ac5bd722be943063
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "·"
+        - Name: Text
+          Id: g=231b6981f911572ac29f98a9b54f9b95
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"·"}
+        - Name: TextColor
+          Id: g=b4214f86f8df094d0b3eab186a163c72
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=ac66615c9eb5782fbe2c396f99117238
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=7c26438c4355f74f2872fb763d6d95ca
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e5c81fb3372613aff313df1823cde7db
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: SquareRoot
+        Id: g=96f3b0ccf1bd865ac0eace65039f9e96
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5b97cda41ecc2c833c72dfd6198597c6
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "√"
+        - Name: Text
+          Id: g=db03086c380eb3ce6d65df8a0fe5f127
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"√"}
+        - Name: TextColor
+          Id: g=bd367470851cc18a92e1073d066de422
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=fa498388007355ec4c1e6512d15b72ed
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=7b6bc17aa09019b689387c913250ccc8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=85e2e3e7e7b74b65701422bd774af99f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Division
+        Id: g=85c66732ea94197c1ccf35541fa06522
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=eb91c98e1b9832fb4fa48ae937aa7ae8
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "÷"
+        - Name: Text
+          Id: g=910b9aca855ca8faaf35e209a91f582b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"÷"}
+        - Name: TextColor
+          Id: g=d3cabd127c0add68648d66692a7bcf69
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=af5814ff01148c9bf6e1a70b0aa0734c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=ce0dc91de3f72c1734d94f787ee84bc7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=cdeab08504fc00e4b3642a73fe74ca57
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Multiplication
+        Id: g=042aad170c7ba77874e25af372302ab8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=253301de5e3711f7604d49e280bc6db7
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "×"
+        - Name: Text
+          Id: g=82ca38e53c09c2449d6f8190bc85f12d
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"×"}
+        - Name: TextColor
+          Id: g=6dd9db336faef319ee9b5d42cbe3f74d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=4d931f189c3ff853d1e23b3b8d38599f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=1d2e4c0069c6c453996039de2991521d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=1009316d75801b71d6390653b2825f44
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: OneHalf
+        Id: g=5d1175c0ce8d2067ab22bbb16053c179
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=361c828aac6d1ca92abc77412a7fd9aa
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "½"
+        - Name: Text
+          Id: g=c526f12f2932a2eb880ab7c42792df1f
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"½"}
+        - Name: TextColor
+          Id: g=6b8d734a7366d2eeb1995f8dc58ad9ff
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=70052e509675d8060ec21b8a7800253f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=cb5a2bf8cafc018eeefa0aff3f324444
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=695153a866bf79de4a85e26ecfef0b61
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: OpeningCurlyBrace
+        Id: g=4f6c09dd7cce7c7b9495c6dd839f8650
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=433538448a292221231d033282719219
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "{"
+        - Name: Text
+          Id: g=23c80f659d5fc2c9e4e514d07e6f51b2
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"{"}
+        - Name: TextColor
+          Id: g=6bb2ffaa53db63866eeb953aaec10fd4
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=0d047f51c22b8a9381b77a9e7082f02f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=2f8bf10b0478994a7a9ff3530c1ddaad
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=7990af745577a605e87adf14883f21bc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: ClosingCurlyBrace
+        Id: g=fc0cc826f5526aaae35b995786d2ccc3
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=bbb10ad51c58d424c51871827b52bc3d
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "}"
+        - Name: Text
+          Id: g=9469a8737fedf8238e5010e2c47d6539
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"}"}
+        - Name: TextColor
+          Id: g=29e3389b6ca9b6ea802ef39c2cc1e426
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=cb60e19f0d9d1e908acf844516ee74cd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=71f59f75fc174f25904d028b141912ea
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=999d4da32d47c20c211195d856c1c15c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow2
+      Id: g=03fea602060ba9b696d167ab55609f92
+      Type: RowLayout
+      Children:
+      - Name: HorizontalGap
+        Id: g=ec40eac27b9b7cbe132c0df0e7617ff0
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: Dollar
+        Id: g=3839006a3af876e3a9efdd712109d28f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=3d59cbd8c903439daa2526acc51d8920
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "$"
+        - Name: Text
+          Id: g=1aa65df3e7db64f5afc8d3de783347f8
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"$"}
+        - Name: TextColor
+          Id: g=ab1631ebf7ecf9f2efd1ab4a1825e60c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=7c89887588e378d9ae53f6d54618fd04
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=61262dc9200925d4b7dfbca6d21996ce
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=fe8c2a56e83e872967fbf3794d6e6ac9
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Euro
+        Id: g=d9b224f81a8b48abe8e88dbb2ed1add6
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=b9009a758c6d30fbfc49fcb10a8be65c
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "€"
+        - Name: Text
+          Id: g=8d3600d2d02096217295139eb1628fb6
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"€"}
+        - Name: TextColor
+          Id: g=a9b8c0367b3ba8e3ed909c50e40dcd44
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=c19466f83dd9cffad44af7a323121be0
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=c93206b5646e880894e2d621a6296fe2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f129715278fd81cee0372078e7ac596c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Pound
+        Id: g=ef86108c8caf4050ad84ccfb9b7d83b8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=ef25133fdedf67bc9f1c6253a6d590c1
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "£"
+        - Name: Text
+          Id: g=2250c0ca19c056fd6a86e013d83f385a
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"£"}
+        - Name: TextColor
+          Id: g=351630a292d3a13ad8c7e5d1a9a3b4d0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=d96262d9d7a2a41122d976b204e0b713
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=901e91e905a76d4b1b3636719326ea68
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f45bea0e87bfe36249991f1d0ce7af5f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Cent
+        Id: g=2bae3c9fa92b79da3ef6176b97934ab1
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=c1bcaa8ae23ff137cff89f14e2ac44f5
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "¢"
+        - Name: Text
+          Id: g=ce13ebe59b7ac9e2c00d6acfd6c86a26
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"¢"}
+        - Name: TextColor
+          Id: g=7c8de9abf893bf942d69a983ebacd81f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=9e030fb0dd1c5ff7476e6cd874f314c4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3a13bb48255edd8b360a9ef9cc69ec91
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=bcc1fbb14ef9b95444d4bcc58dfc4356
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Yen
+        Id: g=aafe8cf2d563ddbef5bad2700f6428cb
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=95ac23b76aac07a4ef873e14a2078282
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "¥"
+        - Name: Text
+          Id: g=faae542bc2b8f7c0f5510a63f43ce467
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"¥"}
+        - Name: TextColor
+          Id: g=e2f7e4b7fad92cd3bab495ca80455e49
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=3c81eb557e9aa05b737e0e100430c48d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=e82b20e159a878e048dde4440c9ef8fc
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=15130f9b5ae5b7d757e3d8ae37e908f0
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Caret
+        Id: g=f3ef5f47a4345ade11056b85ffda62c1
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=42569ee6816d5bcf1ba91d2955ebc8a6
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "^"
+        - Name: Text
+          Id: g=7ac631e0469db885653dc70c4138d1da
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"^"}
+        - Name: TextColor
+          Id: g=0c1ce63b7fd6b75c7a9648494a1d02d6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=67a583d91b53861ae5f6f58aa509339c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=fc05090a4756dceff2104f46b07d0315
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=4b18bb1a910fc7ca12eade9d9670e982
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Equal
+        Id: g=6b629b939ead8c7d79790b048f21264e
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=0d58868e370851f887aacae59916a774
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "="
+        - Name: Text
+          Id: g=b35aa5da1962fef1326b42be07ab30b7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"="}
+        - Name: TextColor
+          Id: g=7e040ed327ebeb6c93089b3bb52d86ac
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=281bf89ce2afea816152b385d5626a27
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=5ffd3319274339b24689c9a23e04cb7b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=f7a45b89cdac10fc7f51e4de76b85479
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Backslash
+        Id: g=12711c7a9d64046dc376067d2eb524de
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=cc680642bd21fbf863d8e98dbacb3773
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "\\"
+        - Name: Text
+          Id: g=57a8528a085943a1a457f03913de2fa3
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"\\"}
+        - Name: TextColor
+          Id: g=e99643c39a5c959bab285894abcc579a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=89cecc08d98895b03b4e6d24909b9c23
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=ff47f5a6982c73ee393cad42b407584a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=a63e0bcc6cc6fbf1cba4b108985dee59
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: OpeningSquareBracket
+        Id: g=b0fb88f8c2eeb8c78b582568247f2f68
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=e1eed6a95db527cae480178ef15bbe97
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "["
+        - Name: Text
+          Id: g=fbf7df8892d3282f1fb3db09c66c0ff0
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"["}
+        - Name: TextColor
+          Id: g=1d6a187d5aea2b1d7a8b6519fb676c39
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2e2070270975b2f59d0db6931725de37
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=8a1f706b4f2331775014a7130086dc86
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e4620d300ff6e0998284d0cdd79a700a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: ClosingSquareBracket
+        Id: g=62c3892ceca098bd03b932ff69135ab7
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=748ecd64cd7c1b5fe67fdf136ce3e9b0
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "]"
+        - Name: Text
+          Id: g=22ba184b8284915297776fb31071d162
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"]"}
+        - Name: TextColor
+          Id: g=bc3ca46adaa97a79a900be33e4be3d16
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=64a26b6b0d289fda7f90ac19ccfba0cd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=7904e7fdf2f23885c76828c0c8e03ad8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=0033c536ff6fef276f6a04e80f68bff4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+    - Name: KeysRow3
+      Id: g=f3c098f159f20c9a74285c888c65f33b
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=a2ecfd57a021dac6472f7904e3dcd47e
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: HorizontalGap
+        Id: g=1dba2535f5009ced0299d7b365dd90d0
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: Trademark
+        Id: g=0b4a0b8f33b6f44ee59ba6c5bd4711d8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=5a31e56814ec52ef475ae46a48e57a69
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "™"
+        - Name: Text
+          Id: g=c69c4523c348e90ab1ba23ac489c6e1c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"™"}
+        - Name: TextColor
+          Id: g=94c2ac7ea8da73c370ad66bc03989585
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=3741faabe0bf2a97cf481832d3ee9a83
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=9f7f0d22d64420c3a58ddc4c3aca274d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=5a5eda7202d949a1a6b1f82320d013ba
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: LeftAngleQuote
+        Id: g=e25043a65fe7dcad55d7251322fca06f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=3eacdb6cd0a29f24d16a8eee12afbe71
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "«"
+        - Name: Text
+          Id: g=4dc5b2cd260718239ccbea6f1f85f123
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"«"}
+        - Name: TextColor
+          Id: g=851b2e3f4c3427fff03ded2b5ae2a202
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=bf48afdc2753765dbd201dfda6a29710
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=ee50b4c09dd9b74c590124cef1d17ffb
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=083b404646fda45e2eaa93b283577729
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: RightAngleQuote
+        Id: g=8a9d5cb471caa24d8e135fb999a47d8d
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=4e220e0e3ee88a04ef8887eb89a8c369
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "»"
+        - Name: Text
+          Id: g=2e9dc4f1afd7cc2280e1cda1fa48ab2d
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"»"}
+        - Name: TextColor
+          Id: g=b530f0d67659f70128a9331cf18de487
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=27084b27aada2dd16f262fdddb04f723
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=9f9f3687cbb0ecbd61561d37c7d84855
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8ccf0756d173b7d404f29436acb22fbc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: LeftDoubleQuote
+        Id: g=2e53377f783a3f34cd0cc6214c7bb0b8
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=abbda81a9a8d0af0c72f5a2f9355f7a8
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "“"
+        - Name: Text
+          Id: g=7b31b8f33a92fb0662b3bb009aff6a20
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"“"}
+        - Name: TextColor
+          Id: g=10a8c6d9d8ffa0b6fd672f0be088084c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=be34a1d5808a49ee49cc4bc373803ba7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=35767d020c1636db2ba9469a4b3b0122
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=2feb34f74b6101ebf7f29d12e6180d0c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: RightDoubleQuote
+        Id: g=2d2b186cfd2a763b91150a9f95b58c32
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=cf00b54fb778d03cd74dfed4ee52c067
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "”"
+        - Name: Text
+          Id: g=ccca6860ac2907c560e8e9be43e36755
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"”"}
+        - Name: TextColor
+          Id: g=002380ea63825499b83c9451c13d41b7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=ec1e76fdab643c63a48e7ee688a3bcc3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=754730f148747898cc4e1bff8da5e2ec
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e9bce86e21afdb80e9d66af8b7972dc6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Ellipsis
+        Id: g=0ff08209087c1ae4f169095da717e32f
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=6f7ce126f8543d58297f604a4ea17427
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "…"
+        - Name: Text
+          Id: g=0ebca8a65949f145ed02bc498e25d8a8
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"…"}
+        - Name: TextColor
+          Id: g=f4ed831649b6803539d126499860f83e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=e21f0d7bd9c7c869f90737889d067b82
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=810f7f6dfa77408ed5395bb7bd49d607
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=e155c3f9ff22e0a5f7098af30931d37d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Comma
+        Id: g=79d20e2c9d9e85ac94344c459abc4e6b
+        Type: BasicTextButton
+        Children:
+        - Name: Key
+          Id: g=346c03b139d99bda42a6f78b17a626af
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: ","
+        - Name: Text
+          Id: g=003949b4f9499a3e71a29dbec131b744
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":","}
+        - Name: TextColor
+          Id: g=2d7aefed6eb3fd9a5ab9923aa5caed3c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=2000132fa187977bebb852a74057f64c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+        - Name: BackgroundColor
+          Id: g=3c096fa9d0032e43b2d85a7054b52bb7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#e4e4e4"
+          Children:
+          - Name: DynamicLink
+            Id: g=8634d2d2b2a621947e5dd6a91ffbc245
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+      - Name: Backspace
+        Id: g=87e2d6b27fa787f2d806ef00d0f101c9
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: Symbol
+          Id: g=52e3742fc762aab49e26b09a1e7258db
+          Type: BaseDataVariableType
+          DataType: VirtualKeyboardKeySymbolEnum
+          ModellingRule: Optional
+          Value: 2
+        - Name: ImagePath
+          Id: g=7f7d8c60a7568fb28427606306de2621
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Backspace_Outline_24x.svg"
+    - Name: KeysRow4
+      Id: g=b1044a13e5276e6964201445d85df4ac
+      Type: RowLayout
+      Children:
+      - Name: LeftMargin
+        Id: g=8a94438d0b114593bed153540a97580b
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 90.0
+      - Name: HorizontalGap
+        Id: g=92fb8e0c96e40e0a5f67bb9dd9fe1b71
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 10.0
+      - Name: Space
+        Id: g=fe71ae9dc149a0b966919fb2ac910f4a
+        Type: BasicSpaceButton
+        Children:
+        - Name: Text
+          Id: g=45c2433029cd374f0442ff21da705bd4
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+      - Name: Enter
+        Id: g=02efdaa2de5f565ec9e6f274789284dd
+        Type: BasicSymbolHorizontalButton
+        Children:
+        - Name: ImagePath
+          Id: g=4b9681d4ae8954d4eaee372f50a1800b
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          ModellingRule: Optional
+          Value: "ns=32;%PROJECTDIR%/res/Enter_Outline_24x.svg"

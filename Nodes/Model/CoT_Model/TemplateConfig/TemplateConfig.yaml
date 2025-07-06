@@ -1,0 +1,82 @@
+Name: TemplateConfig
+Id: g=e705be094a977079699f7a3b2d943a98
+Type: FolderType
+Children:
+- Name: CoT_TemplateConfig
+  Id: g=d9de4e9d5bf02cd41ce79da5ba68dd98
+  Supertype: BaseObjectType
+  Children:
+  - Name: input
+    Id: g=40e94dc522344a2be8d8439b545c4af9
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: standardUser
+      Id: g=34ce5d00b9f5447d016b5a89e7c54368
+      Type: NodePointer
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Id: g=5cba1dfc1897c26fd20e455a01a2ae60
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/MyHMI_Template_Unencrypted/UI/CoT_TemplateTypes/Security/CoT_User"
+    - Name: instructionManualPath
+      Id: g=1b1a3da28c432b05e96d55516eca788f
+      Type: BaseDataVariableType
+      DataType: ResourceUri
+  - Name: inOutput
+    Id: g=6cab14728c92bac71bc4671dd901e8c2
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: standardUserPassword
+      Id: g=7ba0b45dcbc954c9330a27f78f402f1c
+      Type: BaseDataVariableType
+      DataType: Password
+  - Name: output
+    Id: g=30f3b9caade2dd2de086108a3d73610a
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: templateVersion
+      Id: g=bf1637785990d2ffe24394746abd9239
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0.2.0"

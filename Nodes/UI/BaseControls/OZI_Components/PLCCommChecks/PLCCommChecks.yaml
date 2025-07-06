@@ -1,0 +1,487 @@
+Name: PLCCommChecks
+Id: g=74680b8548266e3b99e18e13e8126722
+Type: FolderType
+Children:
+- Name: OZI_CMP_PlcCommCheck
+  Id: g=33f5134f63533fae1912890f6283d129
+  Supertype: BaseObjectType
+  Children:
+  - Name: internals
+    Id: g=316a8895a33039bc72dda4ab327e8fac
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: secondsValue
+      Id: g=418a70a73169210f02c24e23039d5796
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=eb3ea1ecd2177bf2c92ec720c872a754
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/MyHMI_Template_Unencrypted/NetLogic/CoT_NetLogics/ClockLogic/Time/Second"
+        Children:
+        - Name: Mode
+          Id: g=4a22b349cb541866505d81e6ec184082
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: secondsElapsed
+      Id: g=07c685bf7ce3ae0e0654be28558899a8
+      Type: BaseDataVariableType
+      DataType: Int32
+  - Name: internalssecondsValueChanged
+    Id: g=0cdfba4ae04c3b9e48245981ab1bf7ee
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=84f82b79506fbf46d105207ce9337978
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../internals/secondsValue"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=1f5767a75dadacfb3034af41d6cbc491
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=0177124cf18bfd889c1375106c12fcaa
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=77249bac9da0b3fea62a1a35e771799b
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=6c35f1f8c780b7244b98a6b7eb754db5
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=0065ece4b476b5632893158af769e578
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=494640056eac88264139954b4feaa2da
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=1d183809550fcca46517d70c1334a097
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Increment"
+          - Name: InputArguments
+            Id: g=dbe38bab4112ad8758317e3d47457fde
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=db4f7e59542203d318f79e8695479b76
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"IncrementVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=9442b9c493d1252741d696172a9e9d29
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../internals/secondsElapsed@NodeId"
+            - Name: Delta
+              Id: g=96dd6a81903fe3dc2f2d5c314f30bfa9
+              Type: BaseDataVariableType
+              DataType: Float
+              Description: {"NamespaceIndex":9,"TextId":"IncrementDeltaDescription"}
+              Value: 1.0
+            - Name: ArrayIndex
+              Id: g=4e56a77b537ff51dc7a76a3f6d5a12a2
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"IncrementArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+        - Name: MethodContainer2
+          Id: g=bda450415f5710359a68fe85f4fee564
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=689bce3b4642444889d0ce7de1a43586
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=d57026caa676c3d3468763a352e76820
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=c336702ccff0aba1fcb2c0fb7c927d61
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Toggle"
+          - Name: InputArguments
+            Id: g=1d3c7611ca4f86b77bbfe49b39de36dc
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=6a92fc497b3a3e51126f0f8eb7248a8c
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"ToggleVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=4f4619e2e42977710ca8d427b4fa80a7
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../lifeBitToPlc@NodeId"
+            - Name: ArrayIndex
+              Id: g=61f992aaea647074a593561b2d012bc6
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"ToggleArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=a5dfd3fb02f10c93f81253647766104a
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=ea3910802918e8d8f2cad1587e0c6845
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=6afd40a86a9d1cac9538e334b96b0711
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=fd501cca1e327d88593588f28874cd7e
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=93e9e9778320540f11904f98fa49ac66
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=62d813559ac633e222c0672be9eab208
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=1f71b97bc5073d5865ef0d03ecb05c59
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=ee0e4f0a5cc61947aaf35f0b2f16c9b9
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=51e74296ef24552370ea5d5a247f88d0
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=398d99c27ec5ede2c4b12bdb7359bd59
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=3e5b7c7bd4dfcfa40310f0e7d1839d75
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=7d6b2bb38ea10ae8f93331addec145a5
+          Type: PropertyType
+          DataType: UInt16
+  - Name: lifeBitFromPlc
+    Id: g=197a08a6278aabd6e25db0c12c3130ee
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: lifeBitToPlc
+    Id: g=a44916136269637c7ac577b07ece61ff
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: alarmTimeout
+    Id: g=037f9e83510250328df436b016302fc5
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 30
+  - Name: alarmValue
+    Id: g=3ea31b2a1d8f1175564f94fda507c20d
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: lifeBitFromPlcChanged
+    Id: g=c5c9a634a5b4afda74856190898c12ea
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=6034ce1021c4d28b24660d4a2055d61a
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../lifeBitFromPlc"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=f78437f8df612eac480c6c75249d1415
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=7fb7df62d707e6e12cb2c700eef5cffd
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=da7e153315eb57191502c143f69a6a82
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=3e7e61ef9e3794881bdc4f67fd378f27
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=8d210c6ca15aaffd023002d71340a934
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=e68cbd22a21cd9fbbce151b9feb0802c
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=913d6ab3f0996ff1de62827d3278f14b
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=cf58c9cdcc208f43fd11ed39084f736a
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=da5bf09af865876b11407dd809c2e994
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=a7526d515511c4b40510fdd0a58f98c9
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../internals/secondsElapsed@NodeId"
+            - Name: Value
+              Id: g=4c526370a95f34b9b280bd0d0c55ca73
+              Type: BaseDataVariableType
+              DataType: Int32
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+            - Name: ArrayIndex
+              Id: g=44fbffc1d055f1e683aeaead16596ac1
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=323a2a9b71361e71206feaf836e2a9cc
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=94b0b21a0abd79ae354a80bff057da50
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=f6706f9f5827304d719d592206cded25
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=4345e9534ed67888ed46e1ab594cf9ee
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=1a0b382eb08b1d3e36e94d21c6a8342e
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=6052721830edfb9075563ca97aef944e
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=2aa2a69a31d63b16bac4601246d238f7
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=44faa31b77a764198ef9e93a4585cb16
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=707b334ce1ba8cc87650c66b9c45c7c2
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=5404b9d943d1d707dadd11925adc8b0c
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=8dd4259593615c5fc08e4837454d2e37
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=2a2104d6e67e07b9070f7f5978541041
+          Type: PropertyType
+          DataType: UInt16
+  - Name: internalssecondsElapsedChanged
+    Id: g=5c5bc234d5b507a6594278d37028fd22
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=3d904be3ff163a73d217244112a67a10
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../internals/secondsElapsed"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=8447b0df715940b5304a79f4f842939d
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=601360af414bd610b18ced718afa82db
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=9b4f669aa85351d6558e578da96c5483
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=a0233efd58e96272e01a879c382a1bf9
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=139a67163bc05db7c9af4cdd681b8661
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=88eba0760d00fc9613f4406094ff6e5d
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=821e6664a0b7d6ecc6cd195520a603e6
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=22185c41466fc2430a05077a53558004
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=e112eba3ea60ccd69221c069ac4447c7
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=7da444d084107a8337d07a5ff9c1d54e
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../alarmValue@NodeId"
+            - Name: Value
+              Id: g=0eb264f43d2924ef8e91a0596f4c4466
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=4425f5669ecdc71a659fbde0795de640
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Expression
+                  Id: g=61838b31f5048a38788d320d3a0525f2
+                  Type: BaseDataVariableType
+                  DataType: String
+                  ReferenceType: HasParameter
+                  ModellingRule: Optional
+                  Value: "if({#secondsElapsed} >= {#alarmTimeout},true,false)"
+                - Name: ns=9;SourcesecondsElapsed
+                  Id: g=d34aec317a7dedae091c92056421a000
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=4d8d6fd5182470943d96654706573586
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../../internals/secondsElapsed"
+                - Name: ns=9;SourcealarmTimeout
+                  Id: g=fb8810db0a9c0bc86e7f6223ada7cf4c
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=da7e530217a620ee427f6b596e24d1d3
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../../../alarmTimeout"
+            - Name: ArrayIndex
+              Id: g=06c1ed47a6bff64cd450b7e97da20ba0
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=38c8f2e6cec522493f286e2837cf5f74
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=66d481df2a27aae05253fb34c6289828
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=b75420baeb31f63a0f91cf3b07611f3f
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=389df008df888fc284306364c6b0eac4
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=931dd49d5c20c36e8960e7771254a214
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=a74749dbd2533c93960859c644ea98d4
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=1d1a4d31219cb355eb2a78e6c40802f3
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=7d2d9abeb4ea288f12f1762bb3955a56
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=7859f42b0b9254d9de95216969c7f3cf
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=f0cc642f61774433f472c78f8b21eec3
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=f846d0e2f80f1e28b0e7629e5b2d0f3a
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=f91aaa87f8f9230f5e4cf0c6475e03d4
+          Type: PropertyType
+          DataType: UInt16

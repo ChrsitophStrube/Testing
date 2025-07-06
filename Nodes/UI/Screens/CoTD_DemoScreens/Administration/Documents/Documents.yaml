@@ -1,0 +1,417 @@
+Name: Documents
+Id: g=49fe82648a36ae7f9e278b07ba302311
+Type: FolderType
+Children:
+- Name: CoTD_MachineManual
+  Id: g=8d6c2e1323c8f051af2a5d2ac504445c
+  Supertype: CoT_MachineManual
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=85769f10c34c83496cd8ffc3a497bcf0
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=a54c4964928c20f32c90b0fa09c72643
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=d586569b0d7a025d57acaa19aabbebe2
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=8346165d812f9e49e317975f4d22cf0e
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=be838700d679c73e094f1a0bcb4937a4
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=b63998a4afc0d457fe3a8c426e638f54
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=00585c0e17bcd477709c07eb601c884c
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=fd0dbc28f2fcb83f35f8d446b1aa186b
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=584742a04aa88e385a15c74668afad8c
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=224a0356b9dd6f66d76843e326b41164
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=af6f855c03cd1d51faa65c0e1260154b
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=3e171b9b3086c64f13a79a36abe0fa11
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_ProcessFlowChart
+  Id: g=64d32a2be8e5e4eb4a07c0675079fc19
+  Supertype: CoT_ProcessFlowChart
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=5766e1bb1034b5ffc9498c7f243d0bcd
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=9b896064a7cf716089530e45a7c81afc
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=9fd320d42fc94e904dbc83e775749343
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=d91989c649ebc716e6bdfdf7e2efb059
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=4e73dec5cc5edfec64759e0adab388c3
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=0921bd0682b43d692ac867b99388c16e
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=adb64e537afe89f02c169d10df3a14a0
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=69561b612a24f1d04371c5f77b566922
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=65538603b77be57b68082cc016d76043
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=36c3db0a0d77a76afb69997f6adea0de
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=7321ebffac4a321cb45786fe0b596082
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=e676c610632cd44f682af7e6b71e17d2
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_ElectricalDiagram
+  Id: g=afe9b0488da2e16d8978a5917caa5ae3
+  Supertype: CoT_ElectricalDiagram
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=87d6f0cd8c5967eb68f9e37aae4fc332
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=327cfe39fef34e927d24ddb043b034b9
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=232545860dad5436650bcbc2b3c6bb38
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=84ebdb4b1fd5ba54feabc01f846a64bb
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=ded9ab0b158bb22b1a73894dc7e7edeb
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=746c68603821ee2e4c8fc47461263838
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=f6502d4873e4dd67eaee048e22db01e9
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=738e0aee9ec6a67669901d676fad4638
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=43163764638852f4cde4453769e024bb
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=72bec103913a96a3c5285aba1d3b157c
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=fe030c264a4c8b39d4249d407372819e
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=8a7fe47aa36be785b602bda9ca88462e
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_HMIManual
+  Id: g=98c55e2274f12b77bad7e26dedb4fe88
+  Supertype: CoT_HMIManual
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=d85bf1a7243b1bb52cdd83fed5454828
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=7dfdba17f4f3e003babdb3168548cead
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=fe97f5640786642b9807bef6e2e9a1ef
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=3fb5331e8a09b6cd0ebf4edbef4744f3
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=4af0044212bcd659198ee3a6d01951d6
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=cf91b50b4e4080ebcdfbb6e850e132df
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=584105e14bc4120a3cd16e9c626214dc
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=21440cc2fa8c9181789ed830a60be18e
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=73a02d73c114307ccddc7aa6b6261252
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=138b9682eae123b43f5fb1b144f80ad1
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=06805008e4d12ae2a4a342e7e1801146
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=c15b040fc17c536a7dc28dc794c4da2d
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_OSS
+  Id: g=b011102191efc88e6124d5c3910cd742
+  Supertype: CoT_OSS
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=ccb461c5894f7beaf891ee410320d9ea
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=1a6e693f4c320ef43f58347818191b77
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=ac00fe8f8a04370691cc9c3cfb4fd834
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=83ac1bc33ce7cce5d391705b49c13260
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=3516a32210eead80fa5b672a7c099fe0
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=f606af0fa42431c001fdbab6073a0411
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=4e95831866b33d7e19e41514ef746c1a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=d16ed4c25408352f62b0ae8bbd8dbef6
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=91d9628fd4db847476400fb7134cf8c6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=8f141413fe534410d5b734d6e8881fb4
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=680dd268396217eaca9bf24ede0fd610
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=2d91f20cd76f6f3150be3bab79617d80
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_DocuViewer
+  Id: g=e695519b53503f70e16d3e20a2cf4741
+  Supertype: CoT_DocuViewer
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=786c9c5d3c14b3f0c0e665b1148a2b05
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=63b5072e80dcfacb0e08228188bc6b07
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=f288e8eb7e43eb7a07dc9c9a2fee954d
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=262bc56acebb2aff73f9ca7eb9b9b928
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=582df1682afaa9a4a8427712434d3ddc
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=3d40c17daa0bdbaf4c1fd3a1cea05204
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=1fdabdb2b4bc9fca4931a006ba6a8b38
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=6b9a1c1a9c98628395e1a8aacb0f6742
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=7f8a155479b5b052991d9a305ebf37a3
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=7473900062bc8b40bcac883d2b303702
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=e026c8dfcb1980c8ef3b7946b2c67480
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=9d51347ab0328c7fae07c8c6dc2a23f2
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+- Name: CoTD_Abbreviations
+  Id: g=09cb3c2862e16ad44af1f77479fb8931
+  Supertype: CoT_Abbreviations
+  ReferenceType: HasComponent
+  Children:
+  - Name: isGuidedWorkflow
+    Id: g=d0bed1dbb9269f4e102e105e6cfcf27e
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: navigationRestriction
+    Id: g=73ba95912d63c2a5196fafc316a74810
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: VerticalLayout1
+    Id: g=040ec9cc2a6a297bb6164eb32c3c24e3
+    Type: ColumnLayout
+    Children:
+    - Name: Label1
+      Id: g=b739b6782baed632b9816a91c82bf8c7
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=495063ff669faedb8bcdb904f1049e2c
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":32,"TextId":"CoTD_WorkInProgress"}
+    - Name: Label2
+      Id: g=cb798c4de8b76739be63d4910d850251
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=70ac58cc971f49de32862e28649a182d
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=3581607baed764bc2bfb0e1cb0ef1ac5
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=52c6d6f611a4dc4061fa0fd21957a678
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=d642b1e2aa75b3155c5e97f927dd9c5d
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../..@BrowseName"
+  - Name: title
+    Id: g=e82955ec9a74c4b0ab7bda5fde804782
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: pageHelpPath
+    Id: g=9eb031587da085cd614407fae09dac24
+    Type: BaseDataVariableType
+    DataType: ResourceUri

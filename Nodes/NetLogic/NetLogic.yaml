@@ -1,2 +1,5 @@
 Name: NetLogic
+Id: g=8d355c6f313cd0bbd7b697039fc94365
 Type: NetLogicCategoryFolder
+Children:
+- File: CoT_NetLogics/CoT_NetLogics.yaml

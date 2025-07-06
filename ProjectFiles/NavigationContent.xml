@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<NavigationContent xmlns="MyHMI.NavigationContent"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="MyHMI.NavigationContent NavigationContent.xsd">
+    <NavItem Title="TestScreens" IconPath="Icons/icon-monitoring.svg" ScreenPath="">
+		<NavItem Title="Components Dev" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_Components" />
+		<NavItem Title="Components1" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ComponentsOverview1" />
+		<NavItem Title="Components2" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ComponentsOverview2" />
+		<NavItem Title="Controls" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ControlsOverview" />
+	</NavItem>
+	<NavItem Title="Produce" IconPath="Icons/icon-produce.svg" ScreenPath="">
+        <NavItem Title="Select recipe" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeManagement" />
+        <NavItem Title="Setup format parts" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Preparation/CoTD_SetupFormatParts" />
+        <NavItem Title="Clean" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Production/CoTD_Cleaning" />
+        <NavItem Title="Observe production" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Production/CoTD_Dashboard" />
+        <NavItem Title="End production" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Production/CoTD_EndOfProduction" />
+		<NavItem Title="Components Dev" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_Components" />
+    </NavItem>
+    <NavItem Title="Analyze data" IconPath="Icons/icon-monitoring.svg" ScreenPath="">
+        <NavItem Title="Performance history" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_PerformanceHistory" />
+        <NavItem Title="Machine status history" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_MachineStatusHistory" />
+        <NavItem Title="Reject history" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_RejectHistory" />
+        <NavItem Title="Message history" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Messages/CoTD_MessageHistory" />
+        <NavItem Title="Top 10 messages frequency" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_Top10MessageFrequency" />
+        <NavItem Title="Top 10 messages duration" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_Top10MessageDuration" />
+        <NavItem Title="Audit trail" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_AuditTrail" />
+        <NavItem Title="3D alarms" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Messages/CoTD_3DAlarms" />
+        <NavItem Title="PackML" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_PackML" />
+        <NavItem Title="PackML statistics" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Monitoring/CoTD_PackMLStatistics" />
+    </NavItem>
+    <NavItem Title="Manage recipes" IconPath="Icons/icon-manage-production.svg" ScreenPath="">
+        <NavItem Title="Manage recipes" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeManagement" />
+        <NavItem Title="Product parameters" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeParameters" />
+        <NavItem Title="Machine parameters" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeParameters" />
+    </NavItem>
+    <NavItem Title="Administer" IconPath="Icons/icon-administrate.svg" ScreenPath="">
+        <NavItem Title="Backup/Restore" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_BackupRestore" />
+        <NavItem Title="Network settings" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_NetworkSettings" />
+        <NavItem Title="User administration" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/UserManagement/CoTD_UserManagementScreen" />
+        <NavItem Title="Diagnostic server-client" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_ServerClientDiagnostic" />
+        <NavItem Title="Device server" IconPath="">
+            <NavItem Title="Runtime" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Server/CoTD_Server_Runtime" />
+            <NavItem Title="Services" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Server/CoTD_Server_Services" />
+            <NavItem Title="Clean up" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Server/CoTD_Server_CleanUp" />
+            <NavItem Title="Logger" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Server/CoTD_Server_Logger" />
+        </NavItem>
+        <NavItem Title="Language change" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_LanguageChange" />
+        <NavItem Title="Remote access" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_RemoteAccess" />
+        <NavItem Title="Versions" IconPath="">
+            <NavItem Title="Versions HMI" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Versions/CoTD_Versions_HMI" />
+            <NavItem Title="Versions PLC" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Versions/CoTD_Versions_PLC" />
+        </NavItem>
+        <NavItem Title="SSI" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_SSI" />
+        <NavItem Title="Options" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_Options" />
+        <NavItem Title="Documents" IconPath="" ScreenPath="">
+            <NavItem Title="Machine manual" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_MachineManual" />
+            <NavItem Title="Process flow-chart" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_ProcessFlowChart" />
+            <NavItem Title="Electrical diagram" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_ElectricalDiagram" />
+            <NavItem Title="HMI manual" IconPath="Icons/Icon_HMIManual_HMI.svg" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_HMIManual" />
+            <NavItem Title="OSS" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_OSS" />
+            <NavItem Title="Docu viewer" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_DocuViewer" />
+            <NavItem Title="Abbreviations" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/Documents/CoTD_Abbreviations" />
+        </NavItem>
+    </NavItem>
+    <NavItem Title="Machine settings" IconPath="Icons/icon-structure.svg" ScreenPath="">
+        <NavItem Title="Commission" IconPath="" ScreenPath="">
+            <NavItem Title="Expert tuning" IconPath="" ScreenPath="">
+                <NavItem Title="MODX Tuning" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Commissioning/CoTD_ModXTuning" />
+                <NavItem Title="MODY Tuning" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Commissioning/CoTD_ModYTuning" />
+            </NavItem>
+            <NavItem Title="Simulation" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Commissioning/CoTD_Simulation" />
+            <NavItem Title="Maintenance" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Commissioning/CoTD_Maintenance" />
+        </NavItem>
+        <NavItem Title="MODX1" IconPath="" ScreenPath="">
+            <NavItem Title="Overview" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/CoTD_ModX1_Overview" />
+            <NavItem Title="Belt" IconPath="">
+                <NavItem Title="General" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/Belt/DemoModX_MS_Belt_General"></NavItem>
+                <NavItem Title="Motor" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/Belt/DemoModX_MS_Belt_Motor"></NavItem>
+            </NavItem>
+            <NavItem Title="Collator" IconPath="">
+                <NavItem Title="General" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/Collator/CoTD_ModX1_MS_Collator_General"></NavItem>
+                <NavItem Title="Motor" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/Collator/CoTD_ModX1_MS_Collator_Motor"></NavItem>
+            </NavItem>
+            <NavItem Title="Upstream Belts" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModX1/Upstream Belts/CoTD_ModX1_MS_Upstream_Belts" />
+        </NavItem>
+        <NavItem Title="MODY1" IconPath="" ScreenPath="">
+            <NavItem Title="Overview" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/CoTD_ModY1_Overview" />
+            <NavItem Title="Belt" IconPath="">
+                <NavItem Title="General" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/Belt/DemoModY_MS_Belt_General"></NavItem>
+                <NavItem Title="Motor" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/Belt/DemoModY_MS_Belt_Motor"></NavItem>
+            </NavItem>
+            <NavItem Title="Collator" IconPath="">
+                <NavItem Title="General" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/Collator/MODY1_Collator_General"></NavItem>
+                <NavItem Title="Motor" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/Collator/MODY1_Collator_Motor"></NavItem>
+            </NavItem>
+            <NavItem Title="Upstream Belts" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/ModY1/Upstream Belts/CoTD_ModY1_MS_Upstream_Belts" />
+        </NavItem>
+    </NavItem>
+</NavigationContent>

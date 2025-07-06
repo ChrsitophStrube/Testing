@@ -1,3 +1,25 @@
 Name: Roles
 Id: g=168315c4ba704e70bb13e35de715eb03
 Type: RolesCategoryFolder
+Children:
+- Name: Produce
+  Id: g=0c2c6a54b79d69dd234226857ad6e6fe
+  Type: ns=1;RoleType
+- Name: SetupMachine
+  Id: g=02e6a8dc8f451c06adf513b05f27fedb
+  Type: ns=1;RoleType
+- Name: Maintain
+  Id: g=caf9284b8870c62cad8b2f1919df6111
+  Type: ns=1;RoleType
+- Name: Analyse
+  Id: g=2a25b91fcc3ee46445de78ad81b769dd
+  Type: ns=1;RoleType
+- Name: Administrate
+  Id: g=5e508b74d6ac3fc8d6f1322940aa68a0
+  Type: ns=1;RoleType
+- Name: SyntegonFieldService
+  Id: g=df629f7ac4c51d079b481d07bc8322f1
+  Type: ns=1;RoleType
+- Name: SyntegonExpert
+  Id: g=640f26ad2506d1453c60af57ade98001
+  Type: ns=1;RoleType

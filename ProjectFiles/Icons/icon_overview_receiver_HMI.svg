@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Outline_x5F_Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+		fill: #000000;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="48" height="48"/>
+    </clipPath>
+  </defs>
+  <g class="cls-2">
+    <path d="M23,27h-2v-2h2v2ZM27,25h-2v2h2v-2ZM23,31h2v-2h-2v2ZM21,29h-2v2h2v-2ZM27,31h2v-2h-2v2ZM27,39h2v-2h-2v2ZM23,39h2v-2h-2v2ZM19,39h2v-2h-2v2ZM15,39h2v-2h-2v2ZM31,37v2h2v-2h-2ZM27,33h-2v2h2v-2ZM23,33h-2v2h2v-2ZM19,33h-2v2h2v-2ZM31,33h-2v2h2v-2Z"/>
+  </g>
+</svg>

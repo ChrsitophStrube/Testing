@@ -1,0 +1,20 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" data-testid="item=checkbox,state=checked,mode=disabled" xmlns="http://www.w3.org/2000/svg">
+<g id="checkbox-item">
+<g id="Frame 10">
+<rect x="12" y="12" width="48" height="48" rx="1" fill="url(#paint0_linear_2638_20499)"/>
+<g id="done" clip-path="url(#clip0_2638_20499)">
+<path id="Vector" d="M33 40.2001L28.8 36.0001L27.4 37.4001L33 43.0001L45 31.0001L43.6 29.6001L33 40.2001Z" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2638_20499" x1="36" y1="12" x2="36" y2="60" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D4D6D8"/>
+<stop offset="0.5" stop-color="#C9CCCF"/>
+<stop offset="1" stop-color="#C7C9CB"/>
+</linearGradient>
+<clipPath id="clip0_2638_20499">
+<rect width="24" height="24" fill="white" transform="translate(24 24)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "documentationRules": {
+      "companyName": "Syntegon",
+      "copyrightText": "Copyright © {2024} Syntegon.",
+      "documentExposedElements": true,
+      "documentInternalElements": false
+    },
+    "namingRules": {
+      "allowCommonHungarianPrefixes": false,
+      "allowedHungarianPrefixes": [],
+      "fieldPrefixes": [
+        "_"
+      ],
+      "staticFieldPrefixes": [
+        "s_"
+      ],
+      "interfacePrefixes": [
+        "I"
+      ],
+      "enumPrefixes": [],
+      "typeParameterPrefixes": [
+        "T"
+      ]
+    },
+    "orderingRules": {
+      "elementOrder": [
+        "kind",
+        "accessibility",
+        "constant",
+        "readonly"
+      ],
+      "usingDirectivesPlacement": "insideNamespace",
+      "systemUsingDirectivesFirst": true
+    },
+    "indentationRules": {
+      "indentationCharacter": "space",
+      "indentationSize": 4
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "require",
+      "allowConsecutiveUsings": false,
+      "newlineBeforeOpenBrace": "all",
+      "allowMoreThanOneBlankLine": false,
+      "maxLineLength": 100,
+      "noTrailingWhitespace": true
+    }
+  }
+}

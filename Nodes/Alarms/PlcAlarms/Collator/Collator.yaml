@@ -1,0 +1,808 @@
+Name: Collator
+Id: g=c2c1863bdfabdf68a82a699eae4df205
+Type: FolderType
+Children:
+- Name: 30.061.001
+  Id: g=c119aa50c15b966ba2b932c2bc01c8c6
+  Type: CoT_PlcAlarm
+  Children:
+  - Class: Reference
+    Target: ns=27;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=154
+    Direction: Forward
+  - Name: NormalStateValue
+    Id: g=c4abea6cbb20857941d19a7f298a1826
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=464981b6a19c9c15fa9000fba2c05cae
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: LastEvent
+    Id: g=e4da692d34ec51d2a802f0df653d4398
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: CausesRemedys
+    Id: g=a31002da86e77f3158aad9c9d6a34e07
+    Type: BaseObjectType
+    Children:
+    - Name: CauseRemedy1
+      Id: g=c2bcc019bf3a36967b9c15e8caa2c63f
+      Type: CoT_CauseRemedy
+      Children:
+      - Name: cause
+        Id: g=c20ffd778128385426d64e66297bfb32
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Invalid parameter setting"}
+      - Name: remedy
+        Id: g=d0395a7d7bd3829692512edab35cb679
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Undo recent changes\nCheck BLT speed parameter values"}
+      - Name: helpPictures
+        Id: g=1772a16f60ef34b5481b0bfeaad8d5c3
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        ValueRank: OneDimension
+        ArrayDimensions: [10]
+        Value: ["0","0","0","0","0","0","0","0","0","0"]
+      - Name: screenLink
+        Id: g=ea783287e457876d618dd0e9fbd8f63d
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Id: g=fe6c6bb877307314aecd2ecb63e5a0b1
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/Panel/Screen"
+  - Name: displayedText
+    Id: g=030d41dd9b44ed62f20b6e410712a2ef
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+    Children:
+    - Name: StringFormatter1
+      Id: g=c02d5420f32b268f80d7bdbba034ed28
+      Type: StringFormatter
+      Children:
+      - Name: Source0
+        Id: g=bdba06e313433d336108e40cbfe24ec2
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=99d13ba7243e59f613c4eb50009a89ae
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextStatic"
+          Children:
+          - Name: IsPull
+            Id: g=082dab386f5f68886b583524adc61935
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+      - Name: IsPull
+        Id: g=dc836e79f9a0bc4e08269bb54f0c1447
+        Type: PropertyType
+        DataType: Boolean
+        ReferenceType: HasComponent
+        Value: true
+      - Name: Source1
+        Id: g=405e245c4001c670d4a2c9918ab3fa8b
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=e05edd6218a40e9496aa7f3aa2132d98
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextDynamic"
+          Children:
+          - Name: IsPull
+            Id: g=0f613b717d3b22299c6e042bf3412306
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+  - Name: id
+    Id: g=7b68fc82ef6d95707fac636e28baff42
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 30061001
+  - Name: description
+    Id: g=f657b887b7d4ccf5a8f6cffe33c04723
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"NamespaceIndex":32,"TextId":"CoT_MSG_NoSolutionAssigned"}
+  - Name: audittrail
+    Id: g=bfe3623924f8e4de84ed356b547b8328
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageType
+    Id: g=a081e3930c218aa1e0119351e7e68d79
+    Type: BaseDataVariableType
+    DataType: CoT_MessageType
+    Value: 4
+  - Name: resourceLabel
+    Id: g=0c2b64985155a569bd44d5792c5539d8
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: singleAlarmAcknowledge
+    Id: g=88b5a267add0e232c267976684e9a3ba
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageTextDynamic
+    Id: g=df4ac2b27336eeb1d14400f0cf9053ba
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: messageTextStatic
+    Id: g=01d0773d9e9902038771504c5e3db498
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Configuration error"}
+  - Name: Message
+    Id: g=1255ca4b6a5e338ba47c5ff3901d5f72
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: stopReason
+    Id: g=deec17b34b52b1f446aa3f61d15274cf
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: occurredTime
+    Id: g=25e1471a19992890223b750b65865639
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: duration
+    Id: g=d02a2e7fb9ee75d8344c2e822be5a878
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0.00:00:00"
+  - Name: group
+    Id: g=f78582be007dd14ca83b12e81fccb543
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subGroup
+    Id: g=3dcc181841e162c409a7c80382def411
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subSubGroup
+    Id: g=66b5c9b4a66ede3ceafab8374e4aef0f
+    Type: BaseDataVariableType
+    DataType: String
+- Name: 30.061.090
+  Id: g=c043da2e34359fe714cbd8bdeda1ea28
+  Type: CoT_PlcAlarm
+  Children:
+  - Class: Reference
+    Target: ns=27;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=154
+    Direction: Forward
+  - Name: NormalStateValue
+    Id: g=44dbbd5515f5f55af5369d4acf2f189d
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=b5ce11a07b3d07fa36f7692f3dbbab31
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: LastEvent
+    Id: g=7d542a4b89a0ca3e1c8a6b499afe73fb
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: CausesRemedys
+    Id: g=ecf43f444936c6147f512eba1dd1c563
+    Type: BaseObjectType
+    Children:
+    - Name: CauseRemedy1
+      Id: g=c993a1dcd4b078ae9fd05016c6c67f26
+      Type: CoT_CauseRemedy
+      Children:
+      - Name: cause
+        Id: g=80086192b304a8190afeb35bb8b5a7c9
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"The Drive of the axis has an error. \\n\nThe velocity, acceleration or decceleration of the motion is 0."}
+      - Name: remedy
+        Id: g=9a81716672edc14d6a4e4f4c056d9f68
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Call person in charge"}
+      - Name: helpPictures
+        Id: g=c12105a3893327c4467b287053b8cc1e
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        ValueRank: OneDimension
+        ArrayDimensions: [10]
+        Value: ["0","0","0","0","0","0","0","0","0","0"]
+      - Name: screenLink
+        Id: g=99844aed8879aa00362e22e78014dcb6
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Id: g=eb9e364cb9aa6facdea9dbc72d556769
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/Panel/Screen"
+  - Name: displayedText
+    Id: g=1a7f9268f61cdf1a3037da875a0f7430
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+    Children:
+    - Name: StringFormatter1
+      Id: g=a9bb398e2cdd6396dff141f8279fc890
+      Type: StringFormatter
+      Children:
+      - Name: Source0
+        Id: g=1818869c194e57cdc6833e7b47bcb444
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=4486ae32d350536ac8356a6b12ac1ab3
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextStatic"
+          Children:
+          - Name: IsPull
+            Id: g=5490c2c432bd0e456fc95d54deb9da3a
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+      - Name: IsPull
+        Id: g=491b09f82c34d0764b1a1b8135f5130f
+        Type: PropertyType
+        DataType: Boolean
+        ReferenceType: HasComponent
+        Value: true
+      - Name: Source1
+        Id: g=df79c3c8c84861ad3a23f893e3a7241e
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=9321053476ee6996ab8c5996350ebccb
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextDynamic"
+          Children:
+          - Name: IsPull
+            Id: g=dfbb4556acdec80fe58cba73f56f2d1a
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+  - Name: id
+    Id: g=0deb09b5fee4c7cb0f8293e678f1af88
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 30061090
+  - Name: description
+    Id: g=a58ac3f95b8fcf79809033305d9a5320
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"NamespaceIndex":32,"TextId":"CoT_MSG_NoSolutionAssigned"}
+  - Name: audittrail
+    Id: g=1c627e9e7b53800c9be0976bcfc821cd
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageType
+    Id: g=694f688f7cf7e427bf6a12201ada9365
+    Type: BaseDataVariableType
+    DataType: CoT_MessageType
+    Value: 4
+  - Name: resourceLabel
+    Id: g=17f60055d30011382b61f452d0413091
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: singleAlarmAcknowledge
+    Id: g=ab83499e8671ff5fc69ec6b4244d5b22
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageTextDynamic
+    Id: g=d51dc70d438532f167afabc5b413ed4a
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: messageTextStatic
+    Id: g=1c179238ea07ae3581b82349f57c7a70
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Motion instruction error"}
+  - Name: Message
+    Id: g=5b0f1325505105e3ecd277c8d4bf1e85
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: stopReason
+    Id: g=f81048c2ecbcb247b5404ffb10fe572b
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: occurredTime
+    Id: g=f025fc7f85539ec1e812b6328122c0b3
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: duration
+    Id: g=4d0fdce291d817d9ef1bc889ba6afecb
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0.00:00:00"
+  - Name: group
+    Id: g=f0bf69e868e5f60bcc068884b38d7a16
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subGroup
+    Id: g=3c7824fbc4b134f3e0f05eaff568c2af
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subSubGroup
+    Id: g=c171cad408101272eca618cfa55e8fd2
+    Type: BaseDataVariableType
+    DataType: String
+- Name: 30.061.091
+  Id: g=743fe33187ba75c45b4857d377ff2f37
+  Type: CoT_PlcAlarm
+  Children:
+  - Class: Reference
+    Target: ns=27;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=154
+    Direction: Forward
+  - Name: NormalStateValue
+    Id: g=477ab78d40248c5c9d23efe9a8fc0114
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=2b558369e21dbc28644c8840cc6983d9
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: LastEvent
+    Id: g=50301ef1d9c477e8e315312f9fb011e8
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: CausesRemedys
+    Id: g=4a28a15ca9695f6af69584901db5a08f
+    Type: BaseObjectType
+    Children:
+    - Name: CauseRemedy1
+      Id: g=cbd1e55590dc7ff836997f47128f3a4c
+      Type: CoT_CauseRemedy
+      Children:
+      - Name: cause
+        Id: g=6e082cbe8d19f609758dbf1e27b68af2
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Software is not working at stoppprocedure correct."}
+      - Name: remedy
+        Id: g=9deb0d8c4768b444bcce9750539ea354
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Call person in charge."}
+      - Name: helpPictures
+        Id: g=10c334a363399024e8bcf1d996aa127c
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        ValueRank: OneDimension
+        ArrayDimensions: [10]
+        Value: ["0","0","0","0","0","0","0","0","0","0"]
+      - Name: screenLink
+        Id: g=cd9f711418caeb09f39399587d51a9ec
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Id: g=5bf9f3586fa0d8d6c386275de127346a
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/Panel/Screen"
+  - Name: displayedText
+    Id: g=01233546527e443cb7b8940f307ad0b7
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+    Children:
+    - Name: StringFormatter1
+      Id: g=4954fc9e5aad8935a77421adc6972203
+      Type: StringFormatter
+      Children:
+      - Name: Source0
+        Id: g=c528b54e3a6bab2bc7c32486a19b32af
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=0dacd6e8e9ff9c419d96bd3c6cd9e968
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextStatic"
+          Children:
+          - Name: IsPull
+            Id: g=9934f36024cfc90a7f8f43674377485d
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+      - Name: IsPull
+        Id: g=af292c0e5c342156f99c1045a85df93a
+        Type: PropertyType
+        DataType: Boolean
+        ReferenceType: HasComponent
+        Value: true
+      - Name: Source1
+        Id: g=6f515a46019e774f3db23d21c1bce4d5
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=915ac8814d95f33405ac8b7e10c9c0bd
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextDynamic"
+          Children:
+          - Name: IsPull
+            Id: g=c187a09e8a4b81f906d9b0466807485e
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+  - Name: id
+    Id: g=dd86a54277d1e02e52764bf0bed8b72d
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 30061091
+  - Name: description
+    Id: g=485e10463eb19fb98ac6f7b9f78247b4
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"NamespaceIndex":32,"TextId":"CoT_MSG_NoSolutionAssigned"}
+  - Name: audittrail
+    Id: g=8b2c41e2c720d764628ae2864830b88c
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageType
+    Id: g=11484abb8ad3d9382fae64054665692e
+    Type: BaseDataVariableType
+    DataType: CoT_MessageType
+    Value: 4
+  - Name: resourceLabel
+    Id: g=77038038bc7210f560cf087fa1f72ebb
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: singleAlarmAcknowledge
+    Id: g=3c514142fb0dd3d40ce643ecdcf24263
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageTextDynamic
+    Id: g=37833000fc0b1fdfec99324e86550ac0
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: messageTextStatic
+    Id: g=19c41f46b096eebf7abd21d4e7839da5
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Routine Stop Timeout"}
+  - Name: Message
+    Id: g=1d519961e7bea5c68a1944618ad89c23
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: stopReason
+    Id: g=ba7cdcc500cf3a2fba49cd4268aa2de7
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: occurredTime
+    Id: g=b5bb1d3c79b10980e0bcf6341a1ab56b
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: duration
+    Id: g=0042de26c2339d3e79be54c5ac359aa1
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0.00:00:00"
+  - Name: group
+    Id: g=0761a80b81ce69856d2a34b21e7d6937
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subGroup
+    Id: g=05b25931a05abb396a720a229539a3c5
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subSubGroup
+    Id: g=ceffcd43985a5e2ab3eb732fb46b4c39
+    Type: BaseDataVariableType
+    DataType: String
+- Name: 30.061.095
+  Id: g=60bacdd354fefe3ba407bfaa3a46d448
+  Type: CoT_PlcAlarm
+  Children:
+  - Class: Reference
+    Target: ns=27;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=27;i=154
+    Direction: Forward
+  - Name: NormalStateValue
+    Id: g=e2c7c04b8d31345a93aa55abf32c29e2
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=b979fcca5a10ed75cce84afc09e39d65
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: LastEvent
+    Id: g=53dc59cfa0705b8ff162eaa2f4f84734
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: CausesRemedys
+    Id: g=872a4c076d71c85b8c4743122c1f27eb
+    Type: BaseObjectType
+    Children:
+    - Name: CauseRemedy1
+      Id: g=4eaf43eb5ec0c7ccb41cb35cf0a6ec9c
+      Type: CoT_CauseRemedy
+      Children:
+      - Name: cause
+        Id: g=ac167c62a57bf389b79da432fcabf774
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"0"}
+      - Name: remedy
+        Id: g=76e49e31f4bacdb856ecfbd2c366967f
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"Call person in charge."}
+      - Name: helpPictures
+        Id: g=ea31835e97a1fe6ef35714a56494221d
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        ValueRank: OneDimension
+        ArrayDimensions: [10]
+        Value: ["0","0","0","0","0","0","0","0","0","0"]
+      - Name: screenLink
+        Id: g=78c1068e97e79559b263812f7d2a1d9e
+        Type: NodePointer
+        DataType: NodeId
+        Children:
+        - Name: Kind
+          Id: g=0be50139c9a780997e2dcbe55cc272cf
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/Panel/Screen"
+  - Name: displayedText
+    Id: g=14252beefc5f8c0bfe35c8d3abf88b67
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+    Children:
+    - Name: StringFormatter1
+      Id: g=83a519de97df41e5b4183dfe37ca58ab
+      Type: StringFormatter
+      Children:
+      - Name: Source0
+        Id: g=707d58c40401cca266cd16bc005625e2
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=68ce751a122a908c1f4332cc62857f87
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextStatic"
+          Children:
+          - Name: IsPull
+            Id: g=aa3b2bea2203fd4b3c80b42d2c530131
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+      - Name: IsPull
+        Id: g=6a6d9eb5262ee9b5f02f72f3bcb1c2da
+        Type: PropertyType
+        DataType: Boolean
+        ReferenceType: HasComponent
+        Value: true
+      - Name: Source1
+        Id: g=8822e97fc1133625b7af6bd1995e91e5
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=fa36864250a8c182857e9739ab40c7b6
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../messageTextDynamic"
+          Children:
+          - Name: IsPull
+            Id: g=72776fe7f22019af9b617fb4b9244b8e
+            Type: BaseVariableType
+            DataType: Boolean
+            Value: true
+  - Name: id
+    Id: g=49197df4e29ab83f04d809dd462ec208
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 30061095
+  - Name: description
+    Id: g=0e1c300d8a563c22b99abcd51ea89c2f
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"NamespaceIndex":32,"TextId":"CoT_MSG_NoSolutionAssigned"}
+  - Name: audittrail
+    Id: g=7fae2126f163cd136b783b563835902a
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageType
+    Id: g=e661d1d72f397b287a594d8ae4383114
+    Type: BaseDataVariableType
+    DataType: CoT_MessageType
+    Value: 4
+  - Name: resourceLabel
+    Id: g=bf2dc6688e7107c55065032a0fe7f145
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: singleAlarmAcknowledge
+    Id: g=c34737b2cbeb0726cda34cc02903ce91
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: messageTextDynamic
+    Id: g=a2ba0db24caa604831e216dbc7a25fae
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: messageTextStatic
+    Id: g=cce3bade9cdb8cca7e95285e00071309
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"Offline calculation not successfully"}
+  - Name: Message
+    Id: g=b1b21599d12c8976b1d05d34cc525651
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: stopReason
+    Id: g=e626af7d3d4de5c224e335dd25b911fb
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: occurredTime
+    Id: g=e533e377802d09871d5d9d48cfff95b4
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: duration
+    Id: g=c2af439005cdb63bd5fdf3d9bd4410d3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0.00:00:00"
+  - Name: group
+    Id: g=2084037fab1cb5e2db5a45838707a41e
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subGroup
+    Id: g=06a22cfcfcdd856abc4bb5c330bda982
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: subSubGroup
+    Id: g=3c8eb4b3a622459c657ab5081152d3ca
+    Type: BaseDataVariableType
+    DataType: String
