@@ -28,11 +28,11 @@ steps:
       "$(FT_OPTIX_CLI)" export "$(Build.SourcesDirectory)/MyHMI_Template_Unencrypted.optix" --location="$(Build.SourcesDirectory)/build" --platform=Win32_x64
     displayName: 'Export and deploy project to target machine'
 
-  - task: PublishBuildArtifacts@1
-    displayName: "Publish artifact"
-    inputs:
-      PathtoPublish: "$(Build.SourcesDirectory)/build"
-      ArtifactName: "optix"
+  //- task: PublishBuildArtifacts@1
+  //  displayName: "Publish artifact"
+  //  inputs:
+  //    PathtoPublish: "$(Build.SourcesDirectory)/build"
+  //    ArtifactName: "optix"
 
   - task: DotNetCoreCLI@2
     displayName: 'Restore NuGet Packages'
