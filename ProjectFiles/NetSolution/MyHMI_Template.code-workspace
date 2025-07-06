@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Configurator"
+		},
+		{
+			"path": "../.."
+		}
+	], 
+	"settings" : {
+		"typescript.tsc.autoDetect": "off"
+	}
+}

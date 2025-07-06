@@ -1,0 +1,5 @@
+Name: DemoCLX1
+Id: g=42ead530dfdd3d6b9f2674121ab3b8f6
+Type: RAEtherNetIPDriver
+Children:
+- File: DemoCLX1/DemoCLX1.yaml

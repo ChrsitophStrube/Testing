@@ -1,0 +1,9 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" data-testid="item=dropdown,state=pressed,mode=disabled" xmlns="http://www.w3.org/2000/svg">
+<g id="button-icon/regular">
+<rect x="1" y="1" width="70" height="70" fill="#000000"/>
+<rect x="1" y="1" width="70" height="70" stroke="black" stroke-width="2"/>
+<g id="ico-action-expand_more">
+<path id="Vector" d="M36 41.4038L25.3846 30.7884L26.8 29.373L36 38.573L45.2 29.373L46.6154 30.7884L36 41.4038Z" fill="#FFFFFF"/>
+</g>
+</g>
+</svg>

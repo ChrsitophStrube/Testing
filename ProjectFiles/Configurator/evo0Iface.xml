@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Merged>
+    <PLCIface>
+        <GlobalInformation>
+            <Name>Belt</Name>
+            <LibName>RBTx</LibName>
+            <MetaInfo Name="Prefix">DEMO_RBT1</MetaInfo>
+            <MetaInfo Name="LevelID1">28</MetaInfo>
+            <MetaInfo Name="LevelID2">061</MetaInfo>
+            <MetaInfo Name="PLCPath">CommDrivers/DemoCLX1/DemoCLX1/Tags/Controller Tags</MetaInfo>
+            <MetaInfo Name="DefaultScreenPath">UI/Screens/CoTD_DemoScreens/ModY1</MetaInfo>
+            <MetaInfo Name="DefaultCFGPath">Recipes/CoTD_ParametersProduct</MetaInfo>
+            <Options>
+            </Options>
+        </GlobalInformation>
+        <Additive>
+            <Screens>
+                <Screen Name="DemoModY_MS_Belt_General" Type="CoT_ContentB">
+                    <Structure Name="Column1/Area1" PathToNode="ScrollView/GridLayout">
+                        <CoT_CTRL_PictureArea height="300"  imagePath="%PROJECTDIR%\Images\MODX1_Belt.png" headlineText="Belt" showHeadline="false" />
+                        <CoT_CTRL_VarIn text="Product Feeding Belt Max. Speed" unit="mm/s" value="${MODY1_Phi/Belt/r_BeltAxisParSpeed}" minimum="${MODY1_Phi/Belt/r_BeltAxisParSpeed_LowerLimit}" maximum="${MODY1_Phi/Belt/r_BeltAxisParSpeed_UpperLimit}" icon="%PROJECTDIR%\ico-navigation-wind_power.svg" />
+                        <CoT_CTRL_VarIn text="Product Feeding Belt" unit="mm/s²" value="${MODY1_Phi/Belt/dn_BeltAxisParAccel}" minimum="0" maximum="999999" />
+                        <CoT_CTRL_VarIn text="Product Feeding Belt Decel" unit="mm/s²" value="${MODY1_Phi/Belt/dn_BeltAxisParDecel}" minimum="0" maximum="999999" />
+                    </Structure>
+                    <Structure Name="Column2/Area2" PathToNode="ScrollView/GridLayout">
+                        <CoT_CTRL_VarIn text="Product Feeding Belt Position Error" unit="mm" value="${MODY1_Phi/Belt/r_BeltAxisParPosErr}" minimum="0" maximum="100" decimalPlaces="2" />
+                        <CoT_CTRL_VarIn text="Product Belt Feeding Max.Torque" unit="mm" value="${MODY1_Phi/Belt/dn_BeltAxisParTorq}" minimum="-250" maximum="250" />
+                        <CoT_CTRL_TextIn labelText="Product Feeding Belt Format ID Code" textInText="${MODY1_Phi/Belt/str_IDCode}" />
+                    </Structure>
+                    <Structure Name="Column3/Area3" PathToNode="ScrollView/GridLayout">
+                        <CoT_CTRL_VarOut text="Product Feeding Belt Actual Pos." unit="mm" value="${MODY1_Phi/Belt/r_ActPos}" decimalPlaces="2" />
+                        <CoT_CTRL_VarOut text="Product Feeding Belt Actual Speed" unit="mm/s" value="${MODY1_Phi/Belt/r_ActVel}" decimalPlaces="2" />
+                        <CoT_CTRL_VarOut text="Product Feeding Belt Actual Torque" unit="%" value="${MODY1_Phi/Belt/r_ActTorq}" />
+                        <CoT_CTRL_TextOut labelText="Product Feeding Belt Axis State" textOutText="${MODY1_Phi/Belt/str_AxisState}" />
+                        <CoT_CTRL_ButtonNavigationNoLabel text="Feeding Belt Motor Service" screen="UI/Screens/CoTD_DemoScreens/ModY1/Belt/DemoModY_MS_Belt_Motor" />
+                    </Structure>
+                </Screen>
+                <Screen Name="DemoModY_MS_Belt_Motor" Type="CoT_ContentB">
+                    <Structure Name="Column1/Area1" PathToNode="ScrollView/GridLayout">
+                        <CoT_CTRL_VarOut text="Actual Position" unit="mm" value="${MODY1_Phi/Belt/r_ActPos}" />
+                        <CoT_CTRL_TextOut labelText="Axis State" textOutText="${MODY1_Phi/Belt/str_AxisState}" />
+                    </Structure>
+                    <Structure Name="Column2/Area2" PathToNode="ScrollView/GridLayout">
+                        <CoT_CTRL_VarIn text="Move Position" unit="mm" value="${MODY1_Phi/Belt/Service/r_MovePos}" decimalPlaces="2" />
+                        <CoT_CTRL_VarIn text="Move Distance" unit="mm" value="${MODY1_Phi/Belt/Service/r_MoveDist}" decimalPlaces="2" />
+                        <CoT_CTRL_VarOut text="Actual Velocity" unit="mm/s" value="${MODY1_Phi/Belt/Service/r_ActVel}" decimalPlaces="3" />
+                        <CoT_CTRL_VarIn text="Move Velocity" unit="mm/s" value="${MODY1_Phi/Belt/Service/r_MoveVel}" decimalPlaces="3" />
+                        <CoT_CTRL_CheckBox text="Monitor Torque while axis is running" checked="${MODY1_Phi/Belt/Service/b_CheckTorque}" icon="%PROJECTDIR%\ico-action-zoom_out.svg" />
+                        <CoT_CTRL_VarOut text="Actual Torque" unit="%" value="${MODY1_Phi/Belt/Service/r_ActTorq}" decimalPlaces="2" visibility="True" />
+                        <CoT_CTRL_VarIn text="Movement Max Torque" unit="%" value="${MODY1_Phi/Belt/Service/r_MoveMaxTorq}" visibility="True" />
+                    </Structure>
+                    <Structure Name="Column3/Area3" PathToNode="ScrollView/GridLayout">
+                        <CoT_FP_Switch text="Enable Service Mode" icon="%PROJECTDIR%\ico-action-settings.svg" />
+                        <CoT_CTRL_Button labelText="Move Absolute" buttonText="Move Absolute" pressed="${MODY1_Phi/Belt/Service/b_MovePos}" />
+                        <CoT_CTRL_Button labelText="Move Relative" buttonText="Move Relative" pressed="${MODY1_Phi/Belt/Service/b_MoveRelative}" />
+                        <CoT_CTRL_Button labelText="Jog" buttonText="Jog" pressed="${MODY1_Phi/Belt/Service/b_Jog}" />
+                        <CoT_CTRL_Button labelText="Stop" buttonText="Stop" pressed="${MODY1_Phi/Belt/Service/b_Stop}" />
+                        <CoT_CTRL_ButtonNavigationNoLabel text="Machine Settings Belt Feeding Belt" screen="UI/Screens/CoTD_DemoScreens/ModY1/Belt/DemoModY_MS_Belt_General" />
+                    </Structure>
+                </Screen>
+            </Screens>
+            <Cfgs>
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.r_ProdSpeedMeterPerMin" paramName="Belt speed" paramDescription="Production speed of belt" group="Format" keyboard="Standard" minValue="0" maxValue="240" defaultValue="60" unit="m/min" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="Yes" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.r_ProdAccDec" paramName="Belt acceleration/deceleration" paramDescription="Production acceleration/deceleration of belt" group="Format" keyboard="Standard" minValue="1000" maxValue="20000" defaultValue="5000" unit="mm/s²" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="Yes" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.dn_StopDistance" paramName="Stop distance" paramDescription="Move distance before stop axis" group="Format" keyboard="Standard" minValue="0" maxValue="10000" defaultValue="1500" unit="mm" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="Yes" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.dn_EmptyDistance" paramName="Empty distance" paramDescription="Move distance to empty the belt" group="Format" keyboard="Standard" minValue="0" maxValue="10000" defaultValue="1500" unit="mm" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="Yes" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.dn_BeltLength" paramName="Belt length" paramDescription="Length of the belt." group="Machine" keyboard="Standard" minValue="100" maxValue="10000" defaultValue="1400" unit="mm" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="No" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.r_ScaleFactor" paramName="Scale factor" paramDescription="Scale factor to calculate the output frequency for the drive  [Hz*s/m]" group="Machine" keyboard="Standard" minValue="0.01" maxValue="1000" defaultValue="29.4069" decimalPlaces="4" unit="mm" specificFilter="INF1/BLT1" calcFlag="False" editWhileRunning="No" options="INF1_BLT1_OpenLoop_Option" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.b_MotionPolarity" paramName="Motion polarity" paramDescription="Change motor running direction" group="Machine" keyboard="Standard" defaultValue="0" specificFilter="INF1/BLT1" calcFlag="True" editWhileRunning="No" />
+                <Cfg TagName="MODY1_Phi.Belt.Cfgs.b_SuEnable" paramName="Subunit enable" paramDescription="With this parameter it's possible to enable / disable this module / system part depending on the loaded format" group="Format" keyboard="Standard" defaultValue="1" specificFilter="GEN1/Unit" calcFlag="True" editWhileRunning="No" options="not_used_Option" />
+            </Cfgs>
+            <Alarms>
+                <Alarm id="001" messageTextStatic="Configuration error" causesRemedies_remedy="Undo recent changes&#xA;Check BLT speed parameter values" causesRemedies_cause="Invalid parameter setting" messageType="4" />
+                <Alarm id="090" messageTextStatic="Motion instruction error" causesRemedies_remedy="Call person in charge" causesRemedies_cause="The Drive of the axis has an error. \n&#xA;The velocity, acceleration or decceleration of the motion is 0." messageType="4" />
+                <Alarm id="091" messageTextStatic="Routine Stop Timeout" causesRemedies_remedy="Call person in charge." causesRemedies_cause="Software is not working at stoppprocedure correct." messageType="4" />
+                <Alarm id="095" messageTextStatic="Offline calculation not successfully" causesRemedies_remedy="Call person in charge." messageType="4" />
+            </Alarms>
+        </Additive>
+        <FacePlates>
+
+        </FacePlates>
+    </PLCIface>
+    <PLCIface>
+        <GlobalInformation>
+            <Name>Upstream Belts</Name>
+            <MetaInfo Name="Prefix">ModY1</MetaInfo>
+            <MetaInfo Name="LevelID1">29</MetaInfo>
+            <MetaInfo Name="LevelID2">061</MetaInfo>
+            <MetaInfo Name="PLCPath">CommDrivers/DemoCLX1/DemoCLX1/Tags/Controller Tags</MetaInfo>
+            <MetaInfo Name="DefaultScreenPath">UI/Screens/CoTD_DemoScreens/ModY1</MetaInfo>
+            <MetaInfo Name="DefaultCFGPath">Recipes/CoTD_ParametersProduct</MetaInfo>
+            <Options>
+            </Options>
+        </GlobalInformation>
+        <Additive>
+            <Screens>
+                <Screen Name="CoTD_ModY1_MS_Upstream_Belts" Type="CoT_ContentB">
+                    <Structure Name="Column1/Area1" PathToNode="ScrollView/GridLayout">
+                        <CoT_CMP_GroupBox headline="Belt Selection" description=" ">
+                            <Structure Name="Content" PathToNode="VerticalLayout">
+                                <CoT_CRTL_RadioButton text="Upstream Belt 1" optionID="${MODY1_Phi/Upstream_Belts/RadioButton_OptionID_Belt_1}" selectedOption="${MODY1_Phi/Upstream_Belts/RadioButton_SelectedOption_Belt_All}" />
+                                <CoT_CRTL_RadioButton text="Upstream Belt 2" optionID="${MODY1_Phi/Upstream_Belts/RadioButton_OptionID_Belt_2}" selectedOption="${MODY1_Phi/Upstream_Belts/RadioButton_SelectedOption_Belt_All}" />
+                                <CoT_CRTL_RadioButton text="Upstream Belt 3" optionID="${MODY1_Phi/Upstream_Belts/RadioButton_OptionID_Belt_3}" selectedOption="${MODY1_Phi/Upstream_Belts/RadioButton_SelectedOption_Belt_All}" />
+                                <CoT_CRTL_RadioButton text="Upstream Belt All" optionID="${MODY1_Phi/Upstream_Belts/RadioButton_OptionID_Belt_All}" selectedOption="${MODY1_Phi/Upstream_Belts/RadioButton_SelectedOption_Belt_All}" />
+                            </Structure>
+                        </CoT_CMP_GroupBox>
+                    </Structure>
+
+                    <Structure Name="Column2/Area2" PathToNode="ScrollView/GridLayout">
+                        <CoT_CMP_GroupBox headline="Belt Position" description=" ">
+                            <Structure Name="Content" PathToNode="VerticalLayout">
+                                <CoT_FP_VarOutREAL text="Upstream Belt 1 Actual Positon" phi="${MODY1_Phi/Upstream_Belts/VarOut_Actual_Postn_Belt_1}" unit="Deg" decimalPlaces="1" />
+                                <CoT_FP_VarOutREAL text="Upstream Belt 2 Actual Positon" phi="${MODY1_Phi/Upstream_Belts/VarOut_Actual_Postn_Belt_2}" unit="Deg" decimalPlaces="1" />
+                                <CoT_FP_VarOutREAL text="Upstream Belt 3 Actual Positon" phi="${MODY1_Phi/Upstream_Belts/VarOut_Actual_Postn_Belt_3}" unit="Deg" decimalPlaces="1" />
+                            </Structure>
+                        </CoT_CMP_GroupBox>
+                    </Structure>
+
+                    <Structure Name="Column3/Area3" PathToNode="ScrollView/GridLayout">
+                        <FacePlate FacePlateName="Move_Upstream_Belt1" />
+                        <FacePlate FacePlateName="Move_Upstream_Belt2" />
+                        <FacePlate FacePlateName="Move_Upstream_Belt3" />
+                    </Structure>
+                </Screen>
+            </Screens>
+            <Cfgs>
+
+            </Cfgs>
+            <Alarms>
+                <Alarm id="001" messageTextStatic="Configuration error" causesRemedies_remedy="Undo recent changes&#xA;Check BLT speed parameter values" causesRemedies_cause="Invalid parameter setting" messageType="4" />
+                <Alarm id="090" messageTextStatic="Motion instruction error" causesRemedies_remedy="Call person in charge" causesRemedies_cause="The Drive of the axis has an error. \n&#xA;The velocity, acceleration or decceleration of the motion is 0." messageType="4" />
+                <Alarm id="091" messageTextStatic="Routine Stop Timeout" causesRemedies_remedy="Call person in charge." causesRemedies_cause="Software is not working at stoppprocedure correct." messageType="4" />
+                <Alarm id="095" messageTextStatic="Offline calculation not successfully" causesRemedies_remedy="Call person in charge." messageType="4" />
+            </Alarms>
+        </Additive>
+        <FacePlates>
+            <FacePlate Name="Move_Upstream_Belt1">
+                <Type>Move_Upstream_Belt</Type>
+                <Phi Name="phi">MODY1_Phi/Upstream_Belts/Move_belt_1</Phi>
+                <Parameter Name="headline">Move Belt 1</Parameter>
+            </FacePlate>
+            <FacePlate Name="Move_Upstream_Belt2">
+                <Type>Move_Upstream_Belt</Type>
+                <Phi Name="phi">MODY1_Phi/Upstream_Belts/Move_belt_2</Phi>
+                <Parameter Name="headline">Move Belt 2</Parameter>
+            </FacePlate>
+            <FacePlate Name="Move_Upstream_Belt3">
+                <Type>Move_Upstream_Belt</Type>
+                <Phi Name="phi">MODY1_Phi/Upstream_Belts/Move_belt_3</Phi>
+                <Parameter Name="headline">Move Belt 3</Parameter>
+            </FacePlate>
+        </FacePlates>
+
+    </PLCIface>
+    <PLCIface>
+        <GlobalInformation>
+            <Name>Collator</Name>
+            <MetaInfo Name="Prefix">ModY1</MetaInfo>
+            <MetaInfo Name="LevelID1">30</MetaInfo>
+            <MetaInfo Name="LevelID2">061</MetaInfo>
+            <MetaInfo Name="PLCPath">CommDrivers/DemoCLX1/DemoCLX1/Tags/Controller Tags</MetaInfo>
+            <MetaInfo Name="DefaultScreenPath">UI/Screens/CoTD_DemoScreens/ModY1</MetaInfo>
+            <MetaInfo Name="DefaultCFGPath">Recipes/CoTD_ParametersProduct</MetaInfo>
+            <Options>
+            </Options>
+        </GlobalInformation>
+        <Additive>
+            <Screens>
+                <Screen Type="FacePlate" FacePlateName="MODY1_Collator_General" />
+                <Screen Type="FacePlate" FacePlateName="MODY1_Collator_Motor" />
+            </Screens>
+            <Cfgs>
+
+            </Cfgs>
+            <Alarms>
+                <Alarm id="001" messageTextStatic="Configuration error" causesRemedies_remedy="Undo recent changes&#xA;Check BLT speed parameter values" causesRemedies_cause="Invalid parameter setting" messageType="4" />
+                <Alarm id="090" messageTextStatic="Motion instruction error" causesRemedies_remedy="Call person in charge" causesRemedies_cause="The Drive of the axis has an error. \n&#xA;The velocity, acceleration or decceleration of the motion is 0." messageType="4" />
+                <Alarm id="091" messageTextStatic="Routine Stop Timeout" causesRemedies_remedy="Call person in charge." causesRemedies_cause="Software is not working at stoppprocedure correct." messageType="4" />
+                <Alarm id="095" messageTextStatic="Offline calculation not successfully" causesRemedies_remedy="Call person in charge." messageType="4" />
+            </Alarms>
+        </Additive>
+        <FacePlates>
+            <FacePlate Name="MODY1_Collator_General">
+                <Type>CoTD_FP_Collator_General</Type>
+                <Phi Name="phi">MODY1_Phi/Collator</Phi>
+                <ScreenLink Name="MotorScreenPath">UI/Screens/CoTD_DemoScreens/ModY1/Collator/MODY1_Collator_Motor</ScreenLink>
+            </FacePlate>
+            <FacePlate Name="MODY1_Collator_Motor">
+                <Type>CoTD_FP_Collator_Motor</Type>
+                <Phi Name="phi">MODY1_Phi/Collator</Phi>
+                <ScreenLink Name="GeneralScreenPath">UI/Screens/CoTD_DemoScreens/ModY1/Collator/MODY1_Collator_General</ScreenLink>
+            </FacePlate>
+        </FacePlates>
+
+    </PLCIface>
+
+</Merged>

@@ -1,0 +1,7 @@
+Name: CoT_Model
+Id: g=852874561c5f9fac63e78502177d5886
+Type: FolderType
+Children:
+- File: Reports/Reports.yaml
+- File: Statistics/Statistics.yaml
+- File: TemplateConfig/TemplateConfig.yaml

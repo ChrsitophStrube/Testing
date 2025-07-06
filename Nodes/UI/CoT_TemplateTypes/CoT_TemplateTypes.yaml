@@ -1,0 +1,28 @@
+Name: CoT_TemplateTypes
+Id: g=8b7351a7cd0269e309716c7a6839440f
+Type: FolderType
+Children:
+- File: Layouts/Layouts.yaml
+- File: MainWindow/MainWindow.yaml
+- File: MasterDetail/MasterDetail.yaml
+- File: Screens/Screens.yaml
+- Name: ns=19;LibraryReference
+  Id: g=4bf8238af3eab1d995472b15c8fd9fdb
+  Type: ObjectLibraryReference
+  DataType: ObjectLibraryReferenceDataType
+  Value: 
+   {
+    "TypeId": {
+     "Id": 72,
+     "Namespace": 19
+    },
+    "Body": {
+     "libraryGuid": "4fdcfd96d2034cbdda2db44d859eab70",
+     "objectGuid": "0a9e811d61c0a2dbb7c72ba8d40db156",
+     "objectVersion": 1,
+     "highestIgnoredVersion": 0
+    }
+   }
+- File: Security/Security.yaml
+- File: Help/Help.yaml
+- File: Table/Table.yaml

@@ -1,1 +1,1 @@
-1.6.0.557-ReleaseCandidate
+1.6.0.626-Stable

@@ -1,3 +1,310 @@
 Name: Users
 Id: g=8cdfe95c558e909385d4fe7ddc9a2655
 Type: UsersCategoryFolder
+Children:
+- Name: Operator
+  Id: g=bae37ebde1d2ffd38d074868a6036182
+  Type: CoT_User
+  Children:
+  - Name: icon
+    Id: g=3738e3eca8f61cb8e684cdf276e2a4e6
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Value: "ns=32;%PROJECTDIR%/Icons/icon-role_operator.svg"
+  - Name: userName
+    Id: g=369656272107333615f23551c9ef6e44
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Operator"
+  - Name: LocaleId
+    Id: g=02b36bde9d60f0784feb02067b24d72f
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: Language
+    Id: g=3d85b8e9a7b1db69812ffda4e1a699e4
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: MeasurementSystem
+    Id: g=c778c4b3462ea2870dd22954db6d95ed
+    Type: BaseVariableType
+    DataType: MeasurementSystem
+    ReferenceType: HasProperty
+    Value: 1
+  - Class: Reference
+    Type: HasGroup
+    Target: g=5e5326fc9bfb708dc54b61346ca8b885
+  - Name: Password
+    Id: g=8defe837dd45a1f8469402de680694e1
+    Type: Password
+    DataType: Password
+    ReferenceType: HasProperty
+    AccessLevel: Read
+    Children:
+    - Name: Hash
+      Id: g=b687d88f842bdbbeb84da707a16ab9d9
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      Value: 
+       {
+        "TypeId": {
+         "Id": 252,
+         "Namespace": 1
+        },
+        "Body": {
+         "Hash": [20,234,65,181,51,173,37,85,121,231,121,171,58,132,138,84,110,76,167,241,182,75,23,225,87,108,162,145,71,53,159,189],
+         "Salt": [156,31,116,224,251,152,201,206,120,114,94,5,51,12,19,225,122,2,165,155,90,205,183,10,237,10,174,179,10,67,234,71]
+        }
+       }
+    - Name: ChangeTimestamp
+      Id: g=b7d5ec7625d37715fd564df350994c2a
+      Type: PropertyType
+      DataType: UtcTime
+      AccessLevel: Read
+      Value: "2025-03-26T13:18:22.5146338"
+    - Name: History
+      Id: g=3441b91edf6bd9ee97ad7067f0807a30
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[20,234,65,181,51,173,37,85,121,231,121,171,58,132,138,84,110,76,167,241,182,75,23,225,87,108,162,145,71,53,159,189],"Salt":[156,31,116,224,251,152,201,206,120,114,94,5,51,12,19,225,122,2,165,155,90,205,183,10,237,10,174,179,10,67,234,71]}}]
+- Name: Service
+  Id: g=ce53bfcb97f2ca34b1c05921d46068ca
+  Type: CoT_User
+  Children:
+  - Name: icon
+    Id: g=e572eb0f36255cf9bc4856f083b42da9
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Value: "ns=32;%PROJECTDIR%/Icons/icon-role_service.svg"
+  - Name: userName
+    Id: g=8ee758dc30a343e80dfea2fc346ec3c2
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Service"
+  - Name: LocaleId
+    Id: g=a5482b7e946f4a7eaad4c8e3c55f820d
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: Language
+    Id: g=d99b3e65ddafcc1a3bbaff77e85345eb
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: MeasurementSystem
+    Id: g=c06c5eb8f0c265d16442379a6e5949cf
+    Type: BaseVariableType
+    DataType: MeasurementSystem
+    ReferenceType: HasProperty
+    Value: 1
+  - Class: Reference
+    Type: HasGroup
+    Target: g=ba749249655b9e0dc07b9d9594336753
+  - Class: Reference
+    Type: HasGroup
+    Target: g=5e5326fc9bfb708dc54b61346ca8b885
+  - Name: Password
+    Id: g=5f54648a710922db297fe4e5e771d765
+    Type: Password
+    DataType: Password
+    ReferenceType: HasProperty
+    AccessLevel: Read
+    Children:
+    - Name: Hash
+      Id: g=138b4829f36e32c7620cae4e7ccfb385
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      Value: 
+       {
+        "TypeId": {
+         "Id": 252,
+         "Namespace": 1
+        },
+        "Body": {
+         "Hash": [200,84,234,42,99,29,236,157,226,129,248,47,97,6,58,178,28,235,154,138,167,2,90,204,73,133,10,101,159,224,116,95],
+         "Salt": [160,153,36,233,124,94,225,12,47,172,166,90,211,133,254,45,52,75,43,86,244,221,85,201,216,102,204,1,162,57,43,82]
+        }
+       }
+    - Name: ChangeTimestamp
+      Id: g=221375de446d39e9a1962c365ac23b55
+      Type: PropertyType
+      DataType: UtcTime
+      AccessLevel: Read
+      Value: "2025-03-26T11:43:00.4163107"
+    - Name: History
+      Id: g=79c386f8eb1bb61ecff381af0135ac62
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[200,84,234,42,99,29,236,157,226,129,248,47,97,6,58,178,28,235,154,138,167,2,90,204,73,133,10,101,159,224,116,95],"Salt":[160,153,36,233,124,94,225,12,47,172,166,90,211,133,254,45,52,75,43,86,244,221,85,201,216,102,204,1,162,57,43,82]}}]
+- Name: Supervisor
+  Id: g=35bbb9996cf46ee0b727f2cecc4680e9
+  Type: CoT_User
+  Children:
+  - Name: icon
+    Id: g=bb20430c4e7a90e524ccf9a659259704
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Value: "ns=32;%PROJECTDIR%/icon-role_supervisor.svg"
+  - Name: userName
+    Id: g=a4e0b2af3acdac912a822aa701de75d3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Supervisor"
+  - Name: LocaleId
+    Id: g=1fdc6e1a35f11e49f8b3f10de355f1a2
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: Language
+    Id: g=da3ea1684e1c2c81bf4e3bb596b85795
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: MeasurementSystem
+    Id: g=e168df496c037505d3cf39bc00b47a77
+    Type: BaseVariableType
+    DataType: MeasurementSystem
+    ReferenceType: HasProperty
+    Value: 1
+  - Class: Reference
+    Type: HasGroup
+    Target: g=97502ae0cdf1a2bcf8b84f59d9ee67e9
+  - Class: Reference
+    Type: HasGroup
+    Target: g=5e5326fc9bfb708dc54b61346ca8b885
+  - Class: Reference
+    Type: HasGroup
+    Target: g=ba749249655b9e0dc07b9d9594336753
+  - Name: Password
+    Id: g=9cea0be5950e6daa1252cc5c71f9a3f3
+    Type: Password
+    DataType: Password
+    ReferenceType: HasProperty
+    AccessLevel: Read
+    Children:
+    - Name: Hash
+      Id: g=11b7c3d64ce7f7c7be2ebcb9d5ebbdcf
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      Value: 
+       {
+        "TypeId": {
+         "Id": 252,
+         "Namespace": 1
+        },
+        "Body": {
+         "Hash": [229,174,18,104,9,167,19,217,82,32,227,82,216,226,201,208,60,91,102,102,128,218,31,135,156,202,230,108,216,205,86,165],
+         "Salt": [45,85,117,123,34,0,89,110,181,222,212,196,50,82,149,255,135,4,81,68,89,242,97,61,250,115,32,172,159,233,11,80]
+        }
+       }
+    - Name: ChangeTimestamp
+      Id: g=47b997e2cc00a7070d608197bb4662f8
+      Type: PropertyType
+      DataType: UtcTime
+      AccessLevel: Read
+      Value: "2025-03-26T11:43:05.9754966"
+    - Name: History
+      Id: g=51393edefdd497a46a3de92eaf1dc37e
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[229,174,18,104,9,167,19,217,82,32,227,82,216,226,201,208,60,91,102,102,128,218,31,135,156,202,230,108,216,205,86,165],"Salt":[45,85,117,123,34,0,89,110,181,222,212,196,50,82,149,255,135,4,81,68,89,242,97,61,250,115,32,172,159,233,11,80]}}]
+- Name: Admin
+  Id: g=2a40c4115f65f05e4ca653986bc8be7c
+  Type: CoT_User
+  Children:
+  - Name: icon
+    Id: g=2c7d8e56c557e89f65b131b52590ae6b
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Value: "ns=32;%PROJECTDIR%/icon-role_it-admin.svg"
+  - Name: userName
+    Id: g=8095aa29ab5d22c949aa844e45b004bc
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Admin"
+  - Name: LocaleId
+    Id: g=f9444ff7b11deb6945d52e336088a0a3
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: Language
+    Id: g=5851152fa47ae8cbd612e4e4485be0c3
+    Type: BaseVariableType
+    DataType: LocaleId
+    ReferenceType: HasProperty
+    Value: "en-US"
+  - Name: MeasurementSystem
+    Id: g=516f3bb03d37b6d9811dd2769334dcd8
+    Type: BaseVariableType
+    DataType: MeasurementSystem
+    ReferenceType: HasProperty
+    Value: 1
+  - Class: Reference
+    Type: HasGroup
+    Target: g=56d5328f9ee8fdb757fd88a507ff6f92
+  - Class: Reference
+    Type: HasGroup
+    Target: g=5e5326fc9bfb708dc54b61346ca8b885
+  - Class: Reference
+    Type: HasGroup
+    Target: g=ba749249655b9e0dc07b9d9594336753
+  - Class: Reference
+    Type: HasGroup
+    Target: g=97502ae0cdf1a2bcf8b84f59d9ee67e9
+  - Name: Password
+    Id: g=889630d275897a9ad8e93fc08a806792
+    Type: Password
+    DataType: Password
+    ReferenceType: HasProperty
+    AccessLevel: Read
+    Children:
+    - Name: Hash
+      Id: g=63ba23ec5d8c965285d381e2b1237f50
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      Value: 
+       {
+        "TypeId": {
+         "Id": 252,
+         "Namespace": 1
+        },
+        "Body": {
+         "Hash": [6,170,23,183,27,51,103,223,60,16,136,74,151,63,115,12,126,158,150,87,54,208,118,41,59,114,136,124,77,32,167,109],
+         "Salt": [74,117,21,236,186,193,46,107,219,161,106,152,53,47,198,246,174,199,151,224,33,52,144,55,117,88,117,89,96,56,247,87]
+        }
+       }
+    - Name: ChangeTimestamp
+      Id: g=743b58f89f7f5c2d8cb17b1947559d70
+      Type: PropertyType
+      DataType: UtcTime
+      AccessLevel: Read
+      Value: "2025-03-26T11:43:13.3849720"
+    - Name: History
+      Id: g=7f1b7b9620b01bae7f35c18bd0990e29
+      Type: PropertyType
+      DataType: PasswordHash
+      AccessLevel: Read
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":252,"Namespace":1},"Body":{"Hash":[6,170,23,183,27,51,103,223,60,16,136,74,151,63,115,12,126,158,150,87,54,208,118,41,59,114,136,124,77,32,167,109],"Salt":[74,117,21,236,186,193,46,107,219,161,106,152,53,47,198,246,174,199,151,224,33,52,144,55,117,88,117,89,96,56,247,87]}}]

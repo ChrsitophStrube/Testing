@@ -1,0 +1,83 @@
+Name: CoTD_Model
+Id: g=b7ad883910be37d5f9544b6f57a91501
+Type: FolderType
+Children:
+- Name: CoTD_TemplateConfig
+  Id: g=caabc9f1e871d6b9ee48fc6bfa79c1c0
+  Type: CoT_TemplateConfig
+  Children:
+  - Name: input
+    Id: g=8aa6463c133b3d16769ef190704de82c
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: standardUser
+      Id: g=8cdb7ac18a44176751dac9e8dc9e245c
+      Type: NodePointer
+      DataType: NodeId
+      Value: "/Objects/MyHMI_Template_Unencrypted/Security/Users/Operator"
+      Children:
+      - Name: Kind
+        Id: g=a04c2e3e1de1a4c0a79591db05834f62
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Objects/MyHMI_Template_Unencrypted/UI/CoT_TemplateTypes/Security/CoT_User"
+    - Name: instructionManualPath
+      Id: g=e038e0f569a8b88c69d25a41c44e72f0
+      Type: BaseDataVariableType
+      DataType: ResourceUri
+  - Name: inOutput
+    Id: g=21bc231ba132d4631fc18e86f8fb46d9
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: standardUserPassword
+      Id: g=0e3d81aea4c67bfe1679e9d1d5a0851a
+      Type: BaseDataVariableType
+      DataType: Password
+  - Name: output
+    Id: g=fd479459ae9f5a6bcb9bfb04a2930d6b
+    Type: BaseDataVariableType
+    DataType: Structure
+    Value: 
+     {
+      "Type": 22,
+      "Body": {
+       "TypeId": {
+        "IdType": 0,
+        "Id": 0,
+        "Namespace": -1
+       },
+       "Body":    {}
+      }
+     }
+    Children:
+    - Name: templateVersion
+      Id: g=5b5083b0675a389020854a843c72a8b9
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "0.2.0"

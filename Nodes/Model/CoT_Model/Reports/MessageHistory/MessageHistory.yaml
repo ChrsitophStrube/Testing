@@ -1,0 +1,127 @@
+Name: MessageHistory
+Id: g=c499e50d57070a0d724dc474a4e5973f
+Type: FolderType
+Children:
+- Name: MessageHistoryReportParam
+  Id: g=575629fc0eabd2abbd106f5c2dcc10e1
+  Supertype: BaseObjectType
+  Children:
+  - Name: FilterFrom
+    Id: g=5284f8bb375186464da0a40388111be9
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: FilterTo
+    Id: g=f11d98a2fcc0cfebfc762e5779c22e85
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: CritcalSelected
+    Id: g=6aa5add75636b2a506240aea80e094bf
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ErrorSelected
+    Id: g=a6f18d0527e56a88300de9273279a7cc
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: WarningSelected
+    Id: g=4d710fb74089b4cf4c120b5f47d41747
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ActionSelected
+    Id: g=e7631b5b146282963fc7fbb53bb3be09
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: InfoSelected
+    Id: g=ecf7c2182e1c793a5c11f72c0b80b9b1
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ReportFileName
+    Id: g=12920d1177bd8079d2c0836d4cfb42ee
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: ReportFilePath
+    Id: g=595a1605d8b738026dba34dc423f4357
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: ReportDirectory
+    Id: g=fa4ea181768b470dd5dd32b7be6171e5
+    Type: BaseDataVariableType
+    DataType: String
+- Name: MessageHistoryReportParam1
+  Id: g=fb238819455e75a974045f782beae082
+  Type: MessageHistoryReportParam
+  Children:
+  - Name: FilterFrom
+    Id: g=e44210945f7bdea5b26be5e1d42648fc
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: FilterTo
+    Id: g=7c72659442ca694b64cca3aa73eb2ff1
+    Type: BaseDataVariableType
+    DataType: DateTime
+  - Name: CritcalSelected
+    Id: g=740237b92c91e9b1ccc433f9fdd22a23
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ErrorSelected
+    Id: g=ebbfdd88c1c9f9c61ce13cea4d862f05
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: WarningSelected
+    Id: g=43e23e9216d1a13910d3d38c8cba5bb4
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ActionSelected
+    Id: g=c8cfb10705b2807f3f212f990f516bd5
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: InfoSelected
+    Id: g=cc5b6c14104c58436bb5f58e0b62054a
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ReportFileName
+    Id: g=57d171574d84fb2ee5fa79a212630e06
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "MessageHistoryReport.pdf"
+  - Name: ReportFilePath
+    Id: g=a5624934c4b7a8b541fd554451459d29
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Children:
+    - Name: StringFormatter1
+      Id: g=3e47cc63d505ba3f352660860d3a940a
+      Type: StringFormatter
+      Children:
+      - Name: Format
+        Id: g=0fc8b307482689840c926f964ed80721
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        ReferenceType: HasParameter
+        Value: {"LocaleId":"en-US","Text":"{0}/{1}"}
+      - Name: ns=9;Source0
+        Id: g=21f0202fe82340d1a3345c59457b14d2
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=a7fa7075b19d107466945977317031b4
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../ReportDirectory"
+      - Name: ns=9;Source1
+        Id: g=0f516085094887757ef764e339858e28
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=64738836113e7bc4fe0c6da26daaa75e
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../ReportFileName"
+  - Name: ReportDirectory
+    Id: g=054f246c54cd45aa0f2d5a4aee66d953
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "%PROJECTDIR%"

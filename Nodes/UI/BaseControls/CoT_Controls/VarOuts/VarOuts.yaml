@@ -1,0 +1,1520 @@
+Name: VarOuts
+Id: g=ddf5bdd4fbbd239ae63dba23830f1d90
+Type: FolderType
+Children:
+- Name: CoT_CTRL_VarOut
+  Id: g=095e3a10147a1f2489cc6cf20ab404fb
+  Supertype: CoT_CMP_ContentElement
+  ReferenceType: HasComponent
+  Children:
+  - Name: Height
+    Id: g=c98c762659f15f9308659a41b2a144e4
+    Type: BaseVariableType
+    DataType: Size
+    Value: 72.0
+  - Name: Line
+    Id: g=6ea5e03d1d25f2b48d43ad65fbdecce2
+    Type: PolyLine
+    Children:
+    - Name: LineThickness
+      Id: g=e168fa47d5abb5ec3f3c0ac93c06778b
+      Type: BaseDataVariableType
+      DataType: Size
+      Value: 1.0
+    - Name: LineColor
+      Id: g=63f80214088ea5e619a0123d50d049f3
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#919191"
+      Children:
+      - Name: DynamicLink
+        Id: g=dfb46db126510961695a3c03195a641a
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "/Objects/MyHMI_Template_Unencrypted/UI/SyntegonStylesheet/SyntegonColors/AdditionalColors/black44"
+  - Name: HorizontalLayout
+    Id: g=20edb77334841b3f40b73929d172f81a
+    Type: RowLayout
+    Children:
+    - Name: HorizontalGap
+      Id: g=c021659195a727313262b3cef4e59559
+      Type: BaseDataVariableType
+      DataType: Size
+      Value: 20.0
+    - Name: CoT_CMP_Label
+      Id: g=8b6d5dd00f47e16b2df352f7fa173170
+      Type: CoT_CMP_Label
+      Children:
+      - Name: Height
+        Id: g=9a489412379dae67d7e634e481da7911
+        Type: BaseVariableType
+        DataType: Size
+        Value: 48.0
+      - Name: visibility
+        Id: g=7042da2a721510fe4cd0e57c1e50de15
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: enable
+        Id: g=e3a5b3d0a1d6d5ddb06ccdcc27b22113
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: text
+        Id: g=5aafc0310d05581fc4d2df14b105473e
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"LocaleId":"en-US","Text":"This is a label"}
+        Children:
+        - Name: DynamicLink
+          Id: g=f46e781141dd546542d6c56cf0a3f107
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../text"
+          Children:
+          - Name: Mode
+            Id: g=207e19ef6aedb599e15ee33bc42836eb
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: icon
+        Id: g=7e4dbfec93806e40adb45bb75a3b3ba8
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+        Children:
+        - Name: DynamicLink
+          Id: g=e480a43ea04a21f10278a7e243662bc2
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../icon"
+          Children:
+          - Name: Mode
+            Id: g=f12cc3522539294411b240cb7a896c9e
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: HorizontalLayout
+        Id: g=54cfbe4faf55927486d4b45ae06886f6
+        Type: RowLayout
+        Children:
+        - Name: LeftMargin
+          Id: g=84f26e626bfdaf0801126a3806299f41
+          Type: BaseVariableType
+          DataType: Size
+          Value: 12.0
+        - Name: HorizontalGap
+          Id: g=757647fad34c24e71dcf7d6356c0620d
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 8.0
+        - Name: Icon
+          Id: g=2113f54933157af159b59c945ff4f7a5
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=09fd02d7c43048198f854e66f9920bdf
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Children:
+            - Name: DynamicLink
+              Id: g=87c2a53d918feffc1c76791a35d1a069
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../icon"
+          - Name: Width
+            Id: g=fc917659ef380590129d0c40aaef12c3
+            Type: BaseVariableType
+            DataType: Size
+            Value: 48.0
+          - Name: Height
+            Id: g=8efc5759a7c155124a7a97f9b963ed13
+            Type: BaseVariableType
+            DataType: Size
+            Value: 48.0
+          - Name: Visible
+            Id: g=5b61340812816b7f860b4e16f3483d48
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=a60a7dd790eb926e887fa805528486ca
+              Type: ExpressionEvaluator
+              Children:
+              - Name: SourceIconPath
+                Id: g=1d1e597d7ab36088d3738811cfee270a
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=c88de9d377eed87c5173a1a6f48fa4d6
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../icon@Value"
+        - Name: Text
+          Id: g=c0f1f816edb9c920cfef34705519b36b
+          Type: CoT_CMP_SyntegonText
+          Children:
+          - Name: Text
+            Id: g=d568c11ee9b9367d0a1a3e7193cb7cf0
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=17c380e71d5e0d8f1df601b3eec4d9a9
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../text"
+          - Name: text
+            Id: g=660a0d964b713eaa4aeffb16c4293268
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Value: {"LocaleId":"en-US","Text":""}
+            Children:
+            - Name: DynamicLink
+              Id: g=856b11e3a305883d5b63efe64ff4a5d0
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../text"
+          - Name: style
+            Id: g=46490ad5812bba0b1949c103b01e1c2a
+            Type: BaseDataVariableType
+            DataType: CoT_FontStyle
+            Value: 4
+          - Name: FontWeight
+            Id: g=e43c523d91800391d2057918b84a7477
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            Value: 400
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=32266a872e238ad1593990049c665c7f
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=af566feb100c7104dff5ec926ffe2372
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=03674dd2bcd8097486858c7aaf397d18
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../style"
+          - Name: textColor
+            Id: g=7698e6e566dc2054ae721a7b36816c03
+            Type: BaseDataVariableType
+            DataType: CoT_TextColor
+          - Name: TextColor
+            Id: g=b0ca0527aee88c39e34449f29c59b5c2
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#000000"
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=bb9987cf82267680a68fa598eb8dfd9c
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=4f5f11b27b591d488643d7ea7df626ba
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=68050a3fecdaa192687d57c1095f0fcb
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../textColor"
+              - Name: Pairs
+                Id: g=8f861f0614fdfcb93fd4f7f19812f9d0
+                Type: BaseObjectType
+                Children:
+                - Name: Pair
+                  Id: g=c3be0273acf06789ce732af3958d62ae
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=4c095021b500cde971ad701eb6862d3d
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                  - Name: Value
+                    Id: g=0c9ed6e0d38c3d1c28bc8ee72cc6cae2
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=038f5d2b5ec58460e3d5dd9c1b723803
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+                - Name: Pair1
+                  Id: g=6c025a2a746a80f2a9a1563ff44b7d1b
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=4bdbe842e8f7bb4aac2267358d7c379e
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 1
+                  - Name: Value
+                    Id: g=2444b270aec4f4144470576d1d21c3fd
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=8cd39e9be81b32dc73f218f4b52e41f9
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/white"
+                - Name: Pair2
+                  Id: g=8cf8a0ed1520c200ce6b7429d624c986
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=6a0d3c8bbae7c95cde5518a16670a089
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 2
+                  - Name: Value
+                    Id: g=211d5d9a7c61a4f35c1031d3eae02035
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=468385110759630a2497df1d80c1ca3b
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/fatal100"
+                - Name: Pair3
+                  Id: g=203854333ddadd32f9f04e99c0af5496
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=f5e6a3828ce2c2fd1b3a6a9e4f1a43cb
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 3
+                  - Name: Value
+                    Id: g=440b9eea74a83d98852905ce67e00eb9
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=35ffefb3968dd3d70d7d9a646f6aeac8
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/AdditionalColors/black44"
+                - Name: Pair4
+                  Id: g=6a212b2adf286ea13aa62dad7bca28c1
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=bf377af73e7a0c61888a2eb08f1f7ed6
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 4
+                  - Name: Value
+                    Id: g=00a9bdff1a865666be830abda0c585ea
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=8cb0b631686cef9708f9f8574fe43f99
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black60"
+                - Name: Pair5
+                  Id: g=90ec1ed493535a8493ad3de8c9402a16
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=8a298b4c3404099a79ea8325537fcab0
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 5
+                  - Name: Value
+                    Id: g=dad34fbb538dcc09807676132461d250
+                    Type: BaseDataVariableType
+                    DataType: Color
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=757c2a59e2fac68011f9dbf0f2260a67
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black20"
+          - Name: FontSize
+            Id: g=2bcac537832a0041c2ea0665065aac2d
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: -1.0
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=26e76b85488308b9804ae9aa1e74f682
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=bc4d6c5933486fc74eedbc690037a7ab
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=034bdf4af8a7d1352c0cf9fcb7e2d42b
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../style"
+              - Name: Pairs
+                Id: g=15c7badd63b90a248c258785090f804b
+                Type: BaseObjectType
+                Children:
+                - Name: Pair
+                  Id: g=d917012414ed0cb045e89127b8a7c72f
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=91d4f77568fa8d01feece2f7f9f43ebf
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                  - Name: Value
+                    Id: g=839039a868ac86f24e9bd7db69f34846
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 64.0
+                - Name: Pair1
+                  Id: g=2632a16fa866eb941cd092511fad35a4
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=c4ab296518a16aa0d01ed704512cee2e
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 1
+                  - Name: Value
+                    Id: g=00f6902ef1864c79d11777f16bb611ea
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 28.0
+                - Name: Pair3
+                  Id: g=96818e43f8f24d2ee680e4d4f47fe006
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=f8f8ccaee8b206324aacfc87bcc6a006
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 2
+                  - Name: Value
+                    Id: g=b7a0e9530826f3fb67dc7ad0e73a0fed
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 20.0
+                - Name: Pair4
+                  Id: g=8c85e706f5db676169c7537df7f5636e
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=6a4b471cf5c285cda511287cc4435c24
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 3
+                  - Name: Value
+                    Id: g=a288df3a3385d763aa3ce07b8e5ac6ea
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 20.0
+                - Name: Pair5
+                  Id: g=cfe6657a52a090b4a96a8ae975c9c4a1
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=6af836d686ff77ed11181efa30f0e884
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 4
+                  - Name: Value
+                    Id: g=a5f5da447b59165e968dce241bc6b65c
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 20.0
+                - Name: Pair6
+                  Id: g=f69e13d2968fe125cf51d0ce206ef34b
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=aab508a61df99e521a9cf05c55d9db32
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    Value: 5
+                  - Name: Value
+                    Id: g=a39948b28471a8e239183cb6320b4151
+                    Type: BaseDataVariableType
+                    DataType: Size
+                    Value: 16.0
+          - Name: Height
+            Id: g=a72ca199fe3967d9e54f50cd367fb22e
+            Type: BaseVariableType
+            DataType: Size
+            Value: 48.0
+      - Name: Visible
+        Id: g=8531ce859e9ed69296b25fc1cbfcbc3e
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: DynamicLink
+          Id: g=1b96fd53eb124468cbef7da962ccfca9
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../visibility"
+      - Name: Opacity
+        Id: g=6e0e1c3753470dde63eb384af8409553
+        Type: BaseVariableType
+        DataType: Float
+        Value: 100.0
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=c835bae45a6e9ab7bc380853c1d93782
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=a83f5bbb2b926052aae303c113ddd8fe
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=af5057b23163a3786931992ad53934bb
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../enable"
+    - Name: CoT_CMP_VarOut
+      Id: g=fd6049289189f869c6cabdd650968635
+      Type: CoT_CMP_VarOut
+      Children:
+      - Name: Width
+        Id: g=5340e70f5be2cc583875774805023350
+        Type: BaseVariableType
+        DataType: Size
+        Value: 144.0
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=2767747a5cf7eba1b5553da32cd2f5d5
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=fe73c86ae7324849356954752d1e285e
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=5481be0a105c1a1fd9192655f44b28b0
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../stepSize"
+      - Name: Height
+        Id: g=e6e7a5bfb41b28b732174d9cf7ae7e10
+        Type: BaseVariableType
+        DataType: Size
+        Value: 72.0
+      - Name: Enabled
+        Id: g=02e8c8b7e5b47469133c3a9025296137
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: Visible
+        Id: g=174054b27032ce401f31d82672b7b344
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: DynamicLink
+          Id: g=1f994fb86ae100976812733b724f872f
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../visibility"
+      - Name: errorState
+        Id: g=c00233be611df8963b5f4f769de31f62
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Children:
+        - Name: DynamicLink
+          Id: g=c6c8cf720b61a25dbd2fed63653ea00d
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../errorState"
+          Children:
+          - Name: Mode
+            Id: g=ccd9c58e21187289b6cde2829bbf5daf
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: Units
+        Id: g=0d7b4891c132ae8d39e4fe6634f284a4
+        Type: CoT_CMP_SyntegonText
+        Children:
+        - Name: Text
+          Id: g=a91143c86fa6682f1569b7ef6665bf00
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Id: g=5e1a7626c4200c00c4be6fdb99a4287d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../text"
+        - Name: text
+          Id: g=cd4c29d6e368336c356b13f7e4bc1e57
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=fd566f59f2abb839a46c6d0dc340d608
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../unit"
+        - Name: style
+          Id: g=c31c35c69b06c87006fe5cd2b58d9675
+          Type: BaseDataVariableType
+          DataType: CoT_FontStyle
+          Value: 4
+        - Name: FontWeight
+          Id: g=9c9625211fe5de68dc705c489d561e95
+          Type: BaseDataVariableType
+          DataType: FontWeightEnum
+          Value: 400
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=ff6dd9b2aeae8355f3ad1a27de7e0f18
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=65c9b07c86bec53ca1fb0921459b361d
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=29e581b82e83f5482946d274c5cdacf0
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../style"
+        - Name: textColor
+          Id: g=e5366f64af41bc3c2977f4c5ede5b70c
+          Type: BaseDataVariableType
+          DataType: CoT_TextColor
+          Value: 4
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=d2529c32a045b766a86c629df27d60b2
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=868a26d4ad70610608b1dbfda03416d7
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=0eea7a0ded27f43e4c8a857b8992f6ff
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../errorState"
+            - Name: TrueValue
+              Id: g=bbd30240e33b636b4f8dcd9d3ca38923
+              Type: BaseDataVariableType
+              DataType: CoT_TextColor
+              ReferenceType: HasParameter
+              Value: 2
+            - Name: FalseValue
+              Id: g=7b3c2dee5ffb1ac85d96b0a2b7b3d656
+              Type: BaseDataVariableType
+              DataType: CoT_TextColor
+              ReferenceType: HasParameter
+              Value: 4
+        - Name: TextColor
+          Id: g=6b72fb78f990900f254bdb4982c95c7d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=bcd6a8ce71f918c097bf70ae0d28df32
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=37131b60fe64e1a52c52f5dfab062811
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=781c6de7ecb426d99751b5e3497880ba
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../textColor"
+            - Name: Pairs
+              Id: g=63a8f715ad7af482d14f676ad77cf010
+              Type: BaseObjectType
+              Children:
+              - Name: Pair
+                Id: g=9f05315287d03b521caa31a5a98e9522
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=c92c04bf0b08e8e3b13b5a745a03139d
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                - Name: Value
+                  Id: g=3996cb7970552ec85205c47c222e75cc
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=effa0f04769b69160eb60123cd7ce0bc
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+              - Name: Pair1
+                Id: g=04dbe8da312a7099701e3da212868600
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=567b6fccefa0a1ca7cf493d349068800
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 1
+                - Name: Value
+                  Id: g=aabb444b20d1555d0db0052dda6f2c7d
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=361ac52eb6fb230035dc020ce3c7b541
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/white"
+              - Name: Pair2
+                Id: g=16e8188fb7fba099cadc9fa34fd6b110
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=472d15557025201835e9ec9272405eef
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 2
+                - Name: Value
+                  Id: g=b2b23b9b96d36384be67db9748151fa6
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=1846387a4415f4fa9d0f3d8c2eeb5939
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/fatal100"
+              - Name: Pair3
+                Id: g=c5d3b0da512c9d72df3c48651cafaa92
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=0a281b313f11d1083bdd549f55435047
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 3
+                - Name: Value
+                  Id: g=f724a9c23d5fc14ea3d15c1358c72f7d
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=393d307c83642217c2507f9512759374
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/AdditionalColors/black44"
+              - Name: Pair4
+                Id: g=c9bb09122b1ee0ede3675c0d501722ca
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=ac775921e6eeff4c88b4bef2c35ae8b2
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 4
+                - Name: Value
+                  Id: g=039d2714b664534d686b9ac4d011f2ec
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=25724b682371ddf59f6300172aaa88a2
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black60"
+              - Name: Pair5
+                Id: g=237002331a931554ff62c7084c064c95
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=4fc7745bcd545dd6652d70d6ee2e2fd1
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 5
+                - Name: Value
+                  Id: g=9de3e968401e1ecf0226cb55500852f0
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=015256b3e701f13b30a1b82e9902ca98
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black20"
+        - Name: FontSize
+          Id: g=6484496303709e2ab9d5aa5d115e72a4
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: -1.0
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=e76aa4a0910e3f382544cd1b11f8c152
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=2f08a2bd8c44f6a52a3ab4224290e459
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=649e94fff833492f91a5ad8395ef4886
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../style"
+            - Name: Pairs
+              Id: g=1d1e8a90fca5f02f5b8a13ac760018e7
+              Type: BaseObjectType
+              Children:
+              - Name: Pair
+                Id: g=84d9828af598dcfb9a0ea454187fa3e4
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=ab6752dc3fd282111a5fd6fbada82bbe
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                - Name: Value
+                  Id: g=e74d5b380e847255b1f871954627a23d
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 64.0
+              - Name: Pair1
+                Id: g=42b7b3c334301eaa6a45ec54501ce7b0
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=9bc40f72c5730049d8c6bb9b8bfcd0dc
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 1
+                - Name: Value
+                  Id: g=95a499e6d19060b9106ef4c30c46608e
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 28.0
+              - Name: Pair3
+                Id: g=eff1586faa0f450719d710c770e654cf
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=26036b8ab28c614d0341618ad0527f2b
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 2
+                - Name: Value
+                  Id: g=54e3c2a79cc706ce0ebb5dcaae99a17f
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair4
+                Id: g=aa2583e8ac560d3c5df3a9ec98861ae3
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=fe0414ef51a53595d50feedd82d30b1e
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 3
+                - Name: Value
+                  Id: g=fa219a127de3b42acd2b91899c1f98eb
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair5
+                Id: g=0aec5177e37a4cdd9113db22c123bbad
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=4a920e41f3478f341b46f66a57d4fc54
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 4
+                - Name: Value
+                  Id: g=a6d42b886feb8b27815ef724baa7fd0f
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair6
+                Id: g=970316d49428e56b71e99f06e0dc3633
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=0b2b3c18158f7edd809f73d6b1fdd6bb
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 5
+                - Name: Value
+                  Id: g=da1a2408ef4572366c55beae435472de
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 16.0
+      - Name: value
+        Id: g=54b601e61344e0d921d2fc5c2623ca59
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        Value: {"Type":10,"Body":0.0}
+        Children:
+        - Name: DynamicLink
+          Id: g=8289584e26e052df45021225aa00519b
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../value"
+          Children:
+          - Name: Mode
+            Id: g=eb13cc57576a470f20ee7907cb6fbf1f
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: stepSize
+        Id: g=c13708cb672d8439cd4274ebafbb4742
+        Type: BaseDataVariableType
+        DataType: CoT_VarOutSizes
+        Value: 2
+        Children:
+        - Name: DynamicLink
+          Id: g=53b78d17848dfc3c6e0b705ee3b343a5
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../stepSize"
+          Children:
+          - Name: Mode
+            Id: g=41c0e7b1759a897998e14f6cd273d62d
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: decimalPlaces
+        Id: g=d5dbd3022972e08afdc45e060a669643
+        Type: BaseDataVariableType
+        DataType: CoT_DecimalPlaces
+        Children:
+        - Name: DynamicLink
+          Id: g=1c9c171b1646017e4c3f762334753197
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../decimalPlaces"
+          Children:
+          - Name: Mode
+            Id: g=ffa0baae4c3b3d0fe24f073d3e44ab95
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: unit
+        Id: g=5a425353d1df922031541ca4e9406f99
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "unit"
+        Children:
+        - Name: DynamicLink
+          Id: g=70a74138e708437b30d4edb838e00f13
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../unit"
+          Children:
+          - Name: Mode
+            Id: g=9a97dc6ae07e7ab3a35e555952386384
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: visibility
+        Id: g=34cabba91ae110f574f4118c7c4a115f
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+      - Name: NumDisplay
+        Id: g=a3fdd7faf4ce4c369810c5d14b51ca94
+        Type: CoT_CMP_SyntegonText
+        Children:
+        - Name: Text
+          Id: g=23cf92918bf455c83a5a942b6da30b4c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Id: g=aa01934eee015d26bb7e71e47b29b797
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../text"
+        - Name: text
+          Id: g=90db1d0bde5c329c2b34226de8443ac1
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":""}
+          Children:
+          - Name: StringFormatter1
+            Id: g=ed9ffda6c563fcaf303eb34efeb47c31
+            Type: StringFormatter
+            Children:
+            - Name: Format
+              Id: g=9c62679cfdcb197768045fc392b2603f
+              Type: BaseDataVariableType
+              DataType: LocalizedText
+              ReferenceType: HasParameter
+              Value: {"LocaleId":"en-US","Text":"{0:f0}"}
+              Children:
+              - Name: KeyValueConverter1
+                Id: g=615c2a440bdef9e0f3c9eab824e3efd2
+                Type: ValueMapConverter
+                Children:
+                - Name: Source
+                  Id: g=5bb7fec7223aaea20e3b871046a87732
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=531edc39d875ba88c97370a936767cbd
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../decimalPlaces"
+                - Name: Pairs
+                  Id: g=6293086d0bed227b515343f25a7e82b2
+                  Type: BaseObjectType
+                  Children:
+                  - Name: Pair
+                    Id: g=6d8956137b344c3cf8c96c5d40465657
+                    Type: ValueMapPair
+                    Children:
+                    - Name: Key
+                      Id: g=e70ec60fdacb1dde32ed35cca9b64bed
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                    - Name: Value
+                      Id: g=83414d0196fdbdee42810279ef6cb5e9
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Value: "{0}"
+                  - Name: Pair1
+                    Id: g=cab27fca60b341b10c5de17896f28d08
+                    Type: ValueMapPair
+                    Children:
+                    - Name: Key
+                      Id: g=8970f33f28df016b0dd910fb6d0f9365
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      Value: 1
+                    - Name: Value
+                      Id: g=8835aa20b6522ad2310cc6f78b92b32b
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Value: "{0:f1}"
+                  - Name: Pair2
+                    Id: g=6e4c71f533c6b52937eaedcff8a949c5
+                    Type: ValueMapPair
+                    Children:
+                    - Name: Key
+                      Id: g=5a1e2b820a47719743a95b528703d41b
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      Value: 2
+                    - Name: Value
+                      Id: g=6a4e70f7cd02b5569e3381a0f1ac684a
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Value: "{0:f2}"
+                  - Name: Pair3
+                    Id: g=da05dad4fb7f39ca6f11e2829948fd92
+                    Type: ValueMapPair
+                    Children:
+                    - Name: Key
+                      Id: g=beb3f0e4206704e814024bc95cf42937
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      Value: 3
+                    - Name: Value
+                      Id: g=8b02dab3206c702afc49eb4e36fb5764
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Value: "{0:f3}"
+                  - Name: Pair4
+                    Id: g=dfecf9e8fb814904f99eb880bbf68edc
+                    Type: ValueMapPair
+                    Children:
+                    - Name: Key
+                      Id: g=4719572dc8f7f8192bf8acb2d4667132
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      Value: 4
+                    - Name: Value
+                      Id: g=4f3cd7be16a05acbfa02b7e33041fe5e
+                      Type: BaseDataVariableType
+                      DataType: String
+                      Value: "{0:f4}"
+            - Name: Source0
+              Id: g=02a331328590ac9b77e3d06677783cac
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=6d4bc7ddb233ec82191c65d5d2cbd88f
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../value"
+        - Name: style
+          Id: g=8ed5771fb134d5c557e6aea0e954b940
+          Type: BaseDataVariableType
+          DataType: CoT_FontStyle
+          Value: 4
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=98730e3972f16bdca9807f4c495d706a
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=79e3c7e879d1bf3eed52200b6a864859
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=741a7e80fa4ea1cb7ce23a83e5fd171b
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../isInline"
+        - Name: FontWeight
+          Id: g=457ee2f2ad0bd739b17cec345e6edff0
+          Type: BaseDataVariableType
+          DataType: FontWeightEnum
+          Value: 400
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=b38f27180310c06ac62e1d083573c0e9
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=f574d9af8f064d3f51ef3a956cc51bec
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=22c50f5d00374df9e855fe48793968c3
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../style"
+        - Name: textColor
+          Id: g=ef55331831bcf22da1b2afe174e2f175
+          Type: BaseDataVariableType
+          DataType: CoT_TextColor
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=78393cd641a3c2543711645fea9a1ef8
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=ce58fe923dcba5b6adcdafff6d054323
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=7e3a48eb0d7b5be9d6a3a6dd7a5f54d2
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../errorState"
+            - Name: TrueValue
+              Id: g=f9ec83025df53ec15e5e9cc5d50d5d96
+              Type: BaseDataVariableType
+              DataType: CoT_TextColor
+              ReferenceType: HasParameter
+              Value: 2
+            - Name: FalseValue
+              Id: g=09560db8a184930579e6961c61369d63
+              Type: BaseDataVariableType
+              DataType: CoT_TextColor
+              ReferenceType: HasParameter
+        - Name: TextColor
+          Id: g=63890f5d89d8abe834b655fb8ec7df20
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=cb870876325d463cd8b8c6756bfa2eab
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=f1a00294d46a04ab19fb8a6fd9d87070
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=4929b69f1c1e973a9ddf50e601a544fb
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../textColor"
+            - Name: Pairs
+              Id: g=3465942b94f4625d173ece004e4dff3f
+              Type: BaseObjectType
+              Children:
+              - Name: Pair
+                Id: g=05615b8c955836ed823b4ef564a4a68a
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=f2681ce97a0637323f7fa7128fae24d6
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                - Name: Value
+                  Id: g=9b86bce2ecc856f98a3b4d00b06e9a76
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=806250cb81a502e0f16fa69a45249564
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+              - Name: Pair1
+                Id: g=72c155a0e5c8dae9086657b5cb781773
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=408ac47b9fb0acbb3d72ed1795ad0d41
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 1
+                - Name: Value
+                  Id: g=422a2545b2337fb40c1b8c6bb00a5f2b
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=b74d1e6365babdf70d0e82a2c1b01dfe
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/white"
+              - Name: Pair2
+                Id: g=c98764adad32cef074235784031544ec
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=da8dea1ec7b8841953846156b3d6a36b
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 2
+                - Name: Value
+                  Id: g=ce1ce944763f328aa1b1a179f486f46a
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=49d1de3944d78668202bac543c4eaf08
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/fatal100"
+              - Name: Pair3
+                Id: g=0b4138a19db98582fe56f4aaa79c982e
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=88bf47f843bcc0fc96c6e5dfb486a4e3
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 3
+                - Name: Value
+                  Id: g=86924bc2fb2f57f0fa60de835d291984
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=037ebca4caeb7e897eb739186ea2e7a5
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/AdditionalColors/black44"
+              - Name: Pair4
+                Id: g=0f1d709cbdf9ec1448bf0f00e9342aaa
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=f5fbb979057f7b96fd6ed80b9b5c476a
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 4
+                - Name: Value
+                  Id: g=60befff12627fca3b57070f27b613ed9
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=e8747d6e7ac4bf9da67a3e18eea792f3
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black60"
+              - Name: Pair5
+                Id: g=c7a693835ca8065572ddaab48a568681
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=a569555138ad152290bd4f474387066b
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 5
+                - Name: Value
+                  Id: g=b9880c2456fe3031a608be84be406777
+                  Type: BaseDataVariableType
+                  DataType: Color
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=f1e6b1b841a79f0fe6a51b10f13cb064
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100/black20"
+        - Name: FontSize
+          Id: g=48be5a2e29d1f3dfa255990854ae16db
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: -1.0
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=cb9dde1bd7e976e73025b1251741aaed
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=f678854ef4cf0ad7f5deac5902121e77
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=e533f8f70573e97ab2d19d98f809ef29
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../style"
+            - Name: Pairs
+              Id: g=4d6dca998bd8081ebab52e12432ab7a7
+              Type: BaseObjectType
+              Children:
+              - Name: Pair
+                Id: g=ffd461ed4abcf4964851817ceaf76049
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=e7123cdf388264a3b68eebeafcf24dee
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                - Name: Value
+                  Id: g=19cb22ab566974f2eb7ae239a3f2ef79
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 64.0
+              - Name: Pair1
+                Id: g=d4b2542677ebfa168863d8a2e2bea4ea
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=d595e0997691567b968f81f4fb140810
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 1
+                - Name: Value
+                  Id: g=b6066b3dbffd52f1020977e343709f77
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 28.0
+              - Name: Pair3
+                Id: g=887e3239a30cba845a0df0fd215a2e92
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=3f163361ed7d00763dddcf3beba66181
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 2
+                - Name: Value
+                  Id: g=b630d0f76c805e8ff44ed7a9cfa2cfdc
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair4
+                Id: g=8d4aa20cc5b2934bcc9d7f63848f4fd1
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=3e7c7eb47d3cf363966d8e03d298c807
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 3
+                - Name: Value
+                  Id: g=b250b7061bea9c268e13fa4a87bfe63b
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair5
+                Id: g=4a77d2627fede7da675d18c69fe69be7
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=5b60c7461fbcabf269bdd9ce27175880
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 4
+                - Name: Value
+                  Id: g=d736d8688963c7a0685ec23f9255c529
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 20.0
+              - Name: Pair6
+                Id: g=16934ef188694091a56ccdf6c2c3ec4a
+                Type: ValueMapPair
+                Children:
+                - Name: Key
+                  Id: g=867ded431708eb6f8073bcf08e0bb23d
+                  Type: BaseDataVariableType
+                  DataType: UInt32
+                  Value: 5
+                - Name: Value
+                  Id: g=7c3c0e92747f9dcc0c90c3db207de750
+                  Type: BaseDataVariableType
+                  DataType: Size
+                  Value: 16.0
+      - Name: BottomLine
+        Id: g=f8a8ab483b6e18324be228a659a6f2b4
+        Type: Rectangle
+        Children:
+        - Name: BorderThickness
+          Id: g=871ea3603c4ada250e7abdce16055579
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 1.0
+        - Name: Width
+          Id: g=0d544179d350f6ca74baa052686e4248
+          Type: BaseVariableType
+          DataType: Size
+          Value: 144.0
+        - Name: Height
+          Id: g=982cc9f6dc5e96deaab24fa5b9de1c92
+          Type: BaseVariableType
+          DataType: Size
+          Value: 6.0
+        - Name: TopMargin
+          Id: g=a6f532318ab95edacb25f1dc6388e186
+          Type: BaseVariableType
+          DataType: Size
+        - Name: BorderColor
+          Id: g=e75c99d9261d55b3ce40566787dbf06e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#000000"
+          Children:
+          - Name: DynamicLink
+            Id: g=91eac9157d54013835fad22ea683d025
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/SyntegonStylesheet/SyntegonColors/AdditionalColors/fatal120"
+        - Name: FillColor
+          Id: g=c737a1d593f532cc2eb8739dc14dd9e7
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#ffffff"
+          Children:
+          - Name: DynamicLink
+            Id: g=84a310f4af4c3034100bbeb537c07ad6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "/Objects/MyHMI_Template_Unencrypted/UI/SyntegonStylesheet/SyntegonColors/fatal100"
+        - Name: Visible
+          Id: g=863c83f389a5bc324fd7735c1432cef4
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: DynamicLink
+            Id: g=cd0bc7f13ecccdf09aebc5f50e6b5578
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../errorState"
+      - Name: isInline
+        Id: g=9705880a22105a6b0c77abe41f0c4c37
+        Type: BaseDataVariableType
+        DataType: Boolean
+  - Name: visibility
+    Id: g=197ad7110d06908800e03eae6d149ff9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Visible
+    Id: g=3e04a728300c449086695839583e1c6b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: DynamicLink
+      Id: g=7c49ccf16cd4e8718ca57462d8f90ee3
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../visibility"
+  - Name: text
+    Id: g=74e8486d40ea7197620bb29b83482327
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"This is a label"}
+  - Name: icon
+    Id: g=deab1b401858f818407caec6adfa9649
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: errorState
+    Id: g=7e796a076be9a6444f5a15126ed1cae9
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: value
+    Id: g=074d93296e3b4bce49e60a9981569ad3
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    Value: {"Type":6,"Body":0}
+  - Name: stepSize
+    Id: g=088ac417838839578202e70a82927644
+    Type: BaseDataVariableType
+    DataType: CoT_VarOutSizes
+    Value: 2
+  - Name: decimalPlaces
+    Id: g=eb95a101c6cd3796b5c9f1d7129b4cf3
+    Type: BaseDataVariableType
+    DataType: CoT_DecimalPlaces
+  - Name: unit
+    Id: g=98aabaa7c8c4fa29fa55d4fb01f5e0cc
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}

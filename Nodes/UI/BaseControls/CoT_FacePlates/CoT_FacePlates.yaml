@@ -1,0 +1,15 @@
+Name: CoT_FacePlates
+Id: g=02dbdc7e341edcea66fbc935372d504d
+Type: FolderType
+Children:
+- File: Buttons/Buttons.yaml
+- File: Cards/Cards.yaml
+- File: CheckBoxes/CheckBoxes.yaml
+- File: Dropdowns/Dropdowns.yaml
+- File: Leds/Leds.yaml
+- File: Switches/Switches.yaml
+- File: TextArea/TextArea.yaml
+- File: TextIns/TextIns.yaml
+- File: TextOuts/TextOuts.yaml
+- File: VarIns/VarIns.yaml
+- File: VarOuts/VarOuts.yaml

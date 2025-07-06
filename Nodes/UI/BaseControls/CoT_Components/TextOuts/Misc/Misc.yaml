@@ -1,0 +1,123 @@
+Name: Misc
+Id: g=2312e194c5a9341f792d73ae89219e85
+Type: FolderType
+Children:
+- Class: DataType
+  Name: CoT_TextOutFontSizes
+  Id: g=afccb08f98da4d0bb269e9478face3f0
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "TextOutFontSizes",
+    "DataType": {
+     "IdType": 2,
+     "Id": "afccb08f98da4d0bb269e9478face3f0",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Small"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     },{
+      "Name": "Value1",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Large"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=f75eb074a0db069fb5b241cbfd3556a3
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"Small"},"Description":{"LocaleId":"en-US","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"Large"},"Description":{"LocaleId":"en-US","Text":""}}}]
+- Class: DataType
+  Name: CoT_TextOutSizes
+  Id: g=de5dbe3cbb1f4713d8768f09dc4f0b62
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "TextOutSizes",
+    "DataType": {
+     "IdType": 2,
+     "Id": "de5dbe3cbb1f4713d8768f09dc4f0b62",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Auto"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 2"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     },{
+      "Name": "Value2",
+      "Value": 2,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 3"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     },{
+      "Name": "Value3",
+      "Value": 3,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 4"
+      },
+      "Description": {
+       "LocaleId": "en-US",
+       "Text": ""
+      }
+     },{
+      "Name": "Value4",
+      "Value": 4,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "StepSize 5"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=bc12bed36b4ddec5ba2b04b7f450da87
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"Auto"},"Description":{"LocaleId":"en-US","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 2"},"Description":{"LocaleId":"en-US","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":2,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 3"},"Description":{"LocaleId":"en-US","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":3,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 4"},"Description":{"LocaleId":"en-US","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":4,"DisplayName":{"LocaleId":"en-US","Text":"StepSize 5"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]

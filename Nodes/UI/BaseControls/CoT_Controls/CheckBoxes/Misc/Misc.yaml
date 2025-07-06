@@ -1,0 +1,41 @@
+Name: Misc
+Id: g=ca15d4b0e75a9135f3cbc1cafac6d70a
+Type: FolderType
+Children:
+- Class: DataType
+  Name: CoT_CheckBoxPosition
+  Id: g=4cb9a62f337bfce33a58c4608c1dbe3d
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "CheckBoxPosition",
+    "DataType": {
+     "IdType": 2,
+     "Id": "4cb9a62f337bfce33a58c4608c1dbe3d",
+     "Namespace": 32
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Left"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Right"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Id: g=f8db43d6681618016e1ca6644163bebd
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"Left"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"Right"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]

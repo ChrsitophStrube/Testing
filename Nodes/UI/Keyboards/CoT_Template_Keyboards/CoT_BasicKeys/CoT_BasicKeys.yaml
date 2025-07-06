@@ -1,0 +1,183 @@
+Name: CoT_BasicKeys
+Id: g=152bc1f7dbcda8e6661f2b2ded0797ca
+Type: FolderType
+Children:
+- Name: BasicTextButton
+  Id: g=63c9b75139a6d220a0ada7fddb438a7a
+  Supertype: VirtualKeyboardTextButton
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=a6055cebc52a1eb395ab76730614c232
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 50.0
+  - Name: Height
+    Id: g=07b16c657766c3a11d925c6c8ba6826c
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 40.0
+  - Name: Style
+    Id: g=6e950f058c2a8d8096b7f3900b7b6043
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Default"
+  - Name: FontItalic
+    Id: g=ba490075f7cb73c05b0812262c1e1ca4
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+  - Name: FontFamily
+    Id: g=f1701da9f6ce25d61c1b2df9cb4e5d1c
+    Type: BaseDataVariableType
+    DataType: Font
+    ModellingRule: Optional
+    Value: "Syntegon Medium"
+  - Name: TextColor
+    Id: g=7ac1e72a6164f814746a0849d0b8f4ef
+    Type: BaseDataVariableType
+    DataType: Color
+    Value: "#000000"
+    Children:
+    - Name: DynamicLink
+      Id: g=140b7e42d816f8bc79af6b624ae28a0c
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/black100"
+  - Name: FontSize
+    Id: g=72503eb821653e865e6a9fa84ff7a2c2
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: BackgroundColor
+    Id: g=98fc40121f1f549f10425d5358434c05
+    Type: BaseDataVariableType
+    DataType: Color
+    Value: "#e4e4e4"
+    Children:
+    - Name: DynamicLink
+      Id: g=752ab66cbf4fe2aeeb0dee834d84e1ba
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "/Objects/MyHMI_Template_Unencrypted/UI/GlobalStylesheet/SyntegonColors/grey100/grey60"
+- Name: BasicSymbolHorizontalButton
+  Id: g=4a6ae9edc252720f6fe7d8a0d7e68496
+  Supertype: VirtualKeyboardSymbolButton
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=43b8c85e4b71eb7d4baea7b6634988b8
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 80.0
+  - Name: Height
+    Id: g=2dc76158a7f7716202b4403a8a9f433e
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 40.0
+  - Name: ImageWidth
+    Id: g=c1503fb6a81cc31304bb989f0815c622
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 24.0
+- Name: BasicSymbolVerticalButton
+  Id: g=a3e5305f5b1e3b4c1b4eb7218724b285
+  Supertype: VirtualKeyboardSymbolButton
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=6cfdd8d305ee9942b011de7dce252e2b
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 50.0
+  - Name: Height
+    Id: g=5e0e3f0b5df4e51cd59aaba070651f84
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 90.0
+  - Name: ImageWidth
+    Id: g=61d293461e564ffee166b19db517e124
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 24.0
+  - Name: Symbol
+    Id: g=4c0bbc1d59c72194d6608318c3ac972f
+    Type: BaseDataVariableType
+    DataType: VirtualKeyboardKeySymbolEnum
+    ModellingRule: Optional
+- Name: BasicSpaceButton
+  Id: g=82408f31e29d38c9b89ccd935546f46e
+  Supertype: VirtualKeyboardSymbolButton
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=775afa5973b4b18da16f94785e170096
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 410.0
+  - Name: Height
+    Id: g=e9f2805fb440175d383857c8ad4ed0e5
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 40.0
+  - Name: Symbol
+    Id: g=d8547f7cc79fa01bb6d0d9c978a87b5c
+    Type: BaseDataVariableType
+    DataType: VirtualKeyboardKeySymbolEnum
+    ModellingRule: Optional
+    Value: 8
+  - Name: Text
+    Id: g=1fe6c19408b500879810d09592284a58
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: RightMargin
+    Id: g=1640d2b9afa6737d747ce69f06a58fa3
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+  - Name: ImagePath
+    Id: g=3444f30c29c6d2c0631f40631dd25827
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    ModellingRule: Optional
+    Value: "ns=32;%PROJECTDIR%/res/Space_Outline_24x.svg"
+  - Name: ImageWidth
+    Id: g=c210172bde6d179633be374f2e105a09
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 24.0
+- Name: BasicSwitchPushButton
+  Id: g=186471aac6bcaf569c140b660d2646d1
+  Supertype: Button
+  ReferenceType: HasComponent
+  Children:
+  - Name: Height
+    Id: g=756f45c43d93b93ecfbd4504e3a47ad1
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 40.0
+  - Name: Visible
+    Id: g=4e0975310c1d1ec7388c434de09afc3f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Width
+    Id: g=dd4949009e3f15a4068e8bd46db2f7b5
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 80.0
