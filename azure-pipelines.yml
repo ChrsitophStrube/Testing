@@ -38,9 +38,8 @@ steps:
   - powershell: $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/net8.0/playwright.ps1 install
     displayName: 'Install Browser'
 
-  - task: Delay@1
-    inputs:
-      delayForMinutes: '1'
+  - powershell: Start-Sleep -Seconds 50
+    displayName: 'Wait 50 seconds'
 
   - task: DotNetCoreCLI@2
     displayName: 'Run Tests'
