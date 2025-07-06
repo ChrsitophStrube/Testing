@@ -35,9 +35,8 @@ steps:
       command: 'build'
       projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
 
-  - pwsh: $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/netX/playwright.ps1 install
+  - powershell: $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/netX/playwright.ps1 install
     displayName: 'Install Browser'
-
 
   - task: DotNetCoreCLI@2
     displayName: 'Run Tests'
