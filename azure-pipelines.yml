@@ -34,6 +34,32 @@ steps:
       PathtoPublish: "$(Build.SourcesDirectory)/build"
       ArtifactName: "optix"
 
+  - task: DotNetCoreCLI@2
+    displayName: 'Restore NuGet Packages'
+    inputs:
+      command: 'restore'
+      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Build Solution'
+    inputs:
+      command: 'build'
+      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Tests'
+    inputs:
+      command: 'test'
+      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/HmiTesting.PlaywrightTests.csproj'
+      arguments: '--no-build --logger trx'
+
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    inputs:
+      testResultsFiles: '**/TestResults/*.trx'
+      testResultsFormat: 'VSTest'
+      failTaskOnFailedTests: true     
+
   - script: |
       echo Deployment pipeline completed.
     displayName: 'Finish'

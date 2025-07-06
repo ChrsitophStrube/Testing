@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nauful-LibUA-core" Version="1.0.33" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HmiTesting.Core\HmiTesting.Core.csproj" />
+    <ProjectReference Include="..\HmiTesting.Web.Navigation\HmiTesting.Web.Navigation.csproj" />
+
+  </ItemGroup>
+
+
+</Project>
