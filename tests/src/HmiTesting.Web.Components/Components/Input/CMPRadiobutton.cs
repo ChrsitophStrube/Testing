@@ -6,11 +6,11 @@ using LibUA.Core;
 using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
 
-public class CMPRadiobutton : IInputControl
+public class CMPRadiobutton : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _radiobutton { get; }
-    public CMPRadiobutton(IOpcUaSession session, LocatorNodeId radiobutton)
+    public CMPRadiobutton(IOpcUaSession session, LocatorNodeId radiobutton) : base(session, radiobutton)
     {
         _session = session;
         _radiobutton = radiobutton;
@@ -58,13 +58,6 @@ public class CMPRadiobutton : IInputControl
     }
 
 
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "userRole", _radiobutton.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
@@ -80,16 +73,4 @@ public class CMPRadiobutton : IInputControl
         return eventsActive;
     }
 
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _radiobutton.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _radiobutton.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
 }

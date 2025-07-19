@@ -7,20 +7,14 @@ using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
 using System.Text;
 using System.Text.RegularExpressions;
-public class CMPSwitch : IInputControl
+public class CMPSwitch : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _switch { get; }
-    public CMPSwitch(IOpcUaSession session, LocatorNodeId @switch)
+    public CMPSwitch(IOpcUaSession session, LocatorNodeId @switch) : base(session, @switch)
     {
         _session = session;
         _switch = @switch;
-    }
-
-    public async Task Click()
-    {
-        var button = _session.ResolveNodeLocator(_switch.Locator.Page, "TransparentButton", _switch.NodeId);
-        await button.Locator.ClickAsync();
     }
 
     public async Task<bool> GetCommand()
@@ -56,17 +50,6 @@ public class CMPSwitch : IInputControl
             throw new Exception("the command output does not match the visual state after setting the command");
         }
     }
-
-
-
-
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_switch.Locator.Page, "userRole", _switch.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
@@ -82,19 +65,6 @@ public class CMPSwitch : IInputControl
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
         return eventsActive;
-    }
-
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _switch.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _switch.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
     }
 
 }

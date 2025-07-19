@@ -9,11 +9,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-public class CMPDropdown : IInputControl
+public class CMPDropdown : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _dropdown { get; }
-    public CMPDropdown(IOpcUaSession session, LocatorNodeId dropdown)
+    public CMPDropdown(IOpcUaSession session, LocatorNodeId dropdown) : base(session, dropdown)
     {
         _session = session;
         _dropdown = dropdown;
@@ -25,7 +25,7 @@ public class CMPDropdown : IInputControl
         //Open the dropdown
         var button = _session.ResolveNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
         await button.Locator.ClickAsync();
-        
+
         //Get all Options
         var verticalLayout = _session.GetNodeIdFromPath(BuildPath("CoT_CMP_DropdownContent", "ScrollView", "VerticalLayout").ToString(), button.NodeId);
         Thread.Sleep(500); //wait until the dropdown is open(Flyout visible)
@@ -79,13 +79,6 @@ public class CMPDropdown : IInputControl
         return await selectdeOptionText.Locator.Locator("span").InnerTextAsync();
     }
 
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_dropdown.Locator.Page, "userRole", _dropdown.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
@@ -102,18 +95,4 @@ public class CMPDropdown : IInputControl
 
         return eventsActive;
     }
-
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _dropdown.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _dropdown.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
-
 }

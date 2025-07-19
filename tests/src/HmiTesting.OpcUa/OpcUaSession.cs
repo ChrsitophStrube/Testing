@@ -6,6 +6,7 @@ using LibUA.Core;
 using Microsoft.Playwright;
 using HmiTesting.Core.Helpers;
 using HmiTesting.Core.DTOs;
+using System.Diagnostics;
 
 namespace HmiTesting.OpcUa;
 
@@ -44,9 +45,17 @@ public class OpcUaSession :
         throw new NotImplementedException();
     }
 
+
     public NodeId GetNodeIdFromPath(string path, NodeId? startNode = null)
     {
         return GetNodeIdFromPath(_optixProjectNamespace, path, startNode);
+    }
+
+    public NodeId GetNodeIdFromPath(string nsIndex, string path, NodeId startNode = null)
+    {
+        ushort nsIndexInt = GetNamespaceIndex(nsIndex);
+        return GetNodeIdFromPath(nsIndexInt, path, startNode);
+
     }
 
     public NodeId GetNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null)
@@ -209,6 +218,45 @@ public class OpcUaSession :
         return (T)dvs[0].Value;
     }
 
+    public async Task<T> WaitForValueAsync<T>(NodeId nodeId, T expectedValue, int timeoutMs = 500)
+    {
+        var interval = TimeSpan.FromMilliseconds(50);     // Poll-Intervall
+        var start = Stopwatch.GetTimestamp();
+        TimeSpan timeout = TimeSpan.FromMilliseconds(timeoutMs);
+        double timeoutTicks = timeout.TotalSeconds * Stopwatch.Frequency;
+
+        while (true)
+        {
+            T current = GetValue<T>(nodeId);
+
+            // Compare
+            if (IsEqual<T>(current, expectedValue))
+                return current;
+
+            if (Stopwatch.GetTimestamp() - start >= timeoutTicks)
+                throw new TimeoutException(
+                    $" Expected value '{expectedValue}' was not reached within {timeout}.For nodeId with Browsename: {GetBrowsename(nodeId)}");
+
+            await Task.Delay(interval).ConfigureAwait(false);
+        }
+    }
+
+    private static bool IsEqual<T>(T a, T b)
+    {
+
+        if (ReferenceEquals(a, b)) return true;
+        if (a is null || b is null) return false;
+
+
+        if (a is LocalizedText ltA && b is LocalizedText ltB)
+        {
+            return string.Equals(ltA.Locale, ltB.Locale, StringComparison.OrdinalIgnoreCase) &&
+                   string.Equals(ltA.Text, ltB.Text, StringComparison.Ordinal);
+        }
+
+        return EqualityComparer<T>.Default.Equals(a, b);
+    }
+
     public string GetBrowsename(NodeId nodeId)
     {
         var readRes = _client.Read(new ReadValueId[]
@@ -248,4 +296,3 @@ public class OpcUaSession :
     }
 
 }
-

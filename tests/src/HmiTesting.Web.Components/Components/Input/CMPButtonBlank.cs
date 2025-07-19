@@ -4,11 +4,11 @@ using HmiTesting.Core.Interfaces;
 using LibUA.Core;
 using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
-public class CMPButtonBlank : IInputControl
+public class CMPButtonBlank : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _button { get; }
-    public CMPButtonBlank(IOpcUaSession session, LocatorNodeId button)
+    public CMPButtonBlank(IOpcUaSession session, LocatorNodeId button) : base(session, button)
     {
         _session = session;
         _button = button;
@@ -42,13 +42,6 @@ public class CMPButtonBlank : IInputControl
         }
     }
 
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_button.Locator.Page, "userRole", _button.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         var button = _session.ResolveNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
@@ -58,16 +51,4 @@ public class CMPButtonBlank : IInputControl
         return pointerEvents == "auto";
     }
 
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _button.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _button.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
 }
