@@ -1,0 +1,6 @@
+@startuml
+class LocatorNodeId {
+}
+LocatorNodeId --> "NodeId" NodeId
+LocatorNodeId --> "Locator" ILocator
+@enduml

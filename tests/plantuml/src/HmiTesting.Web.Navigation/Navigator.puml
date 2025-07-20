@@ -1,0 +1,12 @@
+@startuml
+class Navigator {
+    + Navigator(session:IOpcUaSession, page:IPage)
+    + <<async>> GoToPage(pagePath:OpcPath, pageName:string) : Task<IHmiPage>
+    + ReturnToNextPage() : INavigator
+    + ReturnToPreviousPage() : INavigator
+}
+class "IReadOnlyDictionary`2"<T1,T2> {
+}
+INavigator <|-- Navigator
+Navigator o-> "_columns<int,OpcPath>" "IReadOnlyDictionary`2"
+@enduml

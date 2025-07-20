@@ -1,0 +1,6 @@
+@startuml
+interface IHmiPageArea {
+    + getElementByNumber(number:int) : LocatorNodeId
+    + getElementByName(name:string) : T
+}
+@enduml

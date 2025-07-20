@@ -1,0 +1,6 @@
+@startuml
+class Tests {
+    + <<async>> Setup() : Task
+    + <<async>> Test1() : Task
+}
+@enduml

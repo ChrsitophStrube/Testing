@@ -1,0 +1,19 @@
+@startuml
+class OpcUaSession {
+    + OpcUaSession(client:Client, optixProjectName:string)
+    + Navigator(MainPageObject:IPage) : INavigator
+    + GetActualPage() : IHmiPage
+    + GetHeader() : IHmiPage
+    + GetNodeIdFromPath(path:string, startNode:NodeId?) : NodeId
+    + GetNodeIdFromPath(nsIndex:ushort, path:string, startNode:NodeId) : NodeId
+    + GetLastSession() : NodeId
+    + GetProjectNamespaceIndex() : ushort
+    + GetNamespaceIndex(namespaceUrl:string) : ushort
+    + SetValue(nodeId:NodeId, value:T) : void
+    + GetValue(nodeId:NodeId) : T
+    + ResolveNodeLocator(page:IPage, pathToNode:string, startNodeId:NodeId) : LocatorNodeId
+}
+IOpcUaSession <|-- OpcUaSession
+OpcUaSession o-> "_objectsFolderNode" NodeId
+OpcUaSession o-> "_namespaceIndexNode" NodeId
+@enduml

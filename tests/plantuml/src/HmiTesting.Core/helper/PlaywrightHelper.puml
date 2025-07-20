@@ -1,0 +1,5 @@
+@startuml
+class PlaywrightHelper <<static>> {
+    + {static} <<async>> CaptureScreenshotOnFailureAsync(page:IPage) : Task
+}
+@enduml

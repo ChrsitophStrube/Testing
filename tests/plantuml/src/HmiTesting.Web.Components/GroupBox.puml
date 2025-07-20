@@ -1,0 +1,10 @@
+@startuml
+class GroupBox {
+    + GroupBox(session:IOpcUaSession, groupBox:LocatorNodeId)
+    + ResolveGroupbox(ControlName:string) : IControl
+    + hasUserLevel(UserRole:string) : bool
+    + IsEnabled() : bool
+    + IsVisible() : bool
+}
+IControl <|-- GroupBox
+@enduml

@@ -362,3 +362,7 @@ ProjectFiles/NetSolution/obj
 ProjectFiles/NetSolution/Private
 ProjectFiles/NetSolution/*.references
 ProjectFiles/UserDefinedModule.xml
+
+#Tast folder should stay
+!tests/
+!tests/**
