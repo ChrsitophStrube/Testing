@@ -6,7 +6,7 @@ pool:
 
 variables:
   - name: 'TARGET_IP'
-    value: '192.168.1.200'
+    value: '192.168.178.121'
   - name: 'TARGET_USER'
     value: 'admin'
   - name: 'FT_OPTIX_CLI'
