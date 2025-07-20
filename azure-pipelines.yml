@@ -48,6 +48,15 @@ steps:
       projects: '$(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/HmiTesting.PlaywrightTests.csproj'
       arguments: '--no-build --logger trx'
 
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Playwright screenshots'
+    inputs:
+      targetPath: '$(Build.SourcesDirectory)/test-results/screenshots'
+      artifact:   'screenshots'
+      publishLocation: 'pipeline'
+    condition: always()              
+    continueOnError: true        
+
   - task: PublishTestResults@2
     displayName: 'Publish Test Results'
     inputs:
