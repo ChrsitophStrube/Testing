@@ -33,7 +33,7 @@ public class CTRLCheckboxTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://l192.168.178.121:8080", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -118,7 +118,7 @@ public class CTRLCheckboxTest
     public async Task TestCTRLCheckboxCheckCheckboxExsistence()
     {
         ILocator checkboxLocator;
-        if (_ctrlCheckbox.CheckBoxPositionProperty==1)
+        if (_ctrlCheckbox.CheckBoxPositionProperty == 1)
         {
             checkboxLocator = _ctrlCheckbox.checkBoxRight._checkbox.Locator;
         }
