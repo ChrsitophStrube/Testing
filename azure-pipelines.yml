@@ -51,7 +51,7 @@ steps:
   - task: PublishPipelineArtifact@1
     displayName: 'Publish Playwright screenshots'
     inputs:
-      targetPath: '$(Build.SourcesDirectory)/test-results/screenshots'
+      targetPath: '$(Build.SourcesDirectory)/tests/test-results/screenshots'
       artifact:   'screenshots'
       publishLocation: 'pipeline'
     condition: always()              
