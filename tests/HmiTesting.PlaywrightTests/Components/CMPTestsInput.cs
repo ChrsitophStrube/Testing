@@ -142,7 +142,7 @@ public class Tests
 
 
         //Enable 
-        await buttonAction.WaitForEnablePropertyAsync(true);
+        await buttonAction.WaitForEnablePropertyAsync(true);  
         bool enabledState = await buttonAction.IsEnabled();
         Assert.True(enabledState, "Button should be enabled initially");
         //disable 
@@ -160,7 +160,7 @@ public class Tests
         bool visibleState = await buttonAction.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
         //Hide Switch
-        buttonAction.VisisbleProperty = false;
+        buttonAction.VisisbleProperty = false;  
         await buttonAction.WaitForVisibleAsync(false);
         visibleState = await buttonAction.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
@@ -417,7 +417,7 @@ public class Tests
         visibleState = await cMPDropdown.GetVisibleAsync();
         Assert.False(visibleState, "Radiobutton should be hidden after setting visible to false");
         //set back visible
-        cMPDropdown.VisisbleProperty = true;
+        cMPDropdown.VisisbleProperty = true;    
 
         //CheckUserRole
         string userRole = cMPDropdown.UserRoleProperty;
