@@ -1738,3 +1738,38 @@ Children:
     Type: BaseDataVariableType
     DataType: ResourceUri
     Value: "ns=32;%PROJECTDIR%/NetSolution/CoT_Helper/RT_CoT_Helper.cs"
+- Name: WebSocketForUI
+  Id: g=c9c5ed0b22168cc254e629bd3856f98f
+  Type: NetLogic
+  Children:
+  - Name: updatePopuop
+    Id: g=fd780f1e57de5a8013652826a9575c55
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/MyHMI_Template_Unencrypted/UI/Screens/CoT_TemplateScreens/Messages/CoT_Update"
+    Children:
+    - Name: Kind
+      Id: g=adade6a3068e7f3c54182b365e1ef40d
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Objects/MyHMI_Template_Unencrypted/UI/BaseControls/CoT_Components/Dialogs/CoT_CMP_Dialog"
+    - Name: NodeClass
+      Id: g=785a4bb24e230b756aeb715831416c9c
+      Type: PropertyType
+      DataType: NodePointerNodeClass
+      Value: 1
+  - Name: delete
+    Id: g=87c0d5d735d0bf412f79e4f542a81516
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Class: Method
+    Name: StartUpdate
+    Id: g=168cd93e7dfbd1ef27c959926c8fa3bf
+  - Class: Method
+    Name: DelayUpdate
+    Id: g=d755401a1a24affc33339b22f7e712bf
+  - Name: updateState
+    Id: g=c0a7810810cf7c906ce28d90dc9bf645
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 1

@@ -1449,6 +1449,11 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="5fb98ddf3b21776f5380913d121747ff" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
                 <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="9673fd6ed351ae0b7e15ff501c1af980" />
             </TargetType>
         </TypeMapping>

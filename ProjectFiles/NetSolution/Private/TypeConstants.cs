@@ -296,6 +296,7 @@ namespace MyHMI_Template_Unencrypted
         public static readonly NodeId CoT_MessageDetails = new NodeId(namespaceIndex, new Guid("aa733c49962f743f41dd6dda4bb5da7d"));
         public static readonly NodeId CoT_MessageDetailsAlias = new NodeId(namespaceIndex, new Guid("b03eeb0a3d4425901d74c7c6c9b0c579"));
         public static readonly NodeId CoT_LoginScreen = new NodeId(namespaceIndex, new Guid("e01ef4537876e154a53dab8cb1d95d5e"));
+        public static readonly NodeId CoT_Update = new NodeId(namespaceIndex, new Guid("5fb98ddf3b21776f5380913d121747ff"));
         public static readonly NodeId CoT_UserManagementScreen = new NodeId(namespaceIndex, new Guid("9673fd6ed351ae0b7e15ff501c1af980"));
         public static readonly NodeId CoT_Server_Runtime = new NodeId(namespaceIndex, new Guid("3c996ae4fcaa72e191cb7a2134d173b8"));
         public static readonly NodeId CoT_Server_Services = new NodeId(namespaceIndex, new Guid("9c2c3b45ee99a9d486479fd5b00e6707"));

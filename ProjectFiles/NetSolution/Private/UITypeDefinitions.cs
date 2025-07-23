@@ -1210,6 +1210,11 @@ public class CoT_LoginScreen : CoT_ContentB
 {
 }
 
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "5fb98ddf3b21776f5380913d121747ff")]
+public class CoT_Update : CoT_CMP_Dialog
+{
+}
+
 [MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "9673fd6ed351ae0b7e15ff501c1af980")]
 public class CoT_UserManagementScreen : CoT_ListB
 {
