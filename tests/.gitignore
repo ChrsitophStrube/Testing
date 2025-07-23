@@ -56,4 +56,5 @@ _ReSharper*/
 # NUnit
 *.VisualState.xml
 TestResult.xml
+test-results/
 nunit-*.xml

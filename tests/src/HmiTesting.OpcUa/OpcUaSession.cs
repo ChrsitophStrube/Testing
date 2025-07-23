@@ -13,7 +13,7 @@ namespace HmiTesting.OpcUa;
 public class OpcUaSession :
     IOpcUaSession
 {
-    private Client _client;
+    private readonly NotifyingClient _client;
     private string _optixProjectName;
     private ushort _optixProjectNamespace;
 
@@ -23,11 +23,13 @@ public class OpcUaSession :
     public static readonly NodeId _namespaceIndexNode = new NodeId(0, 2255);
 
 
-    public OpcUaSession(Client client, string optixProjectName)
+    public OpcUaSession(NotifyingClient client, string optixProjectName)
     {
         _client = client;
         _optixProjectName = optixProjectName;
         _optixProjectNamespace = client.GetNamespaceIndex(_optixProjectName);
+        _client.DataChange += HandleDataChange;   // <<< Event‑Abo
+
     }
 
     public INavigator Navigator(IPage MainPageObject)
@@ -295,4 +297,114 @@ public class OpcUaSession :
         }
     }
 
+    private readonly Dictionary<uint, Action<DataValue>> _dataChange = new();
+    private uint _subscriptionId;
+    private uint _nextHandle = 1;
+    private readonly object _subLock = new();
+
+    private void HandleDataChange(uint handle, DataValue dv)
+    {
+        if (_dataChange.TryGetValue(handle, out var cb))
+            cb(dv);
+    }
+
+    // -----------------------------------------------------------------------------
+    // 3)  NEUE METHODE in OpcUaSession --------------------------------------------
+    // -----------------------------------------------------------------------------
+    public Task<(T oldValue, T newValue)> RegisterChangedEventOnVar<T>(
+            NodeId nodeId,
+            int timeoutMs = 1_000)
+    {
+        // alten Wert auslesen
+        T oldVal = GetValue<T>(nodeId);
+
+        // Subscription nur einmal anlegen
+        if (_subscriptionId == 0)
+        {
+            lock (_subLock)
+            {
+                if (_subscriptionId == 0)
+                {
+                    StatusCode sc = _client.CreateSubscription(
+                                        0,      // publishingInterval (0 = Serverwahl)
+                                        1_000,  // lifeTimeCount
+                                        true,   // publishingEnabled
+                                        0,      // priority
+                                        out _subscriptionId);
+                    if (sc != StatusCode.Good)
+                        throw new Exception("CreateSubscription fehlgeschlagen");
+
+                    _client.SetPublishingMode(true, new[] { _subscriptionId }, out _);
+                }
+            }
+        }
+
+        // MonitoredItem anlegen
+        uint handle = _nextHandle++;
+        var req = new MonitoredItemCreateRequest(
+                      new ReadValueId(nodeId, NodeAttribute.Value, null, new QualifiedName()),
+                      MonitoringMode.Reporting,
+                      new MonitoringParameters(handle, 0, null, 1, true));
+
+        _client.CreateMonitoredItems(_subscriptionId,
+                                     TimestampsToReturn.Both,
+                                     new[] { req },
+                                     out var results);
+        if (results[0].StatusCode != StatusCode.Good)
+            throw new Exception("CreateMonitoredItems fehlgeschlagen");
+
+        // TaskCompletionSource vorbereiten
+        var tcs = new TaskCompletionSource<(T, T)>();
+        _dataChange[handle] = dv =>
+        {
+            if (_dataChange.Remove(handle))
+            {
+                T newVal = (T)dv.Value;
+                tcs.TrySetResult((oldVal, newVal));
+
+                // Aufräumen – MonitoredItem wieder entfernen
+                _client.DeleteMonitoredItems(_subscriptionId,
+                                             new[] { results[0].MonitoredItemId },
+                                             out _);
+            }
+        };
+
+        // Timeout absichern
+        if (timeoutMs > 0)
+        {
+            _ = Task.Delay(timeoutMs).ContinueWith(_ =>
+            {
+                if (_dataChange.Remove(handle))
+                {
+                    tcs.TrySetException(new TimeoutException(
+                        $"Kein Wertwechsel für {nodeId} innerhalb {timeoutMs} ms."));
+                }
+            });
+        }
+
+        return tcs.Task;
+    }
+
+
 }
+
+
+/// <summary>
+/// Leitet von LibUA.Client ab und feuert ein Event,
+/// sobald DataChange‑Notifications eintreffen.
+/// </summary>
+public class NotifyingClient : Client
+    {
+        public event Action<uint, DataValue> DataChange;
+
+        public NotifyingClient(string host, int port = 4840, int timeoutMs = 10_000)
+            : base(host, port, timeoutMs) { }
+
+        public override void NotifyDataChangeNotifications(uint subId,
+                                                           uint[] clientHandles,
+                                                           DataValue[] notifications)
+        {
+            for (int i = 0; i < clientHandles.Length; i++)
+                DataChange?.Invoke(clientHandles[i], notifications[i]);
+        }
+    }
