@@ -582,4 +582,27 @@ public class Tests
         cMPTextIn.VisisbleProperty = true;
     }
 
-}
+    [Test]
+    public async Task TestCMPButtonBlankEvents()
+    {
+        var componentsDevpage = BuildPath("TestScreens", "Components1");
+        var CotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ComponentsOverview1");
+        HmiPageArea area1 = (HmiPageArea)CotTestpage.GetAreaLayoutContentB(1);
+        CMPButtonBlank buttonBlank = area1.getElementByName<CMPButtonBlank>("CoT_CMP_ButtonBlank");
+
+        // set Initial State
+        NodeId buttonBlankClickToggleId = _session.GetNodeIdFromPath("ButtonBlankClickToggle", area1._area.NodeId);
+        _session.SetValue<bool>(buttonBlankClickToggleId, false);
+
+        //Click
+        NodeId pressedState = _session.GetNodeIdFromPath("pressed", buttonBlank._button.NodeId);
+        var changeTask = _session.RegisterChangedEventOnVar<bool>(pressedState, 1500);
+        await buttonBlank.Click();
+        var(oldVal, newVal) = await changeTask;
+
+        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
+        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
+        _session.SetValue<bool>(buttonBlankClickToggleId, false);
+    }
+
+    }

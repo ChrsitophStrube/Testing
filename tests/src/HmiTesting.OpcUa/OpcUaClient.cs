@@ -6,13 +6,13 @@ public class OpcUaClient
 {
     private static string _OptixProjectName;
 
-    private static Client _client;
+    private static NotifyingClient _client;
 
     public OpcUaSession Connect(string optixProjectName,string targetIP = "localhost", int port = 59100)
     {
         _OptixProjectName = optixProjectName;
         // Create Client
-        _client = new Client(targetIP, port, 1000);
+        _client = new NotifyingClient(targetIP, port, 1000);
 
 
         // Connect to server

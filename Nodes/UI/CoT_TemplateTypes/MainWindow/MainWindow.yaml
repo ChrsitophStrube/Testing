@@ -4816,6 +4816,503 @@ Children:
                 Id: g=9dc559f956e568a2247c7fd660d25290
                 Type: PropertyType
                 DataType: UInt16
+        - Name: Update
+          Id: g=ec13eb4f9d31a1520533ef0ae6714e90
+          Type: CoT_HeaderItemCustom
+          Children:
+          - Name: FillColor
+            Id: g=74636740da30953d2e0bc46e45188dc7
+            Type: BaseDataVariableType
+            DataType: Color
+          - Name: HitTestVisible
+            Id: g=e63da8398e6c086cf943db6a1a6f0490
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
+          - Name: Background
+            Id: g=d227a49c42ed00d6395cab0c8b11fb45
+            Type: MultiStateImage
+            Children:
+            - Name: StateValue
+              Id: g=040dc3888324b01d80081b17ad6960e8
+              Type: BaseDataVariableType
+              DataType: Int32
+              Children:
+              - Name: DynamicLink
+                Id: g=76fa6c2ea5697c875ab5840ba037af8a
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../internals/imageState"
+            - Name: States
+              Id: g=df1f622bdf2e5056359f043e2f9e9605
+              Type: BaseObjectType
+              Children:
+              - Name: closed
+                Id: g=72fb0656e89496c3a78f5c67ad7cc32d
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=ac72e2bba3961d3fd4f0073321bfd07d
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                - Name: Path
+                  Id: g=10e41f0596444b655b419df7783acf12
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Images/gradient_primary_enabled.svg"
+              - Name: pressed
+                Id: g=3642639d7c800144572baa2a4001ab51
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=0c1c6f59ba9d56e422d47bb11ba54cdd
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  Value: 1
+                - Name: Path
+                  Id: g=0653ede705ec1ee2ee2384ee3b741c2c
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Images/black100.svg"
+              - Name: open
+                Id: g=ec0cb6287d05024e19f4f62f65d23539
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=4f888d14cd9a6c86f7a9cae10699cafa
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  Value: 2
+                - Name: Path
+                  Id: g=474d1568199f8824b446eafbeedb0a1e
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Images/white.svg"
+              - Name: disabled
+                Id: g=a04ea57ee687d6b9117d9d86efd8e994
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=260622f0392e789ebc725fa83054d685
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  Value: 3
+                - Name: Path
+                  Id: g=e26f6c28d8389689f34a7e0e4ca6d749
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Images/dark110.svg"
+            - Name: Path
+              Id: g=b5b0b587a38fe652fdc38da4319f5b89
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+          - Name: internals
+            Id: g=2e2d8b2b1f24076aef6c86478e680b17
+            Type: BaseDataVariableType
+            DataType: Structure
+            Value: 
+             {
+              "Type": 22,
+              "Body": {
+               "TypeId": {
+                "IdType": 0,
+                "Id": 0,
+                "Namespace": -1
+               },
+               "Body":    {}
+              }
+             }
+            Children:
+            - Name: imageState
+              Id: g=3acbebd563736d81a72b32fdccfeb91d
+              Type: BaseDataVariableType
+              DataType: Int32
+              Children:
+              - Name: ConditionalConverter1
+                Id: g=3f5bff1945a0be70c0861eecabc898d8
+                Type: ConditionalConverter
+                Children:
+                - Name: Condition
+                  Id: g=7c888a5a3dad703748744e07b0004849
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=b97460bf886689080488f83ad00ec1a9
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../enable"
+            - Name: isOpen
+              Id: g=4cccdd0c1e0c30a525e4fd65497d2478
+              Type: BaseDataVariableType
+              DataType: Boolean
+          - Name: MouseDownEventHandler1
+            Id: g=6580d0172d3ad31e06fb7225a4e2d75a
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Id: g=656b22b1d6f0feee787606c9550fdd53
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseDownEvent"
+            - Name: MethodsToCall
+              Id: g=15ae8ab9c901d4b2620f86c42a42463c
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Id: g=7acc4111937b7ecdd5759a1470253cd1
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=621a52ded84674f2b3199fe8e2131781
+                  Type: NodePointer
+                  DataType: NodeId
+                  Value: "/Objects/Commands/VariableCommands"
+                  Children:
+                  - Name: Kind
+                    Id: g=13d9f2bce1ce24e36bac3389fba93bbb
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: "/Types/ObjectTypes/BaseObjectType"
+                - Name: Method
+                  Id: g=ca2d4f247a1b27ff6a51a221e939d758
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "Set"
+                - Name: InputArguments
+                  Id: g=a8ba94240d8e9dc632c3b5dfc8e6443a
+                  Type: BaseObjectType
+                  Children:
+                  - Name: VariableToModify
+                    Id: g=46cb775810a21db286e194518a032606
+                    Type: BaseDataVariableType
+                    DataType: VariablePointer
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=04b2bca3f32de9febc65e51864aad0e9
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../internals/imageState@NodeId"
+                  - Name: Value
+                    Id: g=12c0f15ff34e292667b6c39c5ede12b5
+                    Type: BaseDataVariableType
+                    DataType: Int32
+                    Value: 1
+                  - Name: ArrayIndex
+                    Id: g=0ea9bb61c2086d79a2c5cee67f4f92f3
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    ValueRank: ScalarOrOneDimension
+            - Name: EventArguments
+              Id: g=28dac7fd2b45fb39c0724ed6ce4ec480
+              Type: MouseDownEvent
+              Children:
+              - Name: EventId
+                Id: g=5cce8406e2d6e55f90424a7e0a12642c
+                Type: PropertyType
+                DataType: ByteString
+              - Name: EventType
+                Id: g=e54228bc349b33e11eb7492085a05403
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceNode
+                Id: g=6b3c161e923af24aa2127430ebe5af41
+                Type: PropertyType
+                DataType: NodeId
+              - Name: SourceName
+                Id: g=028bfe6afed9ae54955d133f617b1370
+                Type: PropertyType
+                DataType: String
+              - Name: Time
+                Id: g=6dc0067fc48535cb1d4adeae9d001e05
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: ReceiveTime
+                Id: g=521c1f1396183ecd43fd31cae313158f
+                Type: PropertyType
+                DataType: UtcTime
+              - Name: Message
+                Id: g=eec1a3b97dcfc16e9b20236e747125e3
+                Type: PropertyType
+                DataType: LocalizedText
+              - Name: Severity
+                Id: g=cb381fe953222504e1a1f774350d38f1
+                Type: PropertyType
+                DataType: UInt16
+          - Name: enable
+            Id: g=0440358e7c366a711d37fd979708ff41
+            Type: BaseDataVariableType
+            DataType: Boolean
+          - Name: internalisOpenChanged
+            Id: g=b72a34dbb132ae195f0ab0ddaff7b04e
+            Type: VariableChangedEventDispatcher
+            Children:
+            - Name: VariableNodePath
+              Id: g=9424c8d14a3ebefa5407fccb2022ec1f
+              Type: BaseVariableType
+              DataType: NodePath
+              Value: "../internals/isOpen"
+            - Name: VariableValueChangedEventHandler1
+              Id: g=ad42b0145932079310a985cc801baaff
+              Type: EventHandler
+              Children:
+              - Name: ListenEventType
+                Id: g=34308f776f0edbfce9eb8499707a8190
+                Type: PropertyType
+                DataType: NodeId
+                Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+              - Name: MethodsToCall
+                Id: g=6457e78ca831a95714f31ea55ccb7907
+                Type: BaseObjectType
+                Children:
+                - Name: MethodContainer1
+                  Id: g=6cf7e6f8cd8f22d0388fb32ba81cf4fc
+                  Type: BaseObjectType
+                  Children:
+                  - Name: ObjectPointer
+                    Id: g=4e70d5103e15660fd4f24c6a1233b4a1
+                    Type: NodePointer
+                    DataType: NodeId
+                    Value: "/Objects/Commands/VariableCommands"
+                    Children:
+                    - Name: Kind
+                      Id: g=d2102365d31ebeb6ea2ff03672a1e9de
+                      Type: PropertyType
+                      DataType: NodeId
+                      Value: "/Types/ObjectTypes/BaseObjectType"
+                  - Name: Method
+                    Id: g=e085af7ae1dbbcf55f4926968ed5981f
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: "Set"
+                  - Name: InputArguments
+                    Id: g=e2c97966029cdb0e98c5c32aa7003c36
+                    Type: BaseObjectType
+                    Children:
+                    - Name: VariableToModify
+                      Id: g=3ac42707fa548c5c2668e951ee4ebb36
+                      Type: BaseDataVariableType
+                      DataType: VariablePointer
+                      Children:
+                      - Name: DynamicLink
+                        Id: g=3b0182cf651d43703ea33edc4956af8c
+                        Type: DynamicLink
+                        DataType: NodePath
+                        Value: "../../../../../../internals/imageState@NodeId"
+                    - Name: Value
+                      Id: g=8eff2dfec1a94df15e2421bcbc33d5f0
+                      Type: BaseDataVariableType
+                      DataType: Int32
+                      Children:
+                      - Name: ConditionalConverter1
+                        Id: g=835bec82c51f4bb16f927980001e9f38
+                        Type: ConditionalConverter
+                        Children:
+                        - Name: Condition
+                          Id: g=56b634422b7ef2582dbf9e77ff9b5358
+                          Type: BaseDataVariableType
+                          DataType: Boolean
+                          ReferenceType: HasSource
+                          Children:
+                          - Name: DynamicLink
+                            Id: g=455d3d8ea66a0df015b6132c1c5a59c7
+                            Type: DynamicLink
+                            DataType: NodePath
+                            Value: "../../../../../../../../internals/isOpen"
+                    - Name: ArrayIndex
+                      Id: g=040d549e6e3f5f11d8b24edc01104978
+                      Type: BaseDataVariableType
+                      DataType: UInt32
+                      ValueRank: ScalarOrOneDimension
+              - Name: EventArguments
+                Id: g=1fd0df3b666c7bd27cf6971649646de9
+                Type: VariableValueChangedEvent
+                Children:
+                - Name: VariableNodeId
+                  Id: g=466a57bbc6930ed445e42c99977b5b34
+                  Type: BaseVariableType
+                  DataType: NodeId
+                - Name: NewValue
+                  Id: g=313e1a198b48b1bfbfca7a7cf7038bc5
+                  Type: BaseVariableType
+                  DataType: BaseDataType
+                - Name: OldValue
+                  Id: g=f2b4355fadefc527d8857a8e91d09f26
+                  Type: BaseVariableType
+                  DataType: BaseDataType
+                - Name: EventId
+                  Id: g=824aa3fafc7ce201aba168469f26042b
+                  Type: PropertyType
+                  DataType: ByteString
+                - Name: EventType
+                  Id: g=ec6336bb6620d7079178766cea85acca
+                  Type: PropertyType
+                  DataType: NodeId
+                - Name: SourceNode
+                  Id: g=c44de2e19733ce5c40fe1f8b87ac1841
+                  Type: PropertyType
+                  DataType: NodeId
+                - Name: SourceName
+                  Id: g=e659909b03ed235750c5789ab35fd88e
+                  Type: PropertyType
+                  DataType: String
+                - Name: Time
+                  Id: g=db9cb54edaf25c9484d4594a72b5bd2b
+                  Type: PropertyType
+                  DataType: UtcTime
+                - Name: ReceiveTime
+                  Id: g=06eeb90861336448e07e1aff69d9af34
+                  Type: PropertyType
+                  DataType: UtcTime
+                - Name: Message
+                  Id: g=df055385cb9f0dc3f36de68f666e0cb5
+                  Type: PropertyType
+                  DataType: LocalizedText
+                - Name: Severity
+                  Id: g=41c985cea654f275eb675b78646949d7
+                  Type: PropertyType
+                  DataType: UInt16
+          - Name: Enabled
+            Id: g=bf4b2924ef0ea9794e3aedf9b34c1e42
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
+            Children:
+            - Name: DynamicLink
+              Id: g=02bdedbc183459f4fb97387331767149
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../enable"
+          - Name: Line
+            Id: g=9e25fdf7f51ee9f938253add969adcac
+            Type: PolyLine
+            Children:
+            - Name: LineColor
+              Id: g=1a29681cef328b5b3b7cfd5648d6820f
+              Type: BaseDataVariableType
+              DataType: Color
+              Value: "#000000"
+              Children:
+              - Name: DynamicLink
+                Id: g=a83ef08cf88947211fe3f8842a14ff00
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "/Objects/MyHMI_Template_Unencrypted/UI/SyntegonStylesheet/SyntegonColors/black100"
+            - Name: Visible
+              Id: g=3d8f75e822e5837939794fa4adfa3531
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Value: true
+              Children:
+              - Name: ConditionalConverter1
+                Id: g=007467c923959e85636bb7e65f0f4256
+                Type: ConditionalConverter
+                Children:
+                - Name: Condition
+                  Id: g=5bcaf36aca48026555d0695d129b31b2
+                  Type: BaseDataVariableType
+                  DataType: Boolean
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=fff52a4952656f606ce58446b52f23cb
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../internals/isOpen"
+            - Name: LineThickness
+              Id: g=bcd3c2a2b5c21b0520a29517f17cb837
+              Type: BaseDataVariableType
+              DataType: Size
+              Value: 1.0
+          - Name: visibility
+            Id: g=1196740663136f6c28ae9c67a0a65ca2
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
+          - Name: Visible
+            Id: g=1c7e887fc5c035094eab9eed6cdd8f73
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Value: true
+            Children:
+            - Name: DynamicLink
+              Id: g=0466d1c2c6a3fb74431a06d6e4e22473
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../visibility"
+          - Name: UpdateState
+            Id: g=5716566b2c986316e89bdb2a33b2e9a1
+            Type: MultiStateImage
+            Children:
+            - Name: StateValue
+              Id: g=69091cef21e3b5a307b091e950a6d161
+              Type: BaseDataVariableType
+              DataType: Int32
+              Children:
+              - Name: DynamicLink
+                Id: g=c1ddbd9c5329a09b4de9a2ddecd968ee
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../updateState"
+            - Name: States
+              Id: g=c7b7c7158752a418153de48134a54ad0
+              Type: BaseObjectType
+              Children:
+              - Name: State
+                Id: g=0e4c2f76b9e62d3d276e5e83b93e9bfe
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=9341c920bbaf8c8f8b3513a03b829428
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                - Name: Path
+                  Id: g=a37a4dcc82c521ffc333f919a1bb196b
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+              - Name: Update available
+                Id: g=d3735d71743b4dbfd3cf9256a7e8c9d2
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=d50bb7283cfbf3b022b0945b6209ee0f
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  Value: 2
+                - Name: Path
+                  Id: g=c1162dcd2b77de43afe78629db117c80
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Icons/ico-update-update.svg"
+              - Name: No connection
+                Id: g=9c0db650aa968b6b63b0efa09e869baa
+                Type: MultiStateImageState
+                Children:
+                - Name: Value
+                  Id: g=772631f853b8c906641eb4aea4ce9891
+                  Type: BaseDataVariableType
+                  DataType: Int32
+                  Value: 3
+                - Name: Path
+                  Id: g=a6884b3b74db983b740bdc4c0b66d999
+                  Type: BaseDataVariableType
+                  DataType: ResourceUri
+                  Value: "ns=32;%PROJECTDIR%/Icons/ico-update-exclamationmark.svg"
+            - Name: Path
+              Id: g=d8e7833f2bb69145a841d62f790845b9
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+          - Name: updateState
+            Id: g=bc545e66d5a6e183e133e2e4dfb5d999
+            Type: BaseDataVariableType
+            DataType: Int32
+            Children:
+            - Name: DynamicLink
+              Id: g=37331a4acc6e2b3d7f1ed56c246fd7ca
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "/Objects/MyHMI_Template_Unencrypted/NetLogic/CoT_NetLogics/WebSocketForUI/updateState"
         - Name: Empty
           Id: g=da45740a43e95f7ad74bafd05d4852a6
           Type: CoT_HeaderItemCustom

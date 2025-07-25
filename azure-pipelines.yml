@@ -1,69 +1,78 @@
 trigger:
-- master
+  - master
 
-pool:
-  OPTIX Builder 
+pool: OPTIX Builder
 
 variables:
-  - name: 'TARGET_IP'
-    value: '192.168.178.121'
-  - name: 'TARGET_USER'
-    value: 'admin'
-  - name: 'FT_OPTIX_CLI'
+  - name: "TARGET_IP"
+    value: "192.168.178.121"
+  - name: "TARGET_USER"
+    value: "admin"
+  - name: "FT_OPTIX_CLI"
     value: 'C:\\Program Files\\Rockwell Automation\\FactoryTalk Optix\\Studio 1.6.0.626\\FTOptixStudio'
 
 steps:
   - script: |
       echo "Repo root: $(Build.SourcesDirectory)"
       dir "$(Build.SourcesDirectory)"
-    displayName: 'Print repo root'
+    displayName: "Print repo root"
 
   - script: |
       echo Building and exporting HMI project...
       "$(FT_OPTIX_CLI)" deploy "$(Build.SourcesDirectory)/MyHMI_Template_Unencrypted.optix" --ip-address=$(TARGET_IP) --username=$(TARGET_USER)
-    displayName: 'Export and deploy project to target machine'
+    displayName: "Export and deploy project to target machine"
 
   - task: DotNetCoreCLI@2
-    displayName: 'Restore NuGet Packages'
+    displayName: "Restore NuGet Packages"
     inputs:
-      command: 'restore'
-      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
+      command: "restore"
+      projects: "$(Build.SourcesDirectory)/tests/HmiTesting.sln"
 
   - task: DotNetCoreCLI@2
-    displayName: 'Build Solution'
+    displayName: "Build Solution"
     inputs:
-      command: 'build'
-      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.sln'
+      command: "build"
+      projects: "$(Build.SourcesDirectory)/tests/HmiTesting.sln"
 
   - powershell: $(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/bin/Debug/net8.0/playwright.ps1 install
-    displayName: 'Install Browser'
+    displayName: "Install Browser"
 
   - powershell: Start-Sleep -Seconds 50
-    displayName: 'Wait 50 seconds'
+    displayName: "Wait 50 seconds"
 
   - task: DotNetCoreCLI@2
-    displayName: 'Run Tests'
+    displayName: "Run Tests"
     inputs:
-      command: 'test'
-      projects: '$(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/HmiTesting.PlaywrightTests.csproj'
-      arguments: '--no-build --logger trx'
+      command: "test"
+      projects: "$(Build.SourcesDirectory)/tests/HmiTesting.PlaywrightTests/HmiTesting.PlaywrightTests.csproj"
+      arguments: "--no-build --logger trx"
+
+  - powershell: |
+      $path = '$(Build.SourcesDirectory)/tests/test-results/screenshots'
+      $has  = (Test-Path $path) -and
+              ((Get-ChildItem $path -Recurse -File | Measure-Object).Count -gt 0)
+
+      Write-Host "Screenshots present?  $has"
+      Write-Host "##vso[task.setvariable variable=hasScreens;isOutput=true]$has"
+    name: checkScreenshotsExistence
+    displayName: "Detect screenshots"
+    condition: always()
 
   - task: PublishPipelineArtifact@1
-    displayName: 'Publish Playwright screenshots'
+    displayName: "Publish Playwright screenshots"
     inputs:
-      targetPath: '$(Build.SourcesDirectory)/tests/test-results/screenshots'
-      artifact:   'screenshots'
-      publishLocation: 'pipeline'
-    condition: always()              
-    continueOnError: true        
+      targetPath: "$(Build.SourcesDirectory)/tests/test-results/screenshots"
+      artifact: "screenshots"
+      publishLocation: "pipeline"
+    condition: and(always(), eq(variables['checkScreenshotsExistence.hasScreens'], 'True'))
 
   - task: PublishTestResults@2
-    displayName: 'Publish Test Results'
+    displayName: "Publish Test Results"
     inputs:
-      testResultsFiles: '**/TestResults/*.trx'
-      testResultsFormat: 'VSTest'
-      failTaskOnFailedTests: true     
+      testResultsFiles: "**/TestResults/*.trx"
+      testResultsFormat: "VSTest"
+      failTaskOnFailedTests: true
 
   - script: |
       echo Deployment pipeline completed.
-    displayName: 'Finish'
+    displayName: "Finish"
