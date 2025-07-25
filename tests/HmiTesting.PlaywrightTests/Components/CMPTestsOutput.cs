@@ -39,6 +39,7 @@ public class CMPTestsOutput
         });
         await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
         await _page.WaitForTimeoutAsync(2000);
+        ScreenshotOnFailureAttribute.SetPage(_page!);
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();

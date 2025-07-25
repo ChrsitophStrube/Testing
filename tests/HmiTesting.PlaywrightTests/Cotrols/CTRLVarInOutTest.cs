@@ -49,6 +49,7 @@ public class CTRLVarInOutTest
     [SetUp]
     public async Task Setup()
     {
+        ScreenshotOnFailureAttribute.SetPage(_page!);
         var componentsDevpage = BuildPath("TestScreens", "Controls");
         IHmiPage _cotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ControlsOverview");
         HmiPageArea area1 = (HmiPageArea)_cotTestpage.GetAreaLayoutContentB(3);

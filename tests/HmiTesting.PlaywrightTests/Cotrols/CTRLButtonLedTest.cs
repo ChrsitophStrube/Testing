@@ -40,6 +40,7 @@ public class CTRL_ButtonLedTest
         });
         await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
         await _page.WaitForTimeoutAsync(2000);
+        ScreenshotOnFailureAttribute.SetPage(_page!);
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
@@ -49,6 +50,7 @@ public class CTRL_ButtonLedTest
     [SetUp]
     public async Task Setup()
     {
+        ScreenshotOnFailureAttribute.SetPage(_page!);
         var componentsDevpage = BuildPath("TestScreens", "Controls");
         IHmiPage _cotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ControlsOverview");
         HmiPageArea area1 = (HmiPageArea)_cotTestpage.GetAreaLayoutContentB(1);

@@ -41,6 +41,7 @@ public class CTRLButtonNoLabelTest
         await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
         await _page.WaitForTimeoutAsync(2000);
 
+
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
         _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
@@ -49,6 +50,7 @@ public class CTRLButtonNoLabelTest
     [SetUp]
     public async Task Setup()
     {
+        ScreenshotOnFailureAttribute.SetPage(_page!);
         var componentsDevpage = BuildPath("TestScreens", "Controls");
         IHmiPage _cotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ControlsOverview");
         HmiPageArea area1 = (HmiPageArea)_cotTestpage.GetAreaLayoutContentB(1);
