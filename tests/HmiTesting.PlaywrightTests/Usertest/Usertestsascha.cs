@@ -56,14 +56,6 @@ public class UsertestSascha
         _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
     }
 
-    [SetUp]
-    public void PromotePageForThisTest()
-    {
-        ScreenshotOnFailureAttribute.SetPage(_page!);
-    }
-
-
-
     [OneTimeTearDown]
     public async Task DisconnectOpcUaServer()
     {
