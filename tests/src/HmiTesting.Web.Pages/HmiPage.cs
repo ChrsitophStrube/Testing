@@ -10,13 +10,13 @@ namespace HmiTesting.Web.Pages;
 public class HmiPage : IHmiPage
 {
     private IOpcUaSession _session;
-    private IPage _page;
+    public IPage Page { get; }
     private NodeId _pageId;
     public HmiPage(IOpcUaSession session, IPage page, NodeId pageId)
 
     {
         _session = session;
-        _page = page;
+        Page = page;
         _pageId = pageId;
     }
 
@@ -43,7 +43,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentAAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -71,7 +71,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentBAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -98,7 +98,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentCAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -119,7 +119,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentListAAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -140,7 +140,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentListBAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -162,7 +162,7 @@ public class HmiPage : IHmiPage
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentListCAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 
@@ -183,7 +183,7 @@ new Dictionary<int, OpcPath>
                 nameof(number),
                 $"No area with this number. Area needes to be brtween {Min} and {Max}");
         OpcPath pathToArea = _contentListDAreas[number];
-        LocatorNodeId area = _session.ResolveNodeLocator(_page, pathToArea.ToString(), _pageId);
+        LocatorNodeId area = _session.GetNodeLocator(Page, pathToArea.ToString(), _pageId);
         return new HmiPageArea(_session, area);
     }
 }

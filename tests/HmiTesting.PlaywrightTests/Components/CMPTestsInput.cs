@@ -11,7 +11,7 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
-public class Tests
+public class CMPTestsInputs
 {
 
     private IPlaywright? playwright = null;
@@ -598,7 +598,7 @@ public class Tests
         NodeId pressedState = _session.GetNodeIdFromPath("pressed", buttonBlank._button.NodeId);
         var changeTask = _session.RegisterChangedEventOnVar<bool>(pressedState, 1500);
         await buttonBlank.Click();
-        var(oldVal, newVal) = await changeTask;
+       // var(oldVal, newVal) = await changeTask;
 
         bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
         Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");

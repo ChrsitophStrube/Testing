@@ -16,19 +16,19 @@ public class CMPButtonBlank : CMPInput
 
     public async Task Click()
     {
-        var button = _session.ResolveNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+        var button = _session.GetNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
         await button.Locator.ClickAsync();
     }
 
     public async Task LongClick(int durationMs)
     {
-        var button = _session.ResolveNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+        var button = _session.GetNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
         await button.Locator.ClickAsync(new LocatorClickOptions { Delay = durationMs });
     }
 
     public async Task<string> GetIconName()
     {
-        LocatorNodeId IconElement = _session.ResolveNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "Icon").ToString(), _button.NodeId);
+        LocatorNodeId IconElement = _session.GetNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "Icon").ToString(), _button.NodeId);
         int IconExists = await IconElement.Locator.CountAsync();
         if (IconExists == 0)
         {
@@ -36,7 +36,7 @@ public class CMPButtonBlank : CMPInput
         }
         else
         {
-            LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_button.Locator.Page, "icon", _button.NodeId);
+            LocatorNodeId iconpathLocator = _session.GetNodeLocator(_button.Locator.Page, "icon", _button.NodeId);
             string iconpathstring = _session.GetValue<string>(iconpathLocator.NodeId);
             return Path.GetFileName(iconpathstring); // Return the icon file name
         }
@@ -44,7 +44,7 @@ public class CMPButtonBlank : CMPInput
 
     public async Task<bool> IsEnabled()
     {
-        var button = _session.ResolveNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+        var button = _session.GetNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );

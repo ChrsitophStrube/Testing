@@ -43,39 +43,39 @@ public class CMPTextIn : CMPInput
     public async Task SetValueByKeyboard(string value)
     {
         //OpenKeyboard
-        var textInput = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        var textInput = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         await textInput.Locator.ClickAsync();
 
         //getKeyboard
-        LocatorNodeId keyboard = _session.ResolveNodeLocator(_textIn.Locator.Page, _keyboardName, _session.GetLastSession());
+        LocatorNodeId keyboard = _session.GetNodeLocator(_textIn.Locator.Page, _keyboardName, _session.GetLastSession());
 
         //get Preedit Spinbox
-        LocatorNodeId preeditTextBox = _session.ResolveNodeLocator(_textIn.Locator.Page, "PreeditTextInput", keyboard.NodeId);
+        LocatorNodeId preeditTextBox = _session.GetNodeLocator(_textIn.Locator.Page, "PreeditTextInput", keyboard.NodeId);
 
         //Set Value
         await preeditTextBox.Locator.Locator("input").PressAsync("Delete");
         await preeditTextBox.Locator.Locator("input").FillAsync(value);
 
         //Close Keyboard by clicking enter
-        LocatorNodeId enterButton = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("KeyboardLoader_Preedit", "Letters_" + _actualLocale, "KeysRows", "KeysRow4", "Enter").ToString(), keyboard.NodeId);
+        LocatorNodeId enterButton = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("KeyboardLoader_Preedit", "Letters_" + _actualLocale, "KeysRows", "KeysRow4", "Enter").ToString(), keyboard.NodeId);
         await enterButton.Locator.ClickAsync();
     }
 
     public async Task<string> GetInput()
     {
-        var textInput = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        var textInput = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         return await textInput.Locator.Locator("input").InputValueAsync();
     }
     public async Task WaitForInput(string value)
     {
-        var textInput = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        var textInput = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         await Assertions.Expect(textInput.Locator.Locator("input")).ToHaveValueAsync(value);
     }
 
     public async Task<bool> GetErrorState()
     {
         // get  BackgroundColor
-        LocatorNodeId Frame = _session.ResolveNodeLocator(_textIn.Locator.Page, "Frame", _textIn.NodeId);
+        LocatorNodeId Frame = _session.GetNodeLocator(_textIn.Locator.Page, "Frame", _textIn.NodeId);
         ILocator backgroundColorLocator = Frame.Locator.Locator(":scope > div").First;
         Color backgroundColor = await GetCssColorAsync(backgroundColorLocator, "background-color");
 
@@ -95,7 +95,7 @@ public class CMPTextIn : CMPInput
 
 
         // get TextColor
-        LocatorNodeId textBox = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        LocatorNodeId textBox = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         ILocator textColorLocator = textBox.Locator.Locator("input").First;
         Color textColor = await GetCssColorAsync(textColorLocator, "color");
 
@@ -124,11 +124,11 @@ public class CMPTextIn : CMPInput
     public async Task WaitForErrorState(bool errorstate)
     {
         // get Locator for TextColor
-        LocatorNodeId textBox = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        LocatorNodeId textBox = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         ILocator textColor = textBox.Locator.Locator("input").First;
 
         // get Locator for BackgroundColor
-        LocatorNodeId Frame = _session.ResolveNodeLocator(_textIn.Locator.Page, "Frame", _textIn.NodeId);
+        LocatorNodeId Frame = _session.GetNodeLocator(_textIn.Locator.Page, "Frame", _textIn.NodeId);
         ILocator backgroundColor = Frame.Locator.Locator(":scope > div").First;
         if (errorstate)
         {
@@ -148,7 +148,7 @@ public class CMPTextIn : CMPInput
     public async Task<bool> IsEnabled()
     {
         // get Locator for TextColor
-        LocatorNodeId textBox = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        LocatorNodeId textBox = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         ILocator textColorLocator = textBox.Locator.Locator("input").First;
         Color textColor = await GetCssColorAsync(textColorLocator, "color");
 
@@ -183,7 +183,7 @@ public class CMPTextIn : CMPInput
         Color textColor = enabled ? black100 : black44;
 
         // get Locator for TextColor
-        LocatorNodeId textBox = _session.ResolveNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
+        LocatorNodeId textBox = _session.GetNodeLocator(_textIn.Locator.Page, BuildPath("Frame", "VerticalLayout", "TextInput").ToString(), _textIn.NodeId);
         ILocator textColorLocator = textBox.Locator.Locator("input").First;
         await WaitForCssColorAsync(textColorLocator, "color", textColor);
 

@@ -14,7 +14,7 @@ public class CMPContentElement : IInputControl
 
     public T getComponentByName<T>(string componentName) where T : IInputControl
     {
-        var component = _session.ResolveNodeLocator(_contentElement.Locator.Page, BuildPath("HorizontalLayout", componentName).ToString(), _contentElement.NodeId); ;
+        var component = _session.GetNodeLocator(_contentElement.Locator.Page, BuildPath("HorizontalLayout", componentName).ToString(), _contentElement.NodeId); ;
         return (T)Activator.CreateInstance(typeof(T), _session, component);
     }
 

@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using HmiTesting.Core.Interfaces;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
@@ -26,16 +27,16 @@ public sealed class ScreenshotOnFailureAttribute : NUnitAttribute, ITestAction
 
         var file = Path.Combine(FindRepoRoot(TestContext.CurrentContext.WorkDirectory),
                                 "test-results", "screenshots",
-                                $"{Sanitize(test.Name)}_{DateTime.Now:yyyyMMdd_HHmmss}.png"); 
+                                $"{Sanitize(test.Name)}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
         Directory.CreateDirectory(Path.GetDirectoryName(file)!);
 
-        // --> 1. Nachricht ermitteln
+        //  Get Exception text
         string msg = TestContext.CurrentContext.Result.Message ?? "(no message)";
         string trace = TestContext.CurrentContext.Result.StackTrace ?? "";
         string info = (msg + "\n" + trace).Trim();
         if (info.Length > 500) info = info[..500] + "…";
 
-        // --> 2. Overlay injizieren
+        // inject  Overlay 
         page.EvaluateAsync(@"(html) => {
         const tag = Object.assign(document.createElement('pre'), {
             textContent: html,
@@ -48,11 +49,11 @@ public sealed class ScreenshotOnFailureAttribute : NUnitAttribute, ITestAction
         document.body.append(tag);
     }", info).GetAwaiter().GetResult();
 
-        // --> 3. Screenshot
+        // Mabe Screenshot
         page.ScreenshotAsync(new() { Path = file, FullPage = true })
             .GetAwaiter().GetResult();
 
-        // --> 4. Aufräumen
+        // clean Up
         page.EvaluateAsync("() => document.getElementById('pw-error-banner')?.remove()")
             .GetAwaiter().GetResult();
 
@@ -62,11 +63,11 @@ public sealed class ScreenshotOnFailureAttribute : NUnitAttribute, ITestAction
 
     public ActionTargets Targets => ActionTargets.Test;
 
-    private static string Sanitize(string s) =>
-        string.Concat(s.Split(Path.GetInvalidFileNameChars()));
+    public static string Sanitize(string s) =>
+    string.Concat(s.Split(Path.GetInvalidFileNameChars()));
 
 
-    static string FindRepoRoot(string start)
+    public static string FindRepoRoot(string start)
     {
         var dir = new DirectoryInfo(start);
 
@@ -83,5 +84,4 @@ public sealed class ScreenshotOnFailureAttribute : NUnitAttribute, ITestAction
 
         throw new DirectoryNotFoundException("Repo root not found");
     }
-
 }

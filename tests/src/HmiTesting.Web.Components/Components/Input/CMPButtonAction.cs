@@ -12,7 +12,7 @@ public class CMPButtonAction : CMPButtonBlank
 
     public async Task<string> GetText()
     {
-        var labelTextElement = _session.ResolveNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "buttonText").ToString(), _button.NodeId);
+        var labelTextElement = _session.GetNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "buttonText").ToString(), _button.NodeId);
         return await labelTextElement.Locator.Locator("span").InnerTextAsync();
     }
 }

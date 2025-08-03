@@ -30,7 +30,7 @@ public class CMPRadiobutton : CMPInput
 
         //Check Visual State of the Switch
         bool visualState = false;
-        var svgId = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
 
         string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
         SvgState svgState = new("radiobutton", checkedOutput ? "checked" : "unchecked", null);
@@ -47,7 +47,7 @@ public class CMPRadiobutton : CMPInput
             return; // No change needed
         }
 
-        var switchButton = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
+        var switchButton = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
         await switchButton.Locator.ClickAsync();
 
         switchState = await GetChecked();
@@ -61,13 +61,13 @@ public class CMPRadiobutton : CMPInput
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
+        var button = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
         //Check svg state 
-        var svgId = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
         SvgState svgState = new("radiobutton", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;

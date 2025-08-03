@@ -25,7 +25,7 @@ public class CMPSwitch : CMPInput
 
 
         //Check Visual State of the Switch
-        var svgId = _session.ResolveNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
+        var svgId = _session.GetNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
         SvgState svgState = new("led", commandOutput ? "on-finished" : "off", null);
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
@@ -41,7 +41,7 @@ public class CMPSwitch : CMPInput
             return; // No change needed
         }
 
-        var switchButton = _session.ResolveNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
+        var switchButton = _session.GetNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
         await switchButton.Locator.ClickAsync();
 
         switchState = await GetCommand();
@@ -53,14 +53,14 @@ public class CMPSwitch : CMPInput
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
+        var button = _session.GetNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
 
         //Chech if Icon state is disabled
-        var svgId = _session.ResolveNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
+        var svgId = _session.GetNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
         SvgState svgState = new("led", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
 

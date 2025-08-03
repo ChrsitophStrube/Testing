@@ -17,7 +17,7 @@ public class CTRL_ButtonNoLabel : CMPInput
 
     private void initaializeComponents()
     {
-        LocatorNodeId ButtonLocatorNodeId = _session.ResolveNodeLocator(_control.Locator.Page, "CoT_CMP_ButtonAction", _control.NodeId);
+        LocatorNodeId ButtonLocatorNodeId = _session.GetNodeLocator(_control.Locator.Page, "CoT_CMP_ButtonAction", _control.NodeId);
         button = new CMPButtonAction(_session, ButtonLocatorNodeId);
     }
 

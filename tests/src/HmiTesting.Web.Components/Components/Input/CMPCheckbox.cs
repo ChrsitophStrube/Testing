@@ -25,7 +25,7 @@ public class CMPCheckbox : CMPInput
 
         //Check Visual State of the Switch
         bool visualState = false;
-        var svgId = _session.ResolveNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
 
         string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
         SvgState svgState = new("checkbox", checkedOutput ? "checked" : "unchecked", null);
@@ -42,7 +42,7 @@ public class CMPCheckbox : CMPInput
             return; // No change needed
         }
 
-        var switchButton = _session.ResolveNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
+        var switchButton = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
         await switchButton.Locator.ClickAsync();
 
         switchState = await GetChecked();
@@ -55,14 +55,14 @@ public class CMPCheckbox : CMPInput
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
+        var button = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
 
         //Check svg state 
-        var svgId = _session.ResolveNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
         SvgState svgState = new("checkbox", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;

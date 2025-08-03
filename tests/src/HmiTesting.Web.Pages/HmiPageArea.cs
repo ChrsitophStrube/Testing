@@ -19,7 +19,7 @@ public class HmiPageArea :
     }
     public T getElementByName<T>(string name) where T : IInputControl
     {
-        var element = _session.ResolveNodeLocator(_area.Locator.Page, name, _area.NodeId);
+        var element = _session.GetNodeLocator(_area.Locator.Page, name, _area.NodeId);
         return (T)Activator.CreateInstance(typeof(T), _session, element);
     }
 

@@ -8,7 +8,7 @@ using LibUA.Core;
 using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
 using static HmiTesting.Core.Helpers.PlaywrightHelper;
-public class CMPTextOut : CMPOutput 
+public class CMPTextOut : CMPOutput
 {
     private IOpcUaSession _session;
     public LocatorNodeId _textOut { get; }
@@ -29,13 +29,13 @@ public class CMPTextOut : CMPOutput
 
     public async Task<string> GetText()
     {
-        var spinBox = _session.ResolveNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
+        var spinBox = _session.GetNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
         return await spinBox.Locator.Locator("span").InnerTextAsync();
     }
 
     public async Task WaitForText(string value)
     {
-        var spinBox = _session.ResolveNodeLocator(_textOut.Locator.Page, BuildPath( "VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
+        var spinBox = _session.GetNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
         var expected = value;
         await Assertions.Expect(spinBox.Locator.Locator("input")).ToHaveValueAsync(expected);
     }
@@ -44,7 +44,7 @@ public class CMPTextOut : CMPOutput
     {
 
         // get TextColor
-        LocatorNodeId label = _session.ResolveNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
+        LocatorNodeId label = _session.GetNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
         ILocator textColorLocator = label.Locator.Locator("span").First;
         Color textColor = await GetCssColorAsync(textColorLocator, "color");
 
@@ -64,7 +64,7 @@ public class CMPTextOut : CMPOutput
         }
 
         // get Color of BottomLine
-        LocatorNodeId bottomLine = _session.ResolveNodeLocator(_textOut.Locator.Page, "BottomLine", _textOut.NodeId);
+        LocatorNodeId bottomLine = _session.GetNodeLocator(_textOut.Locator.Page, "BottomLine", _textOut.NodeId);
         ILocator bottomLineLocator = bottomLine.Locator.Locator("div");
         Color backgroundColor = await GetCssColorAsync(bottomLineLocator, "background-color");
 
@@ -88,11 +88,11 @@ public class CMPTextOut : CMPOutput
     public async Task WaitForErrorState(bool errorstate)
     {
         // get Locator for TextColor
-        LocatorNodeId spinBox = _session.ResolveNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
+        LocatorNodeId spinBox = _session.GetNodeLocator(_textOut.Locator.Page, BuildPath("VerticalLayout", "TextDisplay").ToString(), _textOut.NodeId);
         ILocator textColorLocator = spinBox.Locator.Locator("span").First;
 
         // get Locator for BackgroundColor
-        LocatorNodeId bottomLine = _session.ResolveNodeLocator(_textOut.Locator.Page, "BottomLine", _textOut.NodeId);
+        LocatorNodeId bottomLine = _session.GetNodeLocator(_textOut.Locator.Page, "BottomLine", _textOut.NodeId);
         ILocator bottomLineLocator = bottomLine.Locator.Locator("div");
 
         if (errorstate)
@@ -104,7 +104,7 @@ public class CMPTextOut : CMPOutput
         else
         {
             // Wait for no error state
-            await WaitForCssColorAsync(textColorLocator, "color",dark100);
+            await WaitForCssColorAsync(textColorLocator, "color", dark100);
         }
     }
 

@@ -11,39 +11,32 @@ using HmiTesting.Core.DTOs;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using HmiTesting.Core.Interfaces;
+using NUnit.Framework.Interfaces;
+using static HmiTesting.Core.Helpers.PathHandler;
+using System.Xml.Linq;
 
 
 namespace HmiTesting.Core.Helpers
 {
     public static class PlaywrightHelper
     {
-        public static async Task CaptureScreenshotOnFailureAsync(IPage page)
+
+
+        public static async Task MakePageScreenshot(IHmiPage hmiPage, string pageName)
         {
-            try
-            {
-                string testName = TestContext.CurrentContext.Test.Name;
-                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-                string fileName = $"{testName}_Fail_{timestamp}.jpg";
+            var page = hmiPage.Page;
 
-                // Zielordner relativ zum bin\Debug\net8.0
-                string baseDir = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "TestFailPictures");
-                string fullDir = Path.GetFullPath(baseDir);
+            var root = ScreenshotOnFailureAttribute.FindRepoRoot(TestContext.CurrentContext.WorkDirectory);
 
-                Directory.CreateDirectory(fullDir);
+            var folder = Path.Combine(root, "test-results", "screenshots", "General");
+            Directory.CreateDirectory(folder);
 
-                string filePath = Path.Combine(fullDir, fileName);
-
-                await page.ScreenshotAsync(new PageScreenshotOptions
-                {
-                    Path = filePath
-                });
-
-                Console.WriteLine($"Screenshot gespeichert: {filePath}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Fehler beim Screenshot-Erstellen: {ex.Message}");
-            }
+            var safeName = ScreenshotOnFailureAttribute.Sanitize(pageName);
+            var file = Path.Combine(folder, $"{safeName}_{DateTime.Now:yyyyMMdd_HHmmssfff}.png");
+            Thread.Sleep(200);
+            await page.ScreenshotAsync(new() { Path = file, FullPage = true });
+            TestContext.AddTestAttachment(file, $"Screenshot: {pageName}");
         }
 
 
@@ -237,13 +230,12 @@ namespace HmiTesting.Core.Helpers
 
         public static async Task<Color> GetCssColorAsync(ILocator locator, string cssProperty)
         {
-    
+
             string color = await locator.EvaluateAsync<string>(
                 $"el => window.getComputedStyle(el).getPropertyValue('{cssProperty}')");
 
             return ParseCssToColor(color);
         }
-
     }
 }
 

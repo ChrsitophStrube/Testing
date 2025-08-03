@@ -21,13 +21,13 @@ public class CMPLabel : CMPOutput
 
     public async Task<string> GetText()
     {
-        var labelTextElement = _session.ResolveNodeLocator(_label.Locator.Page, BuildPath("HorizontalLayout", "Text").ToString(), _label.NodeId);
+        var labelTextElement = _session.GetNodeLocator(_label.Locator.Page, BuildPath("HorizontalLayout", "Text").ToString(), _label.NodeId);
         return await labelTextElement.Locator.Locator("span").InnerTextAsync();
     }
 
     public async Task WaitForText(string test)
     {
-        var labelTextElement = _session.ResolveNodeLocator(_label.Locator.Page, BuildPath("HorizontalLayout", "Text").ToString(), _label.NodeId);
+        var labelTextElement = _session.GetNodeLocator(_label.Locator.Page, BuildPath("HorizontalLayout", "Text").ToString(), _label.NodeId);
         await labelTextElement.Locator.Locator("span").InnerTextAsync();
     }
 

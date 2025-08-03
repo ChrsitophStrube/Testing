@@ -30,7 +30,7 @@ public class WebSocketForUI : BaseNetLogic
         Thread.Sleep(8000);
         UAValue popupNodeId = LogicObject.Get<NodePointer>("updatePopuop").Value;
         var popup = InformationModel.Get<DialogType>(popupNodeId);
-        OpenDialogBox(popup);
+        //OpenDialogBox(popup);
 
     }
 

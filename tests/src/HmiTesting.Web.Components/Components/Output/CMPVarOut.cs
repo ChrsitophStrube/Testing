@@ -33,7 +33,7 @@ public class CMPVarOut<T> : CMPOutput where T : INumber<T>
 
     public async Task<T> GetValue()
     {
-        var spinBox = _session.ResolveNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
+        var spinBox = _session.GetNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
         string value = await spinBox.Locator.Locator("span").InnerTextAsync();
 
         string cleanedValue = value.EndsWith(".0", StringComparison.Ordinal)
@@ -47,7 +47,7 @@ public class CMPVarOut<T> : CMPOutput where T : INumber<T>
 
     public async Task WaitForValue(T value)
     {
-        var spinBox = _session.ResolveNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
+        var spinBox = _session.GetNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
         var expected = value.ToString(null, CultureInfo.InvariantCulture);
 
         await Assertions.Expect(spinBox.Locator.Locator("input")).ToHaveValueAsync(expected);
@@ -57,7 +57,7 @@ public class CMPVarOut<T> : CMPOutput where T : INumber<T>
     {
 
         // get TextColor
-        LocatorNodeId label = _session.ResolveNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
+        LocatorNodeId label = _session.GetNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
         ILocator textColorLocator = label.Locator.Locator("span").First;
         Color textColor = await GetCssColorAsync(textColorLocator, "color");
 
@@ -77,7 +77,7 @@ public class CMPVarOut<T> : CMPOutput where T : INumber<T>
         }
 
         // get Color of BottomLine
-        LocatorNodeId bottomLine = _session.ResolveNodeLocator(_varOut.Locator.Page, "BottomLine", _varOut.NodeId);
+        LocatorNodeId bottomLine = _session.GetNodeLocator(_varOut.Locator.Page, "BottomLine", _varOut.NodeId);
         ILocator bottomLineLocator = bottomLine.Locator.Locator("div");
         Color backgroundColor = await GetCssColorAsync(bottomLineLocator, "background-color");
 
@@ -101,11 +101,11 @@ public class CMPVarOut<T> : CMPOutput where T : INumber<T>
     public async Task WaitForErrorState(bool errorstate)
     {
         // get Locator for TextColor
-        LocatorNodeId spinBox = _session.ResolveNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
+        LocatorNodeId spinBox = _session.GetNodeLocator(_varOut.Locator.Page, "NumDisplay", _varOut.NodeId);
         ILocator textColorLocator = spinBox.Locator.Locator("span").First;
 
         // get Locator for BackgroundColor
-        LocatorNodeId bottomLine = _session.ResolveNodeLocator(_varOut.Locator.Page, "BottomLine", _varOut.NodeId);
+        LocatorNodeId bottomLine = _session.GetNodeLocator(_varOut.Locator.Page, "BottomLine", _varOut.NodeId);
         ILocator bottomLineLocator = bottomLine.Locator.Locator("div");
 
         if (errorstate)

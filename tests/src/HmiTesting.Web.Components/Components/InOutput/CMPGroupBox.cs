@@ -17,7 +17,7 @@ public class GroupBox : IInputControl
 
     public IInputControl ResolveGroupbox<T>(string ControlName) where T : IInputControl
     {
-        var element = _session.ResolveNodeLocator(_groupBox.Locator.Page, ControlName, _groupBox.NodeId);
+        var element = _session.GetNodeLocator(_groupBox.Locator.Page, ControlName, _groupBox.NodeId);
         return (T)Activator.CreateInstance(typeof(T), element);
     }
     public Task<bool> IsEnabled()

@@ -23,7 +23,7 @@ public class CMPDropdown : CMPInput
     public async Task SelectOption(string optionText)
     {
         //Open the dropdown
-        var button = _session.ResolveNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
+        var button = _session.GetNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
         await button.Locator.ClickAsync();
 
         //Get all Options
@@ -48,7 +48,7 @@ public class CMPDropdown : CMPInput
             if (optionTextValue.Text == optionText)
             {
                 // Click the row with the matching text
-                var optionLocator = _session.ResolveNodeLocator(
+                var optionLocator = _session.GetNodeLocator(
                     _dropdown.Locator.Page, "Button", optionId);
                 await optionLocator.Locator.ClickAsync();
 
@@ -75,21 +75,21 @@ public class CMPDropdown : CMPInput
     {
         //get string from Dom
         OpcPath textPath = BuildPath("HorizontalLayout", "Label", "HorizontalLayout", "Text");
-        LocatorNodeId selectdeOptionText = _session.ResolveNodeLocator(_dropdown.Locator.Page, textPath.ToString(), _dropdown.NodeId);
+        LocatorNodeId selectdeOptionText = _session.GetNodeLocator(_dropdown.Locator.Page, textPath.ToString(), _dropdown.NodeId);
         return await selectdeOptionText.Locator.Locator("span").InnerTextAsync();
     }
 
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
+        var button = _session.GetNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
 
         //Chech if Dropdown arrow  Icon state is disabled
-        var svgId = _session.ResolveNodeLocator(_dropdown.Locator.Page, BuildPath("HorizontalLayout", "DropdownButton").ToString(), _dropdown.NodeId);
+        var svgId = _session.GetNodeLocator(_dropdown.Locator.Page, BuildPath("HorizontalLayout", "DropdownButton").ToString(), _dropdown.NodeId);
         SvgState svgState = new("dropdown", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
