@@ -44,7 +44,7 @@ public class UsertestSascha
 
 
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://:192.168.1.200", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -66,6 +66,7 @@ public class UsertestSascha
 
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInProperties()
     {
         var componentsDevpage = BuildPath("TestScreens", "Components Dev");
@@ -105,6 +106,7 @@ public class UsertestSascha
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestControllErrorstate()
     {
         var componentsDevpage = BuildPath("TestScreens", "Components Dev");

@@ -33,7 +33,7 @@ public class CMPTestsInputs
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://:192.168.1.200", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -598,11 +598,11 @@ public class CMPTestsInputs
         NodeId pressedState = _session.GetNodeIdFromPath("pressed", buttonBlank._button.NodeId);
         var changeTask = _session.RegisterChangedEventOnVar<bool>(pressedState, 1500);
         await buttonBlank.Click();
-       // var(oldVal, newVal) = await changeTask;
+        // var(oldVal, newVal) = await changeTask;
 
         bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
         Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
         _session.SetValue<bool>(buttonBlankClickToggleId, false);
     }
 
-    }
+}

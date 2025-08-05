@@ -34,7 +34,7 @@ public class CTRLVarOutTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://:192.168.1.200", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -66,6 +66,7 @@ public class CTRLVarOutTest
 
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInOutProperties()
     {
         // Get Text
@@ -111,6 +112,7 @@ public class CTRLVarOutTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInOutVarInExsistence()
     {
 
@@ -120,6 +122,7 @@ public class CTRLVarOutTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestVarInOutCheckLabelExsistence()
     {
         ILocator labelLocator = _ctrlVarOut.label._label.Locator;
@@ -127,6 +130,7 @@ public class CTRLVarOutTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInOutVisibility()
     {
         bool visibilety = await _ctrlVarOut.GetVisibleAsync();

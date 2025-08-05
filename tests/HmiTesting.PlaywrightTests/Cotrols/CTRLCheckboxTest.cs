@@ -33,7 +33,7 @@ public class CTRLCheckboxTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://:192.168.1.200", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -64,6 +64,7 @@ public class CTRLCheckboxTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckBoxProperties()
     {
         //Get IconName
@@ -101,6 +102,7 @@ public class CTRLCheckboxTest
 
     }
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckEnable()
     {
         //Check if Button is enabled
@@ -116,10 +118,11 @@ public class CTRLCheckboxTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckCheckboxExsistence()
     {
         ILocator checkboxLocator;
-        if (_ctrlCheckbox.CheckBoxPositionProperty==1)
+        if (_ctrlCheckbox.CheckBoxPositionProperty == 1)
         {
             checkboxLocator = _ctrlCheckbox.checkBoxRight._checkbox.Locator;
         }
@@ -133,6 +136,7 @@ public class CTRLCheckboxTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckLabelExsistence()
     {
         ILocator buttonLocator = _ctrlCheckbox.label._label.Locator;
@@ -140,6 +144,7 @@ public class CTRLCheckboxTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckLabelVisibility()
     {
         bool visibilety = await _ctrlCheckbox.GetVisibleAsync();

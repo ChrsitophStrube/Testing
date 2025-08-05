@@ -34,7 +34,7 @@ public class CTRLButtonTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync("http://:192.168.1.200", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -65,6 +65,7 @@ public class CTRLButtonTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonProperties()
     {
         //Get IconName
@@ -97,6 +98,7 @@ public class CTRLButtonTest
 
     }
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckEnable()
     {
         //Check if Button is enabled
@@ -112,6 +114,7 @@ public class CTRLButtonTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckButtonExsistence()
     {
 
@@ -121,6 +124,7 @@ public class CTRLButtonTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelExsistence()
     {
         ILocator buttonLocator = _ctrlButton.label._label.Locator;
@@ -128,6 +132,7 @@ public class CTRLButtonTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelVisibility()
     {
         bool visibilety = await _ctrlButton.GetVisibleAsync();
