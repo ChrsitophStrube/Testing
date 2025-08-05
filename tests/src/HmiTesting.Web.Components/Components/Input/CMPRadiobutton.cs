@@ -6,11 +6,11 @@ using LibUA.Core;
 using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
 
-public class CMPRadiobutton : IInputControl
+public class CMPRadiobutton : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _radiobutton { get; }
-    public CMPRadiobutton(IOpcUaSession session, LocatorNodeId radiobutton)
+    public CMPRadiobutton(IOpcUaSession session, LocatorNodeId radiobutton) : base(session, radiobutton)
     {
         _session = session;
         _radiobutton = radiobutton;
@@ -30,7 +30,7 @@ public class CMPRadiobutton : IInputControl
 
         //Check Visual State of the Switch
         bool visualState = false;
-        var svgId = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
 
         string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
         SvgState svgState = new("radiobutton", checkedOutput ? "checked" : "unchecked", null);
@@ -47,7 +47,7 @@ public class CMPRadiobutton : IInputControl
             return; // No change needed
         }
 
-        var switchButton = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
+        var switchButton = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
         await switchButton.Locator.ClickAsync();
 
         switchState = await GetChecked();
@@ -58,38 +58,19 @@ public class CMPRadiobutton : IInputControl
     }
 
 
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "userRole", _radiobutton.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
+        var button = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
         //Check svg state 
-        var svgId = _session.ResolveNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
         SvgState svgState = new("radiobutton", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;
     }
 
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _radiobutton.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _radiobutton.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
 }

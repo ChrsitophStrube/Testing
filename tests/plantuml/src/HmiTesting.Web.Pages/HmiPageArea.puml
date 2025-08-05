@@ -1,0 +1,8 @@
+@startuml
+class HmiPageArea {
+    + HmiPageArea(session:IOpcUaSession, area:LocatorNodeId)
+    + getElementByName(name:string) : T
+    + getElementByNumber(number:int) : LocatorNodeId
+}
+IHmiPageArea <|-- HmiPageArea
+@enduml

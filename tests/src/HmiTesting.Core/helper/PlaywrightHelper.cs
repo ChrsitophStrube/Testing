@@ -11,39 +11,32 @@ using HmiTesting.Core.DTOs;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using HmiTesting.Core.Interfaces;
+using NUnit.Framework.Interfaces;
+using static HmiTesting.Core.Helpers.PathHandler;
+using System.Xml.Linq;
 
 
 namespace HmiTesting.Core.Helpers
 {
     public static class PlaywrightHelper
     {
-        public static async Task CaptureScreenshotOnFailureAsync(IPage page)
+
+
+        public static async Task MakePageScreenshot(IHmiPage hmiPage, string pageName)
         {
-            try
-            {
-                string testName = TestContext.CurrentContext.Test.Name;
-                string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-                string fileName = $"{testName}_Fail_{timestamp}.jpg";
+            var page = hmiPage.Page;
 
-                // Zielordner relativ zum bin\Debug\net8.0
-                string baseDir = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "TestFailPictures");
-                string fullDir = Path.GetFullPath(baseDir);
+            var root = ScreenshotOnFailureAttribute.FindRepoRoot(TestContext.CurrentContext.WorkDirectory);
 
-                Directory.CreateDirectory(fullDir);
+            var folder = Path.Combine(root, "test-results", "screenshots", "General");
+            Directory.CreateDirectory(folder);
 
-                string filePath = Path.Combine(fullDir, fileName);
-
-                await page.ScreenshotAsync(new PageScreenshotOptions
-                {
-                    Path = filePath
-                });
-
-                Console.WriteLine($"Screenshot gespeichert: {filePath}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Fehler beim Screenshot-Erstellen: {ex.Message}");
-            }
+            var safeName = ScreenshotOnFailureAttribute.Sanitize(pageName);
+            var file = Path.Combine(folder, $"{safeName}_{DateTime.Now:yyyyMMdd_HHmmssfff}.png");
+            Thread.Sleep(200);
+            await page.ScreenshotAsync(new() { Path = file, FullPage = true });
+            TestContext.AddTestAttachment(file, $"Screenshot: {pageName}");
         }
 
 
@@ -142,7 +135,7 @@ namespace HmiTesting.Core.Helpers
                \s*\)",
             RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
 
-        public static Color ParseCssColor(string css)
+        public static Color ParseCssToColor(string css)
         {
             if (string.IsNullOrWhiteSpace(css))
                 throw new ArgumentException("CSS color string is null or empty.", nameof(css));
@@ -175,11 +168,74 @@ namespace HmiTesting.Core.Helpers
             return Color.FromArgb(a, r, g, b);
         }
 
-    //Extention method to compare colors (Hex optix <-> HTML CSS)
-    public static bool EqualsRgba(this Color self, Color other) =>
-        self.R == other.R && self.G == other.G &&
-        self.B == other.B && self.A == other.A;
 
+        public static string ParseColorToCss(Color c)
+        {
+            // if alpha = 255 ⇒ "rgb(...)"
+            if (c.A == 255)
+                return $"rgb({c.R}, {c.G}, {c.B})";
+
+            double a = c.A / 255d;
+            return string.Create(
+                CultureInfo.InvariantCulture,
+                $"rgba({c.R}, {c.G}, {c.B}, {a:0.###})");
+        }
+
+
+        //Extention method to compare colors (Hex optix <-> HTML CSS)
+        public static bool EqualsRgba(this Color self, Color other) =>
+            self.R == other.R && self.G == other.G &&
+            self.B == other.B && self.A == other.A;
+
+
+        public static async Task WaitForCssColorAsync(
+        ILocator locator,
+        string cssProperty,
+        params Color[] expectedColors)
+        {
+            if (expectedColors == null || expectedColors.Length == 0)
+                throw new ArgumentException("At least one expected color must be provided.", nameof(expectedColors));
+
+
+            string pattern = $"^(?:{string.Join("|",
+                expectedColors.Select(c => Regex.Escape(ParseColorToCss(c))))}?)$";
+
+            var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+            try
+            {
+                await Assertions.Expect(locator)
+                                .ToHaveCSSAsync(cssProperty, regex);
+            }
+            catch (PlaywrightException ex)
+            {
+
+                string cssActual = await locator.EvaluateAsync<string>(
+                    $"el => window.getComputedStyle(el).getPropertyValue('{cssProperty}')");
+
+                Color actualColour = ParseCssToColor(cssActual);
+                string actualHex = actualColour.ToArgb().ToString("X8");
+
+                string expectedHex = string.Join(" | ",
+                    expectedColors.Select(c => c.ToArgb().ToString("X8")));
+
+                throw new PlaywrightException(
+                    $"Colour mismatch for CSS property '{cssProperty}'.\n" +
+                    $"Expected : {expectedHex}\n" +
+                    $"Actual   : {actualHex}",
+                    ex);
+            }
+        }
+
+
+
+        public static async Task<Color> GetCssColorAsync(ILocator locator, string cssProperty)
+        {
+
+            string color = await locator.EvaluateAsync<string>(
+                $"el => window.getComputedStyle(el).getPropertyValue('{cssProperty}')");
+
+            return ParseCssToColor(color);
+        }
     }
 }
 

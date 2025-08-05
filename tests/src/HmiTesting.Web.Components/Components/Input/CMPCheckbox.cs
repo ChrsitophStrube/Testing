@@ -7,11 +7,11 @@ using Microsoft.Playwright;
 using static HmiTesting.Core.Helpers.PathHandler;
 using System.Text;
 using System.Text.RegularExpressions;
-public class CMPCheckbox : IInputControl
+public class CMPCheckbox : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _checkbox { get; }
-    public CMPCheckbox(IOpcUaSession session, LocatorNodeId checkBox)
+    public CMPCheckbox(IOpcUaSession session, LocatorNodeId checkBox) : base(session, checkBox)
     {
         _session = session;
         _checkbox = checkBox;
@@ -25,10 +25,10 @@ public class CMPCheckbox : IInputControl
 
         //Check Visual State of the Switch
         bool visualState = false;
-        var svgId = _session.ResolveNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
 
         string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
-        SvgState svgState = new("checkbox", checkedOutput ? "checked" : "unchecked",null);
+        SvgState svgState = new("checkbox", checkedOutput ? "checked" : "unchecked", null);
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return checkedOutput;
     }
@@ -42,7 +42,7 @@ public class CMPCheckbox : IInputControl
             return; // No change needed
         }
 
-        var switchButton = _session.ResolveNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
+        var switchButton = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
         await switchButton.Locator.ClickAsync();
 
         switchState = await GetChecked();
@@ -52,40 +52,20 @@ public class CMPCheckbox : IInputControl
         }
     }
 
-
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_checkbox.Locator.Page, "userRole", _checkbox.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
-    }
-
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
+        var button = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
 
         //Check svg state 
-        var svgId = _session.ResolveNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
         SvgState svgState = new("checkbox", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;
     }
 
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _checkbox.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _checkbox.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
 }

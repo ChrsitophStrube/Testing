@@ -1,0 +1,13 @@
+@startuml
+class OpcUaHelper <<static>> {
+    + {static} CreatePath(startNode:NodeId, nsIndex:ushort, path:string) : BrowsePath
+    + {static} GetNodeIdfromPath(client:Client, nsIndex:ushort, path:string, startNode:NodeId?) : NodeId
+    + {static} GetLastSession(client:Client, optixProjectName:string, nsIndex:ushort) : NodeId
+    + {static} ResolveNodeLocator(client:Client, nsIndex:ushort, page:IPage, pathToNode:string, startNodeId:NodeId) : LocatorNodeId
+    + {static} GetNamespaceIndex(client:Client, namespaceUrl:string) : ushort
+    + {static} SetValue(client:Client, nodeId:NodeId, value:T) : void
+    + {static} GetValue(client:Client, nodeId:NodeId) : T
+}
+OpcUaHelper o-> "_objectsFolderNode" NodeId
+OpcUaHelper o-> "_namespaceIndexNode" NodeId
+@enduml

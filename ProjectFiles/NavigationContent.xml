@@ -33,7 +33,7 @@
         <NavItem Title="Machine parameters" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeParameters" />
     </NavItem>
     <NavItem Title="Administer" IconPath="Icons/icon-administrate.svg" ScreenPath="">
-        <NavItem Title="Backup/Restore" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_BackupRestore" />
+        <NavItem Title="Backup and Restore" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_BackupRestore" />
         <NavItem Title="Network settings" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_NetworkSettings" />
         <NavItem Title="User administration" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/UserManagement/CoTD_UserManagementScreen" />
         <NavItem Title="Diagnostic server-client" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Administration/CoTD_ServerClientDiagnostic" />

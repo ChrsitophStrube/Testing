@@ -13,7 +13,7 @@ public class CMPButtonLed : CMPButtonAction
     }
     public async Task<string> GetLedState()
     {
-        var ledSvgId = _session.ResolveNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "CoT_LedMulticolor1").ToString(), _button.NodeId);
+        var ledSvgId = _session.GetNodeLocator(_button.Locator.Page, BuildPath("HorizontalLayout1", "CoT_LedMulticolor1").ToString(), _button.NodeId);
         string dataUri = await ledSvgId.Locator.Locator("img").GetAttributeAsync("src");
 
         const string prefix = "data:image/svg+xml;base64,";

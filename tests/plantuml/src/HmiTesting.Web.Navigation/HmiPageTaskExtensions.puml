@@ -1,0 +1,7 @@
+@startuml
+class HmiPageTaskExtensions <<static>> {
+    + {static} <<async>> GetAreaLayoutListA(pageTask:Task<IHmiPage>, number:int) : Task<IHmiPageArea>
+    + {static} <<async>> GetAreaLayoutContentB(pageTask:Task<IHmiPage>, number:int) : Task<IHmiPageArea>
+    + {static} <<async>> GetElementByName(areaTask:Task<IHmiPageArea>, name:string) : Task<T>
+}
+@enduml

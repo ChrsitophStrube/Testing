@@ -6,13 +6,16 @@ using LibUA.Core;
 using Microsoft.Playwright;
 using HmiTesting.Core.Helpers;
 using HmiTesting.Core.DTOs;
+using System.Diagnostics;
+using static HmiTesting.Core.Helpers.PathHandler;
+using System.Text.RegularExpressions;
 
 namespace HmiTesting.OpcUa;
 
 public class OpcUaSession :
     IOpcUaSession
 {
-    private Client _client;
+    private readonly NotifyingClient _client;
     private string _optixProjectName;
     private ushort _optixProjectNamespace;
 
@@ -22,11 +25,13 @@ public class OpcUaSession :
     public static readonly NodeId _namespaceIndexNode = new NodeId(0, 2255);
 
 
-    public OpcUaSession(Client client, string optixProjectName)
+    public OpcUaSession(NotifyingClient client, string optixProjectName)
     {
         _client = client;
         _optixProjectName = optixProjectName;
         _optixProjectNamespace = client.GetNamespaceIndex(_optixProjectName);
+        _client.DataChange += HandleDataChange;   // <<< Event‑Abo
+
     }
 
     public INavigator Navigator(IPage MainPageObject)
@@ -44,22 +49,21 @@ public class OpcUaSession :
         throw new NotImplementedException();
     }
 
+
     public NodeId GetNodeIdFromPath(string path, NodeId? startNode = null)
     {
         return GetNodeIdFromPath(_optixProjectNamespace, path, startNode);
     }
 
+    public NodeId GetNodeIdFromPath(string nsIndex, string path, NodeId startNode = null)
+    {
+        ushort nsIndexInt = GetNamespaceIndex(nsIndex);
+        return GetNodeIdFromPath(nsIndexInt, path, startNode);
+    }
+
     public NodeId GetNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null)
     {
-        // set start node to "Objects" if not set
-        if (startNode == null)
-        {
-            startNode = _objectsFolderNode; // Objects folder
-        }
-
-        BrowsePath[] paths = { CreatePath(startNode, nsIndex, path) };
-        BrowsePathResult[] results;
-        StatusCode sc = _client.TranslateBrowsePathsToNodeIds(paths, out results);
+        (StatusCode sc, BrowsePathResult[] results) = TryGetNodeIdFromPath(nsIndex, path, startNode);
 
         if (sc == StatusCode.Good &&
             results.Length > 0
@@ -72,14 +76,73 @@ public class OpcUaSession :
             throw new Exception($"can not get NodeId from Path:{path}");
         }
     }
+    public NodeId WaitForNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null)
+    {
+        var to = timeout ?? TimeSpan.FromSeconds(40);
+        var interval = pollInterval ?? TimeSpan.FromMilliseconds(250);
+
+        var sw = Stopwatch.StartNew();
+
+        while (sw.Elapsed < to)
+        {
+            var (sc, results) = TryGetNodeIdFromPath(nsIndex, path, startNode);
+
+            if (sc == StatusCode.Good &&
+                results.Length > 0
+                && results[0].Targets.Length > 0)
+            {
+                return results[0].Targets[0].Target;
+            }
+
+            Thread.Sleep(interval);
+        }
+
+        throw new TimeoutException(
+            $"can not get NodeId from Path'{path}' within {to} .");
+    }
+
+    private (StatusCode, BrowsePathResult[]) TryGetNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null)
+    {
+        // set start node to "Objects" if not set
+        if (startNode == null)
+        {
+            startNode = _objectsFolderNode; // Objects folder
+        }
+
+        BrowsePath[] paths = { CreatePath(startNode, nsIndex, path) };
+        BrowsePathResult[] results;
+        StatusCode sc = _client.TranslateBrowsePathsToNodeIds(paths, out results);
+        return (sc, results);
+    }
 
     private BrowsePath CreatePath(NodeId startNode, ushort nsIndex, string path)
     {
         if (string.IsNullOrWhiteSpace(path))
             throw new ArgumentException("path should not be empty", nameof(path));
 
-        string[] segments = path.Trim('/')
-                                 .Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+        //string[] segments = path.Trim('/')
+        //                         .Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+
+        var segments = Regex.Split(path.Trim('/'), @"(?<!&)/")
+                    .Where(s => s.Length > 0)
+                    .Select(s => s.Replace("&/", "/").Trim())
+                    .ToArray();
+
+        var rpe = segments.Select(name =>
+                       new RelativePathElement(
+                               new NodeId(0, 33),      // ReferenceTypeId
+                               false,                  // IsInverse
+                               true,                   // IncludeSubtypes
+                               new QualifiedName(nsIndex, name)))
+                          .ToArray();
+
+        return new BrowsePath(startNode, rpe);
+    }
+
+    private BrowsePath CreatePath(NodeId startNode, ushort nsIndex, OpcPath path)
+    {
+
+        string[] segments = path.Segments.ToArray();
 
         var rpe = segments.Select(name =>
                        new RelativePathElement(
@@ -209,6 +272,45 @@ public class OpcUaSession :
         return (T)dvs[0].Value;
     }
 
+    public async Task<T> WaitForValueAsync<T>(NodeId nodeId, T expectedValue, int timeoutMs = 500)
+    {
+        var interval = TimeSpan.FromMilliseconds(50);     // Poll-Intervall
+        var start = Stopwatch.GetTimestamp();
+        TimeSpan timeout = TimeSpan.FromMilliseconds(timeoutMs);
+        double timeoutTicks = timeout.TotalSeconds * Stopwatch.Frequency;
+
+        while (true)
+        {
+            T current = GetValue<T>(nodeId);
+
+            // Compare
+            if (IsEqual<T>(current, expectedValue))
+                return current;
+
+            if (Stopwatch.GetTimestamp() - start >= timeoutTicks)
+                throw new TimeoutException(
+                    $" Expected value '{expectedValue}' was not reached within {timeout}.For nodeId with Browsename: {GetBrowsename(nodeId)}");
+
+            await Task.Delay(interval).ConfigureAwait(false);
+        }
+    }
+
+    private static bool IsEqual<T>(T a, T b)
+    {
+
+        if (ReferenceEquals(a, b)) return true;
+        if (a is null || b is null) return false;
+
+
+        if (a is LocalizedText ltA && b is LocalizedText ltB)
+        {
+            return string.Equals(ltA.Locale, ltB.Locale, StringComparison.OrdinalIgnoreCase) &&
+                   string.Equals(ltA.Text, ltB.Text, StringComparison.Ordinal);
+        }
+
+        return EqualityComparer<T>.Default.Equals(a, b);
+    }
+
     public string GetBrowsename(NodeId nodeId)
     {
         var readRes = _client.Read(new ReadValueId[]
@@ -225,7 +327,7 @@ public class OpcUaSession :
 
     }
 
-    public LocatorNodeId ResolveNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null)
+    public LocatorNodeId GetNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null)
     {
         if (startNodeId == null)
         {
@@ -233,6 +335,18 @@ public class OpcUaSession :
         }
 
         NodeId nodeId = GetNodeIdFromPath(_optixProjectNamespace, pathToNode, startNodeId);
+        ILocator locator = page.Locator($"[id='{nodeId}']");
+        return new LocatorNodeId { Locator = locator, NodeId = nodeId };
+    }
+
+    public LocatorNodeId WaitForNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null)
+    {
+        if (startNodeId == null)
+        {
+            startNodeId = _objectsFolderNode;
+        }
+
+        NodeId nodeId = WaitForNodeIdFromPath(_optixProjectNamespace, pathToNode, startNodeId);
         ILocator locator = page.Locator($"[id='{nodeId}']");
         return new LocatorNodeId { Locator = locator, NodeId = nodeId };
     }
@@ -247,5 +361,114 @@ public class OpcUaSession :
         }
     }
 
+    private readonly Dictionary<uint, Action<DataValue>> _dataChange = new();
+    private uint _subscriptionId;
+    private uint _nextHandle = 1;
+    private readonly object _subLock = new();
+
+    private void HandleDataChange(uint handle, DataValue dv)
+    {
+        if (_dataChange.TryGetValue(handle, out var cb))
+            cb(dv);
+    }
+
+    // -----------------------------------------------------------------------------
+    // 3)  NEUE METHODE in OpcUaSession --------------------------------------------
+    // -----------------------------------------------------------------------------
+    public Task<(T oldValue, T newValue)> RegisterChangedEventOnVar<T>(
+            NodeId nodeId,
+            int timeoutMs = 1_000)
+    {
+        // alten Wert auslesen
+        T oldVal = GetValue<T>(nodeId);
+
+        // Subscription nur einmal anlegen
+        if (_subscriptionId == 0)
+        {
+            lock (_subLock)
+            {
+                if (_subscriptionId == 0)
+                {
+                    StatusCode sc = _client.CreateSubscription(
+                                        0,      // publishingInterval (0 = Serverwahl)
+                                        1_000,  // lifeTimeCount
+                                        true,   // publishingEnabled
+                                        0,      // priority
+                                        out _subscriptionId);
+                    if (sc != StatusCode.Good)
+                        throw new Exception("CreateSubscription fehlgeschlagen");
+
+                    _client.SetPublishingMode(true, new[] { _subscriptionId }, out _);
+                }
+            }
+        }
+
+        // MonitoredItem anlegen
+        uint handle = _nextHandle++;
+        var req = new MonitoredItemCreateRequest(
+                      new ReadValueId(nodeId, NodeAttribute.Value, null, new QualifiedName()),
+                      MonitoringMode.Reporting,
+                      new MonitoringParameters(handle, 0, null, 1, true));
+
+        _client.CreateMonitoredItems(_subscriptionId,
+                                     TimestampsToReturn.Both,
+                                     new[] { req },
+                                     out var results);
+        if (results[0].StatusCode != StatusCode.Good)
+            throw new Exception("CreateMonitoredItems fehlgeschlagen");
+
+        // TaskCompletionSource vorbereiten
+        var tcs = new TaskCompletionSource<(T, T)>();
+        _dataChange[handle] = dv =>
+        {
+            if (_dataChange.Remove(handle))
+            {
+                T newVal = (T)dv.Value;
+                tcs.TrySetResult((oldVal, newVal));
+
+                // Aufräumen – MonitoredItem wieder entfernen
+                _client.DeleteMonitoredItems(_subscriptionId,
+                                             new[] { results[0].MonitoredItemId },
+                                             out _);
+            }
+        };
+
+        // Timeout absichern
+        if (timeoutMs > 0)
+        {
+            _ = Task.Delay(timeoutMs).ContinueWith(_ =>
+            {
+                if (_dataChange.Remove(handle))
+                {
+                    tcs.TrySetException(new TimeoutException(
+                        $"Kein Wertwechsel für {nodeId} innerhalb {timeoutMs} ms."));
+                }
+            });
+        }
+
+        return tcs.Task;
+    }
+
+
 }
 
+
+/// <summary>
+/// Leitet von LibUA.Client ab und feuert ein Event,
+/// sobald DataChange‑Notifications eintreffen.
+/// </summary>
+public class NotifyingClient : Client
+{
+    public event Action<uint, DataValue> DataChange;
+
+    public NotifyingClient(string host, int port = 4840, int timeoutMs = 10_000)
+        : base(host, port, timeoutMs) { }
+
+    public override void NotifyDataChangeNotifications(uint subId,
+                                                       uint[] clientHandles,
+                                                       DataValue[] notifications)
+    {
+        for (int i = 0; i < clientHandles.Length; i++)
+            DataChange?.Invoke(clientHandles[i], notifications[i]);
+    }
+}

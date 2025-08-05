@@ -1,0 +1,6 @@
+@startuml
+class OpcUaClient {
+    + Connect(optixProjectName:string, targetIP:string, port:int) : IOpcUaSession
+}
+IOpcUaClient <|-- OpcUaClient
+@enduml

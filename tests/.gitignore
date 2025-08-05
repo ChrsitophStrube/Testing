@@ -1,0 +1,60 @@
+# Build-Output-Verzeichnisse
+[Bb]in/
+[Oo]bj/
+
+
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+
+.vscode/
+
+
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Paket-Manager
+# NuGet (inklusive Paket-Downloads)
+*.nupkg
+# Paket-Restore-Ordner (Package Restore)
+packages/
+# Paket-Cache
+*.snupkg
+
+# Microsoft Build-Prozesse
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+
+*.userprefs
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.log
+*.obj
+*.lib
+*.xproj.user
+*.oproj.user
+*.resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.ide.*
+
+# Roslyn- und Visual Studio Caches
+*.ide/
+*.DotSettings.user
+
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+test-results/
+nunit-*.xml

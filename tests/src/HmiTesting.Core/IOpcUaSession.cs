@@ -7,17 +7,21 @@ using Microsoft.Playwright;
 
 public interface IOpcUaSession
 {
-    
+
     ushort GetNamespaceIndex(string namespaceUrl);
     ushort GetProjectNamespaceIndex();
     NodeId GetNodeIdFromPath(string path, NodeId? startNode = null);
+    public NodeId GetNodeIdFromPath(string nsIndex, string path, NodeId startNode = null);
+    public NodeId GetNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null);
     NodeId GetLastSession();
     IHmiPage GetHeader();
     IHmiPage GetActualPage();
     INavigator Navigator(IPage MainPageObject);
     void SetValue<T>(NodeId nodeId, T value);
     T GetValue<T>(NodeId nodeId);
+    Task<T> WaitForValueAsync<T>(NodeId nodeId, T expectedValue, int timeoutMs = 500);
     string GetBrowsename(NodeId nodeId);
     List<NodeId> GetChildren(NodeId parentNodeId);
-    LocatorNodeId ResolveNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null);
+    LocatorNodeId GetNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null);
+    LocatorNodeId WaitForNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null);
 }

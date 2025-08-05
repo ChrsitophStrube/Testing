@@ -8,37 +8,41 @@ using HmiTesting.Core.DTOs;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
-public class Navigator :INavigator
+
+public class Navigator : INavigator
 {
     private IOpcUaSession _session;
     private IPage _page;
 
+
+
+
     //Optix Template Paths
 
-        private static readonly OpcPath _navigationRoot = BuildPath(
-            "UIRoot",
-            "MainFrame",
-            "ContentArea",
-            "Navigation"
-        );
+    private static readonly OpcPath _navigationRoot = BuildPath(
+        "UIRoot",
+        "MainFrame",
+        "ContentArea",
+        "Navigation"
+    );
 
-        public static readonly IReadOnlyDictionary<int, OpcPath> _columns
-            = Enumerable.Range(1, 5)
-                .ToDictionary(
-                    i => i,
-                    i => i == 1
-                        ? _navigationRoot.Append(
-                            "SideBar",
-                            "VerticalLayout",
-                            $"Column{i}",
-                            "ScrollLayout",
-                            "Layout")
-                        : _navigationRoot.Append(
-                            "ColumnLayout",
-                            $"Column{i}",
-                            "ScrollLayout",
-                            "Layout")
-                );          
+    public static readonly IReadOnlyDictionary<int, OpcPath> _columns
+        = Enumerable.Range(1, 5)
+            .ToDictionary(
+                i => i,
+                i => i == 1
+                    ? _navigationRoot.Append(
+                        "SideBar",
+                        "VerticalLayout",
+                        $"Column{i}",
+                        "ScrollLayout",
+                        "Layout")
+                    : _navigationRoot.Append(
+                        "ColumnLayout",
+                        $"Column{i}",
+                        "ScrollLayout",
+                        "Layout")
+            );
 
     readonly OpcPath _mainPanelLoader = BuildPath(
             "UIRoot",
@@ -53,34 +57,77 @@ public class Navigator :INavigator
         _page = page;
     }
 
-
-    public async Task<IHmiPage> GoToPage(OpcPath pagePath,string pageName)
+    public async Task<IHmiPage> GoToPage(OpcPath pagePath, string pageName, bool bypassRestriction = false)
     {
         NodeId lastSession = _session.GetLastSession();
-        OpcPath sidebarButton = _columns[1].Append(pagePath.Segments.First()).Append("Button");
-        // Open Navigation
-        LocatorNodeId siedebarElement = _session.ResolveNodeLocator(_page, sidebarButton.ToString(), lastSession);
-        await siedebarElement.Locator.ClickAsync();
 
         // Navigate to the specified page
-        
-        for ( int i = 1; i < pagePath.Segments.Count(); i++ )
+        string NavigationElementName = "";
+        for (int i = 0; i < pagePath.Segments.Count(); i++)
         {
-            // Find the next segment in the navigation
-            LocatorNodeId NavigationColumn = _session.ResolveNodeLocator(_page, _columns[i+1].ToString(), lastSession);
+            NavigationElementName += pagePath.Segments[i];
 
-            string buttonLableName = pagePath.Segments[i];
-           
-           // Find the button with the specified label in the current navigation column
-            var targetPanel = NavigationColumn.Locator.Locator($":scope > div[data-type='panel']:has(span:text(\"{buttonLableName}\"))");
+            OpcPath sidebarButton = _columns[i + 1].Append(NavigationElementName).Append("Button");
 
-            await targetPanel.Locator("div[data-type='button']").ClickAsync();
+            //Make Navigarion Button Visible 
+            if (bypassRestriction)
+            {
+                OpcPath navigationElement = _columns[i + 1].Append(NavigationElementName);
+                NodeId navigationElementId = _session.GetNodeIdFromPath(navigationElement.ToString(), lastSession);
+                NodeId visebilety = _session.GetNodeIdFromPath("urn:FTOptix:UI", "Visible", navigationElementId);
+                _session.SetValue<bool>(visebilety, true);
+
+            }
+
+            if (i == 0)
+            {
+                // Click First Sidbar element to open (unindependent from color)
+                LocatorNodeId siedebarElement = _session.GetNodeLocator(_page, sidebarButton.ToString(), lastSession);
+                await siedebarElement.Locator.ClickAsync();
+            }
+            else
+            {
+
+                //Skip click if already selected
+                OpcPath isOpenPath = _columns[i + 1].Append(NavigationElementName).Append("isOpen");
+                NodeId isOpenProp  = _session.GetNodeIdFromPath(isOpenPath.ToString(), lastSession);
+                bool isOpen        =  _session.GetValue<bool>(isOpenProp);
+
+                if (!isOpen)
+                {
+                    // Click SidebarElement
+                    LocatorNodeId siedebarElement = _session.GetNodeLocator(_page, sidebarButton.ToString(), lastSession);
+                    await siedebarElement.Locator.ClickAsync();
+                }
+            }
+
+            NavigationElementName += @" &/ ";
         }
-
-        Thread.Sleep(3000); 
-        LocatorNodeId actualPage = _session.ResolveNodeLocator(_page, _mainPanelLoader.Append(pageName).ToString(), lastSession);
+        LocatorNodeId actualPage = _session.WaitForNodeLocator(_page, _mainPanelLoader.Append(pageName).ToString(), lastSession);
         return new HmiPage(_session, actualPage.Locator.Page, actualPage.NodeId);
     }
+
+    public async Task<IReadOnlyList<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, Task> perPage, bool bypassRestriction = true)
+    {
+        var errors = new List<Exception>();
+
+        foreach (var (path, name) in screens)
+        {
+            try
+            {
+                var page = await GoToPage(path, name, bypassRestriction);
+                await perPage(page, name);
+            }
+            catch (Exception ex)
+            {
+                errors.Add(new Exception($"Fault loading Page '{name}' ({path})", ex));
+            }
+        }
+
+        return errors;
+    }
+
+
 
     public INavigator ReturnToNextPage()
     {

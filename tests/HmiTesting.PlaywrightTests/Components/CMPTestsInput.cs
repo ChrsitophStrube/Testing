@@ -11,7 +11,7 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
-public class Tests
+public class CMPTestsInputs
 {
 
     private IPlaywright? playwright = null;
@@ -33,17 +33,20 @@ public class Tests
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
         await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
         await _page.WaitForTimeoutAsync(2000);
 
+        ScreenshotOnFailureAttribute.SetPage(_page!);
+
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200");
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
     }
+
 
     [TearDown]
     public async Task DisconnectOpcUaServer()
@@ -86,28 +89,28 @@ public class Tests
         bool enabledState = await buttonBlank.IsEnabled();
         Assert.True(enabledState, "Button should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", buttonBlank._button.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        buttonBlank.EnableProperty = false;
         //Check if Switch is disabled
         enabledState = await buttonBlank.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        buttonBlank.EnableProperty = true;
 
 
         //VisebiletyCheck
-        bool visibleState = await buttonBlank.IsVisibleAsync();
+        await buttonBlank.WaitForVisibleAsync(true);
+        bool visibleState = await buttonBlank.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
         //Hide Switch
-        NodeId visible = _session.GetNodeIdFromPath("visibility", buttonBlank._button.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await buttonBlank.IsVisibleAsync();
+        buttonBlank.VisisbleProperty = false;
+        await buttonBlank.WaitForVisibleAsync(false);
+        visibleState = await buttonBlank.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        buttonBlank.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = buttonBlank.GetUserRole();
+        string userRole = buttonBlank.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
     }
@@ -142,35 +145,37 @@ public class Tests
 
 
         //Enable 
+        await buttonAction.WaitForEnablePropertyAsync(true);
         bool enabledState = await buttonAction.IsEnabled();
         Assert.True(enabledState, "Button should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", buttonAction._button.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        buttonAction.EnableProperty = false;
         //Check if Switch is disabled
+        await buttonAction.WaitForEnablePropertyAsync(false);
         enabledState = await buttonAction.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        buttonAction.EnableProperty = true;
 
 
         //VisebiletyCheck
-        bool visibleState = await buttonAction.IsVisibleAsync();
+        await buttonAction.WaitForVisibleAsync(true);
+        bool visibleState = await buttonAction.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
         //Hide Switch
-        NodeId visible = _session.GetNodeIdFromPath("visibility", buttonAction._button.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await buttonAction.IsVisibleAsync();
+        buttonAction.VisisbleProperty = false;
+        await buttonAction.WaitForVisibleAsync(false);
+        visibleState = await buttonAction.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        buttonAction.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = buttonAction.GetUserRole();
+        string userRole = buttonAction.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
         //Get Text
-        string buttonText = await  buttonAction.GetText();
+        string buttonText = await buttonAction.GetText();
         Assert.That(buttonText.Equals("Button"));
     }
 
@@ -207,28 +212,28 @@ public class Tests
         bool enabledState = await buttonLed.IsEnabled();
         Assert.True(enabledState, "Button should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", buttonLed._button.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        buttonLed.EnableProperty = false;
         //Check if Switch is disabled
         enabledState = await buttonLed.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        buttonLed.EnableProperty = true;
 
 
         //VisebiletyCheck
-        bool visibleState = await buttonLed.IsVisibleAsync();
+        await buttonLed.WaitForVisibleAsync(true);
+        bool visibleState = await buttonLed.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
         //Hide Switch
-        NodeId visible = _session.GetNodeIdFromPath("visibility", buttonLed._button.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await buttonLed.IsVisibleAsync();
+        buttonLed.VisisbleProperty = false;
+        await buttonLed.WaitForVisibleAsync(false);
+        visibleState = await buttonLed.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        buttonLed.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = buttonLed.GetUserRole();
+        string userRole = buttonLed.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
         //Get Text
@@ -259,27 +264,30 @@ public class Tests
         bool enabledState = await cMPSwitch.IsEnabled();
         Assert.True(enabledState, "Switch should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", cMPSwitch._switch.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        cMPSwitch.EnableProperty = false;
         //Check if Switch is disabled
+        await cMPSwitch.WaitForEnablePropertyAsync(false);
         enabledState = await cMPSwitch.IsEnabled();
         Assert.False(enabledState, "Switch should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        cMPSwitch.EnableProperty = true;
+        await cMPSwitch.WaitForEnablePropertyAsync(true);
 
         //VisebiletyCheck
-        bool visibleState = await cMPSwitch.IsVisibleAsync();
+        await cMPSwitch.WaitForVisibleAsync(true);
+        bool visibleState = await cMPSwitch.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
         //Hide Switch
-        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPSwitch._switch.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await cMPSwitch.IsVisibleAsync();
+        cMPSwitch.VisisbleProperty = false;
+
+        await cMPSwitch.WaitForVisibleAsync(false);
+        visibleState = await cMPSwitch.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        cMPSwitch.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = cMPSwitch.GetUserRole();
+        string userRole = cMPSwitch.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
     }
@@ -303,28 +311,28 @@ public class Tests
         bool enabledState = await cMPCheckbox.IsEnabled();
         Assert.True(enabledState, "Switch should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", cMPCheckbox._checkbox.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        cMPCheckbox.EnableProperty = false;
         //Check if Switch is disabled
         enabledState = await cMPCheckbox.IsEnabled();
         Assert.False(enabledState, "Switch should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
-
+        cMPCheckbox.EnableProperty = true;
 
         //VisebiletyCheck
-        bool visibleState = await cMPCheckbox.IsVisibleAsync();
+        await cMPCheckbox.WaitForVisibleAsync(true);
+        bool visibleState = await cMPCheckbox.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
+
         //Hide Checkbox
-        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPCheckbox._checkbox.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await cMPCheckbox.IsVisibleAsync();
+        cMPCheckbox.VisisbleProperty = false;
+        await cMPCheckbox.WaitForVisibleAsync(false);
+        visibleState = await cMPCheckbox.GetVisibleAsync();
         Assert.False(visibleState, "Switch should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        cMPCheckbox.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = cMPCheckbox.GetUserRole();
+        string userRole = cMPCheckbox.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
     }
@@ -347,28 +355,28 @@ public class Tests
         bool enabledState = await cMPRadiobutton.IsEnabled();
         Assert.True(enabledState, "Radiobutton should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", cMPRadiobutton._radiobutton.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        cMPRadiobutton.EnableProperty = false;
         //Check if Switch is disabled
         enabledState = await cMPRadiobutton.IsEnabled();
         Assert.False(enabledState, "Radiobutton should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        cMPRadiobutton.EnableProperty = true;
 
 
         //VisebiletyCheck
-        bool visibleState = await cMPRadiobutton.IsVisibleAsync();
+        await cMPRadiobutton.WaitForVisibleAsync(true);
+        bool visibleState = await cMPRadiobutton.GetVisibleAsync();
         Assert.True(visibleState, "Radiobutton should be visible initially");
         //Hide Checkbox
-        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPRadiobutton._radiobutton.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await cMPRadiobutton.IsVisibleAsync();
+        cMPRadiobutton.VisisbleProperty = false;
+        await cMPRadiobutton.WaitForVisibleAsync(false);
+        visibleState = await cMPRadiobutton.GetVisibleAsync();
         Assert.False(visibleState, "Radiobutton should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        cMPRadiobutton.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = cMPRadiobutton.GetUserRole();
+        string userRole = cMPRadiobutton.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
 
     }
@@ -394,28 +402,28 @@ public class Tests
         bool enabledState = await cMPDropdown.IsEnabled();
         Assert.True(enabledState, "Dropdown should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", cMPDropdown._dropdown.NodeId);
-        _session.SetValue<bool>(eneble, false);
+        cMPDropdown.EnableProperty = false;
         //Check if Dropdown is disabled
         enabledState = await cMPDropdown.IsEnabled();
         Assert.False(enabledState, "Dropdown should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        cMPDropdown.EnableProperty = true;
 
 
         //VisebiletyCheck
-        bool visibleState = await cMPDropdown.IsVisibleAsync();
+        await cMPDropdown.WaitForVisibleAsync(true);
+        bool visibleState = await cMPDropdown.GetVisibleAsync();
         Assert.True(visibleState, "Radiobutton should be visible initially");
         //Hide Checkbox
-        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPDropdown._dropdown.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await cMPDropdown.IsVisibleAsync();
+        cMPDropdown.VisisbleProperty = false;
+        await cMPDropdown.WaitForVisibleAsync(false);
+        visibleState = await cMPDropdown.GetVisibleAsync();
         Assert.False(visibleState, "Radiobutton should be hidden after setting visible to false");
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        cMPDropdown.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = cMPDropdown.GetUserRole();
+        string userRole = cMPDropdown.UserRoleProperty;
         Assert.That(userRole.Equals("Produce"), $"User role should be 'Produce' but is{userRole} ");
 
     }
@@ -442,8 +450,7 @@ public class Tests
         CMPVarIn<double> cMPVarInDouble = area2.getElementByName<CMPVarIn<double>>("CoT_CMP_VarIn_Double");
 
         //set DecimalPlaces
-        NodeId decimalplaces = _session.GetNodeIdFromPath("decimalPlaces", cMPVarInDouble._varIn.NodeId);
-        _session.SetValue<int>(decimalplaces, 2);
+        cMPVarInDouble.DecimalPlacesProperty = 2;
 
         // Set value in the input field
         double valueDouble = 12.35;
@@ -453,55 +460,149 @@ public class Tests
         double inputValuedouble = await cMPVarInDouble.GetValue();
         Assert.That(inputValueInt.Equals(valueInt), $"Input value should be {valueDouble} but is {valueDouble}");
 
+        await cMPVarInDouble.WaitForValue(valueDouble);
+
 
         //Check Errorstate
         bool initialErrorstate = await cMPVarInInt.GetErrorState();
         Assert.That(initialErrorstate.Equals(false), " Initial error state should be false");
+        await cMPVarInDouble.WaitForErrorState(false);
 
         //Set to errorstate By minValue
-        NodeId minValue = _session.GetNodeIdFromPath("minimum", cMPVarInDouble._varIn.NodeId);
-        _session.SetValue<int>(minValue, 10);
+        cMPVarInDouble.MinValueProperty = 10;
+
         NodeId value = _session.GetNodeIdFromPath("value", cMPVarInDouble._varIn.NodeId);
         _session.SetValue<int>(value, 5);
+
         bool minErrorstate = await cMPVarInDouble.GetErrorState();
         Assert.That(minErrorstate.Equals(true), "value under MinLimit-> error state should be true");
 
         //Set to Errorstate By maxValue
-        NodeId maxValue = _session.GetNodeIdFromPath("maximum", cMPVarInDouble._varIn.NodeId);
-        _session.SetValue<int>(maxValue, 5);
+        cMPVarInDouble.MaxValueProperty = 5;
         _session.SetValue<int>(value, 10);
+        await cMPVarInDouble.WaitForErrorState(true);
         bool maxErrorstate = await cMPVarInDouble.GetErrorState();
         Assert.That(maxErrorstate.Equals(true), "value under MinLimit-> error state should be true");
 
-
-
         //Enable Check
+        await cMPVarInInt.WaitForEnabled(true);
         bool enabledState = await cMPVarInInt.IsEnabled();
-        Assert.True(enabledState, "Switch should be enabled initially");
+        Assert.True(enabledState, "VarIn should be enabled initially");
         //disable 
-        NodeId eneble = _session.GetNodeIdFromPath("enable", cMPVarInInt._varIn.NodeId);
-        _session.SetValue<bool>(eneble, false);
-        //Check if Switch is disabled
+        cMPVarInInt.EnableProperty = false;
+        //Check if Varin is disabled
+        await cMPVarInInt.WaitForEnabled(false);
         enabledState = await cMPVarInInt.IsEnabled();
-        Assert.False(enabledState, "Switch should be disabled after setting enable to false");
+        Assert.False(enabledState, "VarIn should be disabled after setting enable to false");
         //enable again
-        _session.SetValue<bool>(eneble, true);
+        cMPVarInDouble.EnableProperty = true;
 
         //VisebiletyCheck
-        bool visibleState = await cMPVarInInt.IsVisibleAsync();
-        Assert.True(visibleState, "Switch should be visible initially");
-        //Hide Switch
-        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPVarInInt._varIn.NodeId);
-        _session.SetValue<bool>(visible, false);
-        visibleState = await cMPVarInInt.IsVisibleAsync();
-        Assert.False(visibleState, "Switch should be hidden after setting visible to false");
+        await cMPVarInDouble.VisisblePropertyAsync(true);
+        //Hide 
+        cMPVarInDouble.VisisbleProperty = false;
+        await cMPVarInDouble.VisisblePropertyAsync(false);
+
         //set back visible
-        _session.SetValue<bool>(visible, true);
+        cMPVarInDouble.VisisbleProperty = true;
 
         //CheckUserRole
-        string userRole = cMPVarInInt.GetUserRole();
+        string userRole = cMPVarInInt.UserRoleProperty;
         Assert.AreEqual("Produce", userRole, $"User role should be 'Produce' but is{userRole} ");
-                                                                                          
+
     }
 
-}
+    [Test]
+    public async Task TestCMPTextIn()
+    {
+        var componentsDevpage = BuildPath("TestScreens", "Components1");
+        var CotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ComponentsOverview1");
+        var area2 = CotTestpage.GetAreaLayoutContentB(2);
+
+
+        // Input Field Test
+        CMPTextIn cMPTextIn = area2.getElementByName<CMPTextIn>("CoT_CMP_TextIn");
+        // Set value in the input field
+        string value = "Honigkuchen";
+        await cMPTextIn.SetValueByKeyboard(value);
+
+        // Verify that the value was set correctly by waiting
+        await cMPTextIn.WaitForInput(value);
+
+        string readValue = await cMPTextIn.GetInput();
+        Assert.That(readValue.Equals(value), $"Read value {readValue}is not matching {value}");
+
+        //Check Errorstate False
+        bool Errorstate = await cMPTextIn.GetErrorState();
+        Assert.That(Errorstate.Equals(false), " Initial error state should be false");
+        await cMPTextIn.WaitForErrorState(false);
+
+        //Set Errorstate True 
+        cMPTextIn.ErrorStateProperty = true;
+
+        //Check Errorstate true
+        Errorstate = await cMPTextIn.GetErrorState();
+        Assert.That(Errorstate.Equals(true), "error state should be fullfilled");
+        await cMPTextIn.WaitForErrorState(true);
+
+        //Set to errorstate False
+        cMPTextIn.ErrorStateProperty = false;
+
+        //Enable Check
+        bool enabledState = await cMPTextIn.IsEnabled();
+        Assert.True(enabledState, "Switch should be enabled initially");
+
+        await cMPTextIn.WaitForEnabled(true);
+
+        //disable 
+        cMPTextIn.EnableProperty = false;
+
+        //Check if Switch is disabled
+        enabledState = await cMPTextIn.IsEnabled();
+        Assert.False(enabledState, "Switch should be disabled after setting enable to false");
+        await cMPTextIn.WaitForEnabled(false);
+
+        //enable again
+        cMPTextIn.EnableProperty = true;
+
+        //VisebiletyCheck
+        await cMPTextIn.WaitForVisibleAsync(true);
+        bool visibleState = await cMPTextIn.GetVisibleAsync();
+        Assert.True(visibleState, "Switch should be visible initially");
+
+        //Hide
+        NodeId visible = _session.GetNodeIdFromPath("visibility", cMPTextIn._textIn.NodeId);
+        _session.SetValue<bool>(visible, false);
+        cMPTextIn.VisisbleProperty = false;
+        await cMPTextIn.WaitForVisibleAsync(false);
+        visibleState = await cMPTextIn.GetVisibleAsync();
+        Assert.False(visibleState, "Switch should be hidden after setting visible to false");
+
+        //set back visible
+        cMPTextIn.VisisbleProperty = true;
+    }
+
+    [Test]
+    public async Task TestCMPButtonBlankEvents()
+    {
+        var componentsDevpage = BuildPath("TestScreens", "Components1");
+        var CotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ComponentsOverview1");
+        HmiPageArea area1 = (HmiPageArea)CotTestpage.GetAreaLayoutContentB(1);
+        CMPButtonBlank buttonBlank = area1.getElementByName<CMPButtonBlank>("CoT_CMP_ButtonBlank");
+
+        // set Initial State
+        NodeId buttonBlankClickToggleId = _session.GetNodeIdFromPath("ButtonBlankClickToggle", area1._area.NodeId);
+        _session.SetValue<bool>(buttonBlankClickToggleId, false);
+
+        //Click
+        NodeId pressedState = _session.GetNodeIdFromPath("pressed", buttonBlank._button.NodeId);
+        var changeTask = _session.RegisterChangedEventOnVar<bool>(pressedState, 1500);
+        await buttonBlank.Click();
+       // var(oldVal, newVal) = await changeTask;
+
+        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
+        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
+        _session.SetValue<bool>(buttonBlankClickToggleId, false);
+    }
+
+    }

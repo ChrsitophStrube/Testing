@@ -1,0 +1,15 @@
+@startuml
+class PathHandler <<static>> {
+    + {static} BuildPath(segments:string[]) : OpcPath
+    + {static} AppendPath(path:OpcPath, segments:string[]) : OpcPath
+}
+struct OpcPath {
+    + {static} From(segments:string[]) : OpcPath
+    + Append(segments:string[]) : OpcPath
+    + <<override>> ToString() : string
+}
+class "IReadOnlyList`1"<T> {
+}
+PathHandler +-- OpcPath
+OpcPath --> "Segments<string>" "IReadOnlyList`1"
+@enduml

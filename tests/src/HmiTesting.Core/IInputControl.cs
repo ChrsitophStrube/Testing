@@ -1,12 +1,12 @@
+using HmiTesting.Core.DTOs;
 using HmiTesting.Core.enums;
+using LibUA.Core;
+using System.Runtime.CompilerServices;
 
 namespace HmiTesting.Core.Interfaces;
 
 public interface IInputControl
 {
-    // public Task<bool> IsVisibleAsync();
-    public Task<bool> IsEnabled();
-    public string GetUserRole();
-    public Task<bool> IsVisibleAsync(int timeoutMs );
 
 }
+

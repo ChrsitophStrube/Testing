@@ -1,0 +1,16 @@
+@startuml
+class HmiPage {
+    + HmiPage(session:IOpcUaSession, page:IPage, pageId:NodeId)
+    + GetAreaLayoutContentA(number:int) : IHmiPageArea
+    + GetAreaLayoutContentB(number:int) : IHmiPageArea
+    + GetAreaLayoutContentC(number:int) : IHmiPageArea
+    + GetAreaLayoutListA(number:int) : IHmiPageArea
+    + GetAreaLayoutListB(number:int) : IHmiPageArea
+    + GetAreaLayoutListC(number:int) : IHmiPageArea
+    + GetAreaLayoutListD(number:int) : IHmiPageArea
+}
+class "IReadOnlyDictionary`2"<T1,T2> {
+}
+IHmiPage <|-- HmiPage
+HmiPage o-> "_contentBAreas<int,OpcPath>" "IReadOnlyDictionary`2"
+@enduml

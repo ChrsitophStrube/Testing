@@ -9,11 +9,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
-public class CMPDropdown : IInputControl
+public class CMPDropdown : CMPInput
 {
     protected IOpcUaSession _session;
     public LocatorNodeId _dropdown { get; }
-    public CMPDropdown(IOpcUaSession session, LocatorNodeId dropdown)
+    public CMPDropdown(IOpcUaSession session, LocatorNodeId dropdown) : base(session, dropdown)
     {
         _session = session;
         _dropdown = dropdown;
@@ -23,9 +23,9 @@ public class CMPDropdown : IInputControl
     public async Task SelectOption(string optionText)
     {
         //Open the dropdown
-        var button = _session.ResolveNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
+        var button = _session.GetNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
         await button.Locator.ClickAsync();
-        
+
         //Get all Options
         var verticalLayout = _session.GetNodeIdFromPath(BuildPath("CoT_CMP_DropdownContent", "ScrollView", "VerticalLayout").ToString(), button.NodeId);
         Thread.Sleep(500); //wait until the dropdown is open(Flyout visible)
@@ -48,7 +48,7 @@ public class CMPDropdown : IInputControl
             if (optionTextValue.Text == optionText)
             {
                 // Click the row with the matching text
-                var optionLocator = _session.ResolveNodeLocator(
+                var optionLocator = _session.GetNodeLocator(
                     _dropdown.Locator.Page, "Button", optionId);
                 await optionLocator.Locator.ClickAsync();
 
@@ -75,45 +75,24 @@ public class CMPDropdown : IInputControl
     {
         //get string from Dom
         OpcPath textPath = BuildPath("HorizontalLayout", "Label", "HorizontalLayout", "Text");
-        LocatorNodeId selectdeOptionText = _session.ResolveNodeLocator(_dropdown.Locator.Page, textPath.ToString(), _dropdown.NodeId);
+        LocatorNodeId selectdeOptionText = _session.GetNodeLocator(_dropdown.Locator.Page, textPath.ToString(), _dropdown.NodeId);
         return await selectdeOptionText.Locator.Locator("span").InnerTextAsync();
-    }
-
-    public string GetUserRole()
-    {
-        LocatorNodeId iconpathLocator = _session.ResolveNodeLocator(_dropdown.Locator.Page, "userRole", _dropdown.NodeId);
-        NodeId userRoleId = _session.GetValue<NodeId>(iconpathLocator.NodeId);
-        return _session.GetBrowsename(userRoleId);
     }
 
     public async Task<bool> IsEnabled()
     {
         // Check if button forwards events
-        var button = _session.ResolveNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
+        var button = _session.GetNodeLocator(_dropdown.Locator.Page, "Button", _dropdown.NodeId);
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         bool eventsActive = pointerEvents == "auto";
 
         //Chech if Dropdown arrow  Icon state is disabled
-        var svgId = _session.ResolveNodeLocator(_dropdown.Locator.Page, BuildPath("HorizontalLayout", "DropdownButton").ToString(), _dropdown.NodeId);
+        var svgId = _session.GetNodeLocator(_dropdown.Locator.Page, BuildPath("HorizontalLayout", "DropdownButton").ToString(), _dropdown.NodeId);
         SvgState svgState = new("dropdown", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
         return eventsActive;
     }
-
-    public async Task<bool> IsVisibleAsync(int timeoutMs = 2000)
-    {
-        NodeId visebiletyId = _session.GetNodeIdFromPath("visibility", _dropdown.NodeId);
-        bool visebilety = _session.GetValue<bool>(visebiletyId);
-        WaitForSelectorState state = visebilety ? WaitForSelectorState.Visible : WaitForSelectorState.Detached;
-        await _dropdown.Locator.WaitForAsync(new()
-        {
-            State = state,
-            Timeout = timeoutMs
-        });
-        return visebilety;
-    }
-
 }

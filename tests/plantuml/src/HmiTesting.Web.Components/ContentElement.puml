@@ -1,0 +1,9 @@
+@startuml
+class ContentElement {
+    + ContentElement(session:IOpcUaSession, contentElement:LocatorNodeId)
+    + hasUserLevel(UserRole:string) : bool
+    + IsEnabled() : bool
+    + IsVisible() : bool
+}
+IControl <|-- ContentElement
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+interface IControl {
+    + IsVisible() : bool
+    + IsEnabled() : bool
+    + hasUserLevel(UserRole:string) : bool
+}
+@enduml

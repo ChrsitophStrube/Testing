@@ -1,0 +1,11 @@
+@startuml
+interface IHmiPage {
+    + GetAreaLayoutContentA(number:int) : IHmiPageArea
+    + GetAreaLayoutContentB(number:int) : IHmiPageArea
+    + GetAreaLayoutContentC(number:int) : IHmiPageArea
+    + GetAreaLayoutListA(number:int) : IHmiPageArea
+    + GetAreaLayoutListB(number:int) : IHmiPageArea
+    + GetAreaLayoutListC(number:int) : IHmiPageArea
+    + GetAreaLayoutListD(number:int) : IHmiPageArea
+}
+@enduml
