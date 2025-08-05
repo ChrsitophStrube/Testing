@@ -5,7 +5,7 @@ pool: OPTIX Builder
 
 variables:
   - name: "TARGET_IP"
-    value: "192.168.1.121"
+    value: "192.168.1.200"
   - name: "TARGET_USER"
     value: "admin"
   - name: "FT_OPTIX_CLI"
