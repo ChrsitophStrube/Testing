@@ -103,6 +103,7 @@ public class Navigator : INavigator
 
             NavigationElementName += @" &/ ";
         }
+        Thread.Sleep(3500);
         LocatorNodeId actualPage = _session.WaitForNodeLocator(_page, _mainPanelLoader.Append(pageName).ToString(), lastSession);
         return new HmiPage(_session, actualPage.Locator.Page, actualPage.NodeId);
     }
