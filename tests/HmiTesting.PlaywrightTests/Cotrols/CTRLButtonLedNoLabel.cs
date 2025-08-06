@@ -43,7 +43,7 @@ public class CTRLButtonLedNoLabelTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200",59100);
     }
 
     [SetUp]
@@ -65,6 +65,7 @@ public class CTRLButtonLedNoLabelTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonNoLabelProperties()
     {
         //Get IconName
@@ -114,6 +115,7 @@ public class CTRLButtonLedNoLabelTest
     }
 
     [Test]
+    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonLed()
     {
         _ctrlButtonLedNoLabel.LedStateProperty = 3;

@@ -9,7 +9,7 @@ variables:
   - name: "TARGET_USER"
     value: "admin"
   - name: "FT_OPTIX_CLI"
-    value: 'C:\\Program Files\\Rockwell Automation\\FactoryTalk Optix\\Studio 1.6.0.626\\FTOptixStudio'
+    value: 'C:\\Program Files\\Rockwell Automation\\FactoryTalk Optix\\Studio 1.6.2.36\\FTOptixStudio'
 
 steps:
   - script: |

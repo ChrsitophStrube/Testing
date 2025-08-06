@@ -595,10 +595,8 @@ public class CMPTestsInputs
         _session.SetValue<bool>(buttonBlankClickToggleId, false);
 
         //Click
-        NodeId pressedState = _session.GetNodeIdFromPath("pressed", buttonBlank._button.NodeId);
-        var changeTask = _session.RegisterChangedEventOnVar<bool>(pressedState, 1500);
         await buttonBlank.Click();
-        // var(oldVal, newVal) = await changeTask;
+
 
         bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
         Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
