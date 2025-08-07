@@ -34,7 +34,7 @@ public class CTRLRadioButtonTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLRadioButtonTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
     }
 
     [SetUp]
@@ -65,7 +65,6 @@ public class CTRLRadioButtonTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonProperties()
     {
         //Get IconName
@@ -103,7 +102,6 @@ public class CTRLRadioButtonTest
 
     }
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckEnable()
     {
         //Check if Button is enabled
@@ -119,7 +117,6 @@ public class CTRLRadioButtonTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckButtonExsistence()
     {
 
@@ -129,7 +126,6 @@ public class CTRLRadioButtonTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckLabelExsistence()
     {
         ILocator buttonLocator = _ctrlRadioButton.label._label.Locator;
@@ -137,7 +133,6 @@ public class CTRLRadioButtonTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckLabelVisibility()
     {
         bool visibilety = await _ctrlRadioButton.GetVisibleAsync();
@@ -146,9 +141,10 @@ public class CTRLRadioButtonTest
         _ctrlRadioButton.VisisbleProperty = false;
         //Check if Button is invisible
         await _ctrlRadioButton.WaitForVisibleAsync(false);
+        
+        _ctrlRadioButton.VisisbleProperty = true;
     }
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckRadioButton()
     {
         //Set RadioButton to unchecked

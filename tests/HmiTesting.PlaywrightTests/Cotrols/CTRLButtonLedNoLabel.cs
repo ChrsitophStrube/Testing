@@ -34,7 +34,7 @@ public class CTRLButtonLedNoLabelTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLButtonLedNoLabelTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200",59100);
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
     }
 
     [SetUp]
@@ -65,7 +65,6 @@ public class CTRLButtonLedNoLabelTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonNoLabelProperties()
     {
         //Get IconName
@@ -115,12 +114,12 @@ public class CTRLButtonLedNoLabelTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonLed()
     {
         _ctrlButtonLedNoLabel.LedStateProperty = 3;
         await _ctrlButtonLedNoLabel.WaitForLedStateProperty(3);
         string ledStateName = await _ctrlButtonLedNoLabel.button.GetLedState();
         Assert.That(ledStateName.Equals("item=led,state=on-error,mode=enabled"), $"Wrong LedState Name. LedState is: {ledStateName}");
+        _ctrlButtonLedNoLabel.LedStateProperty = 0;
     }
 }

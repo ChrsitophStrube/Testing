@@ -163,7 +163,7 @@ public class CMPTextIn : CMPInput
         }
         else
         {
-            throw new Exception($"Unexpected text color: {textColorLocator}");
+            throw new Exception($"Unexpected text color: {textColor}");
         }
 
         // Check if keyboard will not open

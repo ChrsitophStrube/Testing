@@ -33,7 +33,7 @@ public class CTRLCheckboxTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -42,7 +42,7 @@ public class CTRLCheckboxTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
     }
 
     [SetUp]
@@ -64,7 +64,6 @@ public class CTRLCheckboxTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckBoxProperties()
     {
         //Get IconName
@@ -102,7 +101,6 @@ public class CTRLCheckboxTest
 
     }
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLRadioButtonCheckEnable()
     {
         //Check if Button is enabled
@@ -118,7 +116,6 @@ public class CTRLCheckboxTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckCheckboxExsistence()
     {
         ILocator checkboxLocator;
@@ -136,7 +133,6 @@ public class CTRLCheckboxTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckLabelExsistence()
     {
         ILocator buttonLocator = _ctrlCheckbox.label._label.Locator;
@@ -144,14 +140,15 @@ public class CTRLCheckboxTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLCheckboxCheckLabelVisibility()
     {
         bool visibilety = await _ctrlCheckbox.GetVisibleAsync();
         Assert.That(visibilety, Is.True, "Checkbox should be visible by default");
         //Set Button to invisible
         _ctrlCheckbox.VisisbleProperty = false;
-        //Check if Button is invisible
+        //Check if Checkbox is invisible
         await _ctrlCheckbox.WaitForVisibleAsync(false);
+        //  make it visible again
+        _ctrlCheckbox.VisisbleProperty = true;
     }
 }
