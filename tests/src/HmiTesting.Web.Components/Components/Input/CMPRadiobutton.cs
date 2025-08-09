@@ -38,6 +38,41 @@ public class CMPRadiobutton : CMPInput
         return checkedOutput;
     }
 
+    public async Task<bool> WaitForChecked(bool checkedOutput)
+    {
+        //Check Ouput Variable State of the OptionId of the RadioButton
+        NodeId optionIdId = _session.GetNodeIdFromPath("optionID", _radiobutton.NodeId);
+        Int16 optionId = _session.GetValue<Int16>(optionIdId);
+
+        //Check Ouput Variable State of the Selected Option of the RadioButton
+        NodeId selectedOptionId = _session.GetNodeIdFromPath("selectedOption", _radiobutton.NodeId);
+        if (checkedOutput)
+        {
+            await _session.WaitForValueAsync<Int16>(selectedOptionId, optionId);
+        }
+        else
+        {
+            Thread.Sleep(500);
+            Int16 selectedOption = _session.GetValue<Int16>(selectedOptionId);
+            if (selectedOption == optionId)
+            {
+                throw new Exception("the checked output does not have the right state. selectedOption equals optionId");
+            }
+
+        }
+        //Determine if the selected option matches the option ID
+        // bool checkedOutput = selectedOption == optionId;
+
+        //Check Visual State of the Switch
+        bool visualState = false;
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+
+        string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
+        SvgState svgState = new("radiobutton", checkedOutput ? "checked" : "unchecked", null);
+        await MatchSvgStateAsync(svgId.Locator, svgState);
+        return checkedOutput;
+    }
+
     public async Task SetChecked(bool command)
     {
         //Check Visual State of the Switch
@@ -50,7 +85,7 @@ public class CMPRadiobutton : CMPInput
         var switchButton = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
         await switchButton.Locator.ClickAsync();
 
-        switchState = await GetChecked();
+        switchState = await WaitForChecked(command);
         if (switchState != command)
         {
             throw new Exception("the command output does not match the visual state after setting the Checked State");
@@ -71,6 +106,22 @@ public class CMPRadiobutton : CMPInput
         SvgState svgState = new("radiobutton", null, eventsActive ? "enabled" : "disabled");
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;
+    }
+    
+    public async Task WaitForEnabled(bool enabled)
+    {
+        string expected = enabled ? "auto" : "none";
+        // Check if button forwards events
+        var button = _session.GetNodeLocator(_radiobutton.Locator.Page, "TransparentButton", _radiobutton.NodeId);
+
+            await Assertions.Expect(button.Locator)
+            .ToHaveCSSAsync("pointer-events", expected,
+                new() { Timeout = 2000 });
+
+        //Check svg state 
+        var svgId = _session.GetNodeLocator(_radiobutton.Locator.Page, "Icon", _radiobutton.NodeId);
+        SvgState svgState = new("radiobutton", null, enabled ? "enabled" : "disabled");
+        await MatchSvgStateAsync(svgId.Locator, svgState);
     }
 
 }

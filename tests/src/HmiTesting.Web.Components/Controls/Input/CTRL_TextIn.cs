@@ -6,7 +6,7 @@ using static HmiTesting.Core.Helpers.PathHandler;
 public class CTRL_TextIn : BaseCTRLInWithLabel
 {
 
-    public CMPTextIn textIn { get; private set; }
+    public CMPTextIn TextIn { get; private set; }
     public CTRL_TextIn(IOpcUaSession session, LocatorNodeId control) : base(session, control, "CoT_CMP_Label", "labelText")
     {
         _session = session;
@@ -17,7 +17,7 @@ public class CTRL_TextIn : BaseCTRLInWithLabel
 
     protected virtual void initaializeComponents()
     {
-        textIn = _contentElement.getComponentByName<CMPTextIn>("CoT_CMP_TextIn");
+        TextIn = _contentElement.getComponentByName<CMPTextIn>("CoT_CMP_TextIn");
     }
 
     public LocalizedText TextInTextProperty { get => GetProperty<LocalizedText>("textInText"); set => SetProperty("textInText", value); }
@@ -32,9 +32,16 @@ public class CTRL_TextIn : BaseCTRLInWithLabel
 
     public async Task<bool> IsEnabled()
     {
-        bool buttonEnableStare = await textIn.IsEnabled();
+        bool buttonEnableState = await TextIn.IsEnabled();
         //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
-        return buttonEnableStare; //&& labelEnableState;
+        return buttonEnableState; //&& labelEnableState;
     }
+
+    public async Task WaitForEnabled(bool enabled)
+    {
+        await TextIn.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
+    }       
+
 
 }

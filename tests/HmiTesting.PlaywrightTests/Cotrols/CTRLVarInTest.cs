@@ -34,7 +34,7 @@ public class CTRLVarInTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLVarInTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
     [SetUp]
@@ -66,7 +66,6 @@ public class CTRLVarInTest
 
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInProperties()
     {
         // Get Text
@@ -126,10 +125,10 @@ public class CTRLVarInTest
         // Set VarIn to disabled
         _ctrlVarIn.EnableProperty = false;
         await _ctrlVarIn.WaitForEnablePropertyAsync(false);
+        _ctrlVarIn.EnableProperty = true;
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarInCheckEnable()
     {
         //Check if Button is enabled
@@ -140,12 +139,13 @@ public class CTRLVarInTest
         _ctrlVarIn.EnableProperty = false;
         await _ctrlVarIn.WaitForEnablePropertyAsync(false);
         //Check if Button is disabled 
+        await _ctrlVarIn.WaitForEnabled(false);
         isEnabled = await _ctrlVarIn.IsEnabled();
         Assert.That(isEnabled, Is.False, "VarIn should be disabled now");
+        _ctrlVarIn.EnableProperty = true;
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLVarIntVarInExsistence()
     {
 
@@ -155,7 +155,6 @@ public class CTRLVarInTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelExsistence()
     {
         ILocator labelLocator = _ctrlVarIn.label._label.Locator;
@@ -163,7 +162,6 @@ public class CTRLVarInTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelVisibility()
     {
         bool visibilety = await _ctrlVarIn.GetVisibleAsync();
@@ -172,5 +170,6 @@ public class CTRLVarInTest
         _ctrlVarIn.VisisbleProperty = false;
         //Check if Button is invisible
         await _ctrlVarIn.WaitForVisibleAsync(false);
+        _ctrlVarIn.VisisbleProperty = true;
     }
 }

@@ -28,4 +28,10 @@ public class CTRL_Button : BaseCTRLInWithLabel
         //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
         return buttonEnableStare; //&& labelEnableState;
     }
+
+    public async Task WaitForEnabled(bool enabled)
+    {
+        await button.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
+    }
 }

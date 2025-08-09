@@ -34,7 +34,7 @@ public class CTRLSwitchTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLSwitchTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
     [SetUp]
@@ -65,7 +65,6 @@ public class CTRLSwitchTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonProperties()
     {
         //Get IconName
@@ -96,7 +95,6 @@ public class CTRLSwitchTest
 
     }
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckEnable()
     {
         //Check if Button is enabled
@@ -107,12 +105,12 @@ public class CTRLSwitchTest
         _ctrlSwitch.EnableProperty = false;
         await _ctrlSwitch.WaitForEnablePropertyAsync(false);
         //Check if Button is disabled 
+        await _ctrlSwitch.WaitForEnabled(false);
         isEnabled = await _ctrlSwitch.IsEnabled();
         Assert.That(isEnabled, Is.False, "Button should be disabled now");
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckButtonExsistence()
     {
 
@@ -122,7 +120,6 @@ public class CTRLSwitchTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelExsistence()
     {
         ILocator buttonLocator = _ctrlSwitch.label._label.Locator;
@@ -130,7 +127,6 @@ public class CTRLSwitchTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelVisibility()
     {
         bool visibilety = await _ctrlSwitch.GetVisibleAsync();

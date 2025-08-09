@@ -25,4 +25,16 @@ public class CTRL_ButtonNoLabel : CMPInput
     public async Task WaitForTextProperty(LocalizedText text) => await WaitForProperty<LocalizedText>("text", text);
     public string IconProperty { get => Path.GetFileName(GetProperty<string>("icon")); set => SetProperty("icon", iconbasePath + value); }
     public async Task WaitForIconProperty(string icon) => await WaitForProperty<string>("icon", iconbasePath + icon);
+        public async Task<bool> IsEnabled()
+    {
+        bool buttonEnableStare = await button.IsEnabled();
+        //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
+        return buttonEnableStare; //&& labelEnableState;
+    }
+
+    public async Task WaitForEnabled(bool enabled)
+    {
+        await button.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
+    }
 }

@@ -33,7 +33,7 @@ public class CMPTestsInputs
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -44,7 +44,7 @@ public class CMPTestsInputs
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
 
@@ -70,14 +70,13 @@ public class CMPTestsInputs
 
         //Click
         await buttonBlank.Click();
-        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
+
+        await _session.WaitForValueAsync<bool>(buttonBlankClickToggleId,true);
         _session.SetValue<bool>(buttonBlankClickToggleId, false);
 
         //Long Click
         await buttonBlank.LongClick(2000);
-        buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Long Click");
+        await _session.WaitForValueAsync<bool>(buttonBlankClickToggleId,true);
         _session.SetValue<bool>(buttonBlankClickToggleId, false);
 
         //Get IconName
@@ -91,6 +90,7 @@ public class CMPTestsInputs
         //disable 
         buttonBlank.EnableProperty = false;
         //Check if Switch is disabled
+        await buttonBlank.WaitForEnabled(false);
         enabledState = await buttonBlank.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
@@ -129,14 +129,12 @@ public class CMPTestsInputs
 
         //Click
         await buttonAction.Click();
-        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonActionClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
+        await _session.WaitForValueAsync<bool>(buttonActionClickToggleId,true);
         _session.SetValue<bool>(buttonActionClickToggleId, false);
 
         //Long Click
         await buttonAction.LongClick(2000);
-        buttonBlankClickToggle = _session.GetValue<bool>(buttonActionClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Long Click");
+        await _session.WaitForValueAsync<bool>(buttonActionClickToggleId,true);
         _session.SetValue<bool>(buttonActionClickToggleId, false);
 
         //Get IconName
@@ -152,6 +150,7 @@ public class CMPTestsInputs
         buttonAction.EnableProperty = false;
         //Check if Switch is disabled
         await buttonAction.WaitForEnablePropertyAsync(false);
+        await buttonAction.WaitForEnabled(false);
         enabledState = await buttonAction.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
@@ -193,14 +192,12 @@ public class CMPTestsInputs
 
         //Click
         await buttonLed.Click();
-        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonLedClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
+        await _session.WaitForValueAsync<bool>(buttonLedClickToggleId,true);
         _session.SetValue<bool>(buttonLedClickToggleId, false);
 
         //Long Click
         await buttonLed.LongClick(2000);
-        buttonBlankClickToggle = _session.GetValue<bool>(buttonLedClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Long Click");
+        await _session.WaitForValueAsync<bool>(buttonLedClickToggleId,true);
         _session.SetValue<bool>(buttonLedClickToggleId, false);
 
         //Get IconName
@@ -214,6 +211,7 @@ public class CMPTestsInputs
         //disable 
         buttonLed.EnableProperty = false;
         //Check if Switch is disabled
+        await buttonLed.WaitForEnabled(false);
         enabledState = await buttonLed.IsEnabled();
         Assert.False(enabledState, "Button should be disabled after setting enable to false");
         //enable again
@@ -224,6 +222,7 @@ public class CMPTestsInputs
         await buttonLed.WaitForVisibleAsync(true);
         bool visibleState = await buttonLed.GetVisibleAsync();
         Assert.True(visibleState, "Switch should be visible initially");
+
         //Hide Switch
         buttonLed.VisisbleProperty = false;
         await buttonLed.WaitForVisibleAsync(false);
@@ -256,8 +255,8 @@ public class CMPTestsInputs
         // Switch switch 
         bool command = await cMPSwitch.GetCommand();
         Assert.False(command, "Initial switchState should off");
-        await cMPSwitch.SetCommand(!command);
-        command = await cMPSwitch.GetCommand();
+        await cMPSwitch.SetCommand(true);
+        command = await cMPSwitch.WaitForCommand(true);
         Assert.True(command, "after switching switchState should on");
 
         //Enable Check
@@ -266,7 +265,7 @@ public class CMPTestsInputs
         //disable 
         cMPSwitch.EnableProperty = false;
         //Check if Switch is disabled
-        await cMPSwitch.WaitForEnablePropertyAsync(false);
+        await cMPSwitch.WaitForEnabled(false);
         enabledState = await cMPSwitch.IsEnabled();
         Assert.False(enabledState, "Switch should be disabled after setting enable to false");
         //enable again
@@ -303,8 +302,8 @@ public class CMPTestsInputs
         // Check checkbox 
         bool command = await cMPCheckbox.GetChecked();
         Assert.False(command, "Initial CheckBox state should be off");
-        await cMPCheckbox.SetChecked(!command);
-        command = await cMPCheckbox.GetChecked();
+        await cMPCheckbox.SetChecked(true);
+        command = await cMPCheckbox.WaitForChecked(true);
         Assert.True(command, "after click CheckBox state should on");
 
         //Enable Check
@@ -313,6 +312,7 @@ public class CMPTestsInputs
         //disable 
         cMPCheckbox.EnableProperty = false;
         //Check if Switch is disabled
+        await cMPCheckbox.WaitForEnabled(false);
         enabledState = await cMPCheckbox.IsEnabled();
         Assert.False(enabledState, "Switch should be disabled after setting enable to false");
         //enable again
@@ -348,7 +348,7 @@ public class CMPTestsInputs
         bool command = await cMPRadiobutton.GetChecked();
         Assert.False(command, "Initial Radiobutton state should be off");
         await cMPRadiobutton.SetChecked(!command);
-        command = await cMPRadiobutton.GetChecked();
+        command = await cMPRadiobutton.WaitForChecked(!command);
         Assert.True(command, "after click Radiobutton state should on");
 
         //Enable Check
@@ -357,6 +357,7 @@ public class CMPTestsInputs
         //disable 
         cMPRadiobutton.EnableProperty = false;
         //Check if Switch is disabled
+        await cMPRadiobutton.WaitForEnabled(false);
         enabledState = await cMPRadiobutton.IsEnabled();
         Assert.False(enabledState, "Radiobutton should be disabled after setting enable to false");
         //enable again
@@ -404,6 +405,7 @@ public class CMPTestsInputs
         //disable 
         cMPDropdown.EnableProperty = false;
         //Check if Dropdown is disabled
+        await cMPDropdown.WaitForEnabled(false);
         enabledState = await cMPDropdown.IsEnabled();
         Assert.False(enabledState, "Dropdown should be disabled after setting enable to false");
         //enable again
@@ -443,6 +445,7 @@ public class CMPTestsInputs
         await cMPVarInInt.SetValueByKeyboard(valueInt);
 
         // Verify that the value was set correctly
+        await cMPVarInInt.WaitForValue(42);
         int inputValueInt = await cMPVarInInt.GetValue();
         Assert.That(inputValueInt.Equals(valueInt), $"Input value should be {valueInt} but is {valueInt}");
 
@@ -580,27 +583,6 @@ public class CMPTestsInputs
 
         //set back visible
         cMPTextIn.VisisbleProperty = true;
-    }
-
-    [Test]
-    public async Task TestCMPButtonBlankEvents()
-    {
-        var componentsDevpage = BuildPath("TestScreens", "Components1");
-        var CotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ComponentsOverview1");
-        HmiPageArea area1 = (HmiPageArea)CotTestpage.GetAreaLayoutContentB(1);
-        CMPButtonBlank buttonBlank = area1.getElementByName<CMPButtonBlank>("CoT_CMP_ButtonBlank");
-
-        // set Initial State
-        NodeId buttonBlankClickToggleId = _session.GetNodeIdFromPath("ButtonBlankClickToggle", area1._area.NodeId);
-        _session.SetValue<bool>(buttonBlankClickToggleId, false);
-
-        //Click
-        await buttonBlank.Click();
-
-
-        bool buttonBlankClickToggle = _session.GetValue<bool>(buttonBlankClickToggleId);
-        Assert.That(buttonBlankClickToggle.Equals(true), "Button Output is not True after Click");
-        _session.SetValue<bool>(buttonBlankClickToggleId, false);
     }
 
 }

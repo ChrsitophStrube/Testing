@@ -32,6 +32,21 @@ public class CMPSwitch : CMPInput
         return commandOutput;
     }
 
+    public async Task<bool> WaitForCommand(bool commandOutput)
+    {
+        //Check Ouput Variable State of the Switch
+        NodeId commandOutputId = _session.GetNodeIdFromPath("command", _switch.NodeId);
+        await _session.WaitForValueAsync<bool>(commandOutputId, commandOutput);
+
+
+        //Check Visual State of the Switch
+        var svgId = _session.GetNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
+        SvgState svgState = new("led", commandOutput ? "on-finished" : "off", null);
+        await MatchSvgStateAsync(svgId.Locator, svgState);
+
+        return commandOutput;
+    }
+
     public async Task SetCommand(bool command)
     {
         //Check Visual State of the Switch
@@ -44,7 +59,7 @@ public class CMPSwitch : CMPInput
         var switchButton = _session.GetNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
         await switchButton.Locator.ClickAsync();
 
-        switchState = await GetCommand();
+        switchState = await WaitForCommand(command);
         if (switchState != command)
         {
             throw new Exception("the command output does not match the visual state after setting the command");
@@ -65,6 +80,23 @@ public class CMPSwitch : CMPInput
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
         return eventsActive;
+    }
+    
+    public async Task WaitForEnabled(bool enabled)
+    {
+        string expected = enabled ? "auto" : "none";
+
+        // Check if button forwards events
+        var @switch = _session.GetNodeLocator(_switch.Locator.Page, "SwitchButton", _switch.NodeId);
+
+        await Assertions.Expect(@switch.Locator)
+            .ToHaveCSSAsync("pointer-events", expected,
+                new() { Timeout = 2000 });
+
+        //Chech if Icon state is disabled
+        var svgId = _session.GetNodeLocator(_switch.Locator.Page, BuildPath("CoT_LedSwitch", "Icon").ToString(), _switch.NodeId);
+        SvgState svgState = new("led", null, enabled ? "enabled" : "disabled");
+        await MatchSvgStateAsync(svgId.Locator, svgState);
     }
 
 }

@@ -34,7 +34,7 @@ public class CTRLTextInTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://192.168.1.200:50080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLTextInTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted", "192.168.1.200", 59100);
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
     [SetUp]
@@ -65,7 +65,6 @@ public class CTRLTextInTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonProperties()
     {
         //Get IconName
@@ -100,6 +99,7 @@ public class CTRLTextInTest
         //Set ErrorState
         _ctrlTextIn.ErrorStateProperty = true;
         await _ctrlTextIn.WaitForErrorStateProperty(true);
+        _ctrlTextIn.ErrorStateProperty = false;
 
         //Get Unit
         string unit = _ctrlTextIn.UnitProperty;
@@ -110,7 +110,6 @@ public class CTRLTextInTest
 
     }
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLTextInCheckEnable()
     {
         //Check if Button is enabled
@@ -121,22 +120,21 @@ public class CTRLTextInTest
         _ctrlTextIn.EnableProperty = false;
         await _ctrlTextIn.WaitForEnablePropertyAsync(false);
         //Check if Button is disabled 
+        await _ctrlTextIn.WaitForEnabled(false);
         isEnabled = await _ctrlTextIn.IsEnabled();
         Assert.That(isEnabled, Is.False, "Button should be disabled now");
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLTextIntTextInExsistence()
     {
 
-        ILocator textInLocator = _ctrlTextIn.textIn._textIn.Locator;
+        ILocator textInLocator = _ctrlTextIn.TextIn._textIn.Locator;
         await textInLocator.IsVisibleAsync();
 
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelExsistence()
     {
         ILocator labelLocator = _ctrlTextIn.label._label.Locator;
@@ -144,7 +142,6 @@ public class CTRLTextInTest
     }
 
     [Test]
-    [Ignore("Temporary deactivated for faster CI/CD")]
     public async Task TestCTRLButtonCheckLabelVisibility()
     {
         bool visibilety = await _ctrlTextIn.GetVisibleAsync();
@@ -153,5 +150,7 @@ public class CTRLTextInTest
         _ctrlTextIn.VisisbleProperty = false;
         //Check if Button is invisible
         await _ctrlTextIn.WaitForVisibleAsync(false);
+
+        _ctrlTextIn.VisisbleProperty = true;
     }
 }

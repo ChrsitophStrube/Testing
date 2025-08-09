@@ -42,4 +42,20 @@ public class CTRL_CheckBox : BaseCTRLInWithLabel
         //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
         return checkboxEnableState; //&& labelEnableState;
     }
+
+        public async Task WaitForEnabled(bool enabled)
+    {
+        bool checkboxEnableState;
+        if (CheckBoxPositionProperty == 1)
+        {
+            await checkBoxRight.WaitForEnabled(enabled);
+        }
+
+        else
+        {
+            await checkBoxLeft.WaitForEnabled(enabled);
+        }
+
+        //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
+    }
 }

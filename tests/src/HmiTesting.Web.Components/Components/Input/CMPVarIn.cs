@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Drawing;
 
+
 public class CMPVarIn<T> : CMPInput where T : INumber<T>
 {
     protected IOpcUaSession _session;
@@ -80,7 +81,11 @@ public class CMPVarIn<T> : CMPInput where T : INumber<T>
     public async Task WaitForValue(T value)
     {
         var spinBox = _session.GetNodeLocator(_varIn.Locator.Page, BuildPath("Frame", "VarInput").ToString(), _varIn.NodeId);
-        var expected = value.ToString(null, CultureInfo.InvariantCulture);
+        string expected = value.ToString(null, CultureInfo.InvariantCulture);
+        if (value.GetType() == typeof(int))
+        {
+            expected = expected + ".0";
+        }
 
         await Assertions.Expect(spinBox.Locator.Locator("input")).ToHaveValueAsync(expected);
     }
@@ -159,7 +164,7 @@ public class CMPVarIn<T> : CMPInput where T : INumber<T>
     public async Task<bool> IsEnabled()
     {
         // get TextColor
-        LocatorNodeId spinBox = _session.GetNodeLocator(_varIn.Locator.Page, BuildPath("Frame", "VarInput").ToString(), _varIn.NodeId);
+        LocatorNodeId spinBox = _session.WaitForNodeLocator(_varIn.Locator.Page, BuildPath("Frame", "VarInput").ToString(), _varIn.NodeId);
         ILocator textColorLocator = spinBox.Locator.Locator("input").First;
         Color textColor = await GetCssColorAsync(textColorLocator, "color");
 
