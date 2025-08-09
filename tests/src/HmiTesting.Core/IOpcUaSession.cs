@@ -23,6 +23,9 @@ public interface IOpcUaSession
     T GetValue<T>(NodeId nodeId);
     Task<T> WaitForValueAsync<T>(NodeId nodeId, T expectedValue, int timeoutMs = 500);
     string GetBrowsename(NodeId nodeId);
+    NodeId GetHasTypeDefinition(NodeId nodeId);
+    NodeId GetSubtypeOf(NodeId nodeId);
+    NodeClass? GetNodeClass(NodeId nodeId); 
     List<NodeId> GetChildren(NodeId parentNodeId);
     LocatorNodeId GetNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null);
     LocatorNodeId WaitForNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null);

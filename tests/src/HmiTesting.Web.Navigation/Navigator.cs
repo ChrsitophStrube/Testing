@@ -14,12 +14,9 @@ public class Navigator : INavigator
     private IOpcUaSession _session;
     private IPage _page;
 
-
-
-
     //Optix Template Paths
 
-    private static readonly OpcPath _navigationRoot = BuildPath(
+    public static readonly OpcPath _navigationRoot = BuildPath(
         "UIRoot",
         "MainFrame",
         "ContentArea",
@@ -44,7 +41,7 @@ public class Navigator : INavigator
                         "Layout")
             );
 
-    readonly OpcPath _mainPanelLoader = BuildPath(
+    public readonly OpcPath _mainPanelLoader = BuildPath(
             "UIRoot",
             "MainFrame",
             "ContentArea",
@@ -108,7 +105,7 @@ public class Navigator : INavigator
         return new HmiPage(_session, actualPage.Locator.Page, actualPage.NodeId);
     }
 
-    public async Task<IReadOnlyList<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, Task> perPage, bool bypassRestriction = true)
+    public async Task<IReadOnlyList<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, IOpcUaSession, Task> perPage, bool bypassRestriction = true)
     {
         var errors = new List<Exception>();
 
@@ -117,7 +114,7 @@ public class Navigator : INavigator
             try
             {
                 var page = await GoToPage(path, name, bypassRestriction);
-                await perPage(page, name);
+                await perPage(page, name, _session);
             }
             catch (Exception ex)
             {

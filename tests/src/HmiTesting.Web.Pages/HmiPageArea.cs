@@ -2,6 +2,7 @@
 using HmiTesting.Core.DTOs;
 using HmiTesting.Core.enums;
 using HmiTesting.Core.Interfaces;
+using LibUA.Core;
 using Microsoft.Playwright;
 
 namespace HmiTesting.Web.Pages;
@@ -23,8 +24,26 @@ public class HmiPageArea :
         return (T)Activator.CreateInstance(typeof(T), _session, element);
     }
 
-    public LocatorNodeId getElementByNumber(int number)
+    public List<LocatorNodeId>? getAllElements()
     {
-        throw new NotImplementedException();
+        List<LocatorNodeId> elements = new();
+
+        List<NodeId> children = _session.GetChildren(_area.NodeId);
+        foreach (NodeId child in children)
+        {
+            // No Object means Not needet
+            if(_session.GetNodeClass(child)!= NodeClass.Object)
+            { continue; }
+            string browseName = _session.GetBrowsename(child);
+            
+
+            var element = _session.GetNodeLocator(_area.Locator.Page, browseName, _area.NodeId);
+            elements.Add(element);
+        }
+        if (elements.Count == 0)
+        {
+            return null;
+        }
+        return elements;
     }
 }

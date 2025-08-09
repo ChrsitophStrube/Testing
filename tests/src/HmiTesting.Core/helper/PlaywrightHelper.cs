@@ -23,7 +23,7 @@ namespace HmiTesting.Core.Helpers
     {
 
 
-        public static async Task MakePageScreenshot(IHmiPage hmiPage, string pageName)
+        public static async Task MakePageScreenshot(IHmiPage hmiPage, string pageName, IOpcUaSession session)
         {
             var page = hmiPage.Page;
 

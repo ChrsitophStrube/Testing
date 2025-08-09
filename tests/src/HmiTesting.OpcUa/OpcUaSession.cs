@@ -24,6 +24,9 @@ public class OpcUaSession :
     public static readonly NodeId _objectsFolderNode = new NodeId(0, 85);
     public static readonly NodeId _namespaceIndexNode = new NodeId(0, 2255);
 
+    public static readonly NodeId _hasTypeDefId = new NodeId(0, 40);
+
+    public static readonly NodeId _hasSubtypeId = new NodeId(0, 45);
 
     public OpcUaSession(NotifyingClient client, string optixProjectName)
     {
@@ -336,6 +339,71 @@ public class OpcUaSession :
                 ? qn.Name
                 : null;
 
+    }
+
+    public NodeClass? GetNodeClass(NodeId nodeId)
+    {
+        var readRes = _client.Read(new ReadValueId[]
+        {
+        new ReadValueId(nodeId, NodeAttribute.NodeClass, null, new QualifiedName(0, null)),
+        }, out DataValue[] dvs);
+
+        if (readRes != StatusCode.Good || dvs.Length == 0)
+            return null;
+
+        if (dvs[0].Value is int intValue)
+            return (NodeClass)intValue;
+
+        return null; // Falls Typ nicht passt
+    }
+    public NodeId GetHasTypeDefinition(NodeId nodeId)
+    {
+
+        var hasTypeDefId = new NodeId(0, 40);
+
+        var bd = new BrowseDescription(
+            nodeId,
+            BrowseDirection.Forward,
+            hasTypeDefId,
+            true,   // IncludeSubtypes
+            0xFFFFFFFFu,
+            BrowseResultMask.All);
+
+        BrowseResult[] results;
+        StatusCode sc = _client.Browse(new[] { bd }, 1000, out results);
+
+        if (sc == StatusCode.Good && results.Length > 0 && results[0].Refs.Length > 0)
+        {
+            // only 1 HasTypeDefinition expected
+            return results[0].Refs[0].TargetId;
+        }
+
+        return null; // no typeDef found 
+    }
+
+    public NodeId GetSubtypeOf(NodeId nodeId)
+    {
+        // browse Inverse, for finding Supertrype
+        var hasSubtypeId = new NodeId(0, 45);
+
+        var bd = new BrowseDescription(
+            nodeId,
+            BrowseDirection.Inverse,   // Backwards to Supertyp
+            hasSubtypeId,
+            true,                      // IncludeSubtypes
+            0xFFFFFFFFu,
+            BrowseResultMask.All);
+
+        BrowseResult[] results;
+        StatusCode sc = _client.Browse(new[] { bd }, 1000, out results);
+
+        if (sc == StatusCode.Good && results.Length > 0 && results[0].Refs.Length > 0)
+        {
+            // Only 1 Supertyp expected
+            return results[0].Refs[0].TargetId;
+        }
+
+        return null; // no Supertype found 
     }
 
     public LocatorNodeId GetNodeLocator(IPage page, string pathToNode, NodeId startNodeId = null)

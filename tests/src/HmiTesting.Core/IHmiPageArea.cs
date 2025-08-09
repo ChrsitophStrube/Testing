@@ -4,7 +4,7 @@ namespace HmiTesting.Core.Interfaces;
 
 public interface IHmiPageArea
 {
-    public LocatorNodeId getElementByNumber(int number);
+    List<LocatorNodeId>? getAllElements();
     public T getElementByName<T>(string name) where T : IInputControl;
 
 }

@@ -11,10 +11,10 @@ using HmiTesting.Web.Navigation;
 using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
-using HmiTesting.Core.Helpers;
+using HmiTesting.Core.DTOs;
 
-[Ignore("Temp deactivated")]
-public class ScreenshotAllPages
+
+public class PLCConnectionMissingLinks
 {
 
     private IPlaywright? playwright = null;
@@ -58,18 +58,54 @@ public class ScreenshotAllPages
     }
 
     [Test]
-    public async Task ScreenshotsOfAllPages()
+    public async Task FindUnlikedControls()
     {
         ScreenshotOnFailureAttribute.SetPage(_page!);
         Dictionary<OpcPath, string> screens = [];
-         screens.Add(BuildPath("Machine settings", "MODX1", "Belt", "General"), "DemoModX_MS_Belt_General");
-         screens.Add(BuildPath("Administer", "Device server", "Runtime"), "CoTD_Server_Runtime");
+        screens.Add(BuildPath("Machine settings", "MODX1", "Belt", "General"), "DemoModX_MS_Belt_General");
+        screens.Add(BuildPath("Administer", "Device server", "Runtime"), "CoTD_Server_Runtime");
         screens.Add(BuildPath("Administer", "SSI"), "CoTD_SSI");
-       // screens = NaxigationPaser.GetScreensFromNavigationXML(@"D:\13_Masterarbeit\Repos\MAShmi\MAS-HMI\ProjectFiles\NavigationContent.xml");
+        //screens = NaxigationPaser.GetScreensFromNavigationXML(@"D:\13_Masterarbeit\Repos\MAShmi\MAS-HMI\ProjectFiles\NavigationContent.xml");
 
 
-        var results = await _session.Navigator(_page).GoToAllPages(screens, MakePageScreenshot);
+
+        // IHmiPage _motorGeneralPage = await _session.Navigator(_page).GoToPage(componentsDevpage, "DemoModX_MS_Belt_General",true);
+        var results = await _session.Navigator(_page).GoToAllPages(screens, FindPageAreas);
 
     }
 
+    public static async Task FindPageAreas(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+    {
+        var page = hmiPage.Page;
+        NodeId screenId = hmiPage.PageId;
+        NodeId typeDefinitionId = session.GetHasTypeDefinition(screenId);
+        NodeId SupertypeId = session.GetSubtypeOf(typeDefinitionId);
+        string typeName = session.GetBrowsename(SupertypeId);
+
+        IReadOnlyList<IHmiPageArea>? areas = hmiPage.GetAreasByLayout(typeName);
+        if (areas == null)
+        {
+            return;
+        }
+
+        foreach (IHmiPageArea area in areas)
+        {
+            var elementsResult = area.getAllElements();
+            if (elementsResult == null)
+            {
+                continue;
+            }
+            List<LocatorNodeId> elements = elementsResult;
+
+            foreach (LocatorNodeId element in elements)
+            {
+                string browsename = session.GetBrowsename(element.NodeId);
+                Console.WriteLine(browsename);
+            }
+        }
+
+
+
+
+    }
 }
