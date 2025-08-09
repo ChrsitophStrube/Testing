@@ -76,6 +76,17 @@ public class OpcUaSession :
             throw new Exception($"can not get NodeId from Path:{path}");
         }
     }
+    
+    public NodeId WaitForNodeIdFromPath(string path, NodeId? startNode = null,TimeSpan? timeout = null, TimeSpan? pollInterval = null)
+    {
+        return WaitForNodeIdFromPath(_optixProjectNamespace, path, startNode, timeout, pollInterval);
+    }
+
+    public NodeId WaitForNodeIdFromPath(string nsIndex, string path, NodeId startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null)
+    {
+        ushort nsIndexInt = GetNamespaceIndex(nsIndex);
+        return WaitForNodeIdFromPath(nsIndexInt, path, startNode, timeout, pollInterval);
+    }
     public NodeId WaitForNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null)
     {
         var to = timeout ?? TimeSpan.FromSeconds(40);

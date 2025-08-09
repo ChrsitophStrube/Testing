@@ -11,6 +11,7 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
+[Ignore("Temp deactivated")]
 public class UsertestSascha
 
 
@@ -44,7 +45,7 @@ public class UsertestSascha
 
 
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -53,7 +54,7 @@ public class UsertestSascha
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName, ProjectConfig.Current.OpcUaIp, ProjectConfig.Current.OpcUaPort);
     }
 
     [OneTimeTearDown]

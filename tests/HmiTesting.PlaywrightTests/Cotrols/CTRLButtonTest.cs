@@ -34,7 +34,7 @@ public class CTRLButtonTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLButtonTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
     [SetUp]
@@ -107,6 +107,7 @@ public class CTRLButtonTest
         _ctrlButton.EnableProperty = false;
         await _ctrlButton.WaitForEnablePropertyAsync(false);
         //Check if Button is disabled 
+        await _ctrlButton.WaitForEnabled(false);
         isEnabled = await _ctrlButton.IsEnabled();
         Assert.That(isEnabled, Is.False, "Button should be disabled now");
     }

@@ -11,8 +11,10 @@ public interface IOpcUaSession
     ushort GetNamespaceIndex(string namespaceUrl);
     ushort GetProjectNamespaceIndex();
     NodeId GetNodeIdFromPath(string path, NodeId? startNode = null);
-    public NodeId GetNodeIdFromPath(string nsIndex, string path, NodeId startNode = null);
-    public NodeId GetNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null);
+    NodeId GetNodeIdFromPath(string nsIndex, string path, NodeId startNode = null);
+    NodeId WaitForNodeIdFromPath(string path, NodeId? startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null);
+    NodeId WaitForNodeIdFromPath(string nsIndex, string path, NodeId startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null);
+    NodeId WaitForNodeIdFromPath(ushort nsIndex, string path, NodeId startNode = null, TimeSpan? timeout = null, TimeSpan? pollInterval = null);
     NodeId GetLastSession();
     IHmiPage GetHeader();
     IHmiPage GetActualPage();

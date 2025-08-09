@@ -27,7 +27,8 @@ public class CMPDropdown : CMPInput
         await button.Locator.ClickAsync();
 
         //Get all Options
-        var verticalLayout = _session.GetNodeIdFromPath(BuildPath("CoT_CMP_DropdownContent", "ScrollView", "VerticalLayout").ToString(), button.NodeId);
+        var verticalLayout = _session.WaitForNodeIdFromPath(BuildPath("CoT_CMP_DropdownContent", "ScrollView", "VerticalLayout").ToString(), button.NodeId);
+        //var verticalLayout = _session.GetNodeIdFromPath(BuildPath("CoT_CMP_DropdownContent", "ScrollView", "VerticalLayout").ToString(), button.NodeId);
         Thread.Sleep(500); //wait until the dropdown is open(Flyout visible)
         List<NodeId> options = _session.GetChildren(verticalLayout);
 
@@ -94,5 +95,28 @@ public class CMPDropdown : CMPInput
         await MatchSvgStateAsync(svgId.Locator, svgState);
 
         return eventsActive;
+    }
+    
+
+
+   public async Task WaitForEnabled(bool enabled)
+    {
+        string expected = enabled ? "auto" : "none";
+
+        // Check if button forwards events
+        var button = _session.GetNodeLocator(
+            _dropdown.Locator.Page, "Button", _dropdown.NodeId);
+    
+        await Assertions.Expect(button.Locator)
+            .ToHaveCSSAsync("pointer-events", expected,
+                new() { Timeout = 2000 });
+
+
+        //Chech if Dropdown arrow  Icon state is disabled
+        var svgId = _session.GetNodeLocator(_dropdown.Locator.Page, BuildPath("HorizontalLayout", "DropdownButton").ToString(), _dropdown.NodeId);
+        SvgState svgState = new("dropdown", null, enabled ? "enabled" : "disabled");
+        await MatchSvgStateAsync(svgId.Locator, svgState);
+
+
     }
 }

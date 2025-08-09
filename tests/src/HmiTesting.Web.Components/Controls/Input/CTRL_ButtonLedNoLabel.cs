@@ -28,4 +28,17 @@ public class CTRL_ButtonLedNoLabel : CMPInput
 
     public int LedStateProperty { get => GetProperty<Int16>("ledState"); set => SetProperty("ledState", value); }
     public async Task WaitForLedStateProperty(Int16 LedState) => await WaitForProperty<Int16>("ledState", LedState);
+
+    public async Task<bool> IsEnabled()
+    {
+        bool buttonEnableStare = await button.IsEnabled();
+        //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
+        return buttonEnableStare; //&& labelEnableState;
+    }
+
+    public async Task WaitForEnabled(bool enabled)
+    {
+        await button.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
+    }
 }

@@ -50,5 +50,11 @@ public class CTRL_VarIn<T> : BaseCTRLInWithLabel where T : INumber<T>
         //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
         return varInEnabledState; //&& labelEnableState;
     }
+    
+        public async Task WaitForEnabled(bool enabled)
+    {
+        await VarIn.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
+    }  
 
 }

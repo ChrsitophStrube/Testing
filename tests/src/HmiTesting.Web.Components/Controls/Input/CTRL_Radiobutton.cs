@@ -28,8 +28,14 @@ public class CTRL_Radiobutton : BaseCTRLInWithLabel
 
     public async Task<bool> IsEnabled()
     {
-        bool buttonEnableStare = await radiobutton.IsEnabled();
+        bool buttonEnableState = await radiobutton.IsEnabled();
         //TODO: //bool labelEnableState = await label.IsEnabled(); //Not Implemented On Optix site
-        return buttonEnableStare; //&& labelEnableState;
+        return buttonEnableState; //&& labelEnableState;
+    }
+
+    public async Task WaitForEnabled(bool enabled)
+    {
+        await radiobutton.WaitForEnabled(enabled);
+        //TODO: //bool labelEnableState = await label.WaitForEnabled(enabled); //Not Implemented On Optix site
     }
 }

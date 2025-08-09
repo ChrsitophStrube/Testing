@@ -44,11 +44,22 @@ public class CMPButtonBlank : CMPInput
 
     public async Task<bool> IsEnabled()
     {
-        var button = _session.GetNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+        var button = _session.WaitForNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+
         string pointerEvents = await button.Locator.EvaluateAsync<string>(
             "el => window.getComputedStyle(el).pointerEvents"
         );
         return pointerEvents == "auto";
+    }
+    
+    public async Task WaitForEnabled(bool enabled)
+    {
+        string expected = enabled ? "auto" : "none";
+        var button = _session.WaitForNodeLocator(_button.Locator.Page, "TransparentButton", _button.NodeId);
+        
+        await Assertions.Expect(button.Locator)
+            .ToHaveCSSAsync("pointer-events", expected,
+                new() { Timeout = 2000 });
     }
 
 }

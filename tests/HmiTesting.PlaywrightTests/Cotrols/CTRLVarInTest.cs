@@ -34,7 +34,7 @@ public class CTRLVarInTest
         //Open Page
         _page = await _browser.NewPageAsync();
         await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync("http://localhost:8080", new PageGotoOptions
+        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
         {
             WaitUntil = WaitUntilState.NetworkIdle
         });
@@ -43,7 +43,7 @@ public class CTRLVarInTest
 
         //conect to OPCUA Server
         OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect("MyHMI_Template_Unencrypted");
+        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
     }
 
     [SetUp]
@@ -139,8 +139,10 @@ public class CTRLVarInTest
         _ctrlVarIn.EnableProperty = false;
         await _ctrlVarIn.WaitForEnablePropertyAsync(false);
         //Check if Button is disabled 
+        await _ctrlVarIn.WaitForEnabled(false);
         isEnabled = await _ctrlVarIn.IsEnabled();
         Assert.That(isEnabled, Is.False, "VarIn should be disabled now");
+        _ctrlVarIn.EnableProperty = true;
     }
 
     [Test]
@@ -168,5 +170,6 @@ public class CTRLVarInTest
         _ctrlVarIn.VisisbleProperty = false;
         //Check if Button is invisible
         await _ctrlVarIn.WaitForVisibleAsync(false);
+        _ctrlVarIn.VisisbleProperty = true;
     }
 }

@@ -33,6 +33,22 @@ public class CMPCheckbox : CMPInput
         return checkedOutput;
     }
 
+    public async Task<bool> WaitForChecked(bool checkedOutput)
+    {
+        //Check Ouput Variable State of the Switch
+        NodeId checkedOutputId = _session.GetNodeIdFromPath("checked", _checkbox.NodeId);
+        await _session.WaitForValueAsync<bool>(checkedOutputId,checkedOutput);
+
+        //Check Visual State of the Switch
+        bool visualState = false;
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+
+        string dataUri = await svgId.Locator.Locator("img").GetAttributeAsync("src");
+        SvgState svgState = new("checkbox", checkedOutput ? "checked" : "unchecked", null);
+        await MatchSvgStateAsync(svgId.Locator, svgState);
+        return checkedOutput;
+    }
+
     public async Task SetChecked(bool command)
     {
         //Check Visual State of the Switch
@@ -45,7 +61,7 @@ public class CMPCheckbox : CMPInput
         var switchButton = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
         await switchButton.Locator.ClickAsync();
 
-        switchState = await GetChecked();
+        switchState = await WaitForChecked(command);
         if (switchState != command)
         {
             throw new Exception("the command output does not match the visual state after setting the Checked State");
@@ -67,5 +83,19 @@ public class CMPCheckbox : CMPInput
         await MatchSvgStateAsync(svgId.Locator, svgState);
         return eventsActive;
     }
+    public async Task WaitForEnabled(bool enabled)
+    {
+        string expected = enabled ? "auto" : "none";
+        // Check if button forwards events
+        var button = _session.GetNodeLocator(_checkbox.Locator.Page, "TransparentButton", _checkbox.NodeId);
 
+        await Assertions.Expect(button.Locator)
+            .ToHaveCSSAsync("pointer-events", expected,
+                new() { Timeout = 2000 });
+
+        //Check svg state 
+        var svgId = _session.GetNodeLocator(_checkbox.Locator.Page, "Icon", _checkbox.NodeId);
+        SvgState svgState = new("checkbox", null, enabled ? "enabled" : "disabled");
+        await MatchSvgStateAsync(svgId.Locator, svgState);
+    }
 }

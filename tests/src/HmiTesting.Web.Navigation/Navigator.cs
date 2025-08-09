@@ -82,7 +82,7 @@ public class Navigator : INavigator
             if (i == 0)
             {
                 // Click First Sidbar element to open (unindependent from color)
-                LocatorNodeId siedebarElement = _session.GetNodeLocator(_page, sidebarButton.ToString(), lastSession);
+                LocatorNodeId siedebarElement = _session.WaitForNodeLocator(_page, sidebarButton.ToString(), lastSession);
                 await siedebarElement.Locator.ClickAsync();
             }
             else
@@ -96,7 +96,7 @@ public class Navigator : INavigator
                 if (!isOpen)
                 {
                     // Click SidebarElement
-                    LocatorNodeId siedebarElement = _session.GetNodeLocator(_page, sidebarButton.ToString(), lastSession);
+                    LocatorNodeId siedebarElement = _session.WaitForNodeLocator(_page, sidebarButton.ToString(), lastSession);
                     await siedebarElement.Locator.ClickAsync();
                 }
             }
