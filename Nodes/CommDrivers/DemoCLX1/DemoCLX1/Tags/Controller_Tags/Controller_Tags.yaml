@@ -7166,3 +7166,30 @@ Children:
         Type: BaseDataVariableType
         DataType: String
         Value: "MODY1_Phi.Upstream_Belts.Selected_Belt_All"
+- Name: Deleted_Int
+  Id: g=c2c7ae1ffd558f55fa8472294c6a7e52
+  Type: RAEtherNetIPTag
+  DataType: Int32
+  Children:
+  - Name: SymbolName
+    Id: g=b3fb107a8543a6adc0a2dfb591ae7386
+    Type: BaseDataVariableType
+    DataType: String
+- Name: Deleted_Bool
+  Id: g=a8de9aa06e49258cd76501c8fb2ec8a0
+  Type: RAEtherNetIPTag
+  DataType: Int32
+  Children:
+  - Name: SymbolName
+    Id: g=fe898afc9808fb4696fa8af6041af278
+    Type: BaseDataVariableType
+    DataType: String
+- Name: Deleted_String
+  Id: g=04a0d2166ee9e0c6395c5b70fcc43e48
+  Type: RAEtherNetIPTag
+  DataType: Int32
+  Children:
+  - Name: SymbolName
+    Id: g=fbd5bb73b7247c1e271909e5ad80a4d1
+    Type: BaseDataVariableType
+    DataType: String

@@ -6,6 +6,8 @@
 		<NavItem Title="Components1" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ComponentsOverview1" />
 		<NavItem Title="Components2" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ComponentsOverview2" />
 		<NavItem Title="Controls" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_ControlsOverview" />
+		<NavItem Title="broken PLC links" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_BrokenPLCLinks" />
+		<NavItem Title="missing PLC links" IconPath="" ScreenPath="UI/Screens/CoTT_TestScreens/CoT_MissingPLCLinks" />
 	</NavItem>
 	<NavItem Title="Produce" IconPath="Icons/icon-produce.svg" ScreenPath="">
         <NavItem Title="Select recipe" IconPath="" ScreenPath="UI/Screens/CoTD_DemoScreens/Recipes/CoTD_RecipeManagement" />

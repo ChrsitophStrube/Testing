@@ -87,8 +87,8 @@ public class Navigator : INavigator
 
                 //Skip click if already selected
                 OpcPath isOpenPath = _columns[i + 1].Append(NavigationElementName).Append("isOpen");
-                NodeId isOpenProp  = _session.GetNodeIdFromPath(isOpenPath.ToString(), lastSession);
-                bool isOpen        =  _session.GetValue<bool>(isOpenProp);
+                NodeId isOpenProp = _session.GetNodeIdFromPath(isOpenPath.ToString(), lastSession);
+                bool isOpen = _session.GetValue<bool>(isOpenProp);
 
                 if (!isOpen)
                 {
@@ -118,7 +118,7 @@ public class Navigator : INavigator
             }
             catch (Exception ex)
             {
-                errors.Add(new Exception($"Fault loading Page '{name}' ({path})", ex));
+                errors.Add(new Exception($"Fault on Page '{name}' ({path})", ex));
             }
         }
 

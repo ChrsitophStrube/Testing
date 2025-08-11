@@ -30399,7 +30399,7 @@ Children:
                 Type: DynamicLink
                 DataType: NodePath
                 Value: "../visibility"
-          - Name: ' VriBeltSpeed'
+          - Name: VriBeltSpeed
             Id: g=f69072d25bc467ad2ec2fde26fa8e2a8
             Type: CoT_CTRL_VarIn
             Children:
@@ -34115,7 +34115,7 @@ Children:
                     Type: DynamicLink
                     DataType: NodePath
                     Value: "../../../HorizontalLayout/CoT_CMP_VarInCRTL/Internal/pv_UserRoleFullfilled"
-          - Name: ' VriBeltDecel'
+          - Name: VriBeltDecel
             Id: g=fc7e818fdfa778e0c0b30ae1c5712b63
             Type: CoT_CTRL_VarIn
             Children:

@@ -62,21 +62,25 @@ public class PLCConnectionMissingLinks
     {
         ScreenshotOnFailureAttribute.SetPage(_page!);
         Dictionary<OpcPath, string> screens = [];
-        screens.Add(BuildPath("Machine settings", "MODX1", "Belt", "General"), "DemoModX_MS_Belt_General");
-        screens.Add(BuildPath("Administer", "Device server", "Runtime"), "CoTD_Server_Runtime");
-        screens.Add(BuildPath("Administer", "SSI"), "CoTD_SSI");
+       // screens.Add(BuildPath("Machine settings", "MODX1", "Belt", "General"), "DemoModX_MS_Belt_General");
+       // screens.Add(BuildPath("Administer", "Device server", "Runtime"), "CoTD_Server_Runtime");
+       // screens.Add(BuildPath("Administer", "SSI"), "CoTD_SSI");
+        screens.Add(BuildPath("TestScreens", "broken PLC links"), "CoT_BrokenPLCLinks");
         //screens = NaxigationPaser.GetScreensFromNavigationXML(@"D:\13_Masterarbeit\Repos\MAShmi\MAS-HMI\ProjectFiles\NavigationContent.xml");
 
 
 
         // IHmiPage _motorGeneralPage = await _session.Navigator(_page).GoToPage(componentsDevpage, "DemoModX_MS_Belt_General",true);
-        var results = await _session.Navigator(_page).GoToAllPages(screens, FindPageAreas);
+        var results = await _session.Navigator(_page).GoToAllPages(screens, FindRedXOnElements);
 
     }
 
-    public static async Task FindPageAreas(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+    public static async Task FindRedXOnElements(IHmiPage hmiPage, string pageName, IOpcUaSession session)
     {
-        var page = hmiPage.Page;
+        // List of all elements with red X
+        List < (string pageName , string elementName)> redXElements = new();
+
+        
         NodeId screenId = hmiPage.PageId;
         NodeId typeDefinitionId = session.GetHasTypeDefinition(screenId);
         NodeId SupertypeId = session.GetSubtypeOf(typeDefinitionId);
@@ -99,13 +103,62 @@ public class PLCConnectionMissingLinks
 
             foreach (LocatorNodeId element in elements)
             {
-                string browsename = session.GetBrowsename(element.NodeId);
-                Console.WriteLine(browsename);
+
+                // Check if the element has a red X
+                if(await FindRedXonElement(element.Locator))
+                {
+                    // If it has a red X, add it to the list
+                    string browsename = session.GetBrowsename(element.NodeId);
+                    redXElements.Add((pageName, browsename));
+                }
+                
             }
         }
 
-
-
-
     }
+
+    public static async Task<bool> FindRedXonElement(ILocator element)
+    {
+        // Falls der Locator nichts matched, direkt false
+        var handle = await element.ElementHandleAsync();
+        if (handle is null) return false;
+
+        // Im Kontext des Elements auswerten
+        return await handle.EvaluateAsync<bool>(@"(root) => {
+        const svgs = root.querySelectorAll('svg');
+        const getStroke = (el) => {
+            // computed style (robust gegen CSS)
+            const cs = window.getComputedStyle(el).stroke || '';
+            if (cs && cs !== 'none') return cs.trim().toLowerCase();
+
+            // Fallback: Inline-Attribute
+            const attr = (el.getAttribute('stroke') || '').trim().toLowerCase();
+            if (attr) return attr;
+
+            // Fallback: style-Attribut parsen
+            const style = (el.getAttribute('style') || '').toLowerCase();
+            const m = style.match(/stroke:\s*([^;]+)/);
+            return m ? m[1].trim() : '';
+        };
+
+        const isRed = (color) => {
+            const c = color.replace(/\s/g,'');
+            return c === 'rgb(255,0,0)' || c === '#ff0000' || c === 'red';
+        };
+
+        for (const svg of svgs) {
+            const lines = svg.querySelectorAll('line');
+            if (lines.length !== 2) continue;
+
+            const c1 = getStroke(lines[0]);
+            const c2 = getStroke(lines[1]);
+
+            if (isRed(c1) && isRed(c2)) {
+                return true;
+            }
+        }
+        return false;
+    }");
+    }
+
 }

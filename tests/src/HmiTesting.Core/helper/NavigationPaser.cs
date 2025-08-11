@@ -3,7 +3,7 @@ using static HmiTesting.Core.Helpers.PathHandler;
 
 namespace HmiTesting.Core.Helpers
 {
-    public static class NaxigationPaser
+    public static class NavigationPaser
     {
         private static readonly XNamespace Ns = "MyHMI.NavigationContent";
 
