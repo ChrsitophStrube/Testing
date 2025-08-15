@@ -1,7 +1,0 @@
-Name: Screens
-Id: g=e21cfd34554d28a03e4c0748e991366f
-Type: ScreensCategoryFolder
-Children:
-- File: CoT_TemplateScreens/CoT_TemplateScreens.yaml
-- File: CoTD_DemoScreens/CoTD_DemoScreens.yaml
-- File: CoTT_TestScreens/CoTT_TestScreens.yaml

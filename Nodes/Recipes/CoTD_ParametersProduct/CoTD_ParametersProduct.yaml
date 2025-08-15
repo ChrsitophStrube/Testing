@@ -1,8 +1,0 @@
-Name: CoTD_ParametersProduct
-Id: g=9a1b282b5ba888f135700f08fd62e0f3
-Type: FolderType
-Children:
-- File: Mod1/Mod1.yaml
-- File: Mod2/Mod2.yaml
-- File: Mod3/Mod3.yaml
-- File: Mod4/Mod4.yaml

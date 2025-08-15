@@ -1,8 +1,0 @@
-Name: Alarms
-Id: g=f626dee23de44cb12edbabda4cffdb5b
-Type: AlarmsCategoryFolder
-Children:
-- File: CoT_TemplateAlarming/CoT_TemplateAlarming.yaml
-- File: HmiAlarms/HmiAlarms.yaml
-- File: NetLogicAlarms/NetLogicAlarms.yaml
-- File: PlcAlarms/PlcAlarms.yaml

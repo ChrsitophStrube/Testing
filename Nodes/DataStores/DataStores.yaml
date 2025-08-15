@@ -1,6 +1,0 @@
-Name: DataStores
-Id: g=d22b103f5de9f40688d06a1478fe41e5
-Type: DataStoresCategoryFolder
-Children:
-- File: CoT_DataStores/CoT_DataStores.yaml
-- File: CoTD_DataStores/CoTD_DataStores.yaml
