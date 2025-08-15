@@ -23,20 +23,31 @@ namespace HmiTesting.Core.Helpers
     {
 
 
-        public static async Task MakePageScreenshot(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+        public static async Task<List<Exception>> MakePageScreenshot(IHmiPage hmiPage, string pageName, IOpcUaSession session)
         {
-            var page = hmiPage.Page;
+            List<Exception> exceptions = new();
+            try
+            {
 
-            var root = ScreenshotOnFailureAttribute.FindRepoRoot(TestContext.CurrentContext.WorkDirectory);
+                var page = hmiPage.Page;
 
-            var folder = Path.Combine(root, "test-results", "screenshots", "General");
-            Directory.CreateDirectory(folder);
+                var root = ScreenshotOnFailureAttribute.FindRepoRoot(TestContext.CurrentContext.WorkDirectory);
 
-            var safeName = ScreenshotOnFailureAttribute.Sanitize(pageName);
-            var file = Path.Combine(folder, $"{safeName}_{DateTime.Now:yyyyMMdd_HHmmssfff}.png");
-            Thread.Sleep(200);
-            await page.ScreenshotAsync(new() { Path = file, FullPage = true });
-            TestContext.AddTestAttachment(file, $"Screenshot: {pageName}");
+                var folder = Path.Combine(root, "test-results", "screenshots", "General");
+                Directory.CreateDirectory(folder);
+
+                var safeName = ScreenshotOnFailureAttribute.Sanitize(pageName);
+                var file = Path.Combine(folder, $"{safeName}_{DateTime.Now:yyyyMMdd_HHmmssfff}.png");
+                Thread.Sleep(200);
+                await page.ScreenshotAsync(new() { Path = file, FullPage = true });
+                TestContext.AddTestAttachment(file, $"Screenshot: {pageName}");
+            }
+            catch (Exception ex)
+            {
+                exceptions.Add(new Exception($"Error while taking screenshot for page '{pageName}'", ex));
+            }
+
+            return exceptions;
         }
 
 

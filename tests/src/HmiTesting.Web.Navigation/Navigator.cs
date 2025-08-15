@@ -105,21 +105,18 @@ public class Navigator : INavigator
         return new HmiPage(_session, actualPage.Locator.Page, actualPage.NodeId);
     }
 
-    public async Task<IReadOnlyList<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, IOpcUaSession, Task> perPage, bool bypassRestriction = true)
+    public async Task<List<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, IOpcUaSession, Task<List<Exception>>> perPage, bool bypassRestriction = true)
     {
-        var errors = new List<Exception>();
+        List< Exception > errors = [];
+
+        // Go to each page and execute the provided function
 
         foreach (var (path, name) in screens)
         {
-            try
-            {
-                var page = await GoToPage(path, name, bypassRestriction);
-                await perPage(page, name, _session);
-            }
-            catch (Exception ex)
-            {
-                errors.Add(new Exception($"Fault on Page '{name}' ({path})", ex));
-            }
+
+            var page = await GoToPage(path, name, bypassRestriction);
+            errors.AddRange( await perPage(page, name, _session)); 
+                
         }
 
         return errors;

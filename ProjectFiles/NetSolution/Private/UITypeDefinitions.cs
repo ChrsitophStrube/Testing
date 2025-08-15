@@ -170,6 +170,31 @@ public class CoT_ComponentsOverview2 : CoT_ContentB
 {
 }
 
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "f736748227557f90e1920c9c2a6285a7")]
+public class CoT_EditUserScreen : CoT_ContentB
+{
+}
+
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "c052bb5fe9568397bdac54ac8d56e104")]
+public class CoT_ListA : CoT_SyntegonLayout
+{
+}
+
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "9589b9b248bc9a5db680ee6f859ae64c")]
+public class CoT_BrokenPLCLinks : CoT_ContentB
+{
+}
+
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "fe27337ab47e888a343d1ce16501ed5b")]
+public class CoT_ContentA : CoT_SyntegonLayout
+{
+}
+
+[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "aad14b935d4375c44a8fa88e7e91c506")]
+public class CoT_MissingPLCLinks : CoT_ContentB
+{
+}
+
 [MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "d310ca119eb71f8ac9e04d0de79bb427")]
 public class CoT_AlphaNumeric_de_DE : FTOptix.UI.VirtualKeyboardPanel
 {
@@ -242,21 +267,6 @@ public class TableRowRecipeFormat : CoT_CMP_TableRow
 
 [MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "fefe97c7a3ff0437631263c73d6935dc")]
 public class CoT_CMP_TextInTable : FTOptix.UI.Panel
-{
-}
-
-[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "fe27337ab47e888a343d1ce16501ed5b")]
-public class CoT_ContentA : CoT_SyntegonLayout
-{
-}
-
-[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "f736748227557f90e1920c9c2a6285a7")]
-public class CoT_EditUserScreen : CoT_ContentB
-{
-}
-
-[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "c052bb5fe9568397bdac54ac8d56e104")]
-public class CoT_ListA : CoT_SyntegonLayout
 {
 }
 
@@ -1447,15 +1457,5 @@ public class CoT_NavColumnTemplate : FTOptix.UI.Screen
 
 [MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "b3a6bde7d730362d4e8fe279f9970434")]
 public class CoT_NavItem : FTOptix.UI.Panel
-{
-}
-
-[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "9589b9b248bc9a5db680ee6f859ae64c")]
-public class CoT_BrokenPLCLinks : CoT_ContentB
-{
-}
-
-[MapType(NamespaceUri = "MyHMI_Template_Unencrypted", Guid = "aad14b935d4375c44a8fa88e7e91c506")]
-public class CoT_MissingPLCLinks : CoT_ContentB
 {
 }

@@ -7,5 +7,5 @@ public interface INavigator
     INavigator ReturnToPreviousPage();
     INavigator ReturnToNextPage();
     Task<IHmiPage> GoToPage(OpcPath pagePath, string pageName, bool bypassRestriction = false);
-    Task<IReadOnlyList<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, IOpcUaSession, Task> perPage, bool bypassRestriction = true);
+    Task<List<Exception>> GoToAllPages(Dictionary<OpcPath, string> screens, Func<IHmiPage, string, IOpcUaSession, Task<List<Exception>>> perPage, bool bypassRestriction = true);
 }

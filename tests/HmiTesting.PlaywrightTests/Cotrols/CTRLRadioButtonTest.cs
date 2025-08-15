@@ -11,40 +11,10 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
-public class CTRLRadioButtonTest
+public class CTRLRadioButtonTest : UiTestBase
 {
 
-    private IPlaywright? playwright = null;
-    private IBrowser? _browser;
-    private IPage? _page;
     private CTRL_Radiobutton _ctrlRadioButton;
-
-    private OpcUaSession _session;
-
-    [OneTimeSetUp]
-    public async Task OneTimeSetup()
-    {
-        playwright = await Playwright.CreateAsync();
-
-        _browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-        {
-            Headless = false
-        });
-
-        //Open Page
-        _page = await _browser.NewPageAsync();
-        await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
-        {
-            WaitUntil = WaitUntilState.NetworkIdle
-        });
-        await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
-        await _page.WaitForTimeoutAsync(2000);
-
-        //conect to OPCUA Server
-        OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
-    }
 
     [SetUp]
     public async Task Setup()
@@ -54,14 +24,6 @@ public class CTRLRadioButtonTest
         IHmiPage _cotTestpage = await _session.Navigator(_page).GoToPage(componentsDevpage, "CoT_ControlsOverview");
         HmiPageArea area1 = (HmiPageArea)_cotTestpage.GetAreaLayoutContentB(2);
         _ctrlRadioButton = area1.getElementByName<CTRL_Radiobutton>("CoT_CTRL_RadioButton");
-    }
-
-    [OneTimeTearDown]
-    public async Task DisconnectOpcUaServer()
-    {
-        _session?.Disconnect();
-        await _page?.CloseAsync();
-        await _browser?.CloseAsync();
     }
 
     [Test]

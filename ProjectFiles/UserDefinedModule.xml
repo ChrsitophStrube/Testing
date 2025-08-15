@@ -319,6 +319,31 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="f736748227557f90e1920c9c2a6285a7" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="c052bb5fe9568397bdac54ac8d56e104" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="9589b9b248bc9a5db680ee6f859ae64c" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="fe27337ab47e888a343d1ce16501ed5b" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="aad14b935d4375c44a8fa88e7e91c506" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
                 <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="d310ca119eb71f8ac9e04d0de79bb427" />
             </TargetType>
         </TypeMapping>
@@ -404,26 +429,6 @@
         </TypeMapping>
         <TypeMapping>
             <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="fe27337ab47e888a343d1ce16501ed5b" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="d9de4e9d5bf02cd41ce79da5ba68dd98" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="f736748227557f90e1920c9c2a6285a7" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="c052bb5fe9568397bdac54ac8d56e104" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
                 <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="26dc2f5f6372a760df0399386ac5aee3" />
             </TargetType>
         </TypeMapping>
@@ -480,6 +485,11 @@
         <TypeMapping>
             <TargetType>
                 <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="634daaaacc38569f367436a079cde789" />
+            </TargetType>
+        </TypeMapping>
+        <TypeMapping>
+            <TargetType>
+                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="d9de4e9d5bf02cd41ce79da5ba68dd98" />
             </TargetType>
         </TypeMapping>
         <TypeMapping>
@@ -1700,16 +1710,6 @@
         <TypeMapping>
             <TargetType>
                 <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="b3a6bde7d730362d4e8fe279f9970434" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="9589b9b248bc9a5db680ee6f859ae64c" />
-            </TargetType>
-        </TypeMapping>
-        <TypeMapping>
-            <TargetType>
-                <NodeId namespaceUri="MyHMI_Template_Unencrypted" guid="aad14b935d4375c44a8fa88e7e91c506" />
             </TargetType>
         </TypeMapping>
     </TypeMappings>

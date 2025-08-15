@@ -11,48 +11,9 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 
-public class CMPTestsOutput
+public class CMPTestsOutput : UiTestBase
 {
 
-    private IPlaywright? playwright = null;
-    private IBrowser? _browser;
-    private IPage? _page;
-
-    private OpcUaSession _session;
-
-    [SetUp]
-    public async Task Setup()
-    {
-        playwright = await Playwright.CreateAsync();
-
-        _browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-        {
-            Headless = false
-        });
-
-        //Open Page
-        _page = await _browser.NewPageAsync();
-        await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
-        {
-            WaitUntil = WaitUntilState.NetworkIdle
-        });
-        await _page.EvaluateAsync("() => { document.body.style.zoom = '80%'; }");
-        await _page.WaitForTimeoutAsync(2000);
-        ScreenshotOnFailureAttribute.SetPage(_page!);
-
-        //conect to OPCUA Server
-        OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName,ProjectConfig.Current.OpcUaIp,ProjectConfig.Current.OpcUaPort);
-    }
-
-    [TearDown]
-    public async Task DisconnectOpcUaServer()
-    {
-        _session?.Disconnect();
-        await _page?.CloseAsync();
-        await _browser?.CloseAsync();
-    }
 
     [Test]
     public async Task TestCMPLabel()

@@ -12,75 +12,97 @@ using HmiTesting.Web.Components;
 using LibUA.Core;
 using HmiTesting.Web.Pages;
 using HmiTesting.Core.DTOs;
+using System.Diagnostics;
 
-
-public class PLCConnectionMissingLinks
+public class PLCConnectionMissingLinks : UiTestBase
 {
 
-    private IPlaywright? playwright = null;
-    private IBrowser? _browser;
-    private IPage? _page;
-    private CTRL_ButtonLedNoLabel _ctrlButtonLedNoLabel;
 
-    private OpcUaSession _session;
-
-    [OneTimeSetUp]
-    public async Task OneTimeSetup()
-    {
-        playwright = await Playwright.CreateAsync();
-
-        _browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
-        {
-            Headless = false
-        });
-
-        //Open Page
-        _page = await _browser.NewPageAsync();
-        await _page.SetViewportSizeAsync(1920, 1080);
-        await _page.GotoAsync(ProjectConfig.Current.ProjectUrl, new PageGotoOptions
-        {
-            WaitUntil = WaitUntilState.NetworkIdle
-        });
-        await _page.EvaluateAsync("() => { document.body.style.zoom = '90%'; }");
-        await _page.WaitForTimeoutAsync(2000);
-
-        //conect to OPCUA Server
-        OpcUaClient client = new OpcUaClient();
-        _session = (OpcUaSession)client.Connect(ProjectConfig.Current.ProjectName, ProjectConfig.Current.OpcUaIp, ProjectConfig.Current.OpcUaPort);
-    }
-
-    [OneTimeTearDown]
-    public async Task DisconnectOpcUaServer()
-    {
-        _session?.Disconnect();
-        await _page?.CloseAsync();
-        await _browser?.CloseAsync();
-    }
 
     [Test]
     public async Task FindUnlikedControls()
     {
+        KillDataAcquisitionCore();
+        //wait 20sec brefore starting the test to ensure that the DataAcquisitionCore is not running and X are visible
+        Thread.Sleep(40000);
         ScreenshotOnFailureAttribute.SetPage(_page!);
         Dictionary<OpcPath, string> screens = [];
-       // screens.Add(BuildPath("Machine settings", "MODX1", "Belt", "General"), "DemoModX_MS_Belt_General");
-       // screens.Add(BuildPath("Administer", "Device server", "Runtime"), "CoTD_Server_Runtime");
-       // screens.Add(BuildPath("Administer", "SSI"), "CoTD_SSI");
-        screens.Add(BuildPath("TestScreens", "broken PLC links"), "CoT_BrokenPLCLinks");
+        //screens.Add(BuildPath("TestScreens", "broken PLC links"), "CoT_BrokenPLCLinks");
+        screens.Add(BuildPath("TestScreens", "missing PLC links"), "CoT_MissingPLCLinks");
+        //screens.Add(BuildPath("TestScreens", "Components Dev"), "CoT_Components");
         //screens = NaxigationPaser.GetScreensFromNavigationXML(@"D:\13_Masterarbeit\Repos\MAShmi\MAS-HMI\ProjectFiles\NavigationContent.xml");
+        List<Exception> results = await _session.Navigator(_page).GoToAllPages(screens, RedXMissingOnElements);
 
-
-
-        // IHmiPage _motorGeneralPage = await _session.Navigator(_page).GoToPage(componentsDevpage, "DemoModX_MS_Belt_General",true);
-        var results = await _session.Navigator(_page).GoToAllPages(screens, FindRedXOnElements);
+        if (results.Count > 0)
+        {
+            Assert.Multiple(() =>
+            {
+                foreach (var ex in results)
+                    Assert.Fail(ex.Message);
+            });
+        }
 
     }
 
-    public static async Task FindRedXOnElements(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+    [Test]
+    public async Task FindControlsWithDeletedPLCTag()
+    {
+        ScreenshotOnFailureAttribute.SetPage(_page!);
+        Dictionary<OpcPath, string> screens = [];
+        screens.Add(BuildPath("TestScreens", "broken PLC links"), "CoT_BrokenPLCLinks");
+        //screens.Add(BuildPath("TestScreens", "missing PLC links"), "CoT_MissingPLCLinks");
+        //screens.Add(BuildPath("TestScreens", "Components Dev"), "CoT_Components");
+        //screens = NaxigationPaser.GetScreensFromNavigationXML(@"D:\13_Masterarbeit\Repos\MAShmi\MAS-HMI\ProjectFiles\NavigationContent.xml");
+        List<Exception> results = await _session.Navigator(_page).GoToAllPages(screens, RedXExistingOnElements);
+
+        if (results.Count > 0)
+        {
+            Assert.Multiple(() =>
+            {
+                foreach (var ex in results)
+                    Assert.Fail(ex.Message);
+            });
+        }
+
+    }
+
+    public static void KillDataAcquisitionCore()
+    {
+        foreach (var p in Process.GetProcessesByName("CoreServiceHost"))
+        {
+            string desc;
+            try { desc = p.MainModule?.FileVersionInfo?.FileDescription ?? ""; }
+            catch { continue; }
+
+            if (!desc.Equals("DataAcquisitionCore", StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            bool exited = p.CloseMainWindow() && p.WaitForExit(3000);
+            if (!exited && !p.HasExited)
+            {
+                p.Kill(entireProcessTree: true);
+                p.WaitForExit(5000);
+            }
+            p.Dispose();
+        }
+    }
+
+    public static async Task<List<Exception>> RedXExistingOnElements(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+    {
+        return await RedXOnElements(hmiPage, pageName, session, returnElements.returnElementsWithRedX);
+    }
+
+    public static async Task<List<Exception>> RedXMissingOnElements(IHmiPage hmiPage, string pageName, IOpcUaSession session)
+    {
+        return await RedXOnElements(hmiPage, pageName, session, returnElements.returnElementsWithoutRedX);
+    }
+
+    public static async Task<List<Exception>> RedXOnElements(IHmiPage hmiPage, string pageName, IOpcUaSession session, returnElements returnOption)
     {
         // List of all elements with red X
-        List < (string pageName , string elementName)> redXElements = new();
+        List<Exception> plcVarNotConectedExceptions = new();
 
-        
+
         NodeId screenId = hmiPage.PageId;
         NodeId typeDefinitionId = session.GetHasTypeDefinition(screenId);
         NodeId SupertypeId = session.GetSubtypeOf(typeDefinitionId);
@@ -89,7 +111,7 @@ public class PLCConnectionMissingLinks
         IReadOnlyList<IHmiPageArea>? areas = hmiPage.GetAreasByLayout(typeName);
         if (areas == null)
         {
-            return;
+            return plcVarNotConectedExceptions;
         }
 
         foreach (IHmiPageArea area in areas)
@@ -103,19 +125,33 @@ public class PLCConnectionMissingLinks
 
             foreach (LocatorNodeId element in elements)
             {
+                bool hasRedX = await FindRedXonElement(element.Locator);
 
-                // Check if the element has a red X
-                if(await FindRedXonElement(element.Locator))
+                if ((returnOption == returnElements.returnElementsWithRedX && hasRedX) ||
+                    (returnOption == returnElements.returnElementsWithoutRedX && !hasRedX))
                 {
-                    // If it has a red X, add it to the list
                     string browsename = session.GetBrowsename(element.NodeId);
-                    redXElements.Add((pageName, browsename));
+                    string message = returnElements.returnElementsWithRedX == returnOption
+                        ? $"red X is found on page:{pageName} on element: {browsename}"
+                        : $"red X is missing on page:{pageName} on element: {browsename}";
+
+                    plcVarNotConectedExceptions.Add(new Exception(message));
                 }
-                
+
             }
         }
 
+        return plcVarNotConectedExceptions;
+
     }
+
+
+    public enum returnElements
+    {
+        returnElementsWithRedX,
+        returnElementsWithoutRedX
+    }
+
 
     public static async Task<bool> FindRedXonElement(ILocator element)
     {

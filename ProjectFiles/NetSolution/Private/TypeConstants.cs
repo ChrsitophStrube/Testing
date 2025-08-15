@@ -70,6 +70,11 @@ namespace MyHMI_Template_Unencrypted
         public static readonly NodeId CoTD_SetupFormatParts_Step5 = new NodeId(namespaceIndex, new Guid("63038f96168f22dfbaf152e384ed2785"));
         public static readonly NodeId AlarmingTableTemporary = new NodeId(namespaceIndex, new Guid("80d70c2d8a22456fab69690e09a18b03"));
         public static readonly NodeId CoT_ComponentsOverview2 = new NodeId(namespaceIndex, new Guid("a77ad04c63cfc5408cc9cd90419c44b9"));
+        public static readonly NodeId CoT_EditUserScreen = new NodeId(namespaceIndex, new Guid("f736748227557f90e1920c9c2a6285a7"));
+        public static readonly NodeId CoT_ListA = new NodeId(namespaceIndex, new Guid("c052bb5fe9568397bdac54ac8d56e104"));
+        public static readonly NodeId CoT_BrokenPLCLinks = new NodeId(namespaceIndex, new Guid("9589b9b248bc9a5db680ee6f859ae64c"));
+        public static readonly NodeId CoT_ContentA = new NodeId(namespaceIndex, new Guid("fe27337ab47e888a343d1ce16501ed5b"));
+        public static readonly NodeId CoT_MissingPLCLinks = new NodeId(namespaceIndex, new Guid("aad14b935d4375c44a8fa88e7e91c506"));
         public static readonly NodeId CoT_AlphaNumeric_de_DE = new NodeId(namespaceIndex, new Guid("d310ca119eb71f8ac9e04d0de79bb427"));
         public static readonly NodeId CoTD_SetupFormatParts_StartPage = new NodeId(namespaceIndex, new Guid("a54432e4fb5c7098ded7135eaf5d54c9"));
         public static readonly NodeId Cot_Dialog_RecipeFailiureInjection = new NodeId(namespaceIndex, new Guid("ea1e4f80c503e097cce6a6f24e721704"));
@@ -87,10 +92,6 @@ namespace MyHMI_Template_Unencrypted
         public static readonly NodeId TableHeaderRowRecipeFormat = new NodeId(namespaceIndex, new Guid("0dab6cfae1658d57293daadfbc70c44b"));
         public static readonly NodeId TableRowRecipeFormat = new NodeId(namespaceIndex, new Guid("e2cdf2008870ab60d8662c8a89b5a0da"));
         public static readonly NodeId CoT_CMP_TextInTable = new NodeId(namespaceIndex, new Guid("fefe97c7a3ff0437631263c73d6935dc"));
-        public static readonly NodeId CoT_ContentA = new NodeId(namespaceIndex, new Guid("fe27337ab47e888a343d1ce16501ed5b"));
-        public static readonly NodeId CoT_TemplateConfig = new NodeId(namespaceIndex, new Guid("d9de4e9d5bf02cd41ce79da5ba68dd98"));
-        public static readonly NodeId CoT_EditUserScreen = new NodeId(namespaceIndex, new Guid("f736748227557f90e1920c9c2a6285a7"));
-        public static readonly NodeId CoT_ListA = new NodeId(namespaceIndex, new Guid("c052bb5fe9568397bdac54ac8d56e104"));
         public static readonly NodeId CoTD_Screen_OpMode = new NodeId(namespaceIndex, new Guid("26dc2f5f6372a760df0399386ac5aee3"));
         public static readonly NodeId CoT_MessageStatisticsFrequencyResult = new NodeId(namespaceIndex, new Guid("aac460f8330f95a9664e70eab761aa90"));
         public static readonly NodeId CoT_AlphaNumeric_en_US = new NodeId(namespaceIndex, new Guid("be6e0c1bf66115568dfba8c76b86c000"));
@@ -103,6 +104,7 @@ namespace MyHMI_Template_Unencrypted
         public static readonly NodeId CoT_AlphanumericPlaceholder = new NodeId(namespaceIndex, new Guid("7468570afeb75b0109dfb09fa811b29f"));
         public static readonly NodeId CoT_Navigation = new NodeId(namespaceIndex, new Guid("a33799d99dc96db31c50dbc44506f110"));
         public static readonly NodeId CoT_MessageStatisticsDurationResult = new NodeId(namespaceIndex, new Guid("634daaaacc38569f367436a079cde789"));
+        public static readonly NodeId CoT_TemplateConfig = new NodeId(namespaceIndex, new Guid("d9de4e9d5bf02cd41ce79da5ba68dd98"));
         public static readonly NodeId Letters_de_DE = new NodeId(namespaceIndex, new Guid("9f12017476cb63ba01cfaee2cc1028fd"));
         public static readonly NodeId CoT_SelectionOption = new NodeId(namespaceIndex, new Guid("e872b02a06d0cedd30097262fe093ff5"));
         public static readonly NodeId CoT_AlarmIconKeyValueConverter = new NodeId(namespaceIndex, new Guid("f383f831a1b84c98f3734f3eab7e4835"));
@@ -347,8 +349,6 @@ namespace MyHMI_Template_Unencrypted
         public static readonly NodeId CoT_ScreenCleaningOverlay = new NodeId(namespaceIndex, new Guid("cce1f64265b5fe2eac5e3032e734c0ae"));
         public static readonly NodeId CoT_NavColumnTemplate = new NodeId(namespaceIndex, new Guid("5dd89e4580c592ac4fc69d115db108eb"));
         public static readonly NodeId CoT_NavItem = new NodeId(namespaceIndex, new Guid("b3a6bde7d730362d4e8fe279f9970434"));
-        public static readonly NodeId CoT_BrokenPLCLinks = new NodeId(namespaceIndex, new Guid("9589b9b248bc9a5db680ee6f859ae64c"));
-        public static readonly NodeId CoT_MissingPLCLinks = new NodeId(namespaceIndex, new Guid("aad14b935d4375c44a8fa88e7e91c506"));
     }
 
     public static class VariableTypes
